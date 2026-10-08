@@ -16,10 +16,6 @@ function SimpleSource(texts, opts) {
   this.close = function() {
     return Promise.resolve();
   }
-  this.getUri = function() {
-    var textLen = texts.reduce(function(sum, text) {return sum+text.length}, 0);
-    return "text-selection:(" + textLen + ")" + encodeURIComponent((texts[0] || "").substr(0, 100));
-  }
 }
 
 
@@ -70,10 +66,6 @@ function TabSource() {
   }
   this.close = function() {
     return Promise.resolve();
-  }
-  this.getUri = function() {
-    return this.ready
-      .then(function(info) {return info.url})
   }
 
   async function sendToContentScript(tabId, message) {
@@ -252,20 +244,10 @@ function Doc(source, onEnd) {
   }
 
   function detectLanguageOf(text) {
-    if (text.length < 100) {
-      //too little text, use cloud detection for improved accuracy
-      return serverDetectLanguage(text)
-        .then(function(result) {
-          return result || browserDetectLanguage(text)
-        })
-        .then(function(lang) {
-          //exclude commonly misdetected languages
-          return ["cy", "eo"].includes(lang) ? null : lang
-        })
-    }
     return browserDetectLanguage(text)
-      .then(function(result) {
-        return result || serverDetectLanguage(text);
+      .then(function(lang) {
+        //exclude languages commonly misdetected in short texts
+        return text.length < 100 && ["cy", "eo"].includes(lang) ? null : lang
       })
   }
 
@@ -284,30 +266,6 @@ function Doc(source, onEnd) {
         return null;
       }
     })
-  }
-
-  async function serverDetectLanguage(text) {
-    try {
-      const service = await rxjs.firstValueFrom(fasttextObservable)
-      if (!service) throw new Error("FastText service unavailable")
-      const [prediction] = await service.sendRequest("detectLanguage", {text})
-      return prediction?.language
-    }
-    catch (err) {
-      console.error(err)
-
-      return ajaxPost(config.serviceUrl + "/read-aloud/detect-language", {text: text}, "json")
-        .then(JSON.parse)
-        .then(function(res) {
-          var result = Array.isArray(res) ? res[0] : res
-          if (result && result.language && result.language != "und") return result.language
-          else return null
-        })
-        .catch(function(err) {
-          console.error(err)
-          return null
-        })
-    }
   }
 
   async function getSpeech(texts) {
