@@ -20,9 +20,6 @@
   "options_voicegroup_standard": {
     "message": "Giọng đọc chuẩn"
   },
-  "options_voicegroup_premium": {
-    "message": "Giọng đọc chất lượng cao"
-  },
   "options_voicegroup_experimental": {
     "message": "Giọng AI thử nghiệm"
   },
@@ -151,15 +148,6 @@
   },
   "error_login_required": {
     "message": "Vui lòng [đăng nhập](sign-in) để sử dụng các giọng chất lượng cao"
-  },
-  "error_voice_unavailable": {
-    "message": "Giọng nói không khả dụng, vui lòng chọn một giọng nói khác"
-  },
-  "error_payment_required": {
-    "message": "Hết tín dụng"
-  },
-  "error_wavenet_auth_required": {
-    "message": "Bạn cần cấp thêm [quyền](auth-wavenet) để bật giọng nói của Google Wavenet"
   },
   "error_phone_not_connected": {
     "message": "Điện thoại chưa kết nối. [Kết nối](connect-phone)"

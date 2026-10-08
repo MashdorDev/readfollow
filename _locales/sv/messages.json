@@ -23,9 +23,6 @@
   "options_voicegroup_standard": {
     "message": "Standardröster"
   },
-  "options_voicegroup_premium": {
-    "message": "Premiumröster"
-  },
   "options_voicegroup_additional": {
     "message": "Ytterligare röster"
   },
@@ -148,15 +145,6 @@
   },
   "error_login_required": {
     "message": "Vänligen [logga in](sign-in) för att använda Premiumröster"
-  },
-  "error_voice_unavailable": {
-    "message": "Röst inte tillgänglig, välj en annan"
-  },
-  "error_payment_required": {
-    "message": "Slut på krediter"
-  },
-  "error_wavenet_auth_required": {
-    "message": "Du måste ge ytterligare [behörigheter](auth-wavenet) för att aktivera Google Wavenet-röster"
   },
   "error_phone_not_connected": {
     "message": "Telefon inte ansluten. [Anslut](connect-phone)"

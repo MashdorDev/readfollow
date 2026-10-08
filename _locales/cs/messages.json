@@ -23,9 +23,6 @@
   "options_voicegroup_standard": {
     "message": "Standardní hlasy"
   },
-  "options_voicegroup_premium": {
-    "message": "Prémiové hlasy"
-  },
   "options_voicegroup_additional": {
     "message": "Další hlasy"
   },
@@ -148,15 +145,6 @@
   },
   "error_login_required": {
     "message": "Prosím [přihlaste se](sign-in) pro použití prémiových hlasů"
-  },
-  "error_voice_unavailable": {
-    "message": "Hlas není dostupný, vyberte prosím jiný"
-  },
-  "error_payment_required": {
-    "message": "Vyčerpán kredit"
-  },
-  "error_wavenet_auth_required": {
-    "message": "Musíte udělit dodatečná [oprávnění](auth-wavenet) pro povolení hlasů Google Wavenet"
   },
   "error_phone_not_connected": {
     "message": "Telefon není připojen. [Připojit](connect-phone)"

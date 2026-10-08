@@ -20,9 +20,6 @@
   "options_voicegroup_standard": {
     "message": "Стандартные голоса"
   },
-  "options_voicegroup_premium": {
-    "message": "Премиум-голоса"
-  },
   "options_voicegroup_experimental": {
     "message": "Экспериментальные AI-голоса"
   },
@@ -148,15 +145,6 @@
   },
   "error_login_required": {
     "message": "Пожалуйста, [войдите](sign-in), чтобы использовать Премиум-голоса"
-  },
-  "error_voice_unavailable": {
-    "message": "Голос недоступен, выберите другой"
-  },
-  "error_payment_required": {
-    "message": "Требуется оплата"
-  },
-  "error_wavenet_auth_required": {
-    "message": "Вам необходимо предоставить дополнительные [разрешения](auth-wavenet), чтобы включить голоса Google Wavenet."
   },
   "error_phone_not_connected": {
     "message": "Телефон не подключен. [Подключить](connect-phone)"

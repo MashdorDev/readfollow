@@ -20,9 +20,6 @@
   "options_voicegroup_standard": {
     "message": "Овозҳои стандартӣ"
   },
-  "options_voicegroup_premium": {
-    "message": "Овозҳои баландсифат"
-  },
   "options_voicegroup_experimental": {
     "message": "Овозҳои таҷрибавии AI"
   },
@@ -148,15 +145,6 @@
   },
   "error_login_required": {
     "message": "Барои истифода кардани овозҳои баландсифат, лутфан, [ворид шавед](sign-in)"
-  },
-  "error_voice_unavailable": {
-    "message": "Ин овоз дастнорас аст, лутфан, забони дигареро интихоб намоед"
-  },
-  "error_payment_required": {
-    "message": "Маблағро илова намоед"
-  },
-  "error_wavenet_auth_required": {
-    "message": "Барои фаъол кардани овозҳои «Google Wavenet» шумо бояд [иҷозатҳои](auth-wavenet) иловагиро татбиқ кунед"
   },
   "error_phone_not_connected": {
     "message": "Телефон пайваст нашудааст. [Пайваст намоед](connect-phone)"

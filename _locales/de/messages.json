@@ -23,9 +23,6 @@
   "options_voicegroup_standard": {
     "message": "Standardstimmen"
   },
-  "options_voicegroup_premium": {
-    "message": "Premium-Stimmen"
-  },
   "options_voicegroup_additional": {
     "message": "Zusätzliche Stimmen"
   },
@@ -148,15 +145,6 @@
   },
   "error_login_required": {
     "message": "Bitte [anmelden](sign-in), um die Premium-Stimmen zu nutzen"
-  },
-  "error_voice_unavailable": {
-    "message": "Stimme nicht verfügbar, bitte wählen Sie eine andere"
-  },
-  "error_payment_required": {
-    "message": "Guthaben aufgebraucht"
-  },
-  "error_wavenet_auth_required": {
-    "message": "Sie müssen zusätzliche [Berechtigungen](auth-wavenet) erteilen, um Google Wavenet-Stimmen zu aktivieren"
   },
   "error_phone_not_connected": {
     "message": "Telefon nicht verbunden. [Verbinden](connect-phone)"

@@ -23,9 +23,6 @@
   "options_voicegroup_standard": {
     "message": "Standard Voices"
   },
-  "options_voicegroup_premium": {
-    "message": "Premium Voices"
-  },
   "options_voicegroup_additional": {
     "message": "Additional Voices"
   },
@@ -186,15 +183,6 @@
   },
   "error_login_required": {
     "message": "Please [sign in](sign-in) to use the Premium Voices"
-  },
-  "error_voice_unavailable": {
-    "message": "Voice unavailable, please pick another"
-  },
-  "error_payment_required": {
-    "message": "Out of credits"
-  },
-  "error_wavenet_auth_required": {
-    "message": "You need to grant additional [permissions](auth-wavenet) to enable Google Wavenet voices"
   },
   "error_phone_not_connected": {
     "message": "Phone not connected. [Connect](connect-phone)"

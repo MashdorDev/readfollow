@@ -75,7 +75,6 @@
           var voiceName = $(this).val();
           if (voiceName == "@custom") brapi.tabs.create({url: "custom-voices.html"});
           else if (voiceName == "@languages") brapi.tabs.create({url: "languages.html"});
-          else if (voiceName == "@premium") brapi.tabs.create({url: "premium-voices.html"});
           else if (voiceName == "@piper") bgPageInvoke("managePiperVoices").catch(console.error)
           else if (voiceName == "@supertonic") bgPageInvoke("manageSupertonicVoices").catch(console.error)
           else if (voiceName == "@nghitts") bgPageInvoke("manageNghiTtsVoices").catch(console.error)
@@ -101,14 +100,6 @@
     .subscribe(([voiceName]) => {
       $("#voices").val(voiceName || "")
     })
-
-  rxjs.combineLatest(
-    observeSetting("voiceName"),
-    observeSetting("gcpCreds"),
-    domReadyPromise
-  ).subscribe(([voiceName, gcpCreds]) => {
-    $("#voice-info").toggle(!!voiceName && isGoogleWavenet({voiceName}) && !gcpCreds)
-  })
 
 
 
@@ -331,17 +322,15 @@
           || isOpenai(voice)
       });
 
-    //group by standard/premium
+    //group by experimental/offline/standard
     var groups = Object.assign({
         experimental: [],
         offline: [],
-        premium: [],
         standard: [],
       },
       voices.groupBy(function(voice) {
         if (isPiperVoice(voice) || isSupertonicVoice(voice) || isNghiTtsVoice(voice)) return "experimental"
         if (isOfflineVoice(voice)) return "offline"
-        if (isPremiumVoice(voice)) return "premium";
         return "standard"
       }))
     for (var name in groups) groups[name].sort(voiceSorter);
@@ -395,18 +384,6 @@
         .appendTo(standard);
     });
 
-    //create the premium optgroup
-    $("<optgroup>").appendTo($("#voices"));
-    var premium = $("<optgroup>")
-      .attr("label", brapi.i18n.getMessage("options_voicegroup_premium"))
-      .appendTo($("#voices"));
-    groups.premium.forEach(function(voice) {
-      $("<option>")
-        .val(voice.voiceName)
-        .text(voice.voiceName)
-        .appendTo(premium);
-    });
-
     //create the additional optgroup
     $("<optgroup>").appendTo($("#voices"));
     var additional = $("<optgroup>")
@@ -427,8 +404,6 @@
       var weight = 0
       //native voices should appear before non-natives in Standard group
       if (!isNativeVoice(voice)) weight += 10
-      //ReadAloud Generic Voice should appear first among the non-natives
-      if (!isReadAloudCloud(voice)) weight += 1
       //UseMyPhone should appear last in Offline group
       if (isUseMyPhone(voice)) weight += 1
       return weight
@@ -458,12 +433,6 @@
               })
               .catch(function(err) {
                 $("#status").text(err.message).parent().show();
-              })
-            break;
-          case "#auth-wavenet":
-            brapi.permissions.request(config.wavenetPerms)
-              .then(function(granted) {
-                if (granted) bgPageInvoke("authWavenet");
               })
             break;
           case "#connect-phone":

@@ -23,9 +23,6 @@
   "options_voicegroup_standard": {
     "message": "Standardstemmer"
   },
-  "options_voicegroup_premium": {
-    "message": "Premium-stemmer"
-  },
   "options_voicegroup_additional": {
     "message": "Yderligere stemmer"
   },
@@ -148,15 +145,6 @@
   },
   "error_login_required": {
     "message": "Venligst [log ind](sign-in) for at bruge Premium-stemmer"
-  },
-  "error_voice_unavailable": {
-    "message": "Stemme ikke tilgængelig, vælg venligst en anden"
-  },
-  "error_payment_required": {
-    "message": "Ingen kreditter tilbage"
-  },
-  "error_wavenet_auth_required": {
-    "message": "Du skal give yderligere [tilladelser](auth-wavenet) for at aktivere Google Wavenet-stemmer"
   },
   "error_phone_not_connected": {
     "message": "Telefon ikke tilsluttet. [Tilslut](connect-phone)"

@@ -20,9 +20,6 @@
   "options_voicegroup_standard": {
     "message": "Standart Sesler"
   },
-  "options_voicegroup_premium": {
-    "message": "Premium Sesler"
-  },
   "options_voicegroup_experimental": {
     "message": "Deneysel AI Sesleri"
   },
@@ -148,15 +145,6 @@
   },
   "error_login_required": {
     "message": "Premium Sesleri kullanmak için lütfen [oturum açın](sign-in)"
-  },
-  "error_voice_unavailable": {
-    "message": "Ses kullanılamıyor, lütfen başka bir tane seçin"
-  },
-  "error_payment_required": {
-    "message": "krediler bitti"
-  },
-  "error_wavenet_auth_required": {
-    "message": "Google Wavenet seslerini etkinleştirmek için ek [izinler](auth-wavenet) vermeniz gerekir"
   },
   "error_phone_not_connected": {
     "message": "Telefon bağlı değil. [Bağlan](connect-phone)"

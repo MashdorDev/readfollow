@@ -23,9 +23,6 @@
   "options_voicegroup_standard": {
     "message": "Standaard stemmen"
   },
-  "options_voicegroup_premium": {
-    "message": "Premium stemmen"
-  },
   "options_voicegroup_additional": {
     "message": "Extra stemmen"
   },
@@ -148,15 +145,6 @@
   },
   "error_login_required": {
     "message": "[Log in](sign-in) om de Premium stemmen te gebruiken"
-  },
-  "error_voice_unavailable": {
-    "message": "Stem niet beschikbaar, kies een andere"
-  },
-  "error_payment_required": {
-    "message": "Geen tegoed meer"
-  },
-  "error_wavenet_auth_required": {
-    "message": "U moet extra [machtigingen](auth-wavenet) verlenen om Google Wavenet-stemmen in te schakelen"
   },
   "error_phone_not_connected": {
     "message": "Telefoon niet verbonden. [Verbinden](connect-phone)"
