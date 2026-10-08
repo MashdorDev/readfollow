@@ -1,133 +1,30 @@
-
 <div align="center">
-	<img src="img/icon.png" width="128" height="128">
-	<br>
-	<img src="docs/images/logo-text-trans.png" width="391" height="66">
-	<br>
-	A <b>Text to Speech Voice Reader</b> extension for your browser!
+  <img src="img/icon.png" width="96" height="96">
+  <h1>ReadFollow</h1>
+  Text to speech that highlights each word on the page as it reads, so you can follow along.
 </div>
 
-<div align="center">
-	<a href="https://chromewebstore.google.com/detail/read-aloud-a-text-to-spee/hdhinadidafjejdhmfkjgnolgimiaplp">Chrome Web Store</a> | <a href="https://addons.mozilla.org/en-US/firefox/addon/read-aloud/">Firefox Addon</a> | <a href="https://blog.readaloud.app/">Blog</a> | <a href="https://readaloud.app/">Website</a> 
-</div>
+## What it does
 
-<br>
+Select some text on any page and start reading (toolbar button, `Alt+O`, or right-click > read selection). While it reads:
 
-<div align="center">
-    <br> github stats:
-    <img src="https://badgen.net/github/stars/ken107/read-aloud" >
-    <img src="https://badgen.net/github/open-issues/ken107/read-aloud" >
-    <img src="https://badgen.net/github/open-prs/ken107/read-aloud" >
-    <img src="https://badgen.net/github/tag/ken107/read-aloud" >
-    <img src="https://badgen.net/github/license/ken107/read-aloud/" >
-    <br> chrome web store stats:
-    <img src="https://badgen.net/chrome-web-store/users/hdhinadidafjejdhmfkjgnolgimiaplp" >
-    <img src="https://badgen.net/chrome-web-store/rating/hdhinadidafjejdhmfkjgnolgimiaplp" >
-    <img src="https://badgen.net/chrome-web-store/rating-count/hdhinadidafjejdhmfkjgnolgimiaplp" >
-    <img src="https://badgen.net/chrome-web-store/v/hdhinadidafjejdhmfkjgnolgimiaplp" >
-    <br> firefox addon stats:
-    <img src="https://badgen.net/amo/users/read-aloud" >
-    <img src="https://badgen.net/amo/rating/read-aloud" >
-    <img src="https://badgen.net/amo/reviews/read-aloud" >
-    <img src="https://badgen.net/amo/v/read-aloud" >
-</div>
+- the text you selected is tinted, so you can see how much is left
+- the current sentence is highlighted, and the word being spoken is highlighted on top of it
+- a small bar at the bottom of the page gives you previous/next sentence, play/pause, speed and stop; drag it by the handle if it covers something
+- clicking any word in the selection jumps reading to that word
 
-<br>
+Word-by-word highlighting needs a voice that reports word positions. The voices built into Windows, macOS and ChromeOS do; cloud voices highlight one sentence or phrase at a time.
 
-<div align="center">
-	<sub>A little browser extension built with ❤︎ by <a href="https://github.com/ken107">Hai Phan</a> and <a href="https://github.com/ken107/read-aloud/graphs/contributors">contributors</a> </sub>
-</div>
+Works in Chrome and Firefox (140 or newer).
 
-<hr />
+## Install from source
 
-## Reviews
->First impressions are super. Natural flowing voice and very helpful for multitasking and also giving my eyes a rest. 
+**Chrome:** open `chrome://extensions`, turn on Developer mode, click "Load unpacked" and pick this folder.
 
-*Giuseppe*
+**Firefox:** run `npm run build:firefox`, then load `build/firefox/manifest.json` from `about:debugging` > This Firefox > Load Temporary Add-on. A temporary add-on is removed when Firefox restarts; a permanent install needs a signed build.
 
-> Thank you so much for this extension. I absolutely swear by it whenever I need to read any large chunk of text. The combination of hearing it in a clear voice (...)  Its fantastic, thank you so much.
+## Credit
 
-*Abi*
+ReadFollow is based on [Read Aloud](https://github.com/ken107/read-aloud) by Hai Phan, which provides the page reading, voices and most of the extension. The original history is kept in this repository. Both are released under the MIT license, see [LICENSE](LICENSE).
 
-> LOVE this extension. I remember better when i hear a story vs reading
-
-*David*
-
-> This is a phenomenal extension. Better than anything else I tryed so far. Simple, easy, customizable (...) I would recommend this whole heartedly to anyone who has dyslexia like me, or any other reasons for not beeing able to read comfortably at all times.
-
-*Merlin*
-
-
-## Overview
-Read Aloud is a Chrome and Firefox extension that uses text-to-speech technology to convert webpage text to audio.&nbsp; It works on a variety of websites, including news sites, blogs, fan fiction, publications, textbooks, school and class websites, online universities and course materials.
-
-Read Aloud is aimed at users who prefer to listen to content instead of reading, people with dyslexia or other learning disabilities, children learning to read, or simply to provide users with alternative way to consume web content.
-
-Read Aloud allows you to select from a variety of text-to-speech voices, including those provided natively by the browser, as well as by text-to-speech cloud service providers such as Google Wavenet, Amazon Polly, IBM Watson, and Microsoft.&nbsp; Some of the cloud-based voices may require additional in-app purchase to enable.
-
-## Basic Usage
-
-### Extension Button
-<img src="docs/images/demo-extension-button.gif">
-
-### Right Click Menu
-<img src="docs/images/demo-right-click.gif">
-
-
-## Advanced Usage
-
-### Shortcuts
-
-```yaml
-ALT/Option + P           : Play/Pause
-ALT/Option + O           : Stop
-ALT/Option + Comma       : Rewind
-ALT/Option + Period      : Forward
-```
-
-### Customization
-
-You can change the voice, reading speed, pitch, or enable text highlighting:
-
-1. Click the Read Aloud icon on the [Extensions menu](https://i.imgur.com/KTqFZ3Q.png).
-2. Stop any text that may be playing.
-3. Click on the Gear icon in the Read Aloud context menu. (It may take a second or two for settings to appear)
-
-
-### Using Premium Voices
-[Using Premium Voices (Google Wavenet & Amazon Polly)](docs/usage/premium-voices.md)
-
-
-## Installation
-
-### Chrome and Chromium-based browsers
-You can get the latest available Read Aloud Extension version from the [Chrome Web Store](https://chromewebstore.google.com/detail/read-aloud-a-text-to-spee/hdhinadidafjejdhmfkjgnolgimiaplp).
-
-### Firefox
-You can get the latest version of Read Aloud Extension from the [Mozilla Add-ons website](https://addons.mozilla.org/en-US/firefox/addon/read-aloud/).
-
-#### Firefox install from source
-
-1. Create a build directory with `mkdir build`
-2. Run `npm run-script package`
-3. Extract the resulting zip file. You should see a `manifest.json` which will be used later.
-4. In Firefox, first make sure there isn't an existing read-aloud add-on already installed
-5. type `about:debugging` in the Address bar and enter.
-6. Click on "This Firefox" then click "Load Unpackaged Extension"
-7. Select the `manifest.json` file produced earlier.
-
-## Contribute
-
-- Star this GitHub repo :star:
-- Post about it on your social media (Twitter / Blogs / Facebook / Instagram etc).
-- Leave a positive review on the [Chrome Web Store](https://chromewebstore.google.com/detail/read-aloud-a-text-to-spee/hdhinadidafjejdhmfkjgnolgimiaplp) or [Firefox Addon](https://addons.mozilla.org/en-US/firefox/addon/read-aloud/) pages.
-- Create pull requests, submit bugs, suggest new features or documentation updates 🛠 
-	- To do so, go to [this page](https://github.com/ken107/read-aloud/issues) and click the *New issue* button.
-
-
-## Credits
-
-### Images
-
- - [Streamline Labs](https://lab.streamlineicons.com/)
- - [Freepik](https://www.freepik.com/free-vector/colorful-memphis-design-background-vector_3893585.htm)
+ReadFollow is not affiliated with or endorsed by Read Aloud or its author.

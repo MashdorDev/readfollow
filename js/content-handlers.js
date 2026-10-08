@@ -191,7 +191,7 @@ var contentHandlers = [
     }
   },
 
-  // Read Aloud PDF viewer ---------------------------------------------------
+  // ReadFollow PDF viewer ---------------------------------------------------
   {
     match: url => url.startsWith(brapi.runtime.getURL("pdf-viewer.html")),
     getSourceUri: () => "pdfviewer:",

@@ -1,9 +1,9 @@
 {
   "extension_name": {
-    "message": "Read Aloud: テキスト読み上げ音声リーダー"
+    "message": "ReadFollow: テキスト読み上げ音声リーダー"
   },
   "extension_short_name": {
-    "message": "読み上げる"
+    "message": "ReadFollow"
   },
   "extension_description": {
     "message": "ワンクリックで現在のウェブページの記事を読み上げます。 40以上の言語をサポートします。"
@@ -174,12 +174,12 @@
     "message": "オプションに戻る"
   },
   "google_translate_request_permission": {
-    "message": "Read Aloudは、テキスト読み上げにGoogle翻訳を使用しようとしています。"
+    "message": "ReadFollowは、テキスト読み上げにGoogle翻訳を使用しようとしています。"
   },
   "google_translate_allow_button": {
     "message": "許可する"
   },
   "google_translate_keep_page_open": {
-    "message": "Read Aloudは、テキスト読み上げにGoogle翻訳を使用しています。このタブは開いたままにしてください。"
+    "message": "ReadFollowは、テキスト読み上げにGoogle翻訳を使用しています。このタブは開いたままにしてください。"
   }
 }

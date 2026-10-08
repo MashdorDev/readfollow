@@ -76,7 +76,7 @@ var pageControls = (function() {
     var bar = document.createElement("div")
     bar.className = "bar"
     bar.setAttribute("role", "toolbar")
-    bar.setAttribute("aria-label", "Read Aloud")
+    bar.setAttribute("aria-label", "ReadFollow")
     var grip = button("grip", "Drag to move", "grip")
     grip.tabIndex = -1
     grip.setAttribute("aria-hidden", "true")
