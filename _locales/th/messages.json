@@ -83,15 +83,6 @@
   "options_stop_button": {
     "message": "หยุด"
   },
-  "options_logged_in_as": {
-    "message": "เข้าสู่ระบบเป็น"
-  },
-  "options_account_button": {
-    "message": "บัญชี"
-  },
-  "options_logout_button": {
-    "message": "ออกจากระบบ"
-  },
   "player_tab_explanation": {
     "message": "ReadFollow ใช้แท็บนี้สำหรับการเล่นเสียง แท็บนี้จะปิดอัตโนมัติหลังจากไม่มีกิจกรรม 5 นาที"
   },
@@ -142,9 +133,6 @@
   },
   "error_add_permissions": {
     "message": "คุณต้องให้[สิทธิ์](request-permissions)เพิ่มเติมแก่ ReadFollow สำหรับเว็บไซต์นี้"
-  },
-  "error_login_required": {
-    "message": "กรุณา[เข้าสู่ระบบ](sign-in)เพื่อใช้เสียงพรีเมียม"
   },
   "error_phone_not_connected": {
     "message": "โทรศัพท์ไม่ได้เชื่อมต่อ [เชื่อมต่อ](connect-phone)"

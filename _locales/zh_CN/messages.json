@@ -83,15 +83,6 @@
   "options_stop_button": {
     "message": "停止"
   },
-  "options_logged_in_as": {
-    "message": "登录为"
-  },
-  "options_account_button": {
-    "message": "帐户"
-  },
-  "options_logout_button": {
-    "message": "登出"
-  },
   "player_tab_explanation": {
     "message": "大声朗读使用此选项卡进行音频播放。此选项卡将在 5 分钟无活动后自动关闭。"
   },
@@ -142,9 +133,6 @@
   },
   "error_add_permissions": {
     "message": "您需要授予大声朗读此网站的额外[权限](request-permissions)"
-  },
-  "error_login_required": {
-    "message": "请[登录](sign-in)以使用高级语音"
   },
   "error_phone_not_connected": {
     "message": "手机未连接。[连接](connect-phone)"

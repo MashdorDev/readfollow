@@ -83,15 +83,6 @@
   "options_stop_button": {
     "message": "Зупинити"
   },
-  "options_logged_in_as": {
-    "message": "Ви увійшли як"
-  },
-  "options_account_button": {
-    "message": "Обліковий запис"
-  },
-  "options_logout_button": {
-    "message": "Вийти"
-  },
   "player_tab_explanation": {
     "message": "ReadFollow використовує цю вкладку для відтворення аудіо. Ця вкладка автоматично закриється через 5 хвилин бездіяльності."
   },
@@ -142,9 +133,6 @@
   },
   "error_add_permissions": {
     "message": "Вам потрібно надати ReadFollow додаткові [дозволи](request-permissions) для цього веб-сайту"
-  },
-  "error_login_required": {
-    "message": "Будь ласка, [увійдіть](sign-in), щоб використовувати Преміум-голоси"
   },
   "error_phone_not_connected": {
     "message": "Телефон не підключено. [Підключити](connect-phone)"

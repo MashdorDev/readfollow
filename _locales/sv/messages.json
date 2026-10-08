@@ -83,15 +83,6 @@
   "options_stop_button": {
     "message": "Stoppa"
   },
-  "options_logged_in_as": {
-    "message": "Inloggad som"
-  },
-  "options_account_button": {
-    "message": "Konto"
-  },
-  "options_logout_button": {
-    "message": "Logga ut"
-  },
   "player_tab_explanation": {
     "message": "ReadFollow använder denna flik för ljuduppspelning. Denna flik stängs automatiskt efter 5 minuters inaktivitet."
   },
@@ -142,9 +133,6 @@
   },
   "error_add_permissions": {
     "message": "Du måste ge ReadFollow ytterligare [behörigheter](request-permissions) för denna webbplats"
-  },
-  "error_login_required": {
-    "message": "Vänligen [logga in](sign-in) för att använda Premiumröster"
   },
   "error_phone_not_connected": {
     "message": "Telefon inte ansluten. [Anslut](connect-phone)"

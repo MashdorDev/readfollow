@@ -100,15 +100,6 @@ function handleError(err) {
               }
             })
           break;
-        case "#sign-in":
-          getAuthToken({interactive: true})
-            .then(function(token) {
-              if (token) $("#btnPlay").click();
-            })
-            .catch(function(err) {
-              $("#status").text(err.message).show();
-            })
-          break;
         case "#open-pdf-viewer":
           brapi.tabs.create({url: config.pdfViewerUrl})
           break
