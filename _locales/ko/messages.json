@@ -131,12 +131,6 @@
   "error_add_permissions": {
     "message": "이 웹사이트에 대해 ReadFollow에 추가 [권한](request-permissions)을 부여해야 합니다"
   },
-  "error_phone_not_connected": {
-    "message": "휴대폰이 연결되지 않았습니다. [연결](connect-phone)"
-  },
-  "error_phone_disconnected": {
-    "message": "휴대폰 연결이 끊겼습니다 ({reason}). [다시 연결](connect-phone)"
-  },
   "error_chatgpt": {
     "message": "각 답변 옆의 스피커 아이콘을 클릭하여 소리 내어 읽기"
   },

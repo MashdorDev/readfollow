@@ -131,12 +131,6 @@
   "error_add_permissions": {
     "message": "تحتاج إلى منح ReadFollow [أذونات](request-permissions) إضافية لهذا الموقع"
   },
-  "error_phone_not_connected": {
-    "message": "الهاتف غير متصل. [اتصال](connect-phone)"
-  },
-  "error_phone_disconnected": {
-    "message": "تم قطع اتصال الهاتف ({reason}). [إعادة الاتصال](connect-phone)"
-  },
   "error_chatgpt": {
     "message": "انقر على أيقونة السماعة بجانب كل إجابة لقراءتها بصوت عالٍ"
   },

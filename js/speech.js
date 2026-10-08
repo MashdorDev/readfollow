@@ -35,7 +35,6 @@ function Speech(texts, options) {
     if (isPiperVoice(options.voice)) return piperTtsEngine;
     if (isAzure(options.voice)) return azureTtsEngine;
     if (isOpenai(options.voice)) return openaiTtsEngine;
-    if (isUseMyPhone(options.voice)) return phoneTtsEngine;
     if (isGoogleTranslate(options.voice) && !/\s(Hebrew|Telugu)$/.test(options.voice.voiceName)) {
       return googleTranslateTtsEngine
     }

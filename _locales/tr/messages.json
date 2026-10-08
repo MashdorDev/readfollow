@@ -131,12 +131,6 @@
   "error_add_permissions": {
     "message": "Bu web sitesi için Sesli Okuma ek [izinleri](request-permissions) vermeniz gerekiyor"
   },
-  "error_phone_not_connected": {
-    "message": "Telefon bağlı değil. [Bağlan](connect-phone)"
-  },
-  "error_phone_disconnected": {
-    "message": "Telefon bağlantısı kesildi ({reason}). [Yeniden bağlan](connect-phone)"
-  },
   "error_chatgpt": {
     "message": "Her yanıtın yanındaki hoparlör simgesine tıklayarak sesli okuyun"
   },

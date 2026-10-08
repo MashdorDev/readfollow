@@ -131,12 +131,6 @@
   "error_add_permissions": {
     "message": "Вам потрібно надати ReadFollow додаткові [дозволи](request-permissions) для цього веб-сайту"
   },
-  "error_phone_not_connected": {
-    "message": "Телефон не підключено. [Підключити](connect-phone)"
-  },
-  "error_phone_disconnected": {
-    "message": "Телефон відключено ({reason}). [Підключити знову](connect-phone)"
-  },
   "error_chatgpt": {
     "message": "Натисніть на значок динаміка поруч із кожною відповіддю, щоб прочитати її вголос"
   },

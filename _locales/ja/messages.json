@@ -131,12 +131,6 @@
   "error_add_permissions": {
     "message": "このウェブサイトにReadAloudの追加の[権限](request-permissions)を付与する必要があります"
   },
-  "error_phone_not_connected": {
-    "message": "電話が接続されていません。[接続](connect-phone)"
-  },
-  "error_phone_disconnected": {
-    "message": "電話が切断されました（{reason}）。[再接続](connect-phone)"
-  },
   "error_chatgpt": {
     "message": "各回答の横にあるスピーカーアイコンをクリックして読み上げます"
   },

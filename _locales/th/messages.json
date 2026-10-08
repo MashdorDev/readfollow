@@ -131,12 +131,6 @@
   "error_add_permissions": {
     "message": "คุณต้องให้[สิทธิ์](request-permissions)เพิ่มเติมแก่ ReadFollow สำหรับเว็บไซต์นี้"
   },
-  "error_phone_not_connected": {
-    "message": "โทรศัพท์ไม่ได้เชื่อมต่อ [เชื่อมต่อ](connect-phone)"
-  },
-  "error_phone_disconnected": {
-    "message": "โทรศัพท์ถูกตัดการเชื่อมต่อ ({reason}) [เชื่อมต่อใหม่](connect-phone)"
-  },
   "error_chatgpt": {
     "message": "คลิกไอคอนลำโพงข้างคำตอบแต่ละข้อเพื่ออ่านออกเสียง"
   },

@@ -132,8 +132,6 @@ var messageHandlers = {
   seek: seek,
   close: closePlayer,
   shouldPlaySilence: shouldPlaySilence.bind({}),
-  startPairing: () => phoneTtsEngine.startPairing(),
-  isPaired: () => phoneTtsEngine.isPaired(),
   managePiperVoices,
   getLastUrl: () => lastUrlPromise,
 }

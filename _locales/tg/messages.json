@@ -131,12 +131,6 @@
   "error_add_permissions": {
     "message": "Барои ин сомона шумо бояд ба барномаи «Баланд хонед» [иҷозатҳои](request-permissions) иловагиро татбиқ намоед"
   },
-  "error_phone_not_connected": {
-    "message": "Телефон пайваст нашудааст. [Пайваст намоед](connect-phone)"
-  },
-  "error_phone_disconnected": {
-    "message": "Пайвасти телефон қатъ шуд ({reason}). [Аз нав пайваст намоед](connect-phone)"
-  },
   "error_chatgpt": {
     "message": "Пеш аз ҳар як ҷавоб нишонаи баландгӯякро зер кунед, то ки он бо овози баланд хонда шавад"
   },

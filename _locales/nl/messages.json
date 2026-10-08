@@ -131,12 +131,6 @@
   "error_add_permissions": {
     "message": "U moet ReadFollow extra [machtigingen](request-permissions) geven voor deze website"
   },
-  "error_phone_not_connected": {
-    "message": "Telefoon niet verbonden. [Verbinden](connect-phone)"
-  },
-  "error_phone_disconnected": {
-    "message": "Telefoon losgekoppeld ({reason}). [Opnieuw verbinden](connect-phone)"
-  },
   "error_chatgpt": {
     "message": "Klik op het luidsprekerpictogram naast elk antwoord om het hardop voor te lezen"
   },

@@ -131,12 +131,6 @@
   "error_add_permissions": {
     "message": "您需要授予大聲朗讀此網站的額外[權限](request-permissions)"
   },
-  "error_phone_not_connected": {
-    "message": "手機未連接。[連接](connect-phone)"
-  },
-  "error_phone_disconnected": {
-    "message": "手機已斷開連接（{reason}）。[重新連接](connect-phone)"
-  },
   "error_chatgpt": {
     "message": "點擊每個回答旁邊的揚聲器圖標進行朗讀"
   },
