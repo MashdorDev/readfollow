@@ -779,27 +779,6 @@ function makeSilenceTrack() {
   }
 }
 
-async function getRemoteConfig() {
-  let {remoteConfig} = await getSettings("remoteConfig")
-  if (remoteConfig && remoteConfig.expire > Date.now()) {
-    //still valid, return stored object
-    return remoteConfig
-  }
-  try {
-    //attempt to get latest from server
-    remoteConfig = await ajaxGet({url: config.serviceUrl + "/read-aloud/config", responseType: "json"})
-  }
-  catch (err) {
-    console.error(err)
-    //if fail, use the expired object or create a dummy
-    if (!remoteConfig) remoteConfig = {}
-  }
-  //dont check again for an hour
-  remoteConfig.expire = Date.now() + 3600*1000
-  await updateSettings({remoteConfig})
-  return remoteConfig
-}
-
 /**
  * Repeat an action
  * @param {Object} opt - options
@@ -822,32 +801,6 @@ function repeat(opt) {
         return new Promise(function(f) {setTimeout(f, opt.delay)}).then(iter.bind(null, n+1))
       })
   }
-}
-
-function when(pred, val) {
-  if (typeof pred == "function" ? pred() : pred) {
-    return {
-      when() {
-        return this
-      },
-      else() {
-        return typeof val == "function" ? val() : val
-      }
-    }
-  }
-  else {
-    return {
-      when,
-      else(val) {
-        return typeof val == "function" ? val() : val
-      }
-    }
-  }
-}
-
-function removeAllAttrs(el, recursive) {
-  while (el.attributes.length > 0) el.removeAttribute(el.attributes[0].name)
-  if (recursive) for (const child of el.children) removeAllAttrs(child, true)
 }
 
 function escapeXml(unsafe) {

@@ -9,30 +9,14 @@ var readAloudDoc = new function() {
   }
 
   this.getTexts = async function(index) {
-    if (index == 0) {
-      const math = await getMath()
-      try {
-        if (math) math.show()
-        return parse()
-      }
-      finally {
-        if (math) math.hide()
-      }
-    }
+    if (index == 0) return parse()
     else return null;
   }
 
   this.hasDomSelection = true
 
   this.getSelectedText = async function() {
-    const math = await getMath()
-    try {
-      if (math) math.show()
-      return window.getSelection().toString().trim()
-    }
-    finally {
-      if (math) math.hide()
-    }
+    return window.getSelection().toString().trim()
   }
 
 

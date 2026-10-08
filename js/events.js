@@ -19,7 +19,6 @@ var handlers = {
   forward: forward,
   rewind: rewind,
   seek: seek,
-  reportIssue: reportIssue,
   managePiperVoices,
 }
 
@@ -287,20 +286,6 @@ function seek(n) {
 function handleHeadlessError(err) {
   console.error(err)
   //TODO: let user knows somehow
-}
-
-function reportIssue(url, comment) {
-  var manifest = brapi.runtime.getManifest();
-  return getSettings()
-    .then(function(settings) {
-      if (url) settings.url = url;
-      settings.version = manifest.version;
-      settings.userAgent = navigator.userAgent;
-      return ajaxPost(config.serviceUrl + "/read-aloud/report-issue", {
-        url: JSON.stringify(settings),
-        comment: comment
-      })
-    })
 }
 
 async function openPdfViewer(tabId, pdfUrl) {

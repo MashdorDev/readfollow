@@ -20,7 +20,7 @@ manifest.background = {scripts: [...background.matchAll(/"(js\/[^"]+\.js)"/g)].m
 manifest.browser_specific_settings = {gecko: {
   id: "readfollow@dorzairi.dev",
   strict_min_version: "140.0",
-  //text is sent to cloud voices and the language detection service
+  //text is sent to cloud voices
   data_collection_permissions: {required: ["websiteContent"]},
 }}
 manifest.permissions = manifest.permissions.filter(p => !["offscreen", "tts", "ttsEngine"].includes(p))

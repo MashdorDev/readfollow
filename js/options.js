@@ -182,13 +182,7 @@
 
 
   //voiceTest
-  const demoSpeech = {
-    get(lang) {
-      return this[lang] || (
-        this[lang] = ajaxGet(config.serviceUrl + "/read-aloud/get-demo-speech-text/" + lang).then(JSON.parse)
-      )
-    }
-  }
+  const demoSpeechText = "Hello, this is a sample of the selected voice."
   const voiceTestSubject = new rxjs.Subject()
   rxjs.defer(() => domReadyPromise).pipe(
     rxjs.exhaustMap(() =>
@@ -204,9 +198,7 @@
                 const voiceName = $("#voices").val()
                 const voice = voiceName && findVoiceByName(voices, voiceName)
                 const {lang} = parseLang(voice && getFirstLanguage(voice) || "en-US")
-                return rxjs.defer(() => demoSpeech.get(lang)).pipe(
-                  rxjs.exhaustMap(({text}) => bgPageInvoke("playText", [text, {lang}]))
-                )
+                return bgPageInvoke("playText", [demoSpeechText, {lang}])
               }),
               rxjs.exhaustMap(() =>
                 rxjs.timer(100, 500).pipe(
