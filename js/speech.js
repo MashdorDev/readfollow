@@ -15,6 +15,12 @@ function Speech(texts, options) {
   let wordPosition
   //position to show right after a seek, before the engine reports its first word
   let pendingPosition = null
+  //Voices that report no words get an estimated one: how far into the chunk (or sentence, for engines
+  //that report sentences) the voice should be by now, at a pace learned from what it already finished
+  const defaultCharsPerSecond = 15
+  let charsPerSecond = defaultCharsPerSecond * options.rate
+  let paceLearned = false
+  let unit = null
 
   this.options = options;
   this.play = () => playbackState$.next("resumed")
@@ -69,11 +75,14 @@ function Speech(texts, options) {
   function getInfo() {
     return {
       texts: enginePlaybackState ? enginePlaybackState.texts : texts,
-      position: {
-        index: enginePlaybackState ? enginePlaybackState.index : playlist.getIndex(),
-        word: wordPosition && wordPosition.word,
-        sentence: wordPosition && wordPosition.sentence,
-      },
+      position: immediate(() => {
+        const current = currentPosition()
+        return {
+          index: enginePlaybackState ? enginePlaybackState.index : playlist.getIndex(),
+          word: current && current.word,
+          sentence: current && current.sentence,
+        }
+      }),
       isRTL: /^(ar|az|dv|he|iw|ku|fa|ur)\b/.test(options.lang),
       engine: immediate(() => {
         switch (engine) {
@@ -88,6 +97,15 @@ function Speech(texts, options) {
   const playbackState$ = new rxjs.BehaviorSubject("paused")
   const playlist = makePlaylist()
   const cmd$ = new rxjs.Subject()
+  //time spent paused doesn't count toward the estimated word
+  playbackState$.subscribe(state => {
+    if (!unit) return
+    if (state == "paused") unit.pausedAt = Date.now()
+    else if (unit.pausedAt) {
+      unit.pausedTotal += Date.now() - unit.pausedAt
+      unit.pausedAt = null
+    }
+  })
   const isLoadingSubject = new rxjs.BehaviorSubject(false)
   const isLoading$ = isLoadingSubject.pipe(
     rxjs.distinctUntilChanged(),
@@ -162,9 +180,11 @@ function Speech(texts, options) {
         case "load":
           wordPosition = pendingPosition
           pendingPosition = null
+          unit = null
           break
         case "word":
           if (!enginePlaybackState) wordPosition = makeWordPosition(texts[playlist.getIndex()], event)
+          if (unit) unit.hasWords = true
           break
         case "start":
           if (event.sentenceStartIndicies) {
@@ -173,7 +193,9 @@ function Speech(texts, options) {
               sentenceStartIndicies: event.sentenceStartIndicies,
               index: 0
             }
+            unit = startUnit(enginePlaybackState.texts[0], 0)
           } else {
+            unit = startUnit(texts[playlist.getIndex()], event.charIndex || 0)
             const nextText = texts[playlist.getIndex() + 1]
             if (nextText && engine.prefetch != null) engine.prefetch(nextText, options)
           }
@@ -181,9 +203,13 @@ function Speech(texts, options) {
         case "sentence":
           if (enginePlaybackState) {
             enginePlaybackState.index = enginePlaybackState.sentenceStartIndicies.indexOf(event.startIndex)
+            if (unit) learnPace(unit)
+            unit = startUnit(enginePlaybackState.texts[enginePlaybackState.index], 0)
           }
           break
         case "end":
+          if (unit) learnPace(unit)
+          unit = null
           if (enginePlaybackState) {
             cmd$.complete()
           } else {
@@ -256,7 +282,12 @@ function Speech(texts, options) {
   function makePlayback(text, offset) {
     if (offset) {
       return makePlayback(text.slice(offset)).pipe(
-        rxjs.map(event => event.charIndex != null ? {...event, charIndex: event.charIndex + offset} : event)
+        rxjs.map(event => {
+          if (event.charIndex != null) return {...event, charIndex: event.charIndex + offset}
+          //audio engines start without a position, the word estimate still needs to know where
+          if (event.type == "start") return {...event, charIndex: offset}
+          return event
+        })
       )
     }
     if (engine.stop != null) return makePlaybackLegacy(text)
@@ -270,7 +301,7 @@ function Speech(texts, options) {
     if (resume) playbackState$.next("resumed")
   }
 
-  //Moves by sentence when the engine reports words, otherwise falls back to moving by chunk.
+  //Moves by sentence from the reported or estimated word; engines that read the whole text themselves move by chunk.
   //Going back restarts the current sentence, or goes to the previous one when already at its start
   //or when pressed again right after a restart.
   const repeatRewindWindow = 2000
@@ -279,8 +310,9 @@ function Speech(texts, options) {
     const index = playlist.getIndex()
     const text = texts[index]
     let target = null
-    if (!enginePlaybackState && wordPosition && text != null) {
-      const {word, sentence} = wordPosition
+    const position = currentPosition()
+    if (!enginePlaybackState && position && text != null) {
+      const {word, sentence} = position
       if (direction > 0) {
         const next = sentence.endIndex + text.slice(sentence.endIndex).search(/\S|$/)
         if (next < text.length) target = next
@@ -297,10 +329,45 @@ function Speech(texts, options) {
 
   //Restarts from the current word so the new rate applies right away
   function setRate(rate) {
-    options.rate = rate * (isGoogleNative(options.voice) ? 0.9 : 1)
+    const newRate = rate * (isGoogleNative(options.voice) ? 0.9 : 1)
+    charsPerSecond *= newRate / options.rate
+    options.rate = newRate
     const index = playlist.getIndex()
     if (enginePlaybackState || index == null) return
-    seekTo(index, wordPosition ? wordPosition.word.startIndex : 0, playbackState$.value == "resumed")
+    const position = currentPosition()
+    seekTo(index, position ? position.word.startIndex : 0, playbackState$.value == "resumed")
+  }
+
+  function currentPosition() {
+    return unit && !unit.hasWords ? estimatePosition(unit) : wordPosition
+  }
+
+  function startUnit(text, offset) {
+    if (text == null) return null
+    return {text, offset, startTime: Date.now(), pausedTotal: 0, pausedAt: playbackState$.value == "paused" ? Date.now() : null, hasWords: false}
+  }
+
+  function spokenSeconds(unit) {
+    const now = Date.now()
+    return (now - unit.startTime - unit.pausedTotal - (unit.pausedAt ? now - unit.pausedAt : 0)) / 1000
+  }
+
+  //Takes the word that contains the estimated character, or the one before it when that's a space
+  function estimatePosition(unit) {
+    const charIndex = Math.min(unit.offset + Math.floor(Math.max(0, spokenSeconds(unit)) * charsPerSecond), unit.text.length - 1)
+    let start = Math.max(charIndex, 0)
+    while (start > 0 && /\S/.test(unit.text[start - 1])) start--
+    return makeWordPosition(unit.text, {charIndex: start})
+  }
+
+  //Very short units are mostly start-up delay, so they would skew the pace
+  function learnPace(unit) {
+    const minSeconds = 1.5
+    const seconds = spokenSeconds(unit)
+    if (unit.hasWords || seconds < minSeconds) return
+    const measured = (unit.text.length - unit.offset) / seconds
+    charsPerSecond = paceLearned ? charsPerSecond * 0.6 + measured * 0.4 : measured
+    paceLearned = true
   }
 
   function makePlaybackLegacy(text) {
