@@ -1,0 +1,33 @@
+Piper voice engine bundled in ReadFollow
+
+This folder is built from the web app in ken107/piper-browser-extension
+(https://github.com/ken107/piper-browser-extension, commit ca8fc95),
+modified to run inside the extension: local onnxruntime files, no service
+worker, and no calls to the original author's servers. Source: piper/ in the
+ReadFollow repository.
+
+Components and licenses:
+
+- piper-browser-extension web app: MIT License, Copyright (c) 2024 Sarsa Parilla.
+  See piper/LICENSE in the ReadFollow repository.
+
+- onnxruntime-web 1.17.3 (ort/ort-wasm-simd.wasm, inference-worker.js): MIT License,
+  Copyright (c) Microsoft Corporation. https://github.com/microsoft/onnxruntime
+
+- piper_phonemize.js, piper_phonemize.wasm, piper_phonemize.data: a WebAssembly
+  build of piper-phonemize (MIT, https://github.com/rhasspy/piper-phonemize),
+  which includes espeak-ng and its language data. espeak-ng is licensed under
+  the GNU General Public License version 3 or later. Its source code is
+  available at https://github.com/espeak-ng/espeak-ng and the piper-phonemize
+  source at https://github.com/rhasspy/piper-phonemize. These files are a
+  separate program that the extension talks to through messages.
+
+- Bootstrap (bootstrap.min.css): MIT License, Copyright (c) Twitter, Inc. and
+  The Bootstrap Authors.
+
+- React, ReactDOM, rxjs, immer and the other libraries in bundle.js: see
+  bundle.js.LICENSE.txt.
+
+Voice models are not included. They are downloaded on request from
+https://huggingface.co/rhasspy/piper-voices, and each voice has its own
+license in its MODEL_CARD file there.
