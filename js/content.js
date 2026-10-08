@@ -34,7 +34,6 @@
       else return ["js/content/google-drive-preview.js"];
     }
     else if (location.hostname == "onedrive.live.com" && $(".OneUp-pdf--loaded").length) return ["js/content/onedrive-doc.js"];
-    else if (/^read\.amazon\./.test(location.hostname)) return ["js/content/kindle-book.js"];
     else if (location.hostname.endsWith(".khanacademy.org")) return ["js/content/khan-academy.js"];
     else if (location.hostname.endsWith("acrobatiq.com")) return ["js/content/html-doc.js", "js/content/acrobatiq.js"];
     else if (location.hostname == "digital.wwnorton.com") return ["js/content/html-doc.js", "js/content/wwnorton.js"];
