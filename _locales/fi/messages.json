@@ -35,9 +35,6 @@
   "options_enable_piper_voices": {
     "message": "Asenna Piper-äänet..."
   },
-  "options_enable_supertonic_voices": {
-    "message": "Asenna Supertonic-äänet..."
-  },
   "options_rate_label": {
     "message": "Nopeus"
   },

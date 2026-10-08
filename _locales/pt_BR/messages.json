@@ -35,9 +35,6 @@
   "options_enable_piper_voices": {
     "message": "Instalar vozes Piper..."
   },
-  "options_enable_supertonic_voices": {
-    "message": "Instalar vozes Supertonic..."
-  },
   "options_rate_label": {
     "message": "Velocidade"
   },

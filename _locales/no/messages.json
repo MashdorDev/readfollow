@@ -35,9 +35,6 @@
   "options_enable_piper_voices": {
     "message": "Installer Piper-stemmer..."
   },
-  "options_enable_supertonic_voices": {
-    "message": "Installer Supertonic-stemmer..."
-  },
   "options_rate_label": {
     "message": "Hastighet"
   },

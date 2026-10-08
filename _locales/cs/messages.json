@@ -35,9 +35,6 @@
   "options_enable_piper_voices": {
     "message": "Nainstalovat hlasy Piper..."
   },
-  "options_enable_supertonic_voices": {
-    "message": "Nainstalovat hlasy Supertonic..."
-  },
   "options_rate_label": {
     "message": "Rychlost"
   },

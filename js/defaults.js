@@ -154,16 +154,12 @@ const voices$ = rxjs.combineLatest({
   openaiCreds: observeSetting("openaiCreds"),
   azureCreds: observeSetting("azureCreds"),
   piperVoices: observeSetting("piperVoices"),
-  supertonicVoices: observeSetting("supertonicVoices"),
-  nghiTtsVoices: observeSetting("nghiTtsVoices"),
 }).pipe(
   rxjs.exhaustMap(settings => Promise.all([
     browserTtsEngine.getVoices(),
     googleTranslateTtsEngine.getVoices(),
     phoneTtsEngine.getVoices(),
-    settings.supertonicVoices || [],
     settings.piperVoices || [],
-    settings.nghiTtsVoices || [],
     settings.openaiCreds ? openaiTtsEngine.getVoices() : [],
     settings.awsCreds ? amazonPollyTtsEngine.getVoices() : [],
     settings.ibmCreds ? ibmWatsonTtsEngine.getVoices() : [],
@@ -239,14 +235,6 @@ function isAzure(voice) {
 
 function isPiperVoice(voice) {
   return /^Piper /.test(voice.voiceName)
-}
-
-function isSupertonicVoice(voice) {
-  return /^Supertonic /.test(voice.voiceName)
-}
-
-function isNghiTtsVoice(voice) {
-  return /^NghiTTS /.test(voice.voiceName)
 }
 
 function isUseMyPhone(voice) {

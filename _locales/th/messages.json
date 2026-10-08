@@ -35,9 +35,6 @@
   "options_enable_piper_voices": {
     "message": "ติดตั้งเสียง Piper..."
   },
-  "options_enable_supertonic_voices": {
-    "message": "ติดตั้งเสียง Supertonic..."
-  },
   "options_rate_label": {
     "message": "ความเร็ว"
   },

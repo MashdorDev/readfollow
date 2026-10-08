@@ -35,9 +35,6 @@
   "options_enable_piper_voices": {
     "message": "安裝Piper語音..."
   },
-  "options_enable_supertonic_voices": {
-    "message": "安裝Supertonic語音..."
-  },
   "options_rate_label": {
     "message": "朗讀速度"
   },
