@@ -419,7 +419,7 @@ function managePiperVoices() {
 function createPiperFrame() {
   const f = document.createElement("iframe")
   f.id = "piper-frame"
-  f.src = "https://piper.ttstool.com/"
+  f.src = brapi.runtime.getURL("vendor/piper/index.html")
   f.allow = "cross-origin-isolated"
   f.style.position = "absolute"
   f.style.left =

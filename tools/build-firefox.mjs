@@ -5,7 +5,7 @@ import path from "node:path"
 
 const root = path.resolve(import.meta.dirname, "..")
 const out = path.join(root, "build", "firefox")
-const include = ["_locales", "css", "img", "js", "sound", "background.js", "manifest.json"]
+const include = ["_locales", "css", "img", "js", "sound", "vendor", "background.js", "manifest.json"]
 
 fs.rmSync(out, {recursive: true, force: true})
 for (const entry of fs.readdirSync(root)) {

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Text to speech that highlights each word on the page as it reads.",
   "scripts": {
-    "package": "zip -r build/package.zip _locales css img js sound *.html manifest.json background.js -x \\*.map || true",
+    "package": "zip -r build/package.zip _locales css img js sound vendor *.html manifest.json background.js -x \\*.map || true",
     "build:firefox": "node tools/build-firefox.mjs"
   },
   "repository": {
