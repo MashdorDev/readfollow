@@ -49,8 +49,6 @@
           if (voiceName == "@custom") brapi.tabs.create({url: "custom-voices.html"});
           else if (voiceName == "@languages") brapi.tabs.create({url: "languages.html"});
           else if (voiceName == "@piper") bgPageInvoke("managePiperVoices").catch(console.error)
-          else if (voiceName == "@supertonic") bgPageInvoke("manageSupertonicVoices").catch(console.error)
-          else if (voiceName == "@nghitts") bgPageInvoke("manageNghiTtsVoices").catch(console.error)
           else updateSettings({voiceName})
         });
       $("#languages-edit-button")
@@ -290,8 +288,6 @@
         return !voiceLanguages
           || voiceLanguages.map(parseLang).some(({ lang }) => selectedLangs.includes(lang))
           || isPiperVoice(voice)
-          || isSupertonicVoice(voice)
-          || isNghiTtsVoice(voice)
           || isOpenai(voice)
       });
 
@@ -302,7 +298,7 @@
         standard: [],
       },
       voices.groupBy(function(voice) {
-        if (isPiperVoice(voice) || isSupertonicVoice(voice) || isNghiTtsVoice(voice)) return "experimental"
+        if (isPiperVoice(voice)) return "experimental"
         if (isOfflineVoice(voice)) return "offline"
         return "standard"
       }))
@@ -334,16 +330,6 @@
       .val("@piper")
       .text(brapi.i18n.getMessage("options_enable_piper_voices"))
       .appendTo(experimental)
-    $("<option>")
-      .val("@supertonic")
-      .text(brapi.i18n.getMessage("options_enable_supertonic_voices"))
-      .appendTo(experimental)
-    if (!selectedLangs || selectedLangs.includes('vi')) {
-      $("<option>")
-        .val("@nghitts")
-        .text(brapi.i18n.getMessage("options_enable_nghitts_voices") || "Install NghiTTS voices...")
-        .appendTo(experimental)
-    }
 
     //create the standard optgroup
     $("<optgroup>").appendTo($("#voices"))

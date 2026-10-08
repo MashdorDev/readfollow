@@ -35,9 +35,6 @@
   "options_enable_piper_voices": {
     "message": "تثبيت أصوات Piper..."
   },
-  "options_enable_supertonic_voices": {
-    "message": "تثبيت أصوات Supertonic..."
-  },
   "options_rate_label": {
     "message": "السرعة"
   },

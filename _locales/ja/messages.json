@@ -35,9 +35,6 @@
   "options_enable_piper_voices": {
     "message": "Piper音声をインストール..."
   },
-  "options_enable_supertonic_voices": {
-    "message": "Supertonic音声をインストール..."
-  },
   "options_rate_label": {
     "message": "スピード"
   },

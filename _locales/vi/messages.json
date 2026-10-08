@@ -35,12 +35,6 @@
   "options_enable_piper_voices": {
     "message": "Cài đặt giọng Piper..."
   },
-  "options_enable_supertonic_voices": {
-    "message": "Cài đặt giọng Supertonic..."
-  },
-  "options_enable_nghitts_voices": {
-    "message": "Cài đặt giọng NghiTTS..."
-  },
   "options_rate_label": {
     "message": "Tốc độ đọc"
   },
