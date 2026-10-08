@@ -131,12 +131,6 @@
   "error_add_permissions": {
     "message": "Você precisa conceder ao ReadFollow [permissões](request-permissions) adicionais para este site"
   },
-  "error_phone_not_connected": {
-    "message": "Telefone não conectado. [Conectar](connect-phone)"
-  },
-  "error_phone_disconnected": {
-    "message": "Telefone desconectado ({reason}). [Reconectar](connect-phone)"
-  },
   "error_chatgpt": {
     "message": "Clique no ícone do alto-falante ao lado de cada resposta para lê-la em voz alta"
   },

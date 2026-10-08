@@ -131,12 +131,6 @@
   "error_add_permissions": {
     "message": "Musíte udělit ReadFollow dodatečná [oprávnění](request-permissions) pro tuto webovou stránku"
   },
-  "error_phone_not_connected": {
-    "message": "Telefon není připojen. [Připojit](connect-phone)"
-  },
-  "error_phone_disconnected": {
-    "message": "Telefon odpojen ({reason}). [Znovu připojit](connect-phone)"
-  },
   "error_chatgpt": {
     "message": "Klikněte na ikonu reproduktoru vedle každé odpovědi pro její přečtení nahlas"
   },

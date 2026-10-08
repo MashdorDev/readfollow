@@ -166,12 +166,6 @@
   "error_add_permissions": {
     "message": "You need to grant ReadFollow additional [permissions](request-permissions) for this website"
   },
-  "error_phone_not_connected": {
-    "message": "Phone not connected. [Connect](connect-phone)"
-  },
-  "error_phone_disconnected": {
-    "message": "Phone disconnected ({reason}). [Reconnect](connect-phone)"
-  },
   "error_chatgpt": {
     "message": "Click the speaker icon next to each answer to read it aloud"
   },

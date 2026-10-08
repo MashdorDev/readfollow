@@ -131,12 +131,6 @@
   "error_add_permissions": {
     "message": "Debe conceder [permisos](request-permissions) adicionales para leer en voz alta para este sitio web"
   },
-  "error_phone_not_connected": {
-    "message": "Teléfono no conectado. [Conectar](connect-phone)"
-  },
-  "error_phone_disconnected": {
-    "message": "Teléfono desconectado ({reason}). [Reconectar](connect-phone)"
-  },
   "error_chatgpt": {
     "message": "Haga clic en el icono del altavoz junto a cada respuesta para leerla en voz alta"
   },

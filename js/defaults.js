@@ -158,7 +158,6 @@ const voices$ = rxjs.combineLatest({
   rxjs.exhaustMap(settings => Promise.all([
     browserTtsEngine.getVoices(),
     googleTranslateTtsEngine.getVoices(),
-    phoneTtsEngine.getVoices(),
     settings.piperVoices || [],
     settings.openaiCreds ? openaiTtsEngine.getVoices() : [],
     settings.awsCreds ? amazonPollyTtsEngine.getVoices() : [],
@@ -237,10 +236,6 @@ function isPiperVoice(voice) {
   return /^Piper /.test(voice.voiceName)
 }
 
-function isUseMyPhone(voice) {
-  return voice.isUseMyPhone == true
-}
-
 function isNativeVoice(voice) {
   return !(
     isGoogleTranslate(voice)
@@ -264,7 +259,6 @@ async function getSpeechVoice(voiceName, lang) {
   }
   //otherwise, auto-select in order: offline, native, free, any
   if (!voice && lang) {
-    voices = voices.filter(voice => !isUseMyPhone(voice))
     voice = findVoiceByLang(voices.filter(isOfflineVoice), lang)
       || findVoiceByLang(voices.filter(isGoogleNative), lang)
       || findVoiceByLang(voices.filter(isNativeVoice), lang)

@@ -131,12 +131,6 @@
   "error_add_permissions": {
     "message": "आपको इस वेबसाइट के लिए ReadFollow को अतिरिक्त [अनुमतियां](request-permissions) प्रदान करनी होंगी"
   },
-  "error_phone_not_connected": {
-    "message": "फ़ोन कनेक्ट नहीं है। [कनेक्ट करें](connect-phone)"
-  },
-  "error_phone_disconnected": {
-    "message": "फ़ोन डिस्कनेक्ट हो गया ({reason})। [पुनः कनेक्ट करें](connect-phone)"
-  },
   "error_chatgpt": {
     "message": "इसे जोर से पढ़ने के लिए प्रत्येक उत्तर के बगल में स्पीकर आइकन पर क्लिक करें"
   },

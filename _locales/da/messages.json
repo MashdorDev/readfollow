@@ -131,12 +131,6 @@
   "error_add_permissions": {
     "message": "Du skal give ReadFollow yderligere [tilladelser](request-permissions) til denne webside"
   },
-  "error_phone_not_connected": {
-    "message": "Telefon ikke tilsluttet. [Tilslut](connect-phone)"
-  },
-  "error_phone_disconnected": {
-    "message": "Telefon afbrudt ({reason}). [Tilslut igen](connect-phone)"
-  },
   "error_chatgpt": {
     "message": "Klik på højttalerikonet ved siden af hvert svar for at læse det højt"
   },

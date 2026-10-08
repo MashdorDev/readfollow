@@ -131,12 +131,6 @@
   "error_add_permissions": {
     "message": "Sinun on myönnettävä ReadFollow -sovellukselle lisä[oikeudet](request-permissions) tälle verkkosivustolle"
   },
-  "error_phone_not_connected": {
-    "message": "Puhelin ei ole yhdistetty. [Yhdistä](connect-phone)"
-  },
-  "error_phone_disconnected": {
-    "message": "Puhelimen yhteys katkaistu ({reason}). [Yhdistä uudelleen](connect-phone)"
-  },
   "error_chatgpt": {
     "message": "Napsauta kaiutinkuvaketta jokaisen vastauksen vieressä lukeaksesi sen ääneen"
   },

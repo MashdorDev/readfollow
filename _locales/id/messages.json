@@ -131,12 +131,6 @@
   "error_add_permissions": {
     "message": "Anda perlu memberikan ReadFollow [izin](request-permissions) tambahan untuk situs web ini"
   },
-  "error_phone_not_connected": {
-    "message": "Telepon tidak terhubung. [Hubungkan](connect-phone)"
-  },
-  "error_phone_disconnected": {
-    "message": "Telepon terputus ({reason}). [Hubungkan kembali](connect-phone)"
-  },
   "error_chatgpt": {
     "message": "Klik ikon speaker di samping setiap jawaban untuk membacanya dengan keras"
   },

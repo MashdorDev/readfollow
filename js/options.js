@@ -363,8 +363,6 @@
       var weight = 0
       //native voices should appear before non-natives in Standard group
       if (!isNativeVoice(voice)) weight += 10
-      //UseMyPhone should appear last in Offline group
-      if (isUseMyPhone(voice)) weight += 1
       return weight
     }
     return getWeight(a)-getWeight(b) || a.voiceName.localeCompare(b.voiceName)
@@ -380,13 +378,6 @@
     if (/^{/.test(err.message)) {
       var errInfo = JSON.parse(err.message);
       $("#status").html(formatError(errInfo)).parent().show();
-      $("#status a").click(function() {
-        switch ($(this).attr("href")) {
-          case "#connect-phone":
-            location.href = "connect-phone.html"
-            break
-        }
-      })
     }
     else if (config.browserId == "opera" && /locked fullscreen/.test(err.message)) {
       $("#status").html("Click <a href='#open-player-tab'>here</a> to start read aloud.").parent().show()

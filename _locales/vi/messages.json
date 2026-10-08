@@ -131,12 +131,6 @@
   "error_add_permissions": {
     "message": "Bạn cần cấp thêm [quyền](request-permissions) Đọc to cho trang web này"
   },
-  "error_phone_not_connected": {
-    "message": "Điện thoại chưa kết nối. [Kết nối](connect-phone)"
-  },
-  "error_phone_disconnected": {
-    "message": "Điện thoại đã ngắt kết nối ({reason}). [Kết nối lại](connect-phone)"
-  },
   "error_chatgpt": {
     "message": "Nhấp vào biểu tượng loa bên cạnh mỗi câu trả lời để đọc to"
   },
