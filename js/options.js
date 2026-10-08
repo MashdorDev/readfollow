@@ -30,33 +30,6 @@
 
 
 
-  //account button
-  domReadyPromise
-    .then(() => {
-      $("#account-button")
-        .click(function() {
-          getAuthToken({interactive: true})
-            .then(token => brapi.tabs.create({url: config.webAppUrl + "/premium-voices.html?t=" + token}))
-            .catch(handleError)
-          return false;
-        })
-      $("#logout-button")
-        .click(function() {
-          clearAuthToken()
-          return false;
-        })
-    })
-
-  rxjs.combineLatest([
-      observeSetting("authToken").pipe(
-        rxjs.switchMap(token => token ? getAccountInfo(token) : Promise.resolve(null))
-      ),
-      domReadyPromise
-    ])
-    .subscribe(([account]) => showAccountInfo(account))
-
-
-
   //hotkey
   domReadyPromise
     .then(() => {
@@ -423,18 +396,6 @@
       $("#status").html(formatError(errInfo)).parent().show();
       $("#status a").click(function() {
         switch ($(this).attr("href")) {
-          case "#sign-in":
-            getAuthToken({interactive: true})
-              .then(function(token) {
-                if (token) {
-                  $("#test-voice").click();
-                  getAccountInfo(token).then(showAccountInfo);
-                }
-              })
-              .catch(function(err) {
-                $("#status").text(err.message).parent().show();
-              })
-            break;
           case "#connect-phone":
             location.href = "connect-phone.html"
             break
@@ -462,18 +423,6 @@
       $("#status").text(err.message).parent().show();
     }
   }
-
-  function showAccountInfo(account) {
-    if (account) {
-      $("#account-email").text(account.email);
-      $("#account-info").show();
-    }
-    else {
-      $("#account-info").hide();
-    }
-  }
-
-
 
   function createSlider(elem, {onChange, onSlideChange}) {
     var min = $(elem).data("min") || 0;
