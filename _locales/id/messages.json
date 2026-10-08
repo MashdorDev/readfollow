@@ -23,9 +23,6 @@
   "options_voicegroup_standard": {
     "message": "Suara Standar"
   },
-  "options_voicegroup_premium": {
-    "message": "Suara Premium"
-  },
   "options_voicegroup_additional": {
     "message": "Suara Tambahan"
   },
@@ -148,15 +145,6 @@
   },
   "error_login_required": {
     "message": "Silakan [masuk](sign-in) untuk menggunakan Suara Premium"
-  },
-  "error_voice_unavailable": {
-    "message": "Suara tidak tersedia, silakan pilih yang lain"
-  },
-  "error_payment_required": {
-    "message": "Kredit habis"
-  },
-  "error_wavenet_auth_required": {
-    "message": "Anda perlu memberikan [izin](auth-wavenet) tambahan untuk mengaktifkan suara Google Wavenet"
   },
   "error_phone_not_connected": {
     "message": "Telepon tidak terhubung. [Hubungkan](connect-phone)"

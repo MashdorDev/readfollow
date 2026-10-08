@@ -27,7 +27,6 @@
     "ttsEngine"
   ],
   "optional_permissions": [
-    "webRequest",
     "webNavigation"
   ],
   "host_permissions": [

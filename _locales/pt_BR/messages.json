@@ -23,9 +23,6 @@
   "options_voicegroup_standard": {
     "message": "Vozes padrão"
   },
-  "options_voicegroup_premium": {
-    "message": "Vozes premium"
-  },
   "options_voicegroup_additional": {
     "message": "Vozes adicionais"
   },
@@ -148,15 +145,6 @@
   },
   "error_login_required": {
     "message": "Por favor, [faça login](sign-in) para usar as vozes Premium"
-  },
-  "error_voice_unavailable": {
-    "message": "Voz indisponível, por favor escolha outra"
-  },
-  "error_payment_required": {
-    "message": "Sem créditos"
-  },
-  "error_wavenet_auth_required": {
-    "message": "Você precisa conceder [permissões](auth-wavenet) adicionais para habilitar as vozes do Google Wavenet"
   },
   "error_phone_not_connected": {
     "message": "Telefone não conectado. [Conectar](connect-phone)"

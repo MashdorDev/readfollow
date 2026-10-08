@@ -20,9 +20,6 @@
   "options_voicegroup_standard": {
     "message": "Voci Standard"
   },
-  "options_voicegroup_premium": {
-    "message": "Voci Premium"
-  },
   "options_voicegroup_experimental": {
     "message": "Voci AI sperimentali"
   },
@@ -148,15 +145,6 @@
   },
   "error_login_required": {
     "message": "[Accedi](sign-in) per utilizzare le voci Premium"
-  },
-  "error_voice_unavailable": {
-    "message": "Voce non disponibile, per favore sceglierne un'altra"
-  },
-  "error_payment_required": {
-    "message": "Senza crediti"
-  },
-  "error_wavenet_auth_required": {
-    "message": "Devi concedere [autorizzazioni](auth-wavenet) aggiuntive per abilitare le voci di Google Wavenet"
   },
   "error_phone_not_connected": {
     "message": "Telefono non connesso. [Connetti](connect-phone)"

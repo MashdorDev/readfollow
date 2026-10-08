@@ -23,9 +23,6 @@
   "options_voicegroup_standard": {
     "message": "मानक आवाज़ें"
   },
-  "options_voicegroup_premium": {
-    "message": "प्रीमियम आवाज़ें"
-  },
   "options_voicegroup_additional": {
     "message": "अतिरिक्त आवाज़ें"
   },
@@ -148,15 +145,6 @@
   },
   "error_login_required": {
     "message": "प्रीमियम आवाज़ों का उपयोग करने के लिए कृपया [साइन इन](sign-in) करें"
-  },
-  "error_voice_unavailable": {
-    "message": "आवाज़ उपलब्ध नहीं है, कृपया कोई अन्य चुनें"
-  },
-  "error_payment_required": {
-    "message": "क्रेडिट समाप्त"
-  },
-  "error_wavenet_auth_required": {
-    "message": "Google Wavenet आवाज़ों को सक्षम करने के लिए आपको अतिरिक्त [अनुमतियां](auth-wavenet) प्रदान करनी होंगी"
   },
   "error_phone_not_connected": {
     "message": "फ़ोन कनेक्ट नहीं है। [कनेक्ट करें](connect-phone)"

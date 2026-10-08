@@ -20,9 +20,6 @@
   "options_voicegroup_standard": {
     "message": "標準音声"
   },
-  "options_voicegroup_premium": {
-    "message": "プレミアム音声"
-  },
   "options_voicegroup_experimental": {
     "message": "実験的なAI音声"
   },
@@ -148,15 +145,6 @@
   },
   "error_login_required": {
     "message": "プレミアムボイスを使用するには、[サインイン](sign-in)してください"
-  },
-  "error_voice_unavailable": {
-    "message": "音声が利用できません。別のものを選択してください。"
-  },
-  "error_payment_required": {
-    "message": "クレジットがありません"
-  },
-  "error_wavenet_auth_required": {
-    "message": "Google Wavenetの音声を有効にするには、追加の[権限](auth-wavenet)を付与する必要があります"
   },
   "error_phone_not_connected": {
     "message": "電話が接続されていません。[接続](connect-phone)"

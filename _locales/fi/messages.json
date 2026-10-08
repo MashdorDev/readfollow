@@ -23,9 +23,6 @@
   "options_voicegroup_standard": {
     "message": "Vakioäänet"
   },
-  "options_voicegroup_premium": {
-    "message": "Premium-äänet"
-  },
   "options_voicegroup_additional": {
     "message": "Lisääänet"
   },
@@ -148,15 +145,6 @@
   },
   "error_login_required": {
     "message": "[Kirjaudu sisään](sign-in) käyttääksesi Premium-ääniä"
-  },
-  "error_voice_unavailable": {
-    "message": "Ääni ei ole käytettävissä, valitse toinen"
-  },
-  "error_payment_required": {
-    "message": "Krediitit loppu"
-  },
-  "error_wavenet_auth_required": {
-    "message": "Sinun on myönnettävä lisä[oikeudet](auth-wavenet) Google Wavenet -äänten käyttöönottamiseksi"
   },
   "error_phone_not_connected": {
     "message": "Puhelin ei ole yhdistetty. [Yhdistä](connect-phone)"

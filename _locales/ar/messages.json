@@ -23,9 +23,6 @@
   "options_voicegroup_standard": {
     "message": "الأصوات القياسية"
   },
-  "options_voicegroup_premium": {
-    "message": "الأصوات المميزة"
-  },
   "options_voicegroup_additional": {
     "message": "أصوات إضافية"
   },
@@ -148,15 +145,6 @@
   },
   "error_login_required": {
     "message": "يرجى [تسجيل الدخول](sign-in) لاستخدام الأصوات المميزة"
-  },
-  "error_voice_unavailable": {
-    "message": "الصوت غير متوفر، يرجى اختيار صوت آخر"
-  },
-  "error_payment_required": {
-    "message": "نفاد الرصيد"
-  },
-  "error_wavenet_auth_required": {
-    "message": "تحتاج إلى منح [أذونات](auth-wavenet) إضافية لتمكين أصوات Google Wavenet"
   },
   "error_phone_not_connected": {
     "message": "الهاتف غير متصل. [اتصال](connect-phone)"

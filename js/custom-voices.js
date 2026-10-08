@@ -1,14 +1,10 @@
 
 $(function() {
-  getSettings(["awsCreds", "gcpCreds", "ibmCreds", "azureCreds"])
+  getSettings(["awsCreds", "ibmCreds", "azureCreds"])
     .then(function(items) {
       if (items.awsCreds) {
         $("#aws-access-key-id").val(obfuscate(items.awsCreds.accessKeyId));
         $("#aws-secret-access-key").val(obfuscate(items.awsCreds.secretAccessKey));
-      }
-      if (items.gcpCreds) {
-        $("#gcp-api-key").val(obfuscate(items.gcpCreds.apiKey));
-        $("#gcp-enable-studio").prop('checked', items.gcpCreds.enableStudio);
       }
       if (items.ibmCreds) {
         $("#ibm-api-key").val(obfuscate(items.ibmCreds.apiKey));
@@ -21,7 +17,6 @@ $(function() {
     })
   $(".status").hide();
   $("#aws-save-button").click(awsSave);
-  $("#gcp-save-button").click(gcpSave);
   $("#ibm-save-button").click(ibmSave);
   $("#azure-save-button").click(azureSave)
 })
@@ -70,41 +65,6 @@ function testAws(accessKeyId, secretAccessKey) {
         secretAccessKey: secretAccessKey
       })
       return polly.describeVoices().promise();
-}
-
-
-function gcpSave() {
-  $(".status").hide();
-  var apiKey = $("#gcp-api-key").val().trim();
-  var enableStudio = $("#gcp-enable-studio").is(':checked');
-  if (apiKey) {
-    $("#gcp-progress").show();
-    testGcp(apiKey)
-      .then(function() {
-        $("#gcp-progress").hide();
-        updateSettings({gcpCreds: {apiKey: apiKey, enableStudio: enableStudio}});
-        if (enableStudio) {
-          $("#gcp-success").text("Google Wavenet & Studio voices are enabled.").show();
-        } else {
-          $("#gcp-success").text("Google Wavenet voices are enabled.").show();
-        }
-        $("#gcp-api-key").val(obfuscate(apiKey));
-      },
-      function(err) {
-        $("#gcp-progress").hide();
-        $("#gcp-error").text("Test failed: " + err.message).show();
-      })
-  }
-  else {
-    clearSettings(["gcpCreds"])
-      .then(function() {
-        $("#gcp-success").text("Google Wavenet voices are disabled.").show();
-      })
-  }
-}
-
-function testGcp(apiKey) {
-      return ajaxGet("https://texttospeech.googleapis.com/v1beta1/voices?key=" + apiKey);
 }
 
 

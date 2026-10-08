@@ -23,9 +23,6 @@
   "options_voicegroup_standard": {
     "message": "เสียงมาตรฐาน"
   },
-  "options_voicegroup_premium": {
-    "message": "เสียงพรีเมียม"
-  },
   "options_voicegroup_additional": {
     "message": "เสียงเพิ่มเติม"
   },
@@ -148,15 +145,6 @@
   },
   "error_login_required": {
     "message": "กรุณา[เข้าสู่ระบบ](sign-in)เพื่อใช้เสียงพรีเมียม"
-  },
-  "error_voice_unavailable": {
-    "message": "เสียงไม่พร้อมใช้งาน กรุณาเลือกเสียงอื่น"
-  },
-  "error_payment_required": {
-    "message": "เครดิตหมด"
-  },
-  "error_wavenet_auth_required": {
-    "message": "คุณต้องให้[สิทธิ์](auth-wavenet)เพิ่มเติมเพื่อเปิดใช้เสียง Google Wavenet"
   },
   "error_phone_not_connected": {
     "message": "โทรศัพท์ไม่ได้เชื่อมต่อ [เชื่อมต่อ](connect-phone)"

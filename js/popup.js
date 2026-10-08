@@ -109,12 +109,6 @@ function handleError(err) {
               $("#status").text(err.message).show();
             })
           break;
-        case "#auth-wavenet":
-          brapi.permissions.request(config.wavenetPerms)
-            .then(function(granted) {
-              if (granted) bgPageInvoke("authWavenet");
-            })
-          break;
         case "#open-pdf-viewer":
           brapi.tabs.create({url: config.pdfViewerUrl})
           break

@@ -25,10 +25,6 @@ var config = {
     'chrome:',
     'about:',
   ],
-  wavenetPerms: {
-    permissions: ["webRequest"],
-    origins: ["https://*/"]
-  },
   browserId: getBrowser(),
 }
 
@@ -154,7 +150,6 @@ function observeSetting(name) {
  */
 const voices$ = rxjs.combineLatest({
   awsCreds: observeSetting("awsCreds"),
-  gcpCreds: observeSetting("gcpCreds"),
   ibmCreds: observeSetting("ibmCreds"),
   openaiCreds: observeSetting("openaiCreds"),
   azureCreds: observeSetting("azureCreds"),
@@ -171,10 +166,8 @@ const voices$ = rxjs.combineLatest({
     settings.nghiTtsVoices || [],
     settings.openaiCreds ? openaiTtsEngine.getVoices() : [],
     settings.awsCreds ? amazonPollyTtsEngine.getVoices() : [],
-    settings.gcpCreds ? googleWavenetTtsEngine.getVoices() : googleWavenetTtsEngine.getFreeVoices(),
     settings.ibmCreds ? ibmWatsonTtsEngine.getVoices() : [],
     settings.azureCreds ? azureTtsEngine.getVoices() : [],
-    premiumTtsEngine.getVoices(),
   ])),
   rxjs.map(arr => arr.flat()),
   rxjs.shareReplay(1)
@@ -228,28 +221,8 @@ function isGoogleTranslate(voice) {
   return /^GoogleTranslate /.test(voice.voiceName);
 }
 
-function isAmazonCloud(voice) {
-  return /^Amazon /.test(voice.voiceName);
-}
-
-function isMicrosoftCloud(voice) {
-  return /^Microsoft /.test(voice.voiceName) && voice.voiceName.indexOf(' - ') == -1;
-}
-
-function isReadAloudCloud(voice) {
-  return /^ReadAloud /.test(voice.voiceName)
-}
-
 function isAmazonPolly(voice) {
   return /^AmazonPolly /.test(voice.voiceName);
-}
-
-function isGoogleWavenet(voice) {
-  return /^Google(Standard|Wavenet|Neural2|Studio|Chirp-HD|Chirp3-HD|News|Casual|Polyglot) /.test(voice.voiceName);
-}
-
-function isGoogleStudio(voice) {
-  return /^Google(Studio) /.test(voice.voiceName);
 }
 
 function isIbmWatson(voice) {
@@ -276,10 +249,6 @@ function isNghiTtsVoice(voice) {
   return /^NghiTTS /.test(voice.voiceName)
 }
 
-function isRHVoice(voice) {
-  return /^RHVoice /.test(voice.voiceName)
-}
-
 function isUseMyPhone(voice) {
   return voice.isUseMyPhone == true
 }
@@ -287,20 +256,11 @@ function isUseMyPhone(voice) {
 function isNativeVoice(voice) {
   return !(
     isGoogleTranslate(voice)
-    || isAmazonCloud(voice)
-    || isMicrosoftCloud(voice)
-    || isRHVoice(voice)
-    || isReadAloudCloud(voice)
     || isAmazonPolly(voice)
-    || isGoogleWavenet(voice)
     || isIbmWatson(voice)
     || isOpenai(voice)
     || isAzure(voice)
   )
-}
-
-function isPremiumVoice(voice) {
-  return isAmazonCloud(voice) || isMicrosoftCloud(voice) || isRHVoice(voice)
 }
 
 async function getSpeechVoice(voiceName, lang) {
@@ -324,10 +284,8 @@ async function getSpeechVoice(voiceName, lang) {
     if (!voice) {
       if (!await googleTranslateTtsEngine.ready()) voices = voices.filter(voice => !isGoogleTranslate(voice))
       voice = findVoiceByLang(voices.filter(isGoogleTranslate), lang)
-        || findVoiceByLang(voices.filter(isPremiumVoice), lang)
         || findVoiceByLang(voices, lang);
     }
-    if (voice && isPremiumVoice(voice)) voice = Object.assign({autoSelect: true}, voice);
   }
   return voice;
 }
@@ -610,22 +568,6 @@ function escapeHtml(text) {
   return text.replace(/[&<>"'`=\/]/g, function(s) {
     return config.entityMap[s];
   })
-}
-
-function getUniqueClientId() {
-  return getSettings(["uniqueClientId"])
-    .then(function(settings) {
-      return settings.uniqueClientId || createId(8).then(extraAction(saveId));
-    })
-  function createId(len) {
-    var text = "";
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    for (var i=0; i<len; i++) text += possible.charAt(Math.floor(Math.random() * possible.length));
-    return Promise.resolve(text);
-  }
-  function saveId(id) {
-    return updateSettings({uniqueClientId: id});
-  }
 }
 
 function getBrowser() {
