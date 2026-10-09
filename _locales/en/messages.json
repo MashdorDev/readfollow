@@ -27,10 +27,10 @@
     "message": "Additional Voices"
   },
   "options_add_more_languages": {
-    "message": "➕ Add more languages..."
+    "message": "Add more languages..."
   },
   "options_enable_custom_voices": {
-    "message": "🧩 Enable custom voices..."
+    "message": "Enable custom voices..."
   },
   "options_enable_piper_voices": {
     "message": "Download natural voices that run on your device (Piper)..."
