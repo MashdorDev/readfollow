@@ -444,6 +444,9 @@ function App() {
     const speech = currentSpeech = makeSpeech(synth, {speakerId, text, playAudio}, {
       onSentence(startIndex, endIndex) {
         notifyCaller("onSentence", {startIndex, endIndex})
+      },
+      onPhrase(timing) {
+        notifyCaller("onPhrase", {...timing})
       }
     })
     function notifyCaller(method: string, args?: Record<string, unknown>) {

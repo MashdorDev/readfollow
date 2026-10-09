@@ -22,6 +22,7 @@ const piperDispatcher = makeDispatcher("piper-host", {
   },
   onStart: args => piperCallbacks.next({type: "start", ...args}),
   onSentence: args => piperCallbacks.next({type: "sentence", ...args}),
+  onPhrase: args => piperCallbacks.next({type: "phrase", ...args}),
   onParagraph: args => piperCallbacks.next({type: "paragraph", ...args}),
   onEnd: args => piperCallbacks.next({type: "end", ...args}),
   onError: args => piperCallbacks.next({type: "error", ...args}),

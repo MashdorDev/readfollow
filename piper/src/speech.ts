@@ -26,6 +26,20 @@ interface Sentence {
 
 type PlaybackState = rxjs.Observable<"paused"|"resumed">
 
+//Where a phrase sits in its sentence (by phonemes) and how long its audio is, so the caller can follow along
+export interface PhraseTiming {
+  readonly sentenceStartIndex: number
+  readonly phonemeOffset: number
+  readonly phonemeCount: number
+  readonly phonemeTotal: number
+  readonly seconds: number
+}
+
+interface Callbacks {
+  onSentence(startIndex: number, endIndex: number): void
+  onPhrase?(timing: PhraseTiming): void
+}
+
 interface Playing {
   readonly completePromise: Promise<void|boolean>
   pause(): void
@@ -38,9 +52,7 @@ interface Playing {
 export function makeSpeech(
   synth: Synthesizer,
   opts: SpeakOptions,
-  callbacks: {
-    onSentence(startIndex: number, endIndex: number): void
-  }
+  callbacks: Callbacks
 ) {
   const sentences = makeSentences(synth, opts)
   const playlist = makePlaylist(sentences, opts, callbacks)
@@ -103,9 +115,7 @@ export function makeSpeech(
 function makePlaylist(
   sentences: Sentence[],
   opts: SpeakOptions,
-  callbacks: {
-    onSentence(startIndex: number, endIndex: number): void
-  }
+  callbacks: Callbacks
 ) {
   let sentenceIndex = 0
   let phraseIndex = -1
@@ -120,14 +130,14 @@ function makePlaylist(
           //advance to next phrase in current sentence
           phraseIndex++
           if (phraseIndex == 0) callbacks.onSentence(sentences[sentenceIndex].startIndex, sentences[sentenceIndex].endIndex)
-          await playPhrase(opts, sentences, sentenceIndex, phraseIndex, playbackState)
+          await playPhrase(opts, sentences, sentenceIndex, phraseIndex, playbackState, callbacks)
         }
         else if (sentenceIndex + 1 < sentences.length) {
           //advance to next sentence
           sentenceIndex++
           phraseIndex = 0
           callbacks.onSentence(sentences[sentenceIndex].startIndex, sentences[sentenceIndex].endIndex)
-          await playPhrase(opts, sentences, sentenceIndex, phraseIndex, playbackState)
+          await playPhrase(opts, sentences, sentenceIndex, phraseIndex, playbackState, callbacks)
         }
         else {
           //end of playlist
@@ -145,7 +155,7 @@ function makePlaylist(
           callbacks.onSentence(sentences[sentenceIndex].startIndex, sentences[sentenceIndex].endIndex)
           await new Promise<void>(f => setTimeout(f, 750))
           await wait(playbackState, "resumed")
-          await playPhrase(opts, sentences, sentenceIndex, phraseIndex, playbackState)
+          await playPhrase(opts, sentences, sentenceIndex, phraseIndex, playbackState, callbacks)
         }, isPaused)
       }
     },
@@ -159,7 +169,7 @@ function makePlaylist(
           callbacks.onSentence(sentences[sentenceIndex].startIndex, sentences[sentenceIndex].endIndex)
           await new Promise<void>(f => setTimeout(f, 750))
           await wait(playbackState, "resumed")
-          await playPhrase(opts, sentences, sentenceIndex, phraseIndex, playbackState)
+          await playPhrase(opts, sentences, sentenceIndex, phraseIndex, playbackState, callbacks)
         }, isPaused)
       }
     },
@@ -170,7 +180,7 @@ function makePlaylist(
           sentenceIndex = index
           phraseIndex = 0
           callbacks.onSentence(sentences[sentenceIndex].startIndex, sentences[sentenceIndex].endIndex)
-          await playPhrase(opts, sentences, sentenceIndex, phraseIndex, playbackState)
+          await playPhrase(opts, sentences, sentenceIndex, phraseIndex, playbackState, callbacks)
         }, isPaused)
       }
     }
@@ -258,6 +268,7 @@ async function playPhrase(
   sentenceIndex: number,
   phraseIndex: number,
   playbackState: PlaybackState,
+  callbacks: Callbacks,
 ) {
   prefetch(sentences, sentenceIndex, phraseIndex, playbackState)
     .catch(err => err.name != "CancellationException" && console.error(err))
@@ -269,6 +280,14 @@ async function playPhrase(
     const pcmData = await phrases[phraseIndex].getPcmData()
     await wait(playbackState, "resumed")
 
+    const countPhonemes = (list: MyPhrase[]) => list.reduce((sum, phrase) => sum + phrase.phonemes.length, 0)
+    callbacks.onPhrase?.({
+      sentenceStartIndex: sentences[sentenceIndex].startIndex,
+      phonemeOffset: countPhonemes(phrases.slice(0, phraseIndex)),
+      phonemeCount: phrases[phraseIndex].phonemes.length,
+      phonemeTotal: countPhonemes(phrases),
+      seconds: pcmData.samples.length / (pcmData.sampleRate * pcmData.numChannels) + phrases[phraseIndex].silenceSeconds,
+    })
     let playing = opts.playAudio(pcmData, phrases[phraseIndex].silenceSeconds)
     try {
       while (await Promise.race([wait(playbackState, "paused"), playing.completePromise]) == "paused") {
