@@ -1,8 +1,8 @@
 # Store assets
 
-Chrome Web Store sizes: four screenshots at 1280x800 and the small promo tile at 440x280. The 128px store icon is `img/icon.png` (96px artwork, 16px transparent padding). AMO accepts the same screenshots.
+Chrome Web Store sizes: four screenshots at 1280x800, the small promo tile at 440x280 and the marquee at 1400x560. The 128px store icon is `img/icon.png` (96px artwork, 16px transparent padding). AMO accepts the same screenshots.
 
-Each screenshot is a real capture of the extension, taken in Chrome for Testing at 1280x800, placed in `src/screenshot.html` with one caption (`?img=...&caption=...`, plus `&popup=...` for the popup shot). The promo tile is `src/promo-tile.html`. Both were rendered to PNG through the DevTools protocol at device scale 1.
+Each screenshot is a real capture of the extension, taken in Chrome for Testing at 1280x800, placed in `src/screenshot.html` with one caption (`?img=...&caption=...`, plus `&popup=...` for the popup shot). The promo tile is `src/promo-tile.html` and the marquee `src/marquee.html` (`?img=` the web capture). Both were rendered to PNG through the DevTools protocol at device scale 1.
 
 | File | Shows |
 |---|---|
