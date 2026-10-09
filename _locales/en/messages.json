@@ -423,5 +423,14 @@
   },
   "welcome_about_link": {
     "message": "About and support"
+  },
+  "about_more_title": {
+    "message": "If you like ReadFollow"
+  },
+  "about_more_window_fullscreen": {
+    "message": "Makes the YouTube player fill your browser window without going fullscreen, so your tabs, address bar and taskbar stay where they are. Free and open source, by the same developer."
+  },
+  "about_more_get": {
+    "message": "Get the extension"
   }
 }

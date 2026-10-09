@@ -15,6 +15,8 @@ The maintainer wrote 15 of the 16 commits on master in 2026. Outside PRs that ge
 4. **Bundle pdf.js.** Done. Mozilla's prebuilt viewer (legacy build, Apache-2.0) is in `vendor/pdfjs`, unchanged except for one script tag that loads `js/pdf-bridge.js`; `tools/update-pdfjs.mjs` regenerates it. The legacy build is used because the modern one calls APIs newer than Chrome 125 without polyfills, and the minimum Chrome version is now 125. Firefox can't script its own PDF viewer, so PDF tabs there are reopened in ours. The sentence and word being read are highlighted on the page with the same highlighter as web pages.
 5. **Release.** Decide the license first: the bundled espeak-ng is GPL-3.0, so either keep it as a separately licensed component (current state, see `vendor/piper/THIRD-PARTY-NOTICES.txt`) or license ReadFollow as GPL-3.0. AMO will ask for the source of the minified `vendor/piper` bundle; it is `piper/`. `vendor/pdfjs` is an unmodified Mozilla release apart from `web/viewer.html`. Then privacy policy, store listings (AMO and Chrome Web Store, search the Chrome store for "ReadFollow" by hand first), CI that signs and publishes on a version bump, the same way Window Fullscreen for YouTube does it.
 
+6. **After the stores approve it.** Add a ReadFollow card to Window Fullscreen for YouTube (options page Support section and README), the same as the one on ReadFollow's About page, pointing at ReadFollow's store pages, in that extension's next release. Decided 2026-10-09: not before, so its live users don't land on a GitHub-only install.
+
 ## Not in the first release
 
 Highlighting while reading a whole page (only selections today), keyboard shortcuts for the playback bar, remembering where the bar was dragged, a paid voice service.

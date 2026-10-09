@@ -388,5 +388,14 @@
   },
   "welcome_about_link": {
     "message": "À propos et soutien"
+  },
+  "about_more_title": {
+    "message": "Si vous aimez ReadFollow"
+  },
+  "about_more_window_fullscreen": {
+    "message": "Le lecteur YouTube occupe toute la fenêtre du navigateur sans passer en plein écran, et vos onglets, la barre d'adresse et la barre des tâches restent à leur place. Gratuit et open source, du même développeur."
+  },
+  "about_more_get": {
+    "message": "Obtenir l'extension"
   }
 }

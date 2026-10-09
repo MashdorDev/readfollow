@@ -388,5 +388,14 @@
   },
   "welcome_about_link": {
     "message": "Información y apoyo"
+  },
+  "about_more_title": {
+    "message": "Si te gusta ReadFollow"
+  },
+  "about_more_window_fullscreen": {
+    "message": "Hace que el reproductor de YouTube ocupe toda la ventana del navegador sin pasar a pantalla completa, así las pestañas, la barra de direcciones y la barra de tareas siguen en su sitio. Gratis y de código abierto, del mismo desarrollador."
+  },
+  "about_more_get": {
+    "message": "Obtener la extensión"
   }
 }

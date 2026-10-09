@@ -388,5 +388,14 @@
   },
   "welcome_about_link": {
     "message": "Informazioni e sostegno"
+  },
+  "about_more_title": {
+    "message": "Se ti piace ReadFollow"
+  },
+  "about_more_window_fullscreen": {
+    "message": "Fa occupare al player di YouTube l'intera finestra del browser senza passare a schermo intero, così schede, barra degli indirizzi e barra delle applicazioni restano al loro posto. Gratuita e open source, dello stesso sviluppatore."
+  },
+  "about_more_get": {
+    "message": "Ottieni l'estensione"
   }
 }

@@ -388,5 +388,14 @@
   },
   "welcome_about_link": {
     "message": "Über das Projekt und Unterstützung"
+  },
+  "about_more_title": {
+    "message": "Wenn Ihnen ReadFollow gefällt"
+  },
+  "about_more_window_fullscreen": {
+    "message": "Lässt den YouTube-Player das ganze Browserfenster ausfüllen, ohne in den Vollbildmodus zu wechseln. Tabs, Adressleiste und Taskleiste bleiben dabei, wo sie sind. Kostenlos und Open Source, vom selben Entwickler."
+  },
+  "about_more_get": {
+    "message": "Erweiterung herunterladen"
   }
 }

@@ -388,5 +388,14 @@
   },
   "welcome_about_link": {
     "message": "Tietoja ja tuki"
+  },
+  "about_more_title": {
+    "message": "Jos pidät ReadFollow-laajennuksesta"
+  },
+  "about_more_window_fullscreen": {
+    "message": "Saa YouTube-soittimen täyttämään koko selainikkunan ilman koko näytön tilaa, joten välilehdet, osoiterivi ja tehtäväpalkki pysyvät paikoillaan. Ilmainen ja avointa lähdekoodia, samalta kehittäjältä."
+  },
+  "about_more_get": {
+    "message": "Hanki laajennus"
   }
 }

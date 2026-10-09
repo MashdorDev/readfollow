@@ -388,5 +388,14 @@
   },
   "welcome_about_link": {
     "message": "关于与支持"
+  },
+  "about_more_title": {
+    "message": "如果你喜欢 ReadFollow"
+  },
+  "about_more_window_fullscreen": {
+    "message": "让 YouTube 播放器填满浏览器窗口，而不进入全屏模式，标签页、地址栏和任务栏都保持原样。免费开源，由同一位开发者制作。"
+  },
+  "about_more_get": {
+    "message": "获取扩展程序"
   }
 }

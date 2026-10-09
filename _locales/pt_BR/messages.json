@@ -388,5 +388,14 @@
   },
   "welcome_about_link": {
     "message": "Sobre e apoio"
+  },
+  "about_more_title": {
+    "message": "Se você gosta do ReadFollow"
+  },
+  "about_more_window_fullscreen": {
+    "message": "Faz o player do YouTube ocupar toda a janela do navegador sem entrar em tela cheia, então as abas, a barra de endereço e a barra de tarefas continuam no lugar. Gratuita e de código aberto, do mesmo desenvolvedor."
+  },
+  "about_more_get": {
+    "message": "Obter a extensão"
   }
 }

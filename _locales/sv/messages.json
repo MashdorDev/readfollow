@@ -388,5 +388,14 @@
   },
   "welcome_about_link": {
     "message": "Om och stöd"
+  },
+  "about_more_title": {
+    "message": "Om du gillar ReadFollow"
+  },
+  "about_more_window_fullscreen": {
+    "message": "Får YouTube-spelaren att fylla hela webbläsarfönstret utan att gå över till helskärm, så att flikar, adressfält och aktivitetsfält stannar där de är. Gratis och öppen källkod, från samma utvecklare."
+  },
+  "about_more_get": {
+    "message": "Hämta tillägget"
   }
 }

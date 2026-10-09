@@ -388,5 +388,14 @@
   },
   "welcome_about_link": {
     "message": "정보 및 후원"
+  },
+  "about_more_title": {
+    "message": "ReadFollow가 마음에 드신다면"
+  },
+  "about_more_window_fullscreen": {
+    "message": "전체 화면으로 전환하지 않고 YouTube 플레이어를 브라우저 창에 꽉 차게 표시합니다. 탭, 주소 표시줄, 작업 표시줄은 그대로 유지됩니다. 같은 개발자가 만든 무료 오픈 소스 확장 프로그램입니다."
+  },
+  "about_more_get": {
+    "message": "확장 프로그램 받기"
   }
 }

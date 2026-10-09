@@ -388,5 +388,14 @@
   },
   "welcome_about_link": {
     "message": "Tentang dan dukungan"
+  },
+  "about_more_title": {
+    "message": "Jika Anda menyukai ReadFollow"
+  },
+  "about_more_window_fullscreen": {
+    "message": "Membuat pemutar YouTube memenuhi jendela browser tanpa beralih ke layar penuh, sehingga tab, bilah alamat, dan taskbar tetap di tempatnya. Gratis dan open source, dari pengembang yang sama."
+  },
+  "about_more_get": {
+    "message": "Dapatkan ekstensi"
   }
 }

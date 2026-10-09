@@ -276,3 +276,20 @@ body.in-popup .rf-nav {
 .credits li > span {
   unicode-bidi: isolate;
 }
+
+.more-extension {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--rf-space-4);
+}
+.more-extension img {
+  flex: none;
+  border-radius: var(--rf-radius-s);
+}
+.more-extension h3 {
+  margin: 0 0 var(--rf-space-1);
+  font-size: 1rem;
+}
+.more-extension p {
+  margin: 0 0 var(--rf-space-3);
+}

@@ -388,5 +388,14 @@
   },
   "welcome_about_link": {
     "message": "Om og støtte"
+  },
+  "about_more_title": {
+    "message": "Hvis du liker ReadFollow"
+  },
+  "about_more_window_fullscreen": {
+    "message": "Får YouTube-spilleren til å fylle hele nettleservinduet uten å gå til fullskjerm, så fanene, adresselinjen og oppgavelinjen blir der de er. Gratis og åpen kildekode, fra samme utvikler."
+  },
+  "about_more_get": {
+    "message": "Hent utvidelsen"
   }
 }
