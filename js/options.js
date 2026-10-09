@@ -30,33 +30,6 @@
 
 
 
-  //account button
-  domReadyPromise
-    .then(() => {
-      $("#account-button")
-        .click(function() {
-          getAuthToken({interactive: true})
-            .then(token => brapi.tabs.create({url: config.webAppUrl + "/premium-voices.html?t=" + token}))
-            .catch(handleError)
-          return false;
-        })
-      $("#logout-button")
-        .click(function() {
-          clearAuthToken()
-          return false;
-        })
-    })
-
-  rxjs.combineLatest([
-      observeSetting("authToken").pipe(
-        rxjs.switchMap(token => token ? getAccountInfo(token) : Promise.resolve(null))
-      ),
-      domReadyPromise
-    ])
-    .subscribe(([account]) => showAccountInfo(account))
-
-
-
   //hotkey
   domReadyPromise
     .then(() => {
@@ -75,10 +48,7 @@
           var voiceName = $(this).val();
           if (voiceName == "@custom") brapi.tabs.create({url: "custom-voices.html"});
           else if (voiceName == "@languages") brapi.tabs.create({url: "languages.html"});
-          else if (voiceName == "@premium") brapi.tabs.create({url: "premium-voices.html"});
           else if (voiceName == "@piper") bgPageInvoke("managePiperVoices").catch(console.error)
-          else if (voiceName == "@supertonic") bgPageInvoke("manageSupertonicVoices").catch(console.error)
-          else if (voiceName == "@nghitts") bgPageInvoke("manageNghiTtsVoices").catch(console.error)
           else updateSettings({voiceName})
         });
       $("#languages-edit-button")
@@ -101,14 +71,6 @@
     .subscribe(([voiceName]) => {
       $("#voices").val(voiceName || "")
     })
-
-  rxjs.combineLatest(
-    observeSetting("voiceName"),
-    observeSetting("gcpCreds"),
-    domReadyPromise
-  ).subscribe(([voiceName, gcpCreds]) => {
-    $("#voice-info").toggle(!!voiceName && isGoogleWavenet({voiceName}) && !gcpCreds)
-  })
 
 
 
@@ -220,13 +182,7 @@
 
 
   //voiceTest
-  const demoSpeech = {
-    get(lang) {
-      return this[lang] || (
-        this[lang] = ajaxGet(config.serviceUrl + "/read-aloud/get-demo-speech-text/" + lang).then(JSON.parse)
-      )
-    }
-  }
+  const demoSpeechText = "Hello, this is a sample of the selected voice."
   const voiceTestSubject = new rxjs.Subject()
   rxjs.defer(() => domReadyPromise).pipe(
     rxjs.exhaustMap(() =>
@@ -242,9 +198,7 @@
                 const voiceName = $("#voices").val()
                 const voice = voiceName && findVoiceByName(voices, voiceName)
                 const {lang} = parseLang(voice && getFirstLanguage(voice) || "en-US")
-                return rxjs.defer(() => demoSpeech.get(lang)).pipe(
-                  rxjs.exhaustMap(({text}) => bgPageInvoke("playText", [text, {lang}]))
-                )
+                return bgPageInvoke("playText", [demoSpeechText, {lang}])
               }),
               rxjs.exhaustMap(() =>
                 rxjs.timer(100, 500).pipe(
@@ -326,22 +280,18 @@
         return !voiceLanguages
           || voiceLanguages.map(parseLang).some(({ lang }) => selectedLangs.includes(lang))
           || isPiperVoice(voice)
-          || isSupertonicVoice(voice)
-          || isNghiTtsVoice(voice)
           || isOpenai(voice)
       });
 
-    //group by standard/premium
+    //group by experimental/offline/standard
     var groups = Object.assign({
         experimental: [],
         offline: [],
-        premium: [],
         standard: [],
       },
       voices.groupBy(function(voice) {
-        if (isPiperVoice(voice) || isSupertonicVoice(voice) || isNghiTtsVoice(voice)) return "experimental"
+        if (isPiperVoice(voice)) return "experimental"
         if (isOfflineVoice(voice)) return "offline"
-        if (isPremiumVoice(voice)) return "premium";
         return "standard"
       }))
     for (var name in groups) groups[name].sort(voiceSorter);
@@ -372,16 +322,6 @@
       .val("@piper")
       .text(brapi.i18n.getMessage("options_enable_piper_voices"))
       .appendTo(experimental)
-    $("<option>")
-      .val("@supertonic")
-      .text(brapi.i18n.getMessage("options_enable_supertonic_voices"))
-      .appendTo(experimental)
-    if (!selectedLangs || selectedLangs.includes('vi')) {
-      $("<option>")
-        .val("@nghitts")
-        .text(brapi.i18n.getMessage("options_enable_nghitts_voices") || "Install NghiTTS voices...")
-        .appendTo(experimental)
-    }
 
     //create the standard optgroup
     $("<optgroup>").appendTo($("#voices"))
@@ -393,18 +333,6 @@
         .val(voice.voiceName)
         .text(voice.voiceName)
         .appendTo(standard);
-    });
-
-    //create the premium optgroup
-    $("<optgroup>").appendTo($("#voices"));
-    var premium = $("<optgroup>")
-      .attr("label", brapi.i18n.getMessage("options_voicegroup_premium"))
-      .appendTo($("#voices"));
-    groups.premium.forEach(function(voice) {
-      $("<option>")
-        .val(voice.voiceName)
-        .text(voice.voiceName)
-        .appendTo(premium);
     });
 
     //create the additional optgroup
@@ -427,10 +355,6 @@
       var weight = 0
       //native voices should appear before non-natives in Standard group
       if (!isNativeVoice(voice)) weight += 10
-      //ReadAloud Generic Voice should appear first among the non-natives
-      if (!isReadAloudCloud(voice)) weight += 1
-      //UseMyPhone should appear last in Offline group
-      if (isUseMyPhone(voice)) weight += 1
       return weight
     }
     return getWeight(a)-getWeight(b) || a.voiceName.localeCompare(b.voiceName)
@@ -446,31 +370,6 @@
     if (/^{/.test(err.message)) {
       var errInfo = JSON.parse(err.message);
       $("#status").html(formatError(errInfo)).parent().show();
-      $("#status a").click(function() {
-        switch ($(this).attr("href")) {
-          case "#sign-in":
-            getAuthToken({interactive: true})
-              .then(function(token) {
-                if (token) {
-                  $("#test-voice").click();
-                  getAccountInfo(token).then(showAccountInfo);
-                }
-              })
-              .catch(function(err) {
-                $("#status").text(err.message).parent().show();
-              })
-            break;
-          case "#auth-wavenet":
-            brapi.permissions.request(config.wavenetPerms)
-              .then(function(granted) {
-                if (granted) bgPageInvoke("authWavenet");
-              })
-            break;
-          case "#connect-phone":
-            location.href = "connect-phone.html"
-            break
-        }
-      })
     }
     else if (config.browserId == "opera" && /locked fullscreen/.test(err.message)) {
       $("#status").html("Click <a href='#open-player-tab'>here</a> to start read aloud.").parent().show()
@@ -493,18 +392,6 @@
       $("#status").text(err.message).parent().show();
     }
   }
-
-  function showAccountInfo(account) {
-    if (account) {
-      $("#account-email").text(account.email);
-      $("#account-info").show();
-    }
-    else {
-      $("#account-info").hide();
-    }
-  }
-
-
 
   function createSlider(elem, {onChange, onSlideChange}) {
     var min = $(elem).data("min") || 0;

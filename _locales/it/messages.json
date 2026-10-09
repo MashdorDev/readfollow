@@ -20,9 +20,6 @@
   "options_voicegroup_standard": {
     "message": "Voci Standard"
   },
-  "options_voicegroup_premium": {
-    "message": "Voci Premium"
-  },
   "options_voicegroup_experimental": {
     "message": "Voci AI sperimentali"
   },
@@ -37,9 +34,6 @@
   },
   "options_enable_piper_voices": {
     "message": "Installa voci Piper..."
-  },
-  "options_enable_supertonic_voices": {
-    "message": "Installa voci Supertonic..."
   },
   "options_rate_label": {
     "message": "Velocità"
@@ -85,15 +79,6 @@
   },
   "options_stop_button": {
     "message": "Interrompi"
-  },
-  "options_logged_in_as": {
-    "message": "Collegato come"
-  },
-  "options_account_button": {
-    "message": "Account"
-  },
-  "options_logout_button": {
-    "message": "Disconnettersi"
   },
   "player_tab_explanation": {
     "message": "Leggi ad alta voce utilizza questa scheda per la riproduzione audio. Questa scheda si chiuderà automaticamente dopo 5 minuti di inattività."
@@ -145,24 +130,6 @@
   },
   "error_add_permissions": {
     "message": "Devi concedere Leggi ad alta voce [autorizzazioni](request-permissions) aggiuntive per questo sito web"
-  },
-  "error_login_required": {
-    "message": "[Accedi](sign-in) per utilizzare le voci Premium"
-  },
-  "error_voice_unavailable": {
-    "message": "Voce non disponibile, per favore sceglierne un'altra"
-  },
-  "error_payment_required": {
-    "message": "Senza crediti"
-  },
-  "error_wavenet_auth_required": {
-    "message": "Devi concedere [autorizzazioni](auth-wavenet) aggiuntive per abilitare le voci di Google Wavenet"
-  },
-  "error_phone_not_connected": {
-    "message": "Telefono non connesso. [Connetti](connect-phone)"
-  },
-  "error_phone_disconnected": {
-    "message": "Telefono disconnesso ({reason}). [Riconnetti](connect-phone)"
   },
   "error_chatgpt": {
     "message": "Fai clic sull'icona dell'altoparlante accanto a ogni risposta per leggerla ad alta voce"

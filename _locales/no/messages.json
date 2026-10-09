@@ -23,9 +23,6 @@
   "options_voicegroup_standard": {
     "message": "Standard stemmer"
   },
-  "options_voicegroup_premium": {
-    "message": "Premium-stemmer"
-  },
   "options_voicegroup_additional": {
     "message": "Flere stemmer"
   },
@@ -37,9 +34,6 @@
   },
   "options_enable_piper_voices": {
     "message": "Installer Piper-stemmer..."
-  },
-  "options_enable_supertonic_voices": {
-    "message": "Installer Supertonic-stemmer..."
   },
   "options_rate_label": {
     "message": "Hastighet"
@@ -85,15 +79,6 @@
   },
   "options_stop_button": {
     "message": "Stopp"
-  },
-  "options_logged_in_as": {
-    "message": "Logget inn som"
-  },
-  "options_account_button": {
-    "message": "Konto"
-  },
-  "options_logout_button": {
-    "message": "Logg ut"
   },
   "player_tab_explanation": {
     "message": "ReadFollow bruker denne fanen for lydavspilling. Denne fanen lukkes automatisk etter 5 minutters inaktivitet."
@@ -145,24 +130,6 @@
   },
   "error_add_permissions": {
     "message": "Du må gi ReadFollow ekstra [tillatelser](request-permissions) for denne nettsiden"
-  },
-  "error_login_required": {
-    "message": "Vennligst [logg inn](sign-in) for å bruke Premium-stemmer"
-  },
-  "error_voice_unavailable": {
-    "message": "Stemme ikke tilgjengelig, velg en annen"
-  },
-  "error_payment_required": {
-    "message": "Tomt for kreditter"
-  },
-  "error_wavenet_auth_required": {
-    "message": "Du må gi ekstra [tillatelser](auth-wavenet) for å aktivere Google Wavenet-stemmer"
-  },
-  "error_phone_not_connected": {
-    "message": "Telefon ikke tilkoblet. [Koble til](connect-phone)"
-  },
-  "error_phone_disconnected": {
-    "message": "Telefon frakoblet ({reason}). [Koble til igjen](connect-phone)"
   },
   "error_chatgpt": {
     "message": "Klikk på høyttalerikonet ved siden av hvert svar for å lese det høyt"

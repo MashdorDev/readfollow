@@ -20,9 +20,6 @@
   "options_voicegroup_standard": {
     "message": "Standart Sesler"
   },
-  "options_voicegroup_premium": {
-    "message": "Premium Sesler"
-  },
   "options_voicegroup_experimental": {
     "message": "Deneysel AI Sesleri"
   },
@@ -37,9 +34,6 @@
   },
   "options_enable_piper_voices": {
     "message": "Piper seslerini yükle..."
-  },
-  "options_enable_supertonic_voices": {
-    "message": "Supertonic seslerini yükle..."
   },
   "options_rate_label": {
     "message": "Hız"
@@ -85,15 +79,6 @@
   },
   "options_stop_button": {
     "message": "Durdur"
-  },
-  "options_logged_in_as": {
-    "message": "Olarak oturum açtı"
-  },
-  "options_account_button": {
-    "message": "Hesap"
-  },
-  "options_logout_button": {
-    "message": "Çıkış Yap"
   },
   "player_tab_explanation": {
     "message": "Sesli Oku, ses çalmak için bu sekmeyi kullanır. Bu sekme, 5 dakika boyunca herhangi bir işlem yapılmadığında otomatik olarak kapanacaktır."
@@ -145,24 +130,6 @@
   },
   "error_add_permissions": {
     "message": "Bu web sitesi için Sesli Okuma ek [izinleri](request-permissions) vermeniz gerekiyor"
-  },
-  "error_login_required": {
-    "message": "Premium Sesleri kullanmak için lütfen [oturum açın](sign-in)"
-  },
-  "error_voice_unavailable": {
-    "message": "Ses kullanılamıyor, lütfen başka bir tane seçin"
-  },
-  "error_payment_required": {
-    "message": "krediler bitti"
-  },
-  "error_wavenet_auth_required": {
-    "message": "Google Wavenet seslerini etkinleştirmek için ek [izinler](auth-wavenet) vermeniz gerekir"
-  },
-  "error_phone_not_connected": {
-    "message": "Telefon bağlı değil. [Bağlan](connect-phone)"
-  },
-  "error_phone_disconnected": {
-    "message": "Telefon bağlantısı kesildi ({reason}). [Yeniden bağlan](connect-phone)"
   },
   "error_chatgpt": {
     "message": "Her yanıtın yanındaki hoparlör simgesine tıklayarak sesli okuyun"

@@ -20,9 +20,6 @@
   "options_voicegroup_standard": {
     "message": "Овозҳои стандартӣ"
   },
-  "options_voicegroup_premium": {
-    "message": "Овозҳои баландсифат"
-  },
   "options_voicegroup_experimental": {
     "message": "Овозҳои таҷрибавии AI"
   },
@@ -37,9 +34,6 @@
   },
   "options_enable_piper_voices": {
     "message": "Идоракунии овозҳои «Пайпер»"
-  },
-  "options_enable_supertonic_voices": {
-    "message": "Насб кардани овозҳои Supertonic..."
   },
   "options_rate_label": {
     "message": "Суръат"
@@ -85,15 +79,6 @@
   },
   "options_stop_button": {
     "message": "Қатъ кардан"
-  },
-  "options_logged_in_as": {
-    "message": "Бо номи зерин ворид шуд:"
-  },
-  "options_account_button": {
-    "message": "Ҳисоб"
-  },
-  "options_logout_button": {
-    "message": "Баромад"
   },
   "player_tab_explanation": {
     "message": "Барномаи «Баланд хонед» барои пахши аудиоӣ аз ин варақа истифода мебарад. Ҳангоми бефаъолиятӣ ин варақа пас аз 5 дақиқа ба таври худкор пӯшида мешавад."
@@ -145,24 +130,6 @@
   },
   "error_add_permissions": {
     "message": "Барои ин сомона шумо бояд ба барномаи «Баланд хонед» [иҷозатҳои](request-permissions) иловагиро татбиқ намоед"
-  },
-  "error_login_required": {
-    "message": "Барои истифода кардани овозҳои баландсифат, лутфан, [ворид шавед](sign-in)"
-  },
-  "error_voice_unavailable": {
-    "message": "Ин овоз дастнорас аст, лутфан, забони дигареро интихоб намоед"
-  },
-  "error_payment_required": {
-    "message": "Маблағро илова намоед"
-  },
-  "error_wavenet_auth_required": {
-    "message": "Барои фаъол кардани овозҳои «Google Wavenet» шумо бояд [иҷозатҳои](auth-wavenet) иловагиро татбиқ кунед"
-  },
-  "error_phone_not_connected": {
-    "message": "Телефон пайваст нашудааст. [Пайваст намоед](connect-phone)"
-  },
-  "error_phone_disconnected": {
-    "message": "Пайвасти телефон қатъ шуд ({reason}). [Аз нав пайваст намоед](connect-phone)"
   },
   "error_chatgpt": {
     "message": "Пеш аз ҳар як ҷавоб нишонаи баландгӯякро зер кунед, то ки он бо овози баланд хонда шавад"

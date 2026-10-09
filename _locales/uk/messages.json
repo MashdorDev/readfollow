@@ -23,9 +23,6 @@
   "options_voicegroup_standard": {
     "message": "Стандартні голоси"
   },
-  "options_voicegroup_premium": {
-    "message": "Преміум-голоси"
-  },
   "options_voicegroup_additional": {
     "message": "Додаткові голоси"
   },
@@ -37,9 +34,6 @@
   },
   "options_enable_piper_voices": {
     "message": "Встановити голоси Piper..."
-  },
-  "options_enable_supertonic_voices": {
-    "message": "Встановити голоси Supertonic..."
   },
   "options_rate_label": {
     "message": "Швидкість"
@@ -85,15 +79,6 @@
   },
   "options_stop_button": {
     "message": "Зупинити"
-  },
-  "options_logged_in_as": {
-    "message": "Ви увійшли як"
-  },
-  "options_account_button": {
-    "message": "Обліковий запис"
-  },
-  "options_logout_button": {
-    "message": "Вийти"
   },
   "player_tab_explanation": {
     "message": "ReadFollow використовує цю вкладку для відтворення аудіо. Ця вкладка автоматично закриється через 5 хвилин бездіяльності."
@@ -145,24 +130,6 @@
   },
   "error_add_permissions": {
     "message": "Вам потрібно надати ReadFollow додаткові [дозволи](request-permissions) для цього веб-сайту"
-  },
-  "error_login_required": {
-    "message": "Будь ласка, [увійдіть](sign-in), щоб використовувати Преміум-голоси"
-  },
-  "error_voice_unavailable": {
-    "message": "Голос недоступний, виберіть інший"
-  },
-  "error_payment_required": {
-    "message": "Кредити вичерпано"
-  },
-  "error_wavenet_auth_required": {
-    "message": "Вам потрібно надати додаткові [дозволи](auth-wavenet), щоб увімкнути голоси Google Wavenet"
-  },
-  "error_phone_not_connected": {
-    "message": "Телефон не підключено. [Підключити](connect-phone)"
-  },
-  "error_phone_disconnected": {
-    "message": "Телефон відключено ({reason}). [Підключити знову](connect-phone)"
   },
   "error_chatgpt": {
     "message": "Натисніть на значок динаміка поруч із кожною відповіддю, щоб прочитати її вголос"

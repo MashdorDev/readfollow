@@ -20,9 +20,6 @@
   "options_voicegroup_standard": {
     "message": "Стандартные голоса"
   },
-  "options_voicegroup_premium": {
-    "message": "Премиум-голоса"
-  },
   "options_voicegroup_experimental": {
     "message": "Экспериментальные AI-голоса"
   },
@@ -37,9 +34,6 @@
   },
   "options_enable_piper_voices": {
     "message": "Установить голоса Piper..."
-  },
-  "options_enable_supertonic_voices": {
-    "message": "Установить голоса Supertonic..."
   },
   "options_rate_label": {
     "message": "Скорость"
@@ -85,15 +79,6 @@
   },
   "options_stop_button": {
     "message": "Остановить"
-  },
-  "options_logged_in_as": {
-    "message": "Вы вошли как"
-  },
-  "options_account_button": {
-    "message": "Аккаунт"
-  },
-  "options_logout_button": {
-    "message": "Выйти"
   },
   "player_tab_explanation": {
     "message": "Функция «Чтение вслух» использует эту вкладку для воспроизведения звука. Эта вкладка автоматически закроется через 5 минут бездействия."
@@ -145,24 +130,6 @@
   },
   "error_add_permissions": {
     "message": "Вам необходимо предоставить ReadFollow дополнительные [разрешения](request-permissions) для этого веб-сайта."
-  },
-  "error_login_required": {
-    "message": "Пожалуйста, [войдите](sign-in), чтобы использовать Премиум-голоса"
-  },
-  "error_voice_unavailable": {
-    "message": "Голос недоступен, выберите другой"
-  },
-  "error_payment_required": {
-    "message": "Требуется оплата"
-  },
-  "error_wavenet_auth_required": {
-    "message": "Вам необходимо предоставить дополнительные [разрешения](auth-wavenet), чтобы включить голоса Google Wavenet."
-  },
-  "error_phone_not_connected": {
-    "message": "Телефон не подключен. [Подключить](connect-phone)"
-  },
-  "error_phone_disconnected": {
-    "message": "Телефон отключен ({reason}). [Переподключить](connect-phone)"
   },
   "error_chatgpt": {
     "message": "Нажмите на значок динамика рядом с каждым ответом, чтобы прочитать его вслух"

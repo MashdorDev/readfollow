@@ -23,9 +23,6 @@
   "options_voicegroup_standard": {
     "message": "Standaard stemmen"
   },
-  "options_voicegroup_premium": {
-    "message": "Premium stemmen"
-  },
   "options_voicegroup_additional": {
     "message": "Extra stemmen"
   },
@@ -37,9 +34,6 @@
   },
   "options_enable_piper_voices": {
     "message": "Piper-stemmen installeren..."
-  },
-  "options_enable_supertonic_voices": {
-    "message": "Supertonic-stemmen installeren..."
   },
   "options_rate_label": {
     "message": "Snelheid"
@@ -85,15 +79,6 @@
   },
   "options_stop_button": {
     "message": "Stoppen"
-  },
-  "options_logged_in_as": {
-    "message": "Ingelogd als"
-  },
-  "options_account_button": {
-    "message": "Account"
-  },
-  "options_logout_button": {
-    "message": "Uitloggen"
   },
   "player_tab_explanation": {
     "message": "ReadFollow gebruikt dit tabblad voor audio afspelen. Dit tabblad wordt automatisch gesloten na 5 minuten inactiviteit."
@@ -145,24 +130,6 @@
   },
   "error_add_permissions": {
     "message": "U moet ReadFollow extra [machtigingen](request-permissions) geven voor deze website"
-  },
-  "error_login_required": {
-    "message": "[Log in](sign-in) om de Premium stemmen te gebruiken"
-  },
-  "error_voice_unavailable": {
-    "message": "Stem niet beschikbaar, kies een andere"
-  },
-  "error_payment_required": {
-    "message": "Geen tegoed meer"
-  },
-  "error_wavenet_auth_required": {
-    "message": "U moet extra [machtigingen](auth-wavenet) verlenen om Google Wavenet-stemmen in te schakelen"
-  },
-  "error_phone_not_connected": {
-    "message": "Telefoon niet verbonden. [Verbinden](connect-phone)"
-  },
-  "error_phone_disconnected": {
-    "message": "Telefoon losgekoppeld ({reason}). [Opnieuw verbinden](connect-phone)"
   },
   "error_chatgpt": {
     "message": "Klik op het luidsprekerpictogram naast elk antwoord om het hardop voor te lezen"

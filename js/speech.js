@@ -33,21 +33,13 @@ function Speech(texts, options) {
 
   function pickEngine() {
     if (isPiperVoice(options.voice)) return piperTtsEngine;
-    if (isSupertonicVoice(options.voice)) return supertonicTtsEngine;
-    if (isNghiTtsVoice(options.voice)) return nghiTtsEngine;
     if (isAzure(options.voice)) return azureTtsEngine;
     if (isOpenai(options.voice)) return openaiTtsEngine;
-    if (isUseMyPhone(options.voice)) return phoneTtsEngine;
     if (isGoogleTranslate(options.voice) && !/\s(Hebrew|Telugu)$/.test(options.voice.voiceName)) {
       return googleTranslateTtsEngine
     }
     if (isAmazonPolly(options.voice)) return amazonPollyTtsEngine;
-    if (isGoogleWavenet(options.voice)) return googleWavenetTtsEngine;
     if (isIbmWatson(options.voice)) return ibmWatsonTtsEngine;
-    if (isPremiumVoice(options.voice) || isReadAloudCloud(options.voice)) {
-      premiumTtsEngine.prepare(options)
-      return premiumTtsEngine;
-    }
     if (isGoogleNative(options.voice)) return new TimeoutTtsEngine(browserTtsEngine, 3*1000, 16*1000);
     return browserTtsEngine;
   }
@@ -61,7 +53,7 @@ function Speech(texts, options) {
     }
     else {
       if (isGoogleTranslate(options.voice)) return new CharBreaker(200, punctuator).breakText(text);
-      else if (isPiperVoice(options.voice) || isSupertonicVoice(options.voice) || isNghiTtsVoice(options.voice)) return [text];
+      else if (isPiperVoice(options.voice)) return [text];
       else return new CharBreaker(750, punctuator, 200).breakText(text);
     }
   }
@@ -86,8 +78,6 @@ function Speech(texts, options) {
       engine: immediate(() => {
         switch (engine) {
           case piperTtsEngine: return 'Piper'
-          case supertonicTtsEngine: return 'Supertonic'
-          case nghiTtsEngine: return 'NghiTTS'
         }
       })
     }

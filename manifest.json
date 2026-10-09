@@ -19,7 +19,6 @@
   "permissions": [
     "activeTab",
     "contextMenus",
-    "identity",
     "offscreen",
     "scripting",
     "storage",
@@ -27,7 +26,6 @@
     "ttsEngine"
   ],
   "optional_permissions": [
-    "webRequest",
     "webNavigation"
   ],
   "host_permissions": [

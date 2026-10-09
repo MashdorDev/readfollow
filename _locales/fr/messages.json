@@ -23,9 +23,6 @@
   "options_voicegroup_standard": {
     "message": "Voix standard"
   },
-  "options_voicegroup_premium": {
-    "message": "Voix premium"
-  },
   "options_voicegroup_additional": {
     "message": "Voix supplémentaires"
   },
@@ -37,9 +34,6 @@
   },
   "options_enable_piper_voices": {
     "message": "Installer les voix Piper..."
-  },
-  "options_enable_supertonic_voices": {
-    "message": "Installer les voix Supertonic..."
   },
   "options_rate_label": {
     "message": "Vitesse"
@@ -85,15 +79,6 @@
   },
   "options_stop_button": {
     "message": "Arrêter"
-  },
-  "options_logged_in_as": {
-    "message": "Connecté en tant que"
-  },
-  "options_account_button": {
-    "message": "Compte"
-  },
-  "options_logout_button": {
-    "message": "Déconnexion"
   },
   "player_tab_explanation": {
     "message": "ReadFollow utilise cet onglet pour la lecture audio. Cet onglet se fermera automatiquement après 5 minutes d'inactivité."
@@ -145,24 +130,6 @@
   },
   "error_add_permissions": {
     "message": "Vous devez accorder à ReadFollow des [permissions](request-permissions) supplémentaires pour ce site web"
-  },
-  "error_login_required": {
-    "message": "Veuillez [vous connecter](sign-in) pour utiliser les voix Premium"
-  },
-  "error_voice_unavailable": {
-    "message": "Voix indisponible, veuillez en choisir une autre"
-  },
-  "error_payment_required": {
-    "message": "Crédits épuisés"
-  },
-  "error_wavenet_auth_required": {
-    "message": "Vous devez accorder des [permissions](auth-wavenet) supplémentaires pour activer les voix Google Wavenet"
-  },
-  "error_phone_not_connected": {
-    "message": "Téléphone non connecté. [Connecter](connect-phone)"
-  },
-  "error_phone_disconnected": {
-    "message": "Téléphone déconnecté ({reason}). [Reconnecter](connect-phone)"
   },
   "error_chatgpt": {
     "message": "Cliquez sur l'icône du haut-parleur à côté de chaque réponse pour la lire à haute voix"

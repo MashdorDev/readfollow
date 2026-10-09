@@ -23,9 +23,6 @@
   "options_voicegroup_standard": {
     "message": "الأصوات القياسية"
   },
-  "options_voicegroup_premium": {
-    "message": "الأصوات المميزة"
-  },
   "options_voicegroup_additional": {
     "message": "أصوات إضافية"
   },
@@ -37,9 +34,6 @@
   },
   "options_enable_piper_voices": {
     "message": "تثبيت أصوات Piper..."
-  },
-  "options_enable_supertonic_voices": {
-    "message": "تثبيت أصوات Supertonic..."
   },
   "options_rate_label": {
     "message": "السرعة"
@@ -85,15 +79,6 @@
   },
   "options_stop_button": {
     "message": "إيقاف"
-  },
-  "options_logged_in_as": {
-    "message": "تسجيل الدخول باسم"
-  },
-  "options_account_button": {
-    "message": "الحساب"
-  },
-  "options_logout_button": {
-    "message": "تسجيل الخروج"
   },
   "player_tab_explanation": {
     "message": "يستخدم ReadFollow علامة التبويب هذه لتشغيل الصوت. ستُغلق علامة التبويب هذه تلقائياً بعد 5 دقائق من عدم النشاط."
@@ -145,24 +130,6 @@
   },
   "error_add_permissions": {
     "message": "تحتاج إلى منح ReadFollow [أذونات](request-permissions) إضافية لهذا الموقع"
-  },
-  "error_login_required": {
-    "message": "يرجى [تسجيل الدخول](sign-in) لاستخدام الأصوات المميزة"
-  },
-  "error_voice_unavailable": {
-    "message": "الصوت غير متوفر، يرجى اختيار صوت آخر"
-  },
-  "error_payment_required": {
-    "message": "نفاد الرصيد"
-  },
-  "error_wavenet_auth_required": {
-    "message": "تحتاج إلى منح [أذونات](auth-wavenet) إضافية لتمكين أصوات Google Wavenet"
-  },
-  "error_phone_not_connected": {
-    "message": "الهاتف غير متصل. [اتصال](connect-phone)"
-  },
-  "error_phone_disconnected": {
-    "message": "تم قطع اتصال الهاتف ({reason}). [إعادة الاتصال](connect-phone)"
   },
   "error_chatgpt": {
     "message": "انقر على أيقونة السماعة بجانب كل إجابة لقراءتها بصوت عالٍ"

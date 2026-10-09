@@ -23,9 +23,6 @@
   "options_voicegroup_standard": {
     "message": "Standardní hlasy"
   },
-  "options_voicegroup_premium": {
-    "message": "Prémiové hlasy"
-  },
   "options_voicegroup_additional": {
     "message": "Další hlasy"
   },
@@ -37,9 +34,6 @@
   },
   "options_enable_piper_voices": {
     "message": "Nainstalovat hlasy Piper..."
-  },
-  "options_enable_supertonic_voices": {
-    "message": "Nainstalovat hlasy Supertonic..."
   },
   "options_rate_label": {
     "message": "Rychlost"
@@ -85,15 +79,6 @@
   },
   "options_stop_button": {
     "message": "Zastavit"
-  },
-  "options_logged_in_as": {
-    "message": "Přihlášen jako"
-  },
-  "options_account_button": {
-    "message": "Účet"
-  },
-  "options_logout_button": {
-    "message": "Odhlásit"
   },
   "player_tab_explanation": {
     "message": "ReadFollow používá tuto kartu pro přehrávání zvuku. Tato karta se automaticky zavře po 5 minutách nečinnosti."
@@ -145,24 +130,6 @@
   },
   "error_add_permissions": {
     "message": "Musíte udělit ReadFollow dodatečná [oprávnění](request-permissions) pro tuto webovou stránku"
-  },
-  "error_login_required": {
-    "message": "Prosím [přihlaste se](sign-in) pro použití prémiových hlasů"
-  },
-  "error_voice_unavailable": {
-    "message": "Hlas není dostupný, vyberte prosím jiný"
-  },
-  "error_payment_required": {
-    "message": "Vyčerpán kredit"
-  },
-  "error_wavenet_auth_required": {
-    "message": "Musíte udělit dodatečná [oprávnění](auth-wavenet) pro povolení hlasů Google Wavenet"
-  },
-  "error_phone_not_connected": {
-    "message": "Telefon není připojen. [Připojit](connect-phone)"
-  },
-  "error_phone_disconnected": {
-    "message": "Telefon odpojen ({reason}). [Znovu připojit](connect-phone)"
   },
   "error_chatgpt": {
     "message": "Klikněte na ikonu reproduktoru vedle každé odpovědi pro její přečtení nahlas"
