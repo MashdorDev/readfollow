@@ -214,6 +214,36 @@ function isPiperVoice(voice) {
   return /^Piper /.test(voice.voiceName)
 }
 
+//Colors for the sentence and word being read, chosen in Settings (highlightColors).
+//The word keeps dark text at 10:1 or better and is always underlined, so it stands out without relying on color.
+//PDFs get translucent tints instead: the visible text there is the rendered page under a transparent text layer.
+var highlightColorSchemes = {
+  "blue-amber": {sentence: "rgba(66, 133, 244, 0.22)", word: "#ffc933", pdfSentence: "rgba(66, 133, 244, 0.16)", pdfWord: "rgba(255, 196, 0, 0.6)"},
+  "green-yellow": {sentence: "rgba(34, 197, 94, 0.22)", word: "#fde047", pdfSentence: "rgba(34, 197, 94, 0.16)", pdfWord: "rgba(250, 204, 21, 0.55)"},
+  "pink-lavender": {sentence: "rgba(236, 72, 153, 0.16)", word: "#c4b5fd", pdfSentence: "rgba(236, 72, 153, 0.14)", pdfWord: "rgba(139, 92, 246, 0.35)"},
+  "underline": {},
+}
+
+function getHighlightCss(schemeName, names, forPdf) {
+  var scheme = highlightColorSchemes[schemeName] || highlightColorSchemes["blue-amber"]
+  var sentence = forPdf ? scheme.pdfSentence : scheme.sentence
+  var word = forPdf ? scheme.pdfWord : scheme.word
+  //on a PDF the text itself is transparent, so lines need a color of their own
+  var line = forPdf || word ? "#1f2328" : "currentColor"
+  var rule = function(name, props) {
+    return "::highlight(" + name + ") { " + props.map(function(p) {return p + (forPdf ? " !important" : "") + ";"}).join(" ") + " }"
+  }
+  var sentenceProps = sentence ? ["background-color: " + sentence] : ["text-decoration: underline 1px dotted " + line]
+  var wordProps = word ? ["background-color: " + word] : []
+  wordProps.push("text-decoration: underline " + (word ? "2px " : "3px ") + line, "text-underline-offset: 2px")
+  if (forPdf) {
+    sentenceProps.push("color: transparent")
+    wordProps.push("color: transparent")
+  }
+  else if (word) wordProps.push("color: #1f2328")
+  return rule(names.context, sentenceProps) + "\n" + rule(names.word, wordProps)
+}
+
 //Who receives the text read with this voice, or null for voices that run on this device.
 //Works from the name alone, for pages that don't load the voice engines.
 function getVoiceRecipient(voice) {

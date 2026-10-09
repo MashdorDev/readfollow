@@ -336,5 +336,29 @@
   },
   "voice_privacy_local": {
     "message": "This voice runs on your device. Text stays on it."
+  },
+  "options_highlight_colors": {
+    "message": "Highlight colors"
+  },
+  "highlight_scheme_blue_amber": {
+    "message": "Blue and amber"
+  },
+  "highlight_scheme_green_yellow": {
+    "message": "Green and yellow"
+  },
+  "highlight_scheme_pink_lavender": {
+    "message": "Pink and lavender"
+  },
+  "highlight_scheme_underline": {
+    "message": "Underline only"
+  },
+  "highlight_sample_before": {
+    "message": "The sentence being read and the"
+  },
+  "highlight_sample_word": {
+    "message": "current"
+  },
+  "highlight_sample_after": {
+    "message": "word."
   }
 }

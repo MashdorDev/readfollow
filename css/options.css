@@ -91,6 +91,40 @@ body.in-popup .rf-nav {
   color: var(--rf-text-muted);
 }
 
+#highlight-colors {
+  display: flex;
+  flex-direction: column;
+  gap: var(--rf-space-2);
+}
+.scheme {
+  display: flex;
+  align-items: center;
+  gap: var(--rf-space-3);
+  margin: 0;
+  padding: var(--rf-space-2) var(--rf-space-3);
+  font-weight: 400;
+  border: 1px solid var(--rf-border);
+  border-radius: var(--rf-radius-s);
+  cursor: pointer;
+}
+.scheme:has(input:checked) {
+  border-color: var(--rf-accent);
+  background-color: var(--rf-accent-soft);
+}
+.scheme-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.scheme-name {
+  font-size: 0.85em;
+  color: var(--rf-text-muted);
+}
+.scheme-sample span {
+  border-radius: 2px;
+  text-underline-offset: 2px;
+}
+
 /* Sliders built by createSlider() in js/options.js */
 .slider {
   position: relative;

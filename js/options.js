@@ -31,6 +31,37 @@
 
 
 
+  //highlight colors: one choice per scheme, each with a sample drawn in its colors
+  domReadyPromise
+    .then(() => {
+      const $group = $("#highlight-colors")
+      for (const name of Object.keys(highlightColorSchemes)) {
+        const scheme = highlightColorSchemes[name]
+        const $label = $("<label>").addClass("scheme").appendTo($group)
+        $("<input>").attr({type: "radio", name: "highlight-colors", value: name}).appendTo($label)
+        const $text = $("<span>").addClass("scheme-text").appendTo($label)
+        $("<span>").addClass("scheme-name").text(brapi.i18n.getMessage("highlight_scheme_" + name.replace("-", "_"))).appendTo($text)
+        const $sample = $("<span>").addClass("scheme-sample").appendTo($text)
+        const $sentence = $("<span>").text(brapi.i18n.getMessage("highlight_sample_before") + " ").appendTo($sample)
+        const $word = $("<span>").text(brapi.i18n.getMessage("highlight_sample_word")).appendTo($sentence)
+        $sentence.append(" " + brapi.i18n.getMessage("highlight_sample_after"))
+        if (scheme.sentence) $sentence.css("background-color", scheme.sentence)
+        else $sentence.css("text-decoration", "underline 1px dotted")
+        if (scheme.word) $word.css({"background-color": scheme.word, color: "#1f2328", "text-decoration": "underline 2px #1f2328"})
+        else $word.css("text-decoration", "underline 3px")
+      }
+      $group.on("change", "input", function() {
+        updateSettings({highlightColors: this.value}).then(showConfirmation).catch(handleError)
+      })
+    })
+  rxjs.combineLatest([observeSetting("highlightColors"), domReadyPromise])
+    .subscribe(([name]) => {
+      $("#highlight-colors input").prop("checked", false)
+      $("#highlight-colors input[value='" + (highlightColorSchemes[name] ? name : "blue-amber") + "']").prop("checked", true)
+    })
+
+
+
   //sites where the on-page bar was hidden from its menu
   rxjs.combineLatest([observeSetting("barHiddenSites"), domReadyPromise])
     .subscribe(([sites]) => {
