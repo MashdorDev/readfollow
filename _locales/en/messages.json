@@ -125,7 +125,7 @@
     "message": "Hide this tab?"
   },
   "player_hidethistab_dialog_body": {
-    "message": "If you hide this tab, ReadFollow will play audio inside the current webpage. This means navigating away from the page will cause the speech to stop.\n\n(This setting can be reverted from the extension Options page)"
+    "message": "If you hide this tab, ReadFollow will play audio inside the current webpage. This means navigating away from the page will cause the speech to stop.\n\n(You can change this back in ReadFollow's settings.)"
   },
   "player_hidethistab_dialog_ok_button": {
     "message": "Hide"
@@ -360,5 +360,20 @@
   },
   "highlight_sample_after": {
     "message": "word."
+  },
+  "command_play": {
+    "message": "Read aloud or stop"
+  },
+  "command_pause": {
+    "message": "Pause or resume"
+  },
+  "command_stop": {
+    "message": "Stop"
+  },
+  "command_forward": {
+    "message": "Next sentence"
+  },
+  "command_rewind": {
+    "message": "Previous sentence"
   }
 }

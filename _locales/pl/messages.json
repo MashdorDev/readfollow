@@ -6,10 +6,10 @@
     "message": "ReadFollow"
   },
   "extension_description": {
-    "message": "Czytaj na głos bieżący artykuł na stronie internetowej jednym kliknięciem, używając zamiany tekstu na mowę. Obsługuje ponad 40 języków."
+    "message": "Czyta tekst na głos i podświetla każde wypowiadane słowo na stronie. Działa na stronach i w PDF, offline lub z głosami online."
   },
   "options_heading": {
-    "message": "Opcje"
+    "message": "Ustawienia"
   },
   "options_voice_label": {
     "message": "Głos"
@@ -33,7 +33,7 @@
     "message": "Włącz niestandardowe głosy..."
   },
   "options_enable_piper_voices": {
-    "message": "Zainstaluj głosy Piper..."
+    "message": "Pobierz naturalne głosy działające na Twoim urządzeniu (Piper)..."
   },
   "options_rate_label": {
     "message": "Prędkość"
@@ -48,16 +48,16 @@
     "message": "Głośność"
   },
   "options_show_highlighting": {
-    "message": "Podświetlanie tekstu"
+    "message": "Tekst do śledzenia"
   },
   "options_highlighting_off": {
-    "message": "Wyłącz"
+    "message": "Wyłączone"
   },
   "options_highlighting_popup": {
-    "message": "Pokaż w oknie popup"
+    "message": "W oknie popup"
   },
   "options_highlighting_window": {
-    "message": "Pokaż w osobnym oknie"
+    "message": "W osobnym oknie"
   },
   "options_audio_playback": {
     "message": "Odtwarzanie dźwięku"
@@ -72,7 +72,7 @@
     "message": "Edytuj skróty klawiaturowe"
   },
   "options_test_button": {
-    "message": "Test"
+    "message": "Testuj głos"
   },
   "options_reset_button": {
     "message": "Resetuj"
@@ -90,7 +90,7 @@
     "message": "Ukryć tę kartę?"
   },
   "player_hidethistab_dialog_body": {
-    "message": "Jeśli ukryjesz tę kartę, ReadFollow będzie odtwarzać dźwięk wewnątrz bieżącej strony internetowej. Oznacza to, że opuszczenie strony spowoduje zatrzymanie mowy.\n\n(To ustawienie można cofnąć na stronie opcji rozszerzenia)"
+    "message": "Jeśli ukryjesz tę kartę, ReadFollow będzie odtwarzać dźwięk wewnątrz bieżącej strony internetowej. Oznacza to, że opuszczenie strony spowoduje zatrzymanie mowy.\n\n(Możesz to cofnąć w ustawieniach ReadFollow.)"
   },
   "player_hidethistab_dialog_ok_button": {
     "message": "Ukryj"
@@ -135,7 +135,7 @@
     "message": "Kliknij ikonę głośnika obok każdej odpowiedzi, aby przeczytać ją na głos"
   },
   "languages_heading": {
-    "message": "Opcje języka"
+    "message": "Języki"
   },
   "languages_back_button": {
     "message": "Powrót do opcji"
@@ -148,5 +148,197 @@
   },
   "google_translate_keep_page_open": {
     "message": "ReadFollow używa Tłumacza Google do zamiany tekstu na mowę. Proszę nie zamykać tej karty."
+  },
+  "popup_settings_button": {
+    "message": "Ustawienia"
+  },
+  "popup_controls_label": {
+    "message": "Odtwarzanie"
+  },
+  "popup_loading": {
+    "message": "Wczytywanie"
+  },
+  "popup_play_button": {
+    "message": "Czytaj na głos"
+  },
+  "popup_pause_button": {
+    "message": "Wstrzymaj"
+  },
+  "popup_rewind_button": {
+    "message": "Wstecz"
+  },
+  "popup_forward_button": {
+    "message": "Dalej"
+  },
+  "popup_stop_button": {
+    "message": "Zatrzymaj"
+  },
+  "popup_smaller_text": {
+    "message": "Mniejszy tekst"
+  },
+  "popup_larger_text": {
+    "message": "Większy tekst"
+  },
+  "popup_smaller_window": {
+    "message": "Mniejsze okno"
+  },
+  "popup_larger_window": {
+    "message": "Większe okno"
+  },
+  "popup_voice_auto": {
+    "message": "Wybór automatyczny"
+  },
+  "options_close_button": {
+    "message": "Wróć"
+  },
+  "options_section_voice": {
+    "message": "Głos"
+  },
+  "options_section_reading": {
+    "message": "Czytanie"
+  },
+  "options_filter_languages": {
+    "message": "Wybierz, które języki są wyświetlane na liście"
+  },
+  "options_rate_edit": {
+    "message": "Wpisz dokładną prędkość"
+  },
+  "options_saved": {
+    "message": "Zapisano"
+  },
+  "options_shortcuts_label": {
+    "message": "Skróty"
+  },
+  "nav_settings": {
+    "message": "Ustawienia"
+  },
+  "nav_languages": {
+    "message": "Języki"
+  },
+  "nav_custom_voices": {
+    "message": "Niestandardowe głosy"
+  },
+  "nav_advanced": {
+    "message": "Zaawansowane"
+  },
+  "advanced_playback_title": {
+    "message": "Odtwarzanie"
+  },
+  "advanced_bt_silence_gap": {
+    "message": "Napraw brak kilku pierwszych słów każdego akapitu przy używaniu słuchawek Bluetooth"
+  },
+  "languages_explanation": {
+    "message": "Wybierz języki, w których czytasz. W menu głosów będą wyświetlane tylko ich głosy. Wybierz głos przy danym języku, aby zawsze używać go dla tego języka."
+  },
+  "custom_voices_explanation": {
+    "message": "Dodaj własne konto u dostawcy głosów w chmurze, aby używać jego głosów. Twoje klucze są przechowywane tylko w tej przeglądarce. Tekst czytany tymi głosami jest wysyłany do tego dostawcy."
+  },
+  "welcome_heading": {
+    "message": "ReadFollow czyta tekst na głos i podświetla każde słowo na stronie w chwili, gdy jest wypowiadane."
+  },
+  "welcome_try_title": {
+    "message": "Wypróbuj"
+  },
+  "welcome_sample": {
+    "message": "Ten akapit jest czytany Twoim domyślnym głosem. Czytane zdanie zmienia kolor na niebieski, a bieżące słowo jest oznaczone kolorem bursztynowym i podkreślone, dzięki czemu możesz śledzić tekst wzrokiem."
+  },
+  "welcome_try_button": {
+    "message": "Przeczytaj ten akapit"
+  },
+  "welcome_start_title": {
+    "message": "Trzy sposoby na rozpoczęcie"
+  },
+  "welcome_start_select": {
+    "message": "Zaznacz tekst na dowolnej stronie i naciśnij Alt+O. Na dole strony pojawi się mały pasek z przyciskami wstrzymania, przewijania, prędkości i zatrzymania."
+  },
+  "welcome_start_menu": {
+    "message": "Kliknij zaznaczony tekst prawym przyciskiem myszy i wybierz \"Przeczytaj na głos zaznaczony tekst\"."
+  },
+  "welcome_start_button": {
+    "message": "Kliknij przycisk ReadFollow na pasku narzędzi, aby przeczytać całą stronę."
+  },
+  "welcome_pin_chrome": {
+    "message": "Nie widzisz przycisku? Kliknij ikonę puzzla obok paska adresu, a następnie pinezkę obok ReadFollow."
+  },
+  "welcome_pin_firefox": {
+    "message": "Nie widzisz przycisku? Kliknij przycisk rozszerzeń (ikonę puzzla) na pasku narzędzi, następnie koło zębate obok ReadFollow i \"Przypnij do paska narzędzi\"."
+  },
+  "welcome_shortcuts_title": {
+    "message": "Skróty klawiaturowe"
+  },
+  "welcome_shortcut_not_set": {
+    "message": "Nie ustawiono"
+  },
+  "welcome_shortcuts_missing": {
+    "message": "Nie udało się ustawić niektórych skrótów, zwykle dlatego, że inne rozszerzenie używa już tych samych klawiszy. Poniżej możesz wybrać inne klawisze."
+  },
+  "welcome_privacy_title": {
+    "message": "Twój tekst"
+  },
+  "welcome_privacy_body": {
+    "message": "W przypadku głosów wbudowanych w Twój komputer i pobieranych głosów Piper tekst nigdy nie opuszcza Twojego urządzenia. Google Translate i głosy w chmurze, które dodajesz samodzielnie (OpenAI, Azure, Amazon Polly, IBM), otrzymują tekst, który każesz im przeczytać, i nic więcej. ReadFollow nie ma kont i nie zbiera żadnych danych."
+  },
+  "welcome_settings_link": {
+    "message": "Otwórz ustawienia"
+  },
+  "options_bar_label": {
+    "message": "Pasek odtwarzania"
+  },
+  "options_bar_show_all": {
+    "message": "Pokazuj na wszystkich stronach"
+  },
+  "options_bar_hidden_on": {
+    "message": "Ukryty na $1"
+  },
+  "options_bar_shown_everywhere": {
+    "message": "Wyświetlany na każdej stronie. Aby ukryć go na jednej stronie, użyj menu na końcu paska."
+  },
+  "voice_privacy_auto": {
+    "message": "Wybór automatyczny używa głosu z tego urządzenia, jeśli któryś pasuje do języka. Jeśli żaden nie pasuje, może użyć głosu online Google, który otrzymuje czytany tekst."
+  },
+  "voice_privacy_remote": {
+    "message": "Tekst czytany tym głosem jest wysyłany do $1."
+  },
+  "voice_privacy_local": {
+    "message": "Ten głos działa na Twoim urządzeniu. Tekst na nim pozostaje."
+  },
+  "options_highlight_colors": {
+    "message": "Kolory podświetlenia"
+  },
+  "highlight_scheme_blue_amber": {
+    "message": "Niebieski i bursztynowy"
+  },
+  "highlight_scheme_green_yellow": {
+    "message": "Zielony i żółty"
+  },
+  "highlight_scheme_pink_lavender": {
+    "message": "Różowy i lawendowy"
+  },
+  "highlight_scheme_underline": {
+    "message": "Tylko podkreślenie"
+  },
+  "highlight_sample_before": {
+    "message": "Czytane zdanie i"
+  },
+  "highlight_sample_word": {
+    "message": "bieżące"
+  },
+  "highlight_sample_after": {
+    "message": "słowo."
+  },
+  "command_play": {
+    "message": "Czytaj na głos lub zatrzymaj"
+  },
+  "command_pause": {
+    "message": "Wstrzymaj lub wznów"
+  },
+  "command_stop": {
+    "message": "Zatrzymaj"
+  },
+  "command_forward": {
+    "message": "Następne zdanie"
+  },
+  "command_rewind": {
+    "message": "Poprzednie zdanie"
   }
 }

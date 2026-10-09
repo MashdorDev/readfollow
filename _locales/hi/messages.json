@@ -6,10 +6,10 @@
     "message": "ReadFollow"
   },
   "extension_description": {
-    "message": "एक क्लिक में वर्तमान वेब-पेज लेख को टेक्स्ट टू स्पीच का उपयोग करके जोर से पढ़ें। 40+ भाषाओं का समर्थन करता है।"
+    "message": "टेक्स्ट जोर से पढ़ता है और बोला जा रहा हर शब्द पेज पर हाइलाइट करता है। वेब पेज और PDF पर, ऑफ़लाइन या ऑनलाइन आवाज़ों से काम करता है।"
   },
   "options_heading": {
-    "message": "विकल्प"
+    "message": "सेटिंग्स"
   },
   "options_voice_label": {
     "message": "आवाज़"
@@ -33,7 +33,7 @@
     "message": "कस्टम आवाज़ें सक्षम करें..."
   },
   "options_enable_piper_voices": {
-    "message": "Piper आवाज़ें इंस्टॉल करें..."
+    "message": "आपके डिवाइस पर चलने वाली प्राकृतिक आवाज़ें डाउनलोड करें (Piper)..."
   },
   "options_rate_label": {
     "message": "गति"
@@ -48,16 +48,16 @@
     "message": "वॉल्यूम"
   },
   "options_show_highlighting": {
-    "message": "टेक्स्ट हाइलाइटिंग"
+    "message": "साथ-साथ टेक्स्ट"
   },
   "options_highlighting_off": {
-    "message": "बंद करें"
+    "message": "बंद"
   },
   "options_highlighting_popup": {
-    "message": "पॉपअप में दिखाएं"
+    "message": "पॉपअप में"
   },
   "options_highlighting_window": {
-    "message": "अलग विंडो में दिखाएं"
+    "message": "अलग विंडो में"
   },
   "options_audio_playback": {
     "message": "ऑडियो प्लेबैक"
@@ -69,10 +69,10 @@
     "message": "पेज में"
   },
   "options_hotkeys_link": {
-    "message": "शॉर्टकट कुंजियां संपादित करें"
+    "message": "कीबोर्ड शॉर्टकट संपादित करें"
   },
   "options_test_button": {
-    "message": "टेस्ट"
+    "message": "आवाज़ टेस्ट करें"
   },
   "options_reset_button": {
     "message": "रीसेट"
@@ -90,7 +90,7 @@
     "message": "इस टैब को छुपाएं?"
   },
   "player_hidethistab_dialog_body": {
-    "message": "यदि आप इस टैब को छुपाते हैं, तो ReadFollow वर्तमान वेबपेज के अंदर ऑडियो चलाएगा। इसका मतलब है कि पेज से दूर जाने पर स्पीच रुक जाएगी।\n\n(इस सेटिंग को एक्सटेंशन विकल्प पेज से वापस किया जा सकता है)"
+    "message": "यदि आप इस टैब को छुपाते हैं, तो ReadFollow वर्तमान वेबपेज के अंदर ऑडियो चलाएगा। इसका मतलब है कि पेज से दूर जाने पर स्पीच रुक जाएगी।\n\n(आप इसे ReadFollow की सेटिंग में वापस बदल सकते हैं।)"
   },
   "player_hidethistab_dialog_ok_button": {
     "message": "छुपाएं"
@@ -135,7 +135,7 @@
     "message": "इसे जोर से पढ़ने के लिए प्रत्येक उत्तर के बगल में स्पीकर आइकन पर क्लिक करें"
   },
   "languages_heading": {
-    "message": "भाषा विकल्प"
+    "message": "भाषाएं"
   },
   "languages_back_button": {
     "message": "विकल्पों पर वापस जाएं"
@@ -148,5 +148,197 @@
   },
   "google_translate_keep_page_open": {
     "message": "ReadFollow टेक्स्ट-टू-स्पीच के लिए Google Translate का उपयोग कर रहा है। कृपया इस टैब को खुला रखें।"
+  },
+  "popup_settings_button": {
+    "message": "सेटिंग्स"
+  },
+  "popup_controls_label": {
+    "message": "प्लेबैक"
+  },
+  "popup_loading": {
+    "message": "लोड हो रहा है"
+  },
+  "popup_play_button": {
+    "message": "जोर से पढ़ें"
+  },
+  "popup_pause_button": {
+    "message": "रोकें"
+  },
+  "popup_rewind_button": {
+    "message": "पिछला"
+  },
+  "popup_forward_button": {
+    "message": "अगला"
+  },
+  "popup_stop_button": {
+    "message": "बंद करें"
+  },
+  "popup_smaller_text": {
+    "message": "छोटा टेक्स्ट"
+  },
+  "popup_larger_text": {
+    "message": "बड़ा टेक्स्ट"
+  },
+  "popup_smaller_window": {
+    "message": "छोटी विंडो"
+  },
+  "popup_larger_window": {
+    "message": "बड़ी विंडो"
+  },
+  "popup_voice_auto": {
+    "message": "स्वचालित चयन"
+  },
+  "options_close_button": {
+    "message": "वापस"
+  },
+  "options_section_voice": {
+    "message": "आवाज़"
+  },
+  "options_section_reading": {
+    "message": "पढ़ना"
+  },
+  "options_filter_languages": {
+    "message": "चुनें कि कौन सी भाषाएं सूची में दिखें"
+  },
+  "options_rate_edit": {
+    "message": "सटीक गति टाइप करें"
+  },
+  "options_saved": {
+    "message": "सहेजा गया"
+  },
+  "options_shortcuts_label": {
+    "message": "शॉर्टकट"
+  },
+  "nav_settings": {
+    "message": "सेटिंग्स"
+  },
+  "nav_languages": {
+    "message": "भाषाएं"
+  },
+  "nav_custom_voices": {
+    "message": "कस्टम आवाज़ें"
+  },
+  "nav_advanced": {
+    "message": "उन्नत"
+  },
+  "advanced_playback_title": {
+    "message": "प्लेबैक"
+  },
+  "advanced_bt_silence_gap": {
+    "message": "Bluetooth हेडसेट इस्तेमाल करते समय हर पैराग्राफ़ के शुरुआती कुछ शब्द छूट जाने की समस्या ठीक करें"
+  },
+  "languages_explanation": {
+    "message": "वे भाषाएं चुनें जिनमें आप पढ़ते हैं। आवाज़ मेनू में सिर्फ़ उनकी आवाज़ें दिखेंगी। किसी भाषा के नीचे एक आवाज़ चुनें ताकि उस भाषा के लिए हमेशा वही इस्तेमाल हो।"
+  },
+  "custom_voices_explanation": {
+    "message": "किसी क्लाउड आवाज़ प्रदाता की आवाज़ें इस्तेमाल करने के लिए उसका अपना खाता जोड़ें। आपकी कुंजियां सिर्फ़ इसी ब्राउज़र में सहेजी जाती हैं। इन आवाज़ों से पढ़ा गया टेक्स्ट उस प्रदाता को भेजा जाता है।"
+  },
+  "welcome_heading": {
+    "message": "ReadFollow टेक्स्ट को जोर से पढ़ता है और बोले जा रहे हर शब्द को पेज पर हाइलाइट करता है।"
+  },
+  "welcome_try_title": {
+    "message": "आज़माएं"
+  },
+  "welcome_sample": {
+    "message": "यह पैराग्राफ़ आपकी डिफ़ॉल्ट आवाज़ में पढ़ा जाता है। पढ़ा जा रहा वाक्य नीला हो जाता है, और वर्तमान शब्द एम्बर रंग में चिह्नित और रेखांकित होता है, ताकि आप अपनी आंखों से साथ-साथ पढ़ सकें।"
+  },
+  "welcome_try_button": {
+    "message": "यह पैराग्राफ़ पढ़ें"
+  },
+  "welcome_start_title": {
+    "message": "शुरू करने के तीन तरीके"
+  },
+  "welcome_start_select": {
+    "message": "किसी भी पेज पर टेक्स्ट चुनें और Alt+O दबाएं। पेज के नीचे एक छोटा बार दिखता है जिसमें रोकें, आगे बढ़ें, गति और बंद करें के विकल्प होते हैं।"
+  },
+  "welcome_start_menu": {
+    "message": "चुने गए टेक्स्ट पर राइट-क्लिक करें और \"चयनित टेक्स्ट जोर से पढ़ें\" चुनें।"
+  },
+  "welcome_start_button": {
+    "message": "पूरा पेज पढ़ने के लिए टूलबार में ReadFollow बटन पर क्लिक करें।"
+  },
+  "welcome_pin_chrome": {
+    "message": "बटन नहीं दिख रहा? पता बार के पास पज़ल पीस (एक्सटेंशन) पर क्लिक करें, फिर ReadFollow के पास पिन पर।"
+  },
+  "welcome_pin_firefox": {
+    "message": "बटन नहीं दिख रहा? टूलबार में एक्सटेंशन बटन (पज़ल पीस) पर क्लिक करें, फिर ReadFollow के पास गियर पर और \"टूलबार पर पिन करें\" चुनें।"
+  },
+  "welcome_shortcuts_title": {
+    "message": "कीबोर्ड शॉर्टकट"
+  },
+  "welcome_shortcut_not_set": {
+    "message": "सेट नहीं है"
+  },
+  "welcome_shortcuts_missing": {
+    "message": "कुछ शॉर्टकट सेट नहीं हो सके, आमतौर पर इसलिए कि कोई दूसरा एक्सटेंशन पहले से वही कुंजियां इस्तेमाल करता है। आप नीचे दूसरी कुंजियां चुन सकते हैं।"
+  },
+  "welcome_privacy_title": {
+    "message": "आपका टेक्स्ट"
+  },
+  "welcome_privacy_body": {
+    "message": "आपके कंप्यूटर में मौजूद आवाज़ों और डाउनलोड की जा सकने वाली Piper आवाज़ों के साथ, टेक्स्ट कभी आपके डिवाइस से बाहर नहीं जाता। Google Translate और आपके द्वारा खुद जोड़ी गई क्लाउड आवाज़ें (OpenAI, Azure, Amazon Polly, IBM) सिर्फ़ वही टेक्स्ट पाती हैं जो आप उनसे पढ़वाते हैं, और कुछ नहीं। ReadFollow में कोई खाता नहीं है और यह कोई डेटा इकट्ठा नहीं करता।"
+  },
+  "welcome_settings_link": {
+    "message": "सेटिंग्स खोलें"
+  },
+  "options_bar_label": {
+    "message": "प्लेबैक बार"
+  },
+  "options_bar_show_all": {
+    "message": "सभी साइटों पर दिखाएं"
+  },
+  "options_bar_hidden_on": {
+    "message": "$1 पर छिपा है"
+  },
+  "options_bar_shown_everywhere": {
+    "message": "हर साइट पर दिखता है। किसी एक साइट पर छिपाने के लिए, बार के अंत में मौजूद मेनू का उपयोग करें।"
+  },
+  "voice_privacy_auto": {
+    "message": "स्वचालित चयन इस डिवाइस की कोई आवाज़ इस्तेमाल करता है जब वह भाषा से मेल खाती हो। जब कोई मेल नहीं खाती, तो यह Google की ऑनलाइन आवाज़ इस्तेमाल कर सकता है, जिसे आपका पढ़ा जाने वाला टेक्स्ट मिलता है।"
+  },
+  "voice_privacy_remote": {
+    "message": "इस आवाज़ से पढ़ा गया टेक्स्ट $1 को भेजा जाता है।"
+  },
+  "voice_privacy_local": {
+    "message": "यह आवाज़ आपके डिवाइस पर चलती है। टेक्स्ट उसी पर रहता है।"
+  },
+  "options_highlight_colors": {
+    "message": "हाइलाइट रंग"
+  },
+  "highlight_scheme_blue_amber": {
+    "message": "नीला और एम्बर"
+  },
+  "highlight_scheme_green_yellow": {
+    "message": "हरा और पीला"
+  },
+  "highlight_scheme_pink_lavender": {
+    "message": "गुलाबी और लैवेंडर"
+  },
+  "highlight_scheme_underline": {
+    "message": "सिर्फ़ रेखांकन"
+  },
+  "highlight_sample_before": {
+    "message": "पढ़ा जा रहा वाक्य और"
+  },
+  "highlight_sample_word": {
+    "message": "वर्तमान"
+  },
+  "highlight_sample_after": {
+    "message": "शब्द।"
+  },
+  "command_play": {
+    "message": "ज़ोर से पढ़ें या बंद करें"
+  },
+  "command_pause": {
+    "message": "रोकें या जारी रखें"
+  },
+  "command_stop": {
+    "message": "बंद करें"
+  },
+  "command_forward": {
+    "message": "अगला वाक्य"
+  },
+  "command_rewind": {
+    "message": "पिछला वाक्य"
   }
 }

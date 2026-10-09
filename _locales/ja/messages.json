@@ -6,10 +6,10 @@
     "message": "ReadFollow"
   },
   "extension_description": {
-    "message": "ワンクリックで現在のウェブページの記事を読み上げます。 40以上の言語をサポートします。"
+    "message": "テキストを読み上げ、読み上げ中の単語をページ上で強調表示します。ウェブページとPDFに対応。オフラインでもオンライン音声でも使えます。"
   },
   "options_heading": {
-    "message": "オプション"
+    "message": "設定"
   },
   "options_voice_label": {
     "message": "音声"
@@ -33,7 +33,7 @@
     "message": "カスタム音声を有効にする"
   },
   "options_enable_piper_voices": {
-    "message": "Piper音声をインストール..."
+    "message": "デバイス上で動作する自然な音声をダウンロード (Piper)..."
   },
   "options_rate_label": {
     "message": "スピード"
@@ -48,10 +48,10 @@
     "message": "ボリューム"
   },
   "options_show_highlighting": {
-    "message": "テキストの強調表示"
+    "message": "読み上げテキストの表示"
   },
   "options_highlighting_off": {
-    "message": "消す"
+    "message": "オフ"
   },
   "options_highlighting_popup": {
     "message": "ポップアップで表示"
@@ -72,7 +72,7 @@
     "message": "ショートカットキーを編集する"
   },
   "options_test_button": {
-    "message": "テスト"
+    "message": "音声をテスト"
   },
   "options_reset_button": {
     "message": "リセット"
@@ -81,7 +81,7 @@
     "message": "停止"
   },
   "player_tab_explanation": {
-    "message": "読み上げでは、このタブを使用して音声を再生します。このタブは、5 分間操作がないと自動的に閉じます。"
+    "message": "ReadFollow はこのタブで音声を再生します。このタブは 5 分間操作がないと自動的に閉じます。"
   },
   "player_hidethistab_link": {
     "message": "このタブを非表示"
@@ -90,7 +90,7 @@
     "message": "このタブを非表示にしますか?"
   },
   "player_hidethistab_dialog_body": {
-    "message": "このタブを非表示にすると、読み上げは現在の Web ページ内で音声を再生します。これは、ページから離れると音声が停止することを意味します。 (この設定は、拡張機能の [オプション] ページから元に戻すことができます)"
+    "message": "このタブを非表示にすると、読み上げは現在の Web ページ内で音声を再生します。これは、ページから離れると音声が停止することを意味します。(この設定は ReadFollow の設定で元に戻せます。)"
   },
   "player_hidethistab_dialog_ok_button": {
     "message": "隠れる"
@@ -102,7 +102,7 @@
     "message": "許可が必要です"
   },
   "player_permission_dialog_body": {
-    "message": "音声の再生を読み上げに許可しますか?"
+    "message": "ReadFollow に音声の再生を許可しますか?"
   },
   "player_permission_dialog_ok_button": {
     "message": "許可する"
@@ -126,16 +126,16 @@
     "message": "このウェブサイトを読み上げることはできません"
   },
   "error_file_access": {
-    "message": "拡張子[設定](open-extension-settings)のファイルURLへの読み上げアクセスを許可する必要があります "
+    "message": "拡張機能の[設定](open-extension-settings)で、ReadFollow にファイル URL へのアクセスを許可する必要があります"
   },
   "error_add_permissions": {
-    "message": "このウェブサイトにReadAloudの追加の[権限](request-permissions)を付与する必要があります"
+    "message": "このウェブサイトで ReadFollow に追加の[権限](request-permissions)を付与する必要があります"
   },
   "error_chatgpt": {
     "message": "各回答の横にあるスピーカーアイコンをクリックして読み上げます"
   },
   "languages_heading": {
-    "message": "言語オプション"
+    "message": "言語"
   },
   "languages_back_button": {
     "message": "オプションに戻る"
@@ -148,5 +148,197 @@
   },
   "google_translate_keep_page_open": {
     "message": "ReadFollowは、テキスト読み上げにGoogle翻訳を使用しています。このタブは開いたままにしてください。"
+  },
+  "popup_settings_button": {
+    "message": "設定"
+  },
+  "popup_controls_label": {
+    "message": "再生"
+  },
+  "popup_loading": {
+    "message": "読み込み中"
+  },
+  "popup_play_button": {
+    "message": "読み上げ"
+  },
+  "popup_pause_button": {
+    "message": "一時停止"
+  },
+  "popup_rewind_button": {
+    "message": "前へ"
+  },
+  "popup_forward_button": {
+    "message": "次へ"
+  },
+  "popup_stop_button": {
+    "message": "停止"
+  },
+  "popup_smaller_text": {
+    "message": "文字を小さく"
+  },
+  "popup_larger_text": {
+    "message": "文字を大きく"
+  },
+  "popup_smaller_window": {
+    "message": "ウィンドウを小さく"
+  },
+  "popup_larger_window": {
+    "message": "ウィンドウを大きく"
+  },
+  "popup_voice_auto": {
+    "message": "自動選択"
+  },
+  "options_close_button": {
+    "message": "戻る"
+  },
+  "options_section_voice": {
+    "message": "音声"
+  },
+  "options_section_reading": {
+    "message": "読み上げ"
+  },
+  "options_filter_languages": {
+    "message": "一覧に表示する言語を選択"
+  },
+  "options_rate_edit": {
+    "message": "スピードを数値で入力"
+  },
+  "options_saved": {
+    "message": "保存しました"
+  },
+  "options_shortcuts_label": {
+    "message": "ショートカット"
+  },
+  "nav_settings": {
+    "message": "設定"
+  },
+  "nav_languages": {
+    "message": "言語"
+  },
+  "nav_custom_voices": {
+    "message": "カスタム音声"
+  },
+  "nav_advanced": {
+    "message": "詳細設定"
+  },
+  "advanced_playback_title": {
+    "message": "再生"
+  },
+  "advanced_bt_silence_gap": {
+    "message": "Bluetoothヘッドセット使用時に各段落の最初の数語が聞こえない問題を修正する"
+  },
+  "languages_explanation": {
+    "message": "読む言語を選んでください。音声メニューにはその言語の音声だけが表示されます。言語の下で音声を選ぶと、その言語では常にその音声が使われます。"
+  },
+  "custom_voices_explanation": {
+    "message": "クラウド音声サービスの自分のアカウントを追加すると、その音声を使えます。キーはこのブラウザにのみ保存されます。これらの音声で読み上げるテキストは、そのサービスに送信されます。"
+  },
+  "welcome_heading": {
+    "message": "ReadFollowはテキストを読み上げ、読み上げ中の単語をページ上で強調表示します。"
+  },
+  "welcome_try_title": {
+    "message": "試してみる"
+  },
+  "welcome_sample": {
+    "message": "この段落はデフォルトの音声で読み上げられます。読み上げ中の文は青色になり、現在の単語は琥珀色の下線付きで示されるので、目で追いながら聞くことができます。"
+  },
+  "welcome_try_button": {
+    "message": "この段落を読み上げる"
+  },
+  "welcome_start_title": {
+    "message": "3つの始め方"
+  },
+  "welcome_start_select": {
+    "message": "任意のページでテキストを選択し、Alt+Oを押します。ページ下部に小さなバーが表示され、一時停止、スキップ、スピード、停止を操作できます。"
+  },
+  "welcome_start_menu": {
+    "message": "選択したテキストを右クリックし、「選択したテキストを読み上げる」を選びます。"
+  },
+  "welcome_start_button": {
+    "message": "ツールバーのReadFollowボタンをクリックすると、ページ全体を読み上げます。"
+  },
+  "welcome_pin_chrome": {
+    "message": "ボタンが見当たらない場合は、アドレスバーの横にあるパズルのピースのアイコン (拡張機能) をクリックし、ReadFollowの横にあるピンをクリックしてください。"
+  },
+  "welcome_pin_firefox": {
+    "message": "ボタンが見当たらない場合は、ツールバーの拡張機能ボタン (パズルのピース) をクリックし、ReadFollowの横にある歯車から「ツールバーにピン留め」を選んでください。"
+  },
+  "welcome_shortcuts_title": {
+    "message": "ショートカットキー"
+  },
+  "welcome_shortcut_not_set": {
+    "message": "未設定"
+  },
+  "welcome_shortcuts_missing": {
+    "message": "一部のショートカットを設定できませんでした。多くの場合、別の拡張機能が同じキーを使っていることが原因です。下で別のキーを選べます。"
+  },
+  "welcome_privacy_title": {
+    "message": "テキストの扱い"
+  },
+  "welcome_privacy_body": {
+    "message": "コンピュータに組み込まれた音声とダウンロード可能なPiper音声では、テキストがデバイスの外に出ることはありません。Google翻訳と自分で追加したクラウド音声 (OpenAI、Azure、Amazon Polly、IBM) は、読み上げを依頼したテキストだけを受け取ります。ReadFollowにはアカウントがなく、データを一切収集しません。"
+  },
+  "welcome_settings_link": {
+    "message": "設定を開く"
+  },
+  "options_bar_label": {
+    "message": "再生バー"
+  },
+  "options_bar_show_all": {
+    "message": "すべてのサイトで表示"
+  },
+  "options_bar_hidden_on": {
+    "message": "$1 では非表示"
+  },
+  "options_bar_shown_everywhere": {
+    "message": "すべてのサイトで表示されます。特定のサイトで非表示にするには、バーの端にあるメニューを使ってください。"
+  },
+  "voice_privacy_auto": {
+    "message": "自動選択では、言語に合う音声がこのデバイスにあればそれを使います。ない場合はGoogleのオンライン音声を使うことがあり、読み上げるテキストはGoogleに送信されます。"
+  },
+  "voice_privacy_remote": {
+    "message": "この音声で読み上げるテキストは $1 に送信されます。"
+  },
+  "voice_privacy_local": {
+    "message": "この音声はデバイス上で動作します。テキストはデバイスの外に出ません。"
+  },
+  "options_highlight_colors": {
+    "message": "強調表示の色"
+  },
+  "highlight_scheme_blue_amber": {
+    "message": "青と琥珀色"
+  },
+  "highlight_scheme_green_yellow": {
+    "message": "緑と黄色"
+  },
+  "highlight_scheme_pink_lavender": {
+    "message": "ピンクとラベンダー"
+  },
+  "highlight_scheme_underline": {
+    "message": "下線のみ"
+  },
+  "highlight_sample_before": {
+    "message": "読み上げ中の文と"
+  },
+  "highlight_sample_word": {
+    "message": "現在の"
+  },
+  "highlight_sample_after": {
+    "message": "単語。"
+  },
+  "command_play": {
+    "message": "読み上げを開始または停止"
+  },
+  "command_pause": {
+    "message": "一時停止または再開"
+  },
+  "command_stop": {
+    "message": "停止"
+  },
+  "command_forward": {
+    "message": "次の文"
+  },
+  "command_rewind": {
+    "message": "前の文"
   }
 }

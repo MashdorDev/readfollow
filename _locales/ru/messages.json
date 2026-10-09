@@ -6,10 +6,10 @@
     "message": "ReadFollow"
   },
   "extension_description": {
-    "message": "Прочитайте вслух текущую статью на веб-странице одним щелчком мыши, используя преобразование текста в речь (TTS). Поддерживает более 40 языков."
+    "message": "Читает текст вслух и выделяет на странице каждое произносимое слово. Работает на сайтах и в PDF, офлайн или с онлайн-голосами."
   },
   "options_heading": {
-    "message": "Параметры"
+    "message": "Настройки"
   },
   "options_voice_label": {
     "message": "Голос"
@@ -33,7 +33,7 @@
     "message": "Включить пользовательские голоса"
   },
   "options_enable_piper_voices": {
-    "message": "Установить голоса Piper..."
+    "message": "Скачать естественные голоса, работающие на вашем устройстве (Piper)..."
   },
   "options_rate_label": {
     "message": "Скорость"
@@ -48,16 +48,16 @@
     "message": "Громкость"
   },
   "options_show_highlighting": {
-    "message": "Выделение текста"
+    "message": "Текст для отслеживания"
   },
   "options_highlighting_off": {
-    "message": "Выключить"
+    "message": "Выключено"
   },
   "options_highlighting_popup": {
-    "message": "Показать во всплывающем окне"
+    "message": "Во всплывающем окне"
   },
   "options_highlighting_window": {
-    "message": "Показать в отдельном окне"
+    "message": "В отдельном окне"
   },
   "options_audio_playback": {
     "message": "Воспроизведение аудио"
@@ -72,7 +72,7 @@
     "message": "Изменить сочетания клавиш"
   },
   "options_test_button": {
-    "message": "Тест"
+    "message": "Проверить голос"
   },
   "options_reset_button": {
     "message": "Сброс"
@@ -81,7 +81,7 @@
     "message": "Остановить"
   },
   "player_tab_explanation": {
-    "message": "Функция «Чтение вслух» использует эту вкладку для воспроизведения звука. Эта вкладка автоматически закроется через 5 минут бездействия."
+    "message": "ReadFollow использует эту вкладку для воспроизведения звука. Вкладка закроется автоматически после 5 минут бездействия."
   },
   "player_hidethistab_link": {
     "message": "Скрыть эту вкладку"
@@ -90,7 +90,7 @@
     "message": "Скрыть эту вкладку?"
   },
   "player_hidethistab_dialog_body": {
-    "message": "Если вы скроете эту вкладку, «Читать вслух» будет воспроизводить аудио на текущей веб-странице. Это означает, что переход со страницы приведет к остановке речи. (Эту настройку можно отменить на странице параметров расширения)"
+    "message": "Если вы скроете эту вкладку, «Читать вслух» будет воспроизводить аудио на текущей веб-странице. Это означает, что переход со страницы приведет к остановке речи. (Это можно вернуть в настройках ReadFollow.)"
   },
   "player_hidethistab_dialog_ok_button": {
     "message": "Скрывать"
@@ -102,7 +102,7 @@
     "message": "Запрошено разрешение"
   },
   "player_permission_dialog_body": {
-    "message": "Разрешить чтение вслух для воспроизведения звука?"
+    "message": "Разрешить ReadFollow воспроизводить звук?"
   },
   "player_permission_dialog_ok_button": {
     "message": "Разрешать"
@@ -135,7 +135,7 @@
     "message": "Нажмите на значок динамика рядом с каждым ответом, чтобы прочитать его вслух"
   },
   "languages_heading": {
-    "message": "Параметры языка"
+    "message": "Языки"
   },
   "languages_back_button": {
     "message": "Вернуться к параметрам"
@@ -148,5 +148,197 @@
   },
   "google_translate_keep_page_open": {
     "message": "ReadFollow использует Google Translate для преобразования текста в речь.  Пожалуйста, держите эту вкладку открытой."
+  },
+  "popup_settings_button": {
+    "message": "Настройки"
+  },
+  "popup_controls_label": {
+    "message": "Воспроизведение"
+  },
+  "popup_loading": {
+    "message": "Загрузка"
+  },
+  "popup_play_button": {
+    "message": "Читать вслух"
+  },
+  "popup_pause_button": {
+    "message": "Пауза"
+  },
+  "popup_rewind_button": {
+    "message": "Назад"
+  },
+  "popup_forward_button": {
+    "message": "Далее"
+  },
+  "popup_stop_button": {
+    "message": "Остановить"
+  },
+  "popup_smaller_text": {
+    "message": "Мельче текст"
+  },
+  "popup_larger_text": {
+    "message": "Крупнее текст"
+  },
+  "popup_smaller_window": {
+    "message": "Меньше окно"
+  },
+  "popup_larger_window": {
+    "message": "Больше окно"
+  },
+  "popup_voice_auto": {
+    "message": "Автовыбор"
+  },
+  "options_close_button": {
+    "message": "Назад"
+  },
+  "options_section_voice": {
+    "message": "Голос"
+  },
+  "options_section_reading": {
+    "message": "Чтение"
+  },
+  "options_filter_languages": {
+    "message": "Выберите, какие языки показывать"
+  },
+  "options_rate_edit": {
+    "message": "Введите точную скорость"
+  },
+  "options_saved": {
+    "message": "Сохранено"
+  },
+  "options_shortcuts_label": {
+    "message": "Сочетания клавиш"
+  },
+  "nav_settings": {
+    "message": "Настройки"
+  },
+  "nav_languages": {
+    "message": "Языки"
+  },
+  "nav_custom_voices": {
+    "message": "Пользовательские голоса"
+  },
+  "nav_advanced": {
+    "message": "Дополнительно"
+  },
+  "advanced_playback_title": {
+    "message": "Воспроизведение"
+  },
+  "advanced_bt_silence_gap": {
+    "message": "Исправить пропуск первых слов каждого абзаца при использовании Bluetooth-гарнитуры"
+  },
+  "languages_explanation": {
+    "message": "Выберите языки, на которых вы читаете. В меню голосов показываются только их голоса. Выберите голос под языком, чтобы всегда использовать его для этого языка."
+  },
+  "custom_voices_explanation": {
+    "message": "Добавьте свою учетную запись у поставщика облачных голосов, чтобы использовать его голоса. Ваши ключи хранятся только в этом браузере. Текст, который вы читаете этими голосами, отправляется этому поставщику."
+  },
+  "welcome_heading": {
+    "message": "ReadFollow читает текст вслух и выделяет на странице каждое произносимое слово."
+  },
+  "welcome_try_title": {
+    "message": "Попробуйте"
+  },
+  "welcome_sample": {
+    "message": "Этот абзац читается голосом по умолчанию. Читаемое предложение становится синим, а текущее слово выделяется янтарным цветом и подчеркивается, чтобы вы могли следить за текстом глазами."
+  },
+  "welcome_try_button": {
+    "message": "Прочитать этот абзац"
+  },
+  "welcome_start_title": {
+    "message": "Три способа начать"
+  },
+  "welcome_start_select": {
+    "message": "Выделите текст на любой странице и нажмите Alt+O. Внизу страницы появится небольшая панель с паузой, перемоткой, скоростью и остановкой."
+  },
+  "welcome_start_menu": {
+    "message": "Щелкните выделенный текст правой кнопкой мыши и выберите «Прочитать вслух выделенный текст»."
+  },
+  "welcome_start_button": {
+    "message": "Нажмите кнопку ReadFollow на панели инструментов, чтобы прочитать всю страницу."
+  },
+  "welcome_pin_chrome": {
+    "message": "Не видите кнопку? Нажмите на значок пазла рядом с адресной строкой, затем на значок булавки рядом с ReadFollow."
+  },
+  "welcome_pin_firefox": {
+    "message": "Не видите кнопку? Нажмите кнопку расширений (пазл) на панели инструментов, затем шестеренку рядом с ReadFollow и «Закрепить на панели инструментов»."
+  },
+  "welcome_shortcuts_title": {
+    "message": "Сочетания клавиш"
+  },
+  "welcome_shortcut_not_set": {
+    "message": "Не задано"
+  },
+  "welcome_shortcuts_missing": {
+    "message": "Некоторые сочетания клавиш не удалось задать, обычно потому, что другое расширение уже использует те же клавиши. Ниже можно выбрать другие клавиши."
+  },
+  "welcome_privacy_title": {
+    "message": "Ваш текст"
+  },
+  "welcome_privacy_body": {
+    "message": "При использовании встроенных голосов компьютера и загружаемых голосов Piper текст никогда не покидает ваше устройство. Google Translate и облачные голоса, которые вы добавляете сами (OpenAI, Azure, Amazon Polly, IBM), получают текст, который вы просите их прочитать, и ничего больше. В ReadFollow нет учетной записи, и он не собирает данные."
+  },
+  "welcome_settings_link": {
+    "message": "Открыть настройки"
+  },
+  "options_bar_label": {
+    "message": "Панель воспроизведения"
+  },
+  "options_bar_show_all": {
+    "message": "Показывать на всех сайтах"
+  },
+  "options_bar_hidden_on": {
+    "message": "Скрыта на $1"
+  },
+  "options_bar_shown_everywhere": {
+    "message": "Показывается на всех сайтах. Чтобы скрыть ее на одном сайте, используйте меню в конце панели."
+  },
+  "voice_privacy_auto": {
+    "message": "Автовыбор использует голос на этом устройстве, если он подходит к языку. Если подходящего нет, может использоваться онлайн-голос Google, который получает читаемый вами текст."
+  },
+  "voice_privacy_remote": {
+    "message": "Текст, который вы читаете этим голосом, отправляется в $1."
+  },
+  "voice_privacy_local": {
+    "message": "Этот голос работает на вашем устройстве. Текст остается на нем."
+  },
+  "options_highlight_colors": {
+    "message": "Цвета выделения"
+  },
+  "highlight_scheme_blue_amber": {
+    "message": "Синий и янтарный"
+  },
+  "highlight_scheme_green_yellow": {
+    "message": "Зеленый и желтый"
+  },
+  "highlight_scheme_pink_lavender": {
+    "message": "Розовый и лавандовый"
+  },
+  "highlight_scheme_underline": {
+    "message": "Только подчеркивание"
+  },
+  "highlight_sample_before": {
+    "message": "Читаемое предложение и"
+  },
+  "highlight_sample_word": {
+    "message": "текущее"
+  },
+  "highlight_sample_after": {
+    "message": "слово."
+  },
+  "command_play": {
+    "message": "Читать вслух или остановить"
+  },
+  "command_pause": {
+    "message": "Пауза или продолжить"
+  },
+  "command_stop": {
+    "message": "Остановить"
+  },
+  "command_forward": {
+    "message": "Следующее предложение"
+  },
+  "command_rewind": {
+    "message": "Предыдущее предложение"
   }
 }

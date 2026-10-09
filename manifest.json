@@ -63,22 +63,22 @@
   "commands": {
     "play": {
       "suggested_key": {"default": "Alt+O"},
-      "description": "Play/Stop"
+      "description": "__MSG_command_play__"
     },
     "pause": {
       "suggested_key": {"default": "Alt+P"},
-      "description": "Play/Pause"
+      "description": "__MSG_command_pause__"
     },
     "stop": {
-      "description": "Stop"
+      "description": "__MSG_command_stop__"
     },
     "forward": {
       "suggested_key": {"default": "Alt+Period"},
-      "description": "Forward"
+      "description": "__MSG_command_forward__"
     },
     "rewind": {
       "suggested_key": {"default": "Alt+Comma"},
-      "description": "Rewind"
+      "description": "__MSG_command_rewind__"
     }
   }
 }

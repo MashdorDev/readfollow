@@ -6,7 +6,7 @@
     "message": "ReadFollow"
   },
   "extension_description": {
-    "message": "Lue nykyinen verkkosivu ääneen yhdellä napsautuksella käyttäen tekstistä puheeksi -tekniikkaa. Tukee yli 40 kieltä."
+    "message": "Lukee tekstin ääneen ja korostaa jokaisen sanan sivulla, kun se luetaan. Toimii verkkosivuilla ja PDF:issä, offline tai verkkoäänin."
   },
   "options_heading": {
     "message": "Asetukset"
@@ -33,7 +33,7 @@
     "message": "Ota mukautetut äänet käyttöön..."
   },
   "options_enable_piper_voices": {
-    "message": "Asenna Piper-äänet..."
+    "message": "Lataa luonnollisia ääniä, jotka toimivat laitteellasi (Piper)..."
   },
   "options_rate_label": {
     "message": "Nopeus"
@@ -48,16 +48,16 @@
     "message": "Äänenvoimakkuus"
   },
   "options_show_highlighting": {
-    "message": "Tekstin korostus"
+    "message": "Seurattava teksti"
   },
   "options_highlighting_off": {
     "message": "Pois päältä"
   },
   "options_highlighting_popup": {
-    "message": "Näytä ponnahdusikkunassa"
+    "message": "Ponnahdusikkunassa"
   },
   "options_highlighting_window": {
-    "message": "Näytä erillisessä ikkunassa"
+    "message": "Erillisessä ikkunassa"
   },
   "options_audio_playback": {
     "message": "Äänen toisto"
@@ -72,7 +72,7 @@
     "message": "Muokkaa pikanäppäimiä"
   },
   "options_test_button": {
-    "message": "Testaa"
+    "message": "Testaa ääntä"
   },
   "options_reset_button": {
     "message": "Nollaa"
@@ -90,7 +90,7 @@
     "message": "Piilota tämä välilehti?"
   },
   "player_hidethistab_dialog_body": {
-    "message": "Jos piilotat tämän välilehden, ReadFollow toistaa äänen nykyisen verkkosivun sisällä. Tämä tarkoittaa, että sivulta poistuminen pysäyttää puheen.\n\n(Tämä asetus voidaan kumota laajennuksen asetussivulta)"
+    "message": "Jos piilotat tämän välilehden, ReadFollow toistaa äänen nykyisen verkkosivun sisällä. Tämä tarkoittaa, että sivulta poistuminen pysäyttää puheen.\n\n(Voit palauttaa tämän ReadFollow'n asetuksista.)"
   },
   "player_hidethistab_dialog_ok_button": {
     "message": "Piilota"
@@ -135,7 +135,7 @@
     "message": "Napsauta kaiutinkuvaketta jokaisen vastauksen vieressä lukeaksesi sen ääneen"
   },
   "languages_heading": {
-    "message": "Kieliasetukset"
+    "message": "Kielet"
   },
   "languages_back_button": {
     "message": "Takaisin asetuksiin"
@@ -148,5 +148,197 @@
   },
   "google_translate_keep_page_open": {
     "message": "ReadFollow käyttää Google-kääntäjää tekstistä puheeksi -toimintoon. Pidä tämä välilehti auki."
+  },
+  "popup_settings_button": {
+    "message": "Asetukset"
+  },
+  "popup_controls_label": {
+    "message": "Toisto"
+  },
+  "popup_loading": {
+    "message": "Ladataan"
+  },
+  "popup_play_button": {
+    "message": "Lue ääneen"
+  },
+  "popup_pause_button": {
+    "message": "Tauko"
+  },
+  "popup_rewind_button": {
+    "message": "Edellinen"
+  },
+  "popup_forward_button": {
+    "message": "Seuraava"
+  },
+  "popup_stop_button": {
+    "message": "Pysäytä"
+  },
+  "popup_smaller_text": {
+    "message": "Pienempi teksti"
+  },
+  "popup_larger_text": {
+    "message": "Suurempi teksti"
+  },
+  "popup_smaller_window": {
+    "message": "Pienempi ikkuna"
+  },
+  "popup_larger_window": {
+    "message": "Suurempi ikkuna"
+  },
+  "popup_voice_auto": {
+    "message": "Automaattinen valinta"
+  },
+  "options_close_button": {
+    "message": "Takaisin"
+  },
+  "options_section_voice": {
+    "message": "Ääni"
+  },
+  "options_section_reading": {
+    "message": "Lukeminen"
+  },
+  "options_filter_languages": {
+    "message": "Valitse, mitkä kielet näytetään"
+  },
+  "options_rate_edit": {
+    "message": "Kirjoita tarkka nopeus"
+  },
+  "options_saved": {
+    "message": "Tallennettu"
+  },
+  "options_shortcuts_label": {
+    "message": "Pikanäppäimet"
+  },
+  "nav_settings": {
+    "message": "Asetukset"
+  },
+  "nav_languages": {
+    "message": "Kielet"
+  },
+  "nav_custom_voices": {
+    "message": "Mukautetut äänet"
+  },
+  "nav_advanced": {
+    "message": "Lisäasetukset"
+  },
+  "advanced_playback_title": {
+    "message": "Toisto"
+  },
+  "advanced_bt_silence_gap": {
+    "message": "Korjaa kunkin kappaleen ensimmäisten sanojen puuttuminen Bluetooth-kuulokkeita käytettäessä"
+  },
+  "languages_explanation": {
+    "message": "Valitse kielet, joita luet. Vain niiden äänet näytetään äänivalikossa. Valitse kielen alta ääni, niin sitä käytetään aina kyseiselle kielelle."
+  },
+  "custom_voices_explanation": {
+    "message": "Lisää oma tilisi pilviäänipalveluun käyttääksesi sen ääniä. Avaimesi tallennetaan vain tähän selaimeen. Näillä äänillä luettava teksti lähetetään kyseiselle palveluntarjoajalle."
+  },
+  "welcome_heading": {
+    "message": "ReadFollow lukee tekstin ääneen ja korostaa sivulla jokaisen sanan sitä mukaa kuin se luetaan."
+  },
+  "welcome_try_title": {
+    "message": "Kokeile"
+  },
+  "welcome_sample": {
+    "message": "Tämä kappale luetaan oletusäänelläsi. Luettava lause muuttuu siniseksi, ja nykyinen sana merkitään meripihkan värillä ja alleviivataan, joten voit seurata tekstiä silmilläsi."
+  },
+  "welcome_try_button": {
+    "message": "Lue tämä kappale"
+  },
+  "welcome_start_title": {
+    "message": "Kolme tapaa aloittaa"
+  },
+  "welcome_start_select": {
+    "message": "Valitse tekstiä millä tahansa sivulla ja paina Alt+O. Sivun alareunaan ilmestyy pieni palkki, jossa on tauko, ohitus, nopeus ja pysäytys."
+  },
+  "welcome_start_menu": {
+    "message": "Napsauta valittua tekstiä hiiren oikealla painikkeella ja valitse \"Lue valittu teksti ääneen\"."
+  },
+  "welcome_start_button": {
+    "message": "Napsauta työkalupalkin ReadFollow-painiketta lukeaksesi koko sivun."
+  },
+  "welcome_pin_chrome": {
+    "message": "Eikö painiketta näy? Napsauta osoitepalkin vieressä olevaa palapelin palaa ja sitten ReadFollow'n vieressä olevaa nastaa."
+  },
+  "welcome_pin_firefox": {
+    "message": "Eikö painiketta näy? Napsauta työkalupalkin laajennuspainiketta (palapelin pala), sitten ReadFollow'n vieressä olevaa ratasta ja \"Kiinnitä työkalupalkkiin\"."
+  },
+  "welcome_shortcuts_title": {
+    "message": "Pikanäppäimet"
+  },
+  "welcome_shortcut_not_set": {
+    "message": "Ei asetettu"
+  },
+  "welcome_shortcuts_missing": {
+    "message": "Joitakin pikanäppäimiä ei voitu asettaa, yleensä koska toinen laajennus käyttää jo samoja näppäimiä. Voit valita muut näppäimet alla."
+  },
+  "welcome_privacy_title": {
+    "message": "Tekstisi"
+  },
+  "welcome_privacy_body": {
+    "message": "Kun käytät tietokoneesi sisäänrakennettuja ääniä ja ladattavia Piper-ääniä, teksti ei koskaan poistu laitteeltasi. Google Translate ja itse lisäämäsi pilviäänet (OpenAI, Azure, Amazon Polly, IBM) vastaanottavat tekstin, jonka pyydät niitä lukemaan, eivätkä mitään muuta. ReadFollow ei vaadi tiliä eikä kerää tietoja."
+  },
+  "welcome_settings_link": {
+    "message": "Avaa asetukset"
+  },
+  "options_bar_label": {
+    "message": "Toistopalkki"
+  },
+  "options_bar_show_all": {
+    "message": "Näytä kaikilla sivustoilla"
+  },
+  "options_bar_hidden_on": {
+    "message": "Piilotettu sivustolla $1"
+  },
+  "options_bar_shown_everywhere": {
+    "message": "Näytetään kaikilla sivustoilla. Voit piilottaa sen yhdeltä sivustolta palkin lopussa olevasta valikosta."
+  },
+  "voice_privacy_auto": {
+    "message": "Automaattinen valinta käyttää tämän laitteen ääntä, kun jokin vastaa kieltä. Jos mikään ei vastaa, se voi käyttää Googlen verkkoääntä, joka vastaanottaa lukemasi tekstin."
+  },
+  "voice_privacy_remote": {
+    "message": "Tällä äänellä luettava teksti lähetetään palveluun $1."
+  },
+  "voice_privacy_local": {
+    "message": "Tämä ääni toimii laitteellasi. Teksti pysyy laitteella."
+  },
+  "options_highlight_colors": {
+    "message": "Korostusvärit"
+  },
+  "highlight_scheme_blue_amber": {
+    "message": "Sininen ja meripihka"
+  },
+  "highlight_scheme_green_yellow": {
+    "message": "Vihreä ja keltainen"
+  },
+  "highlight_scheme_pink_lavender": {
+    "message": "Vaaleanpunainen ja laventeli"
+  },
+  "highlight_scheme_underline": {
+    "message": "Vain alleviivaus"
+  },
+  "highlight_sample_before": {
+    "message": "Luettava lause ja"
+  },
+  "highlight_sample_word": {
+    "message": "nykyinen"
+  },
+  "highlight_sample_after": {
+    "message": "sana."
+  },
+  "command_play": {
+    "message": "Lue ääneen tai pysäytä"
+  },
+  "command_pause": {
+    "message": "Keskeytä tai jatka"
+  },
+  "command_stop": {
+    "message": "Pysäytä"
+  },
+  "command_forward": {
+    "message": "Seuraava lause"
+  },
+  "command_rewind": {
+    "message": "Edellinen lause"
   }
 }

@@ -6,10 +6,10 @@
     "message": "ReadFollow"
   },
   "extension_description": {
-    "message": "Přečtěte nahlas aktuální článek na webové stránce jedním kliknutím pomocí převodu textu na řeč. Podporuje více než 40 jazyků."
+    "message": "Čte text nahlas a zvýrazňuje na stránce každé slovo, když zazní. Funguje na webových stránkách i v PDF, offline nebo s online hlasy."
   },
   "options_heading": {
-    "message": "Možnosti"
+    "message": "Nastavení"
   },
   "options_voice_label": {
     "message": "Hlas"
@@ -33,7 +33,7 @@
     "message": "Povolit vlastní hlasy..."
   },
   "options_enable_piper_voices": {
-    "message": "Nainstalovat hlasy Piper..."
+    "message": "Stáhnout přirozené hlasy, které běží ve vašem zařízení (Piper)..."
   },
   "options_rate_label": {
     "message": "Rychlost"
@@ -48,16 +48,16 @@
     "message": "Hlasitost"
   },
   "options_show_highlighting": {
-    "message": "Zvýraznění textu"
+    "message": "Text ke sledování"
   },
   "options_highlighting_off": {
-    "message": "Vypnout"
+    "message": "Vypnuto"
   },
   "options_highlighting_popup": {
-    "message": "Zobrazit ve vyskakovacím okně"
+    "message": "Ve vyskakovacím okně"
   },
   "options_highlighting_window": {
-    "message": "Zobrazit v samostatném okně"
+    "message": "V samostatném okně"
   },
   "options_audio_playback": {
     "message": "Přehrávání zvuku"
@@ -72,7 +72,7 @@
     "message": "Upravit klávesové zkratky"
   },
   "options_test_button": {
-    "message": "Test"
+    "message": "Vyzkoušet hlas"
   },
   "options_reset_button": {
     "message": "Obnovit"
@@ -90,7 +90,7 @@
     "message": "Skrýt tuto kartu?"
   },
   "player_hidethistab_dialog_body": {
-    "message": "Pokud skryjete tuto kartu, ReadFollow bude přehrávat zvuk uvnitř aktuální webové stránky. To znamená, že opuštění stránky způsobí zastavení řeči.\n\n(Toto nastavení lze vrátit zpět ze stránky možností rozšíření)"
+    "message": "Pokud skryjete tuto kartu, ReadFollow bude přehrávat zvuk uvnitř aktuální webové stránky. To znamená, že opuštění stránky způsobí zastavení řeči.\n\n(Toto nastavení můžete vrátit v nastavení ReadFollow.)"
   },
   "player_hidethistab_dialog_ok_button": {
     "message": "Skrýt"
@@ -135,7 +135,7 @@
     "message": "Klikněte na ikonu reproduktoru vedle každé odpovědi pro její přečtení nahlas"
   },
   "languages_heading": {
-    "message": "Možnosti jazyka"
+    "message": "Jazyky"
   },
   "languages_back_button": {
     "message": "Zpět na možnosti"
@@ -148,5 +148,197 @@
   },
   "google_translate_keep_page_open": {
     "message": "ReadFollow používá Google Překladač pro převod textu na řeč. Prosím ponechte tuto kartu otevřenou."
+  },
+  "popup_settings_button": {
+    "message": "Nastavení"
+  },
+  "popup_controls_label": {
+    "message": "Přehrávání"
+  },
+  "popup_loading": {
+    "message": "Načítání"
+  },
+  "popup_play_button": {
+    "message": "Číst nahlas"
+  },
+  "popup_pause_button": {
+    "message": "Pozastavit"
+  },
+  "popup_rewind_button": {
+    "message": "Předchozí"
+  },
+  "popup_forward_button": {
+    "message": "Další"
+  },
+  "popup_stop_button": {
+    "message": "Zastavit"
+  },
+  "popup_smaller_text": {
+    "message": "Menší text"
+  },
+  "popup_larger_text": {
+    "message": "Větší text"
+  },
+  "popup_smaller_window": {
+    "message": "Menší okno"
+  },
+  "popup_larger_window": {
+    "message": "Větší okno"
+  },
+  "popup_voice_auto": {
+    "message": "Automatický výběr"
+  },
+  "options_close_button": {
+    "message": "Zpět"
+  },
+  "options_section_voice": {
+    "message": "Hlas"
+  },
+  "options_section_reading": {
+    "message": "Čtení"
+  },
+  "options_filter_languages": {
+    "message": "Vyberte, které jazyky se zobrazí v seznamu"
+  },
+  "options_rate_edit": {
+    "message": "Zadejte přesnou rychlost"
+  },
+  "options_saved": {
+    "message": "Uloženo"
+  },
+  "options_shortcuts_label": {
+    "message": "Zkratky"
+  },
+  "nav_settings": {
+    "message": "Nastavení"
+  },
+  "nav_languages": {
+    "message": "Jazyky"
+  },
+  "nav_custom_voices": {
+    "message": "Vlastní hlasy"
+  },
+  "nav_advanced": {
+    "message": "Pokročilé"
+  },
+  "advanced_playback_title": {
+    "message": "Přehrávání"
+  },
+  "advanced_bt_silence_gap": {
+    "message": "Opravit chybějící první slova každého odstavce při použití sluchátek Bluetooth"
+  },
+  "languages_explanation": {
+    "message": "Vyberte jazyky, ve kterých čtete. V nabídce hlasů se zobrazí jen jejich hlasy. Když u jazyka vyberete hlas, bude se pro tento jazyk používat vždy."
+  },
+  "custom_voices_explanation": {
+    "message": "Přidejte vlastní účet u poskytovatele cloudových hlasů a používejte jeho hlasy. Vaše klíče jsou uloženy pouze v tomto prohlížeči. Text, který čtete těmito hlasy, se odesílá tomuto poskytovateli."
+  },
+  "welcome_heading": {
+    "message": "ReadFollow čte text nahlas a zvýrazňuje na stránce každé slovo ve chvíli, kdy zazní."
+  },
+  "welcome_try_title": {
+    "message": "Vyzkoušejte"
+  },
+  "welcome_sample": {
+    "message": "Tento odstavec se čte vaším výchozím hlasem. Právě čtená věta zmodrá a aktuální slovo je označeno jantarovou barvou a podtrženo, takže můžete text sledovat očima."
+  },
+  "welcome_try_button": {
+    "message": "Přečíst tento odstavec"
+  },
+  "welcome_start_title": {
+    "message": "Tři způsoby, jak začít"
+  },
+  "welcome_start_select": {
+    "message": "Vyberte text na libovolné stránce a stiskněte Alt+O. V dolní části stránky se objeví malá lišta s pozastavením, přeskočením, rychlostí a zastavením."
+  },
+  "welcome_start_menu": {
+    "message": "Klikněte pravým tlačítkem na vybraný text a zvolte \"Přečíst nahlas vybraný text\"."
+  },
+  "welcome_start_button": {
+    "message": "Klikněte na tlačítko ReadFollow na liště nástrojů a přečtěte celou stránku."
+  },
+  "welcome_pin_chrome": {
+    "message": "Nevidíte tlačítko? Klikněte na dílek skládačky vedle adresního řádku a potom na špendlík vedle ReadFollow."
+  },
+  "welcome_pin_firefox": {
+    "message": "Nevidíte tlačítko? Klikněte na tlačítko rozšíření (dílek skládačky) na liště nástrojů, potom na ozubené kolo vedle ReadFollow a na \"Připnout na lištu\"."
+  },
+  "welcome_shortcuts_title": {
+    "message": "Klávesové zkratky"
+  },
+  "welcome_shortcut_not_set": {
+    "message": "Nenastaveno"
+  },
+  "welcome_shortcuts_missing": {
+    "message": "Některé zkratky se nepodařilo nastavit, obvykle proto, že stejné klávesy už používá jiné rozšíření. Níže můžete vybrat jiné klávesy."
+  },
+  "welcome_privacy_title": {
+    "message": "Váš text"
+  },
+  "welcome_privacy_body": {
+    "message": "S hlasy vestavěnými ve vašem počítači a se stahovatelnými hlasy Piper text nikdy neopustí vaše zařízení. Google Translate a cloudové hlasy, které si sami přidáte (OpenAI, Azure, Amazon Polly, IBM), dostávají text, který jim zadáte k přečtení, a nic jiného. ReadFollow nemá žádné účty a neshromažďuje žádná data."
+  },
+  "welcome_settings_link": {
+    "message": "Otevřít nastavení"
+  },
+  "options_bar_label": {
+    "message": "Lišta přehrávání"
+  },
+  "options_bar_show_all": {
+    "message": "Zobrazit na všech webech"
+  },
+  "options_bar_hidden_on": {
+    "message": "Skryto na $1"
+  },
+  "options_bar_shown_everywhere": {
+    "message": "Zobrazuje se na každém webu. Chcete-li ji na některém webu skrýt, použijte nabídku na konci lišty."
+  },
+  "voice_privacy_auto": {
+    "message": "Automatický výběr použije hlas v tomto zařízení, pokud některý odpovídá jazyku. Pokud žádný neodpovídá, může použít online hlas Google, který dostává čtený text."
+  },
+  "voice_privacy_remote": {
+    "message": "Text, který čtete tímto hlasem, se odesílá do $1."
+  },
+  "voice_privacy_local": {
+    "message": "Tento hlas běží ve vašem zařízení. Text v něm zůstává."
+  },
+  "options_highlight_colors": {
+    "message": "Barvy zvýraznění"
+  },
+  "highlight_scheme_blue_amber": {
+    "message": "Modrá a jantarová"
+  },
+  "highlight_scheme_green_yellow": {
+    "message": "Zelená a žlutá"
+  },
+  "highlight_scheme_pink_lavender": {
+    "message": "Růžová a levandulová"
+  },
+  "highlight_scheme_underline": {
+    "message": "Pouze podtržení"
+  },
+  "highlight_sample_before": {
+    "message": "Čtená věta a"
+  },
+  "highlight_sample_word": {
+    "message": "aktuální"
+  },
+  "highlight_sample_after": {
+    "message": "slovo."
+  },
+  "command_play": {
+    "message": "Číst nahlas nebo zastavit"
+  },
+  "command_pause": {
+    "message": "Pozastavit nebo pokračovat"
+  },
+  "command_stop": {
+    "message": "Zastavit"
+  },
+  "command_forward": {
+    "message": "Další věta"
+  },
+  "command_rewind": {
+    "message": "Předchozí věta"
   }
 }

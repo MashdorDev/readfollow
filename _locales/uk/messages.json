@@ -6,10 +6,10 @@
     "message": "ReadFollow"
   },
   "extension_description": {
-    "message": "Читайте вголос статтю поточної веб-сторінки одним кліком, використовуючи синтез мовлення. Підтримує понад 40 мов."
+    "message": "Читає текст уголос і виділяє на сторінці кожне вимовлене слово. Працює на веб-сторінках і в PDF, офлайн або з онлайн-голосами."
   },
   "options_heading": {
-    "message": "Параметри"
+    "message": "Налаштування"
   },
   "options_voice_label": {
     "message": "Голос"
@@ -33,7 +33,7 @@
     "message": "Увімкнути користувацькі голоси..."
   },
   "options_enable_piper_voices": {
-    "message": "Встановити голоси Piper..."
+    "message": "Завантажити природні голоси, що працюють на вашому пристрої (Piper)..."
   },
   "options_rate_label": {
     "message": "Швидкість"
@@ -48,16 +48,16 @@
     "message": "Гучність"
   },
   "options_show_highlighting": {
-    "message": "Виділення тексту"
+    "message": "Текст для стеження"
   },
   "options_highlighting_off": {
-    "message": "Вимкнути"
+    "message": "Вимкнено"
   },
   "options_highlighting_popup": {
-    "message": "Показати у спливаючому вікні"
+    "message": "У спливаючому вікні"
   },
   "options_highlighting_window": {
-    "message": "Показати в окремому вікні"
+    "message": "В окремому вікні"
   },
   "options_audio_playback": {
     "message": "Відтворення аудіо"
@@ -72,7 +72,7 @@
     "message": "Редагувати гарячі клавіші"
   },
   "options_test_button": {
-    "message": "Тест"
+    "message": "Перевірити голос"
   },
   "options_reset_button": {
     "message": "Скинути"
@@ -90,7 +90,7 @@
     "message": "Сховати цю вкладку?"
   },
   "player_hidethistab_dialog_body": {
-    "message": "Якщо ви сховаєте цю вкладку, ReadFollow відтворюватиме аудіо на поточній веб-сторінці. Це означає, що перехід зі сторінки зупинить мовлення.\n\n(Цей параметр можна скасувати на сторінці параметрів розширення)"
+    "message": "Якщо ви сховаєте цю вкладку, ReadFollow відтворюватиме аудіо на поточній веб-сторінці. Це означає, що перехід зі сторінки зупинить мовлення.\n\n(Це можна повернути в налаштуваннях ReadFollow.)"
   },
   "player_hidethistab_dialog_ok_button": {
     "message": "Сховати"
@@ -135,7 +135,7 @@
     "message": "Натисніть на значок динаміка поруч із кожною відповіддю, щоб прочитати її вголос"
   },
   "languages_heading": {
-    "message": "Параметри мови"
+    "message": "Мови"
   },
   "languages_back_button": {
     "message": "Назад до параметрів"
@@ -148,5 +148,197 @@
   },
   "google_translate_keep_page_open": {
     "message": "ReadFollow використовує Google Перекладач для синтезу мовлення. Будь ласка, тримайте цю вкладку відкритою."
+  },
+  "popup_settings_button": {
+    "message": "Налаштування"
+  },
+  "popup_controls_label": {
+    "message": "Відтворення"
+  },
+  "popup_loading": {
+    "message": "Завантаження"
+  },
+  "popup_play_button": {
+    "message": "Читати вголос"
+  },
+  "popup_pause_button": {
+    "message": "Пауза"
+  },
+  "popup_rewind_button": {
+    "message": "Назад"
+  },
+  "popup_forward_button": {
+    "message": "Далі"
+  },
+  "popup_stop_button": {
+    "message": "Зупинити"
+  },
+  "popup_smaller_text": {
+    "message": "Менший текст"
+  },
+  "popup_larger_text": {
+    "message": "Більший текст"
+  },
+  "popup_smaller_window": {
+    "message": "Менше вікно"
+  },
+  "popup_larger_window": {
+    "message": "Більше вікно"
+  },
+  "popup_voice_auto": {
+    "message": "Автовибір"
+  },
+  "options_close_button": {
+    "message": "Назад"
+  },
+  "options_section_voice": {
+    "message": "Голос"
+  },
+  "options_section_reading": {
+    "message": "Читання"
+  },
+  "options_filter_languages": {
+    "message": "Виберіть, які мови показувати"
+  },
+  "options_rate_edit": {
+    "message": "Введіть точну швидкість"
+  },
+  "options_saved": {
+    "message": "Збережено"
+  },
+  "options_shortcuts_label": {
+    "message": "Гарячі клавіші"
+  },
+  "nav_settings": {
+    "message": "Налаштування"
+  },
+  "nav_languages": {
+    "message": "Мови"
+  },
+  "nav_custom_voices": {
+    "message": "Користувацькі голоси"
+  },
+  "nav_advanced": {
+    "message": "Додатково"
+  },
+  "advanced_playback_title": {
+    "message": "Відтворення"
+  },
+  "advanced_bt_silence_gap": {
+    "message": "Виправити пропуск перших слів кожного абзацу під час використання Bluetooth-гарнітури"
+  },
+  "languages_explanation": {
+    "message": "Виберіть мови, якими ви читаєте. У меню голосів показано лише їхні голоси. Виберіть голос під мовою, щоб завжди використовувати його для цієї мови."
+  },
+  "custom_voices_explanation": {
+    "message": "Додайте власний обліковий запис у постачальника хмарних голосів, щоб використовувати його голоси. Ваші ключі зберігаються лише в цьому браузері. Текст, який ви читаєте цими голосами, надсилається цьому постачальнику."
+  },
+  "welcome_heading": {
+    "message": "ReadFollow читає текст уголос і виділяє на сторінці кожне вимовлене слово."
+  },
+  "welcome_try_title": {
+    "message": "Спробуйте"
+  },
+  "welcome_sample": {
+    "message": "Цей абзац читається вашим голосом за замовчуванням. Речення, яке читається, стає синім, а поточне слово позначається бурштиновим кольором і підкреслюється, щоб ви могли стежити за текстом очима."
+  },
+  "welcome_try_button": {
+    "message": "Прочитати цей абзац"
+  },
+  "welcome_start_title": {
+    "message": "Три способи почати"
+  },
+  "welcome_start_select": {
+    "message": "Виділіть текст на будь-якій сторінці й натисніть Alt+O. Унизу сторінки з'явиться невелика панель із паузою, перемотуванням, швидкістю та зупинкою."
+  },
+  "welcome_start_menu": {
+    "message": "Клацніть виділений текст правою кнопкою миші й виберіть «Прочитати вголос виділений текст»."
+  },
+  "welcome_start_button": {
+    "message": "Натисніть кнопку ReadFollow на панелі інструментів, щоб прочитати всю сторінку."
+  },
+  "welcome_pin_chrome": {
+    "message": "Не бачите кнопки? Натисніть значок пазла біля адресного рядка, а потім значок шпильки біля ReadFollow."
+  },
+  "welcome_pin_firefox": {
+    "message": "Не бачите кнопки? Натисніть кнопку розширень (пазл) на панелі інструментів, потім шестерню біля ReadFollow і «Закріпити на панелі інструментів»."
+  },
+  "welcome_shortcuts_title": {
+    "message": "Гарячі клавіші"
+  },
+  "welcome_shortcut_not_set": {
+    "message": "Не задано"
+  },
+  "welcome_shortcuts_missing": {
+    "message": "Деякі гарячі клавіші не вдалося задати, зазвичай тому, що інше розширення вже використовує ті самі клавіші. Нижче можна вибрати інші клавіші."
+  },
+  "welcome_privacy_title": {
+    "message": "Ваш текст"
+  },
+  "welcome_privacy_body": {
+    "message": "З голосами, вбудованими у ваш комп'ютер, і голосами Piper, які можна завантажити, текст ніколи не залишає ваш пристрій. Google Translate і хмарні голоси, які ви додаєте самі (OpenAI, Azure, Amazon Polly, IBM), отримують текст, який ви просите їх прочитати, і нічого більше. ReadFollow не має облікового запису й не збирає даних."
+  },
+  "welcome_settings_link": {
+    "message": "Відкрити налаштування"
+  },
+  "options_bar_label": {
+    "message": "Панель відтворення"
+  },
+  "options_bar_show_all": {
+    "message": "Показувати на всіх сайтах"
+  },
+  "options_bar_hidden_on": {
+    "message": "Приховано на $1"
+  },
+  "options_bar_shown_everywhere": {
+    "message": "Показується на всіх сайтах. Щоб приховати її на одному сайті, скористайтеся меню в кінці панелі."
+  },
+  "voice_privacy_auto": {
+    "message": "Автовибір використовує голос на цьому пристрої, якщо він відповідає мові. Якщо такого немає, може використовуватися онлайн-голос Google, який отримує текст, що ви читаєте."
+  },
+  "voice_privacy_remote": {
+    "message": "Текст, який ви читаєте цим голосом, надсилається до $1."
+  },
+  "voice_privacy_local": {
+    "message": "Цей голос працює на вашому пристрої. Текст залишається на ньому."
+  },
+  "options_highlight_colors": {
+    "message": "Кольори виділення"
+  },
+  "highlight_scheme_blue_amber": {
+    "message": "Синій і бурштиновий"
+  },
+  "highlight_scheme_green_yellow": {
+    "message": "Зелений і жовтий"
+  },
+  "highlight_scheme_pink_lavender": {
+    "message": "Рожевий і лавандовий"
+  },
+  "highlight_scheme_underline": {
+    "message": "Лише підкреслення"
+  },
+  "highlight_sample_before": {
+    "message": "Речення, яке читається, і"
+  },
+  "highlight_sample_word": {
+    "message": "поточне"
+  },
+  "highlight_sample_after": {
+    "message": "слово."
+  },
+  "command_play": {
+    "message": "Читати вголос або зупинити"
+  },
+  "command_pause": {
+    "message": "Пауза або продовжити"
+  },
+  "command_stop": {
+    "message": "Зупинити"
+  },
+  "command_forward": {
+    "message": "Наступне речення"
+  },
+  "command_rewind": {
+    "message": "Попереднє речення"
   }
 }

@@ -6,10 +6,10 @@
     "message": "ReadFollow"
   },
   "extension_description": {
-    "message": "Lees het huidige webpagina-artikel hardop voor met één klik, met tekst naar spraak. Ondersteunt meer dan 40 talen."
+    "message": "Leest tekst voor en markeert elk gesproken woord op de pagina. Voor websites en pdf's, offline of met online stemmen."
   },
   "options_heading": {
-    "message": "Opties"
+    "message": "Instellingen"
   },
   "options_voice_label": {
     "message": "Stem"
@@ -33,7 +33,7 @@
     "message": "Aangepaste stemmen inschakelen..."
   },
   "options_enable_piper_voices": {
-    "message": "Piper-stemmen installeren..."
+    "message": "Natuurlijke stemmen downloaden die op je apparaat draaien (Piper)..."
   },
   "options_rate_label": {
     "message": "Snelheid"
@@ -48,16 +48,16 @@
     "message": "Volume"
   },
   "options_show_highlighting": {
-    "message": "Tekstmarkering"
+    "message": "Meeleestekst"
   },
   "options_highlighting_off": {
-    "message": "Uitschakelen"
+    "message": "Uit"
   },
   "options_highlighting_popup": {
-    "message": "Tonen in popup"
+    "message": "In de popup"
   },
   "options_highlighting_window": {
-    "message": "Tonen in apart venster"
+    "message": "In een apart venster"
   },
   "options_audio_playback": {
     "message": "Audio afspelen"
@@ -72,7 +72,7 @@
     "message": "Sneltoetsen bewerken"
   },
   "options_test_button": {
-    "message": "Testen"
+    "message": "Stem testen"
   },
   "options_reset_button": {
     "message": "Resetten"
@@ -90,7 +90,7 @@
     "message": "Dit tabblad verbergen?"
   },
   "player_hidethistab_dialog_body": {
-    "message": "Als u dit tabblad verbergt, speelt ReadFollow audio af binnen de huidige webpagina. Dit betekent dat het verlaten van de pagina de spraak stopt.\n\n(Deze instelling kan worden teruggedraaid via de Opties-pagina van de extensie)"
+    "message": "Als u dit tabblad verbergt, speelt ReadFollow audio af binnen de huidige webpagina. Dit betekent dat het verlaten van de pagina de spraak stopt.\n\n(Je kunt dit terugzetten in de instellingen van ReadFollow.)"
   },
   "player_hidethistab_dialog_ok_button": {
     "message": "Verbergen"
@@ -135,7 +135,7 @@
     "message": "Klik op het luidsprekerpictogram naast elk antwoord om het hardop voor te lezen"
   },
   "languages_heading": {
-    "message": "Taalopties"
+    "message": "Talen"
   },
   "languages_back_button": {
     "message": "Terug naar opties"
@@ -148,5 +148,197 @@
   },
   "google_translate_keep_page_open": {
     "message": "ReadFollow gebruikt Google Translate voor tekst naar spraak. Houd dit tabblad open."
+  },
+  "popup_settings_button": {
+    "message": "Instellingen"
+  },
+  "popup_controls_label": {
+    "message": "Afspelen"
+  },
+  "popup_loading": {
+    "message": "Laden"
+  },
+  "popup_play_button": {
+    "message": "Voorlezen"
+  },
+  "popup_pause_button": {
+    "message": "Pauzeren"
+  },
+  "popup_rewind_button": {
+    "message": "Vorige"
+  },
+  "popup_forward_button": {
+    "message": "Volgende"
+  },
+  "popup_stop_button": {
+    "message": "Stoppen"
+  },
+  "popup_smaller_text": {
+    "message": "Kleinere tekst"
+  },
+  "popup_larger_text": {
+    "message": "Grotere tekst"
+  },
+  "popup_smaller_window": {
+    "message": "Kleiner venster"
+  },
+  "popup_larger_window": {
+    "message": "Groter venster"
+  },
+  "popup_voice_auto": {
+    "message": "Automatisch kiezen"
+  },
+  "options_close_button": {
+    "message": "Terug"
+  },
+  "options_section_voice": {
+    "message": "Stem"
+  },
+  "options_section_reading": {
+    "message": "Lezen"
+  },
+  "options_filter_languages": {
+    "message": "Kies welke talen worden getoond"
+  },
+  "options_rate_edit": {
+    "message": "Typ een exacte snelheid"
+  },
+  "options_saved": {
+    "message": "Opgeslagen"
+  },
+  "options_shortcuts_label": {
+    "message": "Sneltoetsen"
+  },
+  "nav_settings": {
+    "message": "Instellingen"
+  },
+  "nav_languages": {
+    "message": "Talen"
+  },
+  "nav_custom_voices": {
+    "message": "Aangepaste stemmen"
+  },
+  "nav_advanced": {
+    "message": "Geavanceerd"
+  },
+  "advanced_playback_title": {
+    "message": "Afspelen"
+  },
+  "advanced_bt_silence_gap": {
+    "message": "Ontbrekende eerste woorden van elke alinea herstellen bij gebruik van een Bluetooth-headset"
+  },
+  "languages_explanation": {
+    "message": "Kies de talen die je leest. Alleen hun stemmen staan in het stemmenmenu. Kies een stem onder een taal om die altijd voor die taal te gebruiken."
+  },
+  "custom_voices_explanation": {
+    "message": "Voeg je eigen account bij een aanbieder van cloudstemmen toe om diens stemmen te gebruiken. Je sleutels worden alleen in deze browser opgeslagen. Tekst die je met deze stemmen leest, wordt naar die aanbieder gestuurd."
+  },
+  "welcome_heading": {
+    "message": "ReadFollow leest tekst hardop voor en markeert elk woord op de pagina terwijl het wordt uitgesproken."
+  },
+  "welcome_try_title": {
+    "message": "Probeer het"
+  },
+  "welcome_sample": {
+    "message": "Deze alinea wordt voorgelezen met je standaardstem. De zin die wordt voorgelezen wordt blauw, en het huidige woord wordt in amber gemarkeerd en onderstreept, zodat je met je ogen kunt meelezen."
+  },
+  "welcome_try_button": {
+    "message": "Deze alinea voorlezen"
+  },
+  "welcome_start_title": {
+    "message": "Drie manieren om te beginnen"
+  },
+  "welcome_start_select": {
+    "message": "Selecteer tekst op een willekeurige pagina en druk op Alt+O. Onderaan de pagina verschijnt een kleine balk met pauzeren, overslaan, snelheid en stoppen."
+  },
+  "welcome_start_menu": {
+    "message": "Klik met de rechtermuisknop op geselecteerde tekst en kies \"Geselecteerde tekst hardop voorlezen\"."
+  },
+  "welcome_start_button": {
+    "message": "Klik op de ReadFollow-knop in de werkbalk om de hele pagina voor te lezen."
+  },
+  "welcome_pin_chrome": {
+    "message": "Zie je de knop niet? Klik op het puzzelstukje naast de adresbalk en daarna op de punaise naast ReadFollow."
+  },
+  "welcome_pin_firefox": {
+    "message": "Zie je de knop niet? Klik op de extensieknop (het puzzelstukje) in de werkbalk, daarna op het tandwiel naast ReadFollow en op \"Vastmaken aan werkbalk\"."
+  },
+  "welcome_shortcuts_title": {
+    "message": "Sneltoetsen"
+  },
+  "welcome_shortcut_not_set": {
+    "message": "Niet ingesteld"
+  },
+  "welcome_shortcuts_missing": {
+    "message": "Sommige sneltoetsen konden niet worden ingesteld, meestal omdat een andere extensie dezelfde toetsen al gebruikt. Je kunt hieronder andere toetsen kiezen."
+  },
+  "welcome_privacy_title": {
+    "message": "Je tekst"
+  },
+  "welcome_privacy_body": {
+    "message": "Met de stemmen die in je computer zijn ingebouwd en de downloadbare Piper-stemmen verlaat tekst nooit je apparaat. Google Translate en de cloudstemmen die je zelf toevoegt (OpenAI, Azure, Amazon Polly, IBM) ontvangen de tekst die je ze laat voorlezen, en verder niets. ReadFollow heeft geen account en verzamelt geen gegevens."
+  },
+  "welcome_settings_link": {
+    "message": "Instellingen openen"
+  },
+  "options_bar_label": {
+    "message": "Afspeelbalk"
+  },
+  "options_bar_show_all": {
+    "message": "Op alle sites tonen"
+  },
+  "options_bar_hidden_on": {
+    "message": "Verborgen op $1"
+  },
+  "options_bar_shown_everywhere": {
+    "message": "Wordt op elke site getoond. Gebruik het menu aan het eind van de balk om hem op een site te verbergen."
+  },
+  "voice_privacy_auto": {
+    "message": "Automatisch kiezen gebruikt een stem op dit apparaat als er een bij de taal past. Als er geen past, kan een online stem van Google worden gebruikt, die de tekst ontvangt die je leest."
+  },
+  "voice_privacy_remote": {
+    "message": "Tekst die je met deze stem leest, wordt naar $1 gestuurd."
+  },
+  "voice_privacy_local": {
+    "message": "Deze stem draait op je apparaat. De tekst blijft daar."
+  },
+  "options_highlight_colors": {
+    "message": "Markeerkleuren"
+  },
+  "highlight_scheme_blue_amber": {
+    "message": "Blauw en amber"
+  },
+  "highlight_scheme_green_yellow": {
+    "message": "Groen en geel"
+  },
+  "highlight_scheme_pink_lavender": {
+    "message": "Roze en lavendel"
+  },
+  "highlight_scheme_underline": {
+    "message": "Alleen onderstrepen"
+  },
+  "highlight_sample_before": {
+    "message": "De zin die wordt voorgelezen en het"
+  },
+  "highlight_sample_word": {
+    "message": "huidige"
+  },
+  "highlight_sample_after": {
+    "message": "woord."
+  },
+  "command_play": {
+    "message": "Voorlezen of stoppen"
+  },
+  "command_pause": {
+    "message": "Pauzeren of hervatten"
+  },
+  "command_stop": {
+    "message": "Stoppen"
+  },
+  "command_forward": {
+    "message": "Volgende zin"
+  },
+  "command_rewind": {
+    "message": "Vorige zin"
   }
 }

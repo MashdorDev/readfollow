@@ -6,10 +6,10 @@
     "message": "ReadFollow"
   },
   "extension_description": {
-    "message": "Lesen Sie den aktuellen Webseiten-Artikel mit einem Klick laut vor, mit Text-zu-Sprache. Unterstützt über 40 Sprachen."
+    "message": "Liest Text vor und hebt jedes gesprochene Wort auf der Seite hervor. Für Webseiten und PDFs, offline oder mit Online-Stimmen."
   },
   "options_heading": {
-    "message": "Optionen"
+    "message": "Einstellungen"
   },
   "options_voice_label": {
     "message": "Stimme"
@@ -33,7 +33,7 @@
     "message": "Benutzerdefinierte Stimmen aktivieren..."
   },
   "options_enable_piper_voices": {
-    "message": "Piper-Stimmen installieren..."
+    "message": "Natürliche Stimmen herunterladen, die auf Ihrem Gerät laufen (Piper)..."
   },
   "options_rate_label": {
     "message": "Geschwindigkeit"
@@ -48,16 +48,16 @@
     "message": "Lautstärke"
   },
   "options_show_highlighting": {
-    "message": "Texthervorhebung"
+    "message": "Mitlesetext"
   },
   "options_highlighting_off": {
-    "message": "Ausschalten"
+    "message": "Aus"
   },
   "options_highlighting_popup": {
-    "message": "Im Popup anzeigen"
+    "message": "Im Popup"
   },
   "options_highlighting_window": {
-    "message": "In separatem Fenster anzeigen"
+    "message": "In separatem Fenster"
   },
   "options_audio_playback": {
     "message": "Audio-Wiedergabe"
@@ -72,7 +72,7 @@
     "message": "Tastenkürzel bearbeiten"
   },
   "options_test_button": {
-    "message": "Testen"
+    "message": "Stimme testen"
   },
   "options_reset_button": {
     "message": "Zurücksetzen"
@@ -90,7 +90,7 @@
     "message": "Diesen Tab ausblenden?"
   },
   "player_hidethistab_dialog_body": {
-    "message": "Wenn Sie diesen Tab ausblenden, wird ReadFollow Audio innerhalb der aktuellen Webseite abspielen. Das bedeutet, dass das Verlassen der Seite die Sprachwiedergabe stoppt.\n\n(Diese Einstellung kann auf der Optionen-Seite der Erweiterung rückgängig gemacht werden)"
+    "message": "Wenn Sie diesen Tab ausblenden, wird ReadFollow Audio innerhalb der aktuellen Webseite abspielen. Das bedeutet, dass das Verlassen der Seite die Sprachwiedergabe stoppt.\n\n(Sie können das in den Einstellungen von ReadFollow wieder ändern.)"
   },
   "player_hidethistab_dialog_ok_button": {
     "message": "Ausblenden"
@@ -135,7 +135,7 @@
     "message": "Klicken Sie auf das Lautsprecher-Symbol neben jeder Antwort, um sie vorzulesen"
   },
   "languages_heading": {
-    "message": "Sprachoptionen"
+    "message": "Sprachen"
   },
   "languages_back_button": {
     "message": "Zurück zu den Optionen"
@@ -148,5 +148,197 @@
   },
   "google_translate_keep_page_open": {
     "message": "ReadFollow verwendet Google Übersetzer für Text-zu-Sprache. Bitte lassen Sie diesen Tab geöffnet."
+  },
+  "popup_settings_button": {
+    "message": "Einstellungen"
+  },
+  "popup_controls_label": {
+    "message": "Wiedergabe"
+  },
+  "popup_loading": {
+    "message": "Wird geladen"
+  },
+  "popup_play_button": {
+    "message": "Vorlesen"
+  },
+  "popup_pause_button": {
+    "message": "Pause"
+  },
+  "popup_rewind_button": {
+    "message": "Zurück"
+  },
+  "popup_forward_button": {
+    "message": "Weiter"
+  },
+  "popup_stop_button": {
+    "message": "Stoppen"
+  },
+  "popup_smaller_text": {
+    "message": "Kleinerer Text"
+  },
+  "popup_larger_text": {
+    "message": "Größerer Text"
+  },
+  "popup_smaller_window": {
+    "message": "Kleineres Fenster"
+  },
+  "popup_larger_window": {
+    "message": "Größeres Fenster"
+  },
+  "popup_voice_auto": {
+    "message": "Automatisch wählen"
+  },
+  "options_close_button": {
+    "message": "Zurück"
+  },
+  "options_section_voice": {
+    "message": "Stimme"
+  },
+  "options_section_reading": {
+    "message": "Lesen"
+  },
+  "options_filter_languages": {
+    "message": "Auswählen, welche Sprachen angezeigt werden"
+  },
+  "options_rate_edit": {
+    "message": "Genaue Geschwindigkeit eingeben"
+  },
+  "options_saved": {
+    "message": "Gespeichert"
+  },
+  "options_shortcuts_label": {
+    "message": "Tastenkürzel"
+  },
+  "nav_settings": {
+    "message": "Einstellungen"
+  },
+  "nav_languages": {
+    "message": "Sprachen"
+  },
+  "nav_custom_voices": {
+    "message": "Benutzerdefinierte Stimmen"
+  },
+  "nav_advanced": {
+    "message": "Erweitert"
+  },
+  "advanced_playback_title": {
+    "message": "Wiedergabe"
+  },
+  "advanced_bt_silence_gap": {
+    "message": "Fehlende erste Wörter jedes Absatzes bei Verwendung eines Bluetooth-Headsets beheben"
+  },
+  "languages_explanation": {
+    "message": "Wählen Sie die Sprachen, die Sie lesen. Nur deren Stimmen erscheinen im Stimmenmenü. Wählen Sie eine Stimme unter einer Sprache, um sie immer für diese Sprache zu verwenden."
+  },
+  "custom_voices_explanation": {
+    "message": "Fügen Sie Ihr eigenes Konto bei einem Cloud-Stimmenanbieter hinzu, um dessen Stimmen zu verwenden. Ihre Schlüssel werden nur in diesem Browser gespeichert. Text, den Sie mit diesen Stimmen lesen, wird an diesen Anbieter gesendet."
+  },
+  "welcome_heading": {
+    "message": "ReadFollow liest Text vor und hebt jedes gesprochene Wort auf der Seite hervor."
+  },
+  "welcome_try_title": {
+    "message": "Ausprobieren"
+  },
+  "welcome_sample": {
+    "message": "Dieser Absatz wird mit Ihrer Standardstimme gelesen. Der Satz, der gerade gelesen wird, wird blau, und das aktuelle Wort wird bernsteinfarben markiert und unterstrichen, damit Sie mit den Augen mitlesen können."
+  },
+  "welcome_try_button": {
+    "message": "Diesen Absatz vorlesen"
+  },
+  "welcome_start_title": {
+    "message": "Drei Möglichkeiten zum Starten"
+  },
+  "welcome_start_select": {
+    "message": "Markieren Sie Text auf einer beliebigen Seite und drücken Sie Alt+O. Unten auf der Seite erscheint eine kleine Leiste mit Pause, Springen, Geschwindigkeit und Stopp."
+  },
+  "welcome_start_menu": {
+    "message": "Klicken Sie mit der rechten Maustaste auf markierten Text und wählen Sie \"Markierten Text vorlesen\"."
+  },
+  "welcome_start_button": {
+    "message": "Klicken Sie auf die ReadFollow-Schaltfläche in der Symbolleiste, um die ganze Seite vorzulesen."
+  },
+  "welcome_pin_chrome": {
+    "message": "Sie sehen die Schaltfläche nicht? Klicken Sie auf das Puzzleteil neben der Adressleiste und dann auf die Pinnnadel neben ReadFollow."
+  },
+  "welcome_pin_firefox": {
+    "message": "Sie sehen die Schaltfläche nicht? Klicken Sie in der Symbolleiste auf die Erweiterungen-Schaltfläche (das Puzzleteil), dann auf das Zahnrad neben ReadFollow und auf \"An Symbolleiste anheften\"."
+  },
+  "welcome_shortcuts_title": {
+    "message": "Tastenkürzel"
+  },
+  "welcome_shortcut_not_set": {
+    "message": "Nicht festgelegt"
+  },
+  "welcome_shortcuts_missing": {
+    "message": "Einige Tastenkürzel konnten nicht festgelegt werden, meist weil eine andere Erweiterung dieselben Tasten bereits verwendet. Sie können unten andere Tasten wählen."
+  },
+  "welcome_privacy_title": {
+    "message": "Ihr Text"
+  },
+  "welcome_privacy_body": {
+    "message": "Mit den in Ihren Computer eingebauten Stimmen und den herunterladbaren Piper-Stimmen verlässt Text nie Ihr Gerät. Google Translate und die Cloud-Stimmen, die Sie selbst hinzufügen (OpenAI, Azure, Amazon Polly, IBM), erhalten den Text, den sie vorlesen sollen, und sonst nichts. ReadFollow hat kein Konto und sammelt keine Daten."
+  },
+  "welcome_settings_link": {
+    "message": "Einstellungen öffnen"
+  },
+  "options_bar_label": {
+    "message": "Wiedergabeleiste"
+  },
+  "options_bar_show_all": {
+    "message": "Auf allen Websites anzeigen"
+  },
+  "options_bar_hidden_on": {
+    "message": "Ausgeblendet auf $1"
+  },
+  "options_bar_shown_everywhere": {
+    "message": "Wird auf jeder Website angezeigt. Um sie auf einer Website auszublenden, verwenden Sie das Menü am Ende der Leiste."
+  },
+  "voice_privacy_auto": {
+    "message": "Automatisch wählen verwendet eine Stimme auf diesem Gerät, wenn eine zur Sprache passt. Wenn keine passt, kann eine Online-Stimme von Google verwendet werden, die den gelesenen Text erhält."
+  },
+  "voice_privacy_remote": {
+    "message": "Text, den Sie mit dieser Stimme lesen, wird an $1 gesendet."
+  },
+  "voice_privacy_local": {
+    "message": "Diese Stimme läuft auf Ihrem Gerät. Der Text bleibt dort."
+  },
+  "options_highlight_colors": {
+    "message": "Hervorhebungsfarben"
+  },
+  "highlight_scheme_blue_amber": {
+    "message": "Blau und Bernstein"
+  },
+  "highlight_scheme_green_yellow": {
+    "message": "Grün und Gelb"
+  },
+  "highlight_scheme_pink_lavender": {
+    "message": "Rosa und Lavendel"
+  },
+  "highlight_scheme_underline": {
+    "message": "Nur unterstreichen"
+  },
+  "highlight_sample_before": {
+    "message": "Der gerade gelesene Satz und das"
+  },
+  "highlight_sample_word": {
+    "message": "aktuelle"
+  },
+  "highlight_sample_after": {
+    "message": "Wort."
+  },
+  "command_play": {
+    "message": "Vorlesen oder stoppen"
+  },
+  "command_pause": {
+    "message": "Pausieren oder fortsetzen"
+  },
+  "command_stop": {
+    "message": "Stoppen"
+  },
+  "command_forward": {
+    "message": "Nächster Satz"
+  },
+  "command_rewind": {
+    "message": "Vorheriger Satz"
   }
 }

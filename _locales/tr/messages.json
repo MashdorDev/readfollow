@@ -6,10 +6,10 @@
     "message": "ReadFollow"
   },
   "extension_description": {
-    "message": "Geçerli web sayfası makalesini tek bir tıklatmayla, metin okuma (TTS) kullanarak yüksek sesle okuyun. 40'tan fazla dili destekler."
+    "message": "Metni sesli okur ve okunan her kelimeyi sayfada vurgular. Web sayfalarında ve PDF'lerde, çevrimdışı veya çevrimiçi seslerle çalışır."
   },
   "options_heading": {
-    "message": "Seçenekler"
+    "message": "Ayarlar"
   },
   "options_voice_label": {
     "message": "Ses"
@@ -33,7 +33,7 @@
     "message": "Özel Sesleri Etkinleştirme"
   },
   "options_enable_piper_voices": {
-    "message": "Piper seslerini yükle..."
+    "message": "Cihazınızda çalışan doğal sesleri indirin (Piper)..."
   },
   "options_rate_label": {
     "message": "Hız"
@@ -48,19 +48,19 @@
     "message": "Ses Seviyesi"
   },
   "options_show_highlighting": {
-    "message": "Metin Vurgulama"
+    "message": "Takip edilecek metin"
   },
   "options_highlighting_off": {
-    "message": "Kapat"
+    "message": "Kapalı"
   },
   "options_highlighting_popup": {
-    "message": "Açılır pencerede göster"
+    "message": "Açılır pencerede"
   },
   "options_highlighting_window": {
-    "message": "Ayrı bir pencerede göster"
+    "message": "Ayrı bir pencerede"
   },
   "options_audio_playback": {
-    "message": "Ses Çalma"
+    "message": "Ses çalma"
   },
   "options_audio_playback_standalone": {
     "message": "Ayrı sekme kullan"
@@ -69,10 +69,10 @@
     "message": "Sayfada"
   },
   "options_hotkeys_link": {
-    "message": "Kısayol tuşlarını düzenle"
+    "message": "Klavye kısayollarını düzenle"
   },
   "options_test_button": {
-    "message": "Test"
+    "message": "Sesi dene"
   },
   "options_reset_button": {
     "message": "Sıfırla"
@@ -81,7 +81,7 @@
     "message": "Durdur"
   },
   "player_tab_explanation": {
-    "message": "Sesli Oku, ses çalmak için bu sekmeyi kullanır. Bu sekme, 5 dakika boyunca herhangi bir işlem yapılmadığında otomatik olarak kapanacaktır."
+    "message": "ReadFollow ses çalmak için bu sekmeyi kullanır. Bu sekme 5 dakika işlem yapılmazsa kendiliğinden kapanır."
   },
   "player_hidethistab_link": {
     "message": "Bu sekmeyi gizle"
@@ -90,7 +90,7 @@
     "message": "Bu sekme gizlensin mi?"
   },
   "player_hidethistab_dialog_body": {
-    "message": "Bu sekmeyi gizlerseniz, Sesli Oku mevcut web sayfasında ses çalar. Bu, sayfadan ayrılmanın konuşmanın durmasına neden olacağı anlamına gelir. (Bu ayar, uzantı Seçenekleri sayfasından geri alınabilir)"
+    "message": "Bu sekmeyi gizlerseniz, Sesli Oku mevcut web sayfasında ses çalar. Bu, sayfadan ayrılmanın konuşmanın durmasına neden olacağı anlamına gelir. (Bunu ReadFollow ayarlarından geri alabilirsiniz.)"
   },
   "player_hidethistab_dialog_ok_button": {
     "message": "Saklamak"
@@ -102,7 +102,7 @@
     "message": "İzin İstendi"
   },
   "player_permission_dialog_body": {
-    "message": "Sesli Okuma&#39;nın ses çalmasına izin verilsin mi?"
+    "message": "ReadFollow'un ses çalmasına izin verilsin mi?"
   },
   "player_permission_dialog_ok_button": {
     "message": "İzin vermek"
@@ -126,16 +126,16 @@
     "message": "Bu web sitesi sesli okunamıyor"
   },
   "error_file_access": {
-    "message": "[ayarlar](open-extension-settings) uzantısındaki dosya URL'lerine Sesli Okuma erişimi vermeniz gerekir"
+    "message": "Uzantı [ayarlarında](open-extension-settings) ReadFollow'un dosya URL'lerine erişmesine izin vermeniz gerekir"
   },
   "error_add_permissions": {
-    "message": "Bu web sitesi için Sesli Okuma ek [izinleri](request-permissions) vermeniz gerekiyor"
+    "message": "Bu web sitesi için ReadFollow'a ek [izinler](request-permissions) vermeniz gerekir"
   },
   "error_chatgpt": {
     "message": "Her yanıtın yanındaki hoparlör simgesine tıklayarak sesli okuyun"
   },
   "languages_heading": {
-    "message": "Dil Seçenekleri"
+    "message": "Diller"
   },
   "languages_back_button": {
     "message": "Seçeneklere Geri Dön"
@@ -148,5 +148,197 @@
   },
   "google_translate_keep_page_open": {
     "message": "ReadFollow, metinden seslendirme için Google Çeviri'yi kullanıyor. Lütfen bu sekmeyi açık tutun."
+  },
+  "popup_settings_button": {
+    "message": "Ayarlar"
+  },
+  "popup_controls_label": {
+    "message": "Oynatma"
+  },
+  "popup_loading": {
+    "message": "Yükleniyor"
+  },
+  "popup_play_button": {
+    "message": "Sesli oku"
+  },
+  "popup_pause_button": {
+    "message": "Duraklat"
+  },
+  "popup_rewind_button": {
+    "message": "Önceki"
+  },
+  "popup_forward_button": {
+    "message": "Sonraki"
+  },
+  "popup_stop_button": {
+    "message": "Durdur"
+  },
+  "popup_smaller_text": {
+    "message": "Daha küçük metin"
+  },
+  "popup_larger_text": {
+    "message": "Daha büyük metin"
+  },
+  "popup_smaller_window": {
+    "message": "Daha küçük pencere"
+  },
+  "popup_larger_window": {
+    "message": "Daha büyük pencere"
+  },
+  "popup_voice_auto": {
+    "message": "Otomatik seç"
+  },
+  "options_close_button": {
+    "message": "Geri"
+  },
+  "options_section_voice": {
+    "message": "Ses"
+  },
+  "options_section_reading": {
+    "message": "Okuma"
+  },
+  "options_filter_languages": {
+    "message": "Listelenecek dilleri seçin"
+  },
+  "options_rate_edit": {
+    "message": "Tam bir hız yazın"
+  },
+  "options_saved": {
+    "message": "Kaydedildi"
+  },
+  "options_shortcuts_label": {
+    "message": "Kısayollar"
+  },
+  "nav_settings": {
+    "message": "Ayarlar"
+  },
+  "nav_languages": {
+    "message": "Diller"
+  },
+  "nav_custom_voices": {
+    "message": "Özel sesler"
+  },
+  "nav_advanced": {
+    "message": "Gelişmiş"
+  },
+  "advanced_playback_title": {
+    "message": "Oynatma"
+  },
+  "advanced_bt_silence_gap": {
+    "message": "Bluetooth kulaklık kullanırken her paragrafın ilk birkaç kelimesinin eksik çıkmasını düzelt"
+  },
+  "languages_explanation": {
+    "message": "Okuduğunuz dilleri seçin. Ses menüsünde yalnızca bu dillerin sesleri listelenir. Bir dil için her zaman aynı sesi kullanmak için o dilin altından bir ses seçin."
+  },
+  "custom_voices_explanation": {
+    "message": "Seslerini kullanmak için bir bulut ses sağlayıcısındaki kendi hesabınızı ekleyin. Anahtarlarınız yalnızca bu tarayıcıda saklanır. Bu seslerle okuduğunuz metin o sağlayıcıya gönderilir."
+  },
+  "welcome_heading": {
+    "message": "ReadFollow metni sesli okur ve okunan her kelimeyi sayfada vurgular."
+  },
+  "welcome_try_title": {
+    "message": "Deneyin"
+  },
+  "welcome_sample": {
+    "message": "Bu paragraf varsayılan sesinizle okunur. Okunan cümle maviye döner, geçerli kelime ise kehribar rengiyle işaretlenip altı çizilir, böylece gözlerinizle takip edebilirsiniz."
+  },
+  "welcome_try_button": {
+    "message": "Bu paragrafı oku"
+  },
+  "welcome_start_title": {
+    "message": "Başlamanın üç yolu"
+  },
+  "welcome_start_select": {
+    "message": "Herhangi bir sayfada metin seçin ve Alt+O tuşlarına basın. Sayfanın altında duraklatma, atlama, hız ve durdurma içeren küçük bir çubuk görünür."
+  },
+  "welcome_start_menu": {
+    "message": "Seçili metne sağ tıklayın ve \"Seçilen metni yüksek sesle oku\" seçeneğini seçin."
+  },
+  "welcome_start_button": {
+    "message": "Tüm sayfayı okumak için araç çubuğundaki ReadFollow düğmesine tıklayın."
+  },
+  "welcome_pin_chrome": {
+    "message": "Düğmeyi göremiyor musunuz? Adres çubuğunun yanındaki yapboz parçasına, ardından ReadFollow'un yanındaki raptiyeye tıklayın."
+  },
+  "welcome_pin_firefox": {
+    "message": "Düğmeyi göremiyor musunuz? Araç çubuğundaki uzantılar düğmesine (yapboz parçası), ardından ReadFollow'un yanındaki dişli simgesine ve \"Araç çubuğuna sabitle\" seçeneğine tıklayın."
+  },
+  "welcome_shortcuts_title": {
+    "message": "Klavye kısayolları"
+  },
+  "welcome_shortcut_not_set": {
+    "message": "Ayarlanmadı"
+  },
+  "welcome_shortcuts_missing": {
+    "message": "Bazı kısayollar ayarlanamadı, genellikle başka bir uzantı aynı tuşları zaten kullandığı için. Aşağıdan farklı tuşlar seçebilirsiniz."
+  },
+  "welcome_privacy_title": {
+    "message": "Metniniz"
+  },
+  "welcome_privacy_body": {
+    "message": "Bilgisayarınızda yerleşik sesler ve indirilebilir Piper sesleriyle metin cihazınızdan hiç çıkmaz. Google Translate ve kendiniz eklediğiniz bulut sesleri (OpenAI, Azure, Amazon Polly, IBM) yalnızca okumalarını istediğiniz metni alır, başka hiçbir şey almaz. ReadFollow hesap gerektirmez ve veri toplamaz."
+  },
+  "welcome_settings_link": {
+    "message": "Ayarları aç"
+  },
+  "options_bar_label": {
+    "message": "Oynatma çubuğu"
+  },
+  "options_bar_show_all": {
+    "message": "Tüm sitelerde göster"
+  },
+  "options_bar_hidden_on": {
+    "message": "$1 sitesinde gizli"
+  },
+  "options_bar_shown_everywhere": {
+    "message": "Her sitede gösterilir. Bir sitede gizlemek için çubuğun sonundaki menüyü kullanın."
+  },
+  "voice_privacy_auto": {
+    "message": "Otomatik seçim, dille eşleşen bir ses varsa bu cihazdaki sesi kullanır. Eşleşen yoksa, okuduğunuz metni alan çevrimiçi bir Google sesi kullanabilir."
+  },
+  "voice_privacy_remote": {
+    "message": "Bu sesle okuduğunuz metin $1 hizmetine gönderilir."
+  },
+  "voice_privacy_local": {
+    "message": "Bu ses cihazınızda çalışır. Metin cihazınızda kalır."
+  },
+  "options_highlight_colors": {
+    "message": "Vurgu renkleri"
+  },
+  "highlight_scheme_blue_amber": {
+    "message": "Mavi ve kehribar"
+  },
+  "highlight_scheme_green_yellow": {
+    "message": "Yeşil ve sarı"
+  },
+  "highlight_scheme_pink_lavender": {
+    "message": "Pembe ve lavanta"
+  },
+  "highlight_scheme_underline": {
+    "message": "Yalnızca alt çizgi"
+  },
+  "highlight_sample_before": {
+    "message": "Okunan cümle ve"
+  },
+  "highlight_sample_word": {
+    "message": "geçerli"
+  },
+  "highlight_sample_after": {
+    "message": "kelime."
+  },
+  "command_play": {
+    "message": "Sesli oku veya durdur"
+  },
+  "command_pause": {
+    "message": "Duraklat veya devam et"
+  },
+  "command_stop": {
+    "message": "Durdur"
+  },
+  "command_forward": {
+    "message": "Sonraki cümle"
+  },
+  "command_rewind": {
+    "message": "Önceki cümle"
   }
 }
