@@ -209,8 +209,16 @@ async function playTab(tabId) {
     }
     else {
       const frameId = handler.getFrameId && await getAllFrames(tab.id).then(frames => handler.getFrameId(frames))
-      if (!await contentScriptAlreadyInjected(tab, frameId)) await injectContentScript(tab, frameId, handler.extraScripts)
-      await brapi.storage.local.set({"sourceUri": "contentscript:" + tab.id})
+      try {
+        if (!await contentScriptAlreadyInjected(tab, frameId)) await injectContentScript(tab, frameId, handler.extraScripts)
+        await brapi.storage.local.set({"sourceUri": "contentscript:" + tab.id})
+      }
+      catch (err) {
+        //Firefox shows PDFs in its own viewer, which extensions can't script, so read them in ours
+        if (config.browserId != "firefox" || !/^https?:/.test(tab.url) || !/Missing host permission/.test(err.message)) throw err
+        await openPdfViewer(tab.id, tab.url)
+        await brapi.storage.local.set({"sourceUri": "pdfviewer:"})
+      }
     }
   }
   finally {

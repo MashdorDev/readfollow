@@ -1,9 +1,9 @@
 
-var readAloudDoc = location.pathname.match(/readaloud\.html$/) ? new Standalone() : new Embedded()
+var readAloudDoc = new Embedded()
 
 
 function Embedded() {
-  const pdfViewerUrl = new URL("https://assets.lsdsoftware.com/read-aloud/pdf-viewer-2/web/readaloud.html?embedded")
+  const pdfViewerUrl = new URL(config.pdfjsViewerUrl + "?file=")
   const ready = Promise.resolve()
         .then(function() {
           var url = location.href
@@ -38,7 +38,7 @@ function Embedded() {
   async function loadViewer(buffer) {
     const frame = createViewerFrame(pdfViewerUrl.href)
     var queue
-    await new Promise(f => queue = new MessageQueue(frame.contentWindow, pdfViewerUrl.origin, {viewerReady: f}))
+    await new Promise(f => queue = new MessageQueue(frame.contentWindow, {viewerReady: f}))
     await queue.send({method: "loadDocument", buffer: buffer}, [buffer])
     return queue
   }
@@ -68,10 +68,14 @@ function Embedded() {
       .then(res => res.value)
   }
 
-  function MessageQueue(targetWindow, targetOrigin, handlers) {
+  //Messages are matched by the frame's window, not by pdfViewerUrl's origin: in Chrome that url carries the
+  //per-session dynamic id, while the frame itself reports the extension's real origin. Replies go to that origin.
+  function MessageQueue(targetWindow, handlers) {
     const pending = {}
+    var targetOrigin
     window.addEventListener("message", event => {
-      if (event.origin == targetOrigin) {
+      if (event.source == targetWindow) {
+        targetOrigin = event.origin
         if (handlers[event.data.method]) handlers[event.data.method](event.data)
         else if (pending[event.data.id]) pending[event.data.id](event.data)
         else console.error("Unhandled", event)
@@ -82,48 +86,10 @@ function Embedded() {
       targetWindow.postMessage(message, targetOrigin, transfer)
       return new Promise(f => pending[message.id] = f)
         .finally(() => delete pending[message.id])
-    }
-  }
-}
-
-
-function Standalone() {
-  var queue = new EventQueue("PdfDoc");
-  var ready = new Promise(f => queue.once("documentLoaded", f).trigger("loadDocument"))
-
-  this.getCurrentIndex = function() {
-    return ready.then(function() {
-      return new Promise(function(fulfill) {
-        queue.once("currentIndexGot", fulfill).trigger("getCurrentIndex");
-      })
-    })
-  }
-
-  this.getTexts = function(index, quietly) {
-    return new Promise(function(fulfill) {
-      queue.once("textsGot", fulfill).trigger("getTexts", index, quietly);
-    })
-  }
-
-  function EventQueue(prefix) {
-    this.on = function(eventType, callback) {
-      document.addEventListener(prefix+eventType, function(event) {
-        callback.apply(null, JSON.parse(event.detail));
-      })
-      return this;
-    }
-    this.once = function(eventType, callback) {
-      var handler = function(event) {
-        document.removeEventListener(prefix+eventType, handler);
-        callback.apply(null, JSON.parse(event.detail));
-      };
-      document.addEventListener(prefix+eventType, handler);
-      return this;
-    }
-    this.trigger = function(eventType) {
-      var args = Array.prototype.slice.call(arguments, 1);
-      document.dispatchEvent(new CustomEvent(prefix+eventType, {detail: JSON.stringify(args)}));
-      return this;
+        .then(res => {
+          if (res.error) throw new Error(res.error)
+          return res
+        })
     }
   }
 }

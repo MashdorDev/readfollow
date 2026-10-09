@@ -28,7 +28,10 @@ bgPageInvoke("pdfViewerCheckIn")
 
 
 async function loadViewer() {
-  const viewerUrl = new URL(config.pdfViewerUrl + "?embedded")
+  //Same origin as this page: config.pdfjsViewerUrl is the dynamic web-accessible URL, a different origin,
+  //which this page's require-corp embedder policy refuses to frame.
+  //An empty file parameter keeps pdf.js from opening its sample document.
+  const viewerUrl = new URL("vendor/pdfjs/web/viewer.html?file=", location.href)
   const frame = document.getElementById("viewer-frame")
   frame.src = viewerUrl.href
   var queue
@@ -36,9 +39,12 @@ async function loadViewer() {
   return queue
 }
 
+//Without a url (a local file), the user opens the file in the viewer
 async function loadDocument(queue) {
   const query = getQueryString()
+  if (!query.url) return queue
   const res = await fetch(query.url)
+  if (!res.ok) throw new Error("Failed to download PDF, status " + res.status)
   const buffer = await res.arrayBuffer()
   await queue.send({method: "loadDocument", buffer: buffer}, [buffer])
   return queue
@@ -58,5 +64,9 @@ function MessageQueue(targetWindow, targetOrigin, handlers) {
     targetWindow.postMessage(message, targetOrigin, transfer)
     return new Promise(f => pending[message.id] = f)
       .finally(() => delete pending[message.id])
+      .then(res => {
+        if (res.error) throw new Error(res.error)
+        return res
+      })
   }
 }

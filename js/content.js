@@ -42,7 +42,8 @@
     else if (location.hostname == "www.webnovel.com" && location.pathname.startsWith("/book/")) return ["js/content/webnovel.js"];
     else if (location.hostname == "archiveofourown.org") return ["js/content/archiveofourown.js"];
     else if (location.hostname == "chat.openai.com") return ["js/content/chatgpt.js"];
-    else if (location.pathname.match(/readaloud\.html$/)
+    //Chrome's PDF viewer leaves the tab's own document empty, with no <embed>, and the URL may not end in .pdf
+    else if (document.contentType == "application/pdf"
       || location.pathname.match(/\.pdf$/)
       || $("embed[type='application/pdf']").length
       || $("iframe[src*='.pdf']").length) return ["js/content/pdf-doc.js"];

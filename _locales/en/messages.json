@@ -152,7 +152,7 @@
     "message": "Language not supported '{lang}'"
   },
   "error_upload_pdf": {
-    "message": "Please use the form to upload your PDF file to read aloud"
+    "message": "Open your PDF file in this viewer to read it aloud: Tools (the >> button at the top right), then Open, or drag the file onto the page"
   },
   "error_ajax_pdf": {
     "message": "Please save this PDF file to your computer and open it inside this [PDF viewer](open-pdf-viewer) to read aloud"

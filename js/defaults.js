@@ -3,7 +3,9 @@ var brapi = (typeof chrome != 'undefined') ? chrome : (typeof browser != 'undefi
 polyfills();
 
 var config = {
-  pdfViewerUrl: "https://assets.lsdsoftware.com/read-aloud/pdf-viewer-2/web/readaloud.html",
+  pdfViewerUrl: brapi.runtime.getURL("pdf-viewer.html"),
+  //the bundled pdf.js viewer, embedded by pdf-viewer.html and by the PDF content script
+  pdfjsViewerUrl: brapi.runtime.getURL("vendor/pdfjs/web/viewer.html"),
   entityMap: {
     '&': '&amp;',
     '<': '&lt;',
