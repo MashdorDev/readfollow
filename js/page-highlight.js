@@ -19,7 +19,8 @@ var pageHighlighter = (function() {
     return typeof CSS != "undefined" && CSS.highlights && typeof Highlight == "function"
   }
 
-  function start(range) {
+  //options.tint: false leaves the range untinted, for a whole PDF page where the tint would only be noise
+  function start(range, options) {
     stop()
     if (!isSupported() || !range || range.collapsed) return
     var index = buildIndex(range)
@@ -34,9 +35,11 @@ var pageHighlighter = (function() {
       positionKey: null,
       timer: setInterval(poll, pollInterval),
     }
-    var selection = new Highlight(range)
-    selection.priority = -1
-    CSS.highlights.set(selectionHighlight, selection)
+    if (!options || options.tint !== false) {
+      var selection = new Highlight(range)
+      selection.priority = -1
+      CSS.highlights.set(selectionHighlight, selection)
+    }
     window.getSelection().removeAllRanges()
     pageControls.show(onCommand)
     getRateKey().then(getSetting).then(function(rate) {pageControls.update(null, rate || defaults.rate)})
@@ -332,5 +335,6 @@ var pageHighlighter = (function() {
   return {
     start: start,
     stop: stop,
+    isActive: function() {return session != null},
   }
 })();
