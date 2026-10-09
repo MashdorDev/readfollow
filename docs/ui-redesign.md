@@ -72,4 +72,14 @@ Done:
 - On-page bar: warm white with a teal play button, charcoal in dark mode. Page highlights use the PDF pair.
 - New teal icon at 16/32/48/128. The 128px store icon has the 96px artwork with 16px padding. It reads on light and dark toolbars, so Firefox `theme_icons` aren't needed.
 
-Not done yet, in the order above: first-run page and shortcut check, bar top layer (`popover`) with per-site hide and a remembered position, a notice before the first cloud voice use, the Piper manager restyle (needs a `vendor/piper` rebuild), store screenshots and promo tile, and a highlight color setting. Only the English strings were updated; other locales still carry the upstream wording for renamed settings.
+The rest, done in a second pass the same day:
+
+- First-run page (`welcome.html`), opened once on install: a paragraph to try with the live highlight, three ways to start, a pin hint, the real shortcuts from `commands.getAll()` with any the browser left empty flagged, and where text goes. The shortcut button opens Firefox's own editor where it exists.
+- Bar: a manual popover in the top layer, position saved per site (dragged or docked), a menu with Move to top/bottom (the non-drag way to move it) and Hide on this site, which Settings can undo.
+- Where text goes: Settings and the popup name the service that receives the text for cloud voices, and Settings explains that Auto select can fall back to an online Google voice. A persistent note rather than a one-time dialog, since reads started from a shortcut have no page to show a dialog in.
+- Highlight colors: blue and amber, green and yellow, pink and lavender, underline only, previewed in Settings, used on web pages and PDFs.
+- Piper voice manager styled with the tokens instead of Bootstrap 5, without rebuilding its bundle.
+- Store assets in `store/`: four 1280x800 screenshots and the 440x280 promo tile.
+- Found along the way and fixed: PDFs read arXiv's sideways margin stamp aloud, and the English description and Piper menu entry were still upstream's.
+
+Still open: the other 25 locales carry upstream wording for renamed settings and have no strings for the new pages (Chrome and Firefox fall back to English), and the optional 1400x560 marquee image.
