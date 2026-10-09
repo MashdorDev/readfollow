@@ -40,3 +40,6 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+# pdf.js keeps its library in build/, which the rule above would drop
+!/vendor/pdfjs/build/
