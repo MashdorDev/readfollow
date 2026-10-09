@@ -6,7 +6,7 @@
     "message": "ReadFollow"
   },
   "extension_description": {
-    "message": "Read aloud the current web-page article with one click, using text to speech (TTS). Supports 40+ languages."
+    "message": "Reads text aloud and highlights each word on the page as it is spoken. Works on web pages and PDFs, offline or with online voices."
   },
   "options_heading": {
     "message": "Settings"
@@ -33,7 +33,7 @@
     "message": "🧩 Enable custom voices..."
   },
   "options_enable_piper_voices": {
-    "message": "⚡ Install Piper voices..."
+    "message": "Download natural voices that run on your device (Piper)..."
   },
   "options_rate_label": {
     "message": "Speed"
