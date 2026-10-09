@@ -82,4 +82,6 @@ The rest, done in a second pass the same day:
 - Store assets in `store/`: four 1280x800 screenshots and the 440x280 promo tile.
 - Found along the way and fixed: PDFs read arXiv's sideways margin stamp aloud, and the English description and Piper menu entry were still upstream's.
 
-Still open: the other 25 locales carry upstream wording for renamed settings and have no strings for the new pages (Chrome and Firefox fall back to English), and the optional 1400x560 marquee image.
+Third pass, the same day: all 70 new or renamed strings translated into the 25 existing locales, Hebrew added as a 27th, and keyboard shortcut names localized through the manifest. Pages set `dir` from the UI language, so Arabic and Hebrew read right to left, while sliders and playback controls stay left to right. Leftovers fixed on the way: the old Read Aloud product name in eight locales, HTML apostrophe entities shown as text, and hard-coded English labels. Every page has the ReadFollow tab icon, and the player tab's icon shows reading or paused like the toolbar badge. The 1400x560 marquee is in `store/`.
+
+The translations were machine-made with each locale's existing terms as reference; a native speaker should review them before release, Hebrew first.
