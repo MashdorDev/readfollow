@@ -24,8 +24,7 @@
     "offscreen",
     "scripting",
     "storage",
-    "tts",
-    "ttsEngine"
+    "tts"
   ],
   "optional_permissions": [
     "webNavigation"

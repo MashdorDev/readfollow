@@ -23,7 +23,7 @@ manifest.browser_specific_settings = {gecko: {
   //text is sent to cloud voices
   data_collection_permissions: {required: ["websiteContent"]},
 }}
-manifest.permissions = manifest.permissions.filter(p => !["offscreen", "tts", "ttsEngine"].includes(p))
+manifest.permissions = manifest.permissions.filter(p => !["offscreen", "tts"].includes(p))
 delete manifest.key
 delete manifest.oauth2
 delete manifest.minimum_chrome_version
