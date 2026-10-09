@@ -61,3 +61,15 @@ Done as one pass (see Decided), in this order, smoke-tested in Chrome and Firefo
 - **Surfaces:** the on-page bar stays the main control and the popup becomes a launcher and status view. Other ways in (side panel, sidebar) can come later.
 - **Rollout:** one pass across every surface in a single PR rather than eight, accepting a large review.
 - **Highlights:** blue sentence and amber underlined word on web pages too, the same as PDFs. A color choice for the user comes later.
+
+## Status after the first pass (2026-10-09)
+
+Done:
+
+- `css/tokens.css` and `css/base.css` replace Bootstrap 4 and `common.css` on every extension page. Light and dark follow the system or browser theme; the manual dark mode toggle and its `darkMode` setting are gone. The Google Fonts request is gone.
+- Popup: header with settings, a large play/pause button, previous/next/stop, a speed menu and the current voice, errors in plain words (the browser's "Cannot access contents of the page" now reads "Cannot read aloud this website"). The follow-along view is kept and restyled, since whole-page reading has no on-page highlight.
+- Settings, Languages, Custom voices and Advanced share a header and tabs. Settings is split into Voice and Reading sections, shows the speed as a number, and its sliders work from the keyboard (arrows, Page Up/Down, Home/End) as labelled ARIA sliders. "Text Highlighting" is renamed "Follow-along text".
+- On-page bar: warm white with a teal play button, charcoal in dark mode. Page highlights use the PDF pair.
+- New teal icon at 16/32/48/128. The 128px store icon has the 96px artwork with 16px padding. It reads on light and dark toolbars, so Firefox `theme_icons` aren't needed.
+
+Not done yet, in the order above: first-run page and shortcut check, bar top layer (`popover`) with per-site hide and a remembered position, a notice before the first cloud voice use, the Piper manager restyle (needs a `vendor/piper` rebuild), store screenshots and promo tile, and a highlight color setting. Only the English strings were updated; other locales still carry the upstream wording for renamed settings.
