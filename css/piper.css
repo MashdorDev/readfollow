@@ -1,0 +1,105 @@
+/* The Piper voice manager (vendor/piper), styled with ReadFollow's tokens and base.css in place of Bootstrap 5.
+   Covers the Bootstrap class names its bundle renders that base.css doesn't. */
+
+.container {
+  max-width: 820px;
+}
+.container > div {
+  margin-bottom: var(--rf-space-6);
+}
+
+h2 {
+  margin-bottom: var(--rf-space-3);
+}
+
+.small { font-size: 0.85em; }
+.text-end { text-align: end; }
+.text-center { text-align: center; }
+.align-top { vertical-align: top; }
+.d-flex { display: flex; }
+.d-block { display: block !important; }
+.align-items-center { align-items: center; }
+.ms-1 { margin-inline-start: var(--rf-space-1); }
+.me-1 { margin-inline-end: var(--rf-space-1); }
+.ps-2 { padding-inline-start: var(--rf-space-2); }
+.mt-1 { margin-top: var(--rf-space-1); }
+.mt-3 { margin-top: var(--rf-space-4); }
+.mb-2 { margin-bottom: var(--rf-space-2); }
+.mb-4 { margin-bottom: var(--rf-space-5); }
+
+.table td, .table th {
+  vertical-align: middle;
+}
+.table-sm td, .table-sm th {
+  padding: var(--rf-space-2) var(--rf-space-3);
+}
+.table-borderless td, .table-borderless th {
+  border-top: 0;
+}
+.table-borderless tr + tr td {
+  border-top: 1px solid var(--rf-border);
+}
+.table-hover tr:hover td {
+  background-color: var(--rf-surface-2);
+}
+
+/* install and delete */
+.btn-success {
+  color: var(--rf-on-accent);
+  background-color: var(--rf-accent);
+  border-color: var(--rf-accent);
+}
+.btn-success:hover {
+  background-color: var(--rf-accent-hover);
+}
+.btn-danger {
+  color: var(--rf-danger);
+  background-color: transparent;
+  border-color: var(--rf-danger);
+}
+.btn-danger:hover {
+  background-color: var(--rf-danger-soft);
+}
+
+.modal.d-block {
+  background-color: rgb(0 0 0 / 0.4);
+}
+.modal-dialog-centered {
+  display: flex;
+  align-items: center;
+  min-height: 80vh;
+}
+.modal-dialog-centered .modal-content {
+  width: 100%;
+}
+.btn-close {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.btn-close::before {
+  content: "\00d7";
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--rf-text-muted);
+}
+.btn-close:hover {
+  background-color: var(--rf-surface-2);
+}
+
+.link {
+  color: var(--rf-accent);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.muted-link {
+  color: var(--rf-text-muted);
+  text-decoration: none;
+}
+.muted-link:hover {
+  text-decoration: underline;
+}

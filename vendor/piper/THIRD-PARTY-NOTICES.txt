@@ -3,7 +3,8 @@ Piper voice engine bundled in ReadFollow
 This folder is built from the web app in ken107/piper-browser-extension
 (https://github.com/ken107/piper-browser-extension, commit ca8fc95),
 modified to run inside the extension: local onnxruntime files, no service
-worker, and no calls to the original author's servers. Source: piper/ in the
+worker, no calls to the original author's servers, and index.html styled with
+ReadFollow's own CSS (css/piper.css) instead of Bootstrap. Source: piper/ in the
 ReadFollow repository.
 
 Components and licenses:
