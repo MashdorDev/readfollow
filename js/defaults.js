@@ -214,6 +214,19 @@ function isPiperVoice(voice) {
   return /^Piper /.test(voice.voiceName)
 }
 
+//Who receives the text read with this voice, or null for voices that run on this device.
+//Works from the name alone, for pages that don't load the voice engines.
+function getVoiceRecipient(voice) {
+  if (isGoogleTranslate(voice)) return "Google Translate"
+  if (isOpenai(voice)) return "the OpenAI-compatible service you added"
+  if (isAzure(voice)) return "Microsoft Azure"
+  if (isAmazonPolly(voice)) return "Amazon Polly"
+  if (isIbmWatson(voice)) return "IBM Watson"
+  if (isGoogleNative(voice)) return "Google"
+  if (voice.remote) return "the online service behind this voice"
+  return null
+}
+
 function isNativeVoice(voice) {
   return !(
     isGoogleTranslate(voice)

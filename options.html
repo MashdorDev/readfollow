@@ -40,11 +40,14 @@
       <h2 data-i18n="options_section_voice"></h2>
       <div class="layout">
         <label for="voices" data-i18n="options_voice_label"></label>
-        <div class="control-row">
-          <select id="voices" class="form-control"></select>
-          <button id="languages-edit-button" type="button" class="btn btn-light" data-i18n-title="options_filter_languages">
-            <i class="material-icons" aria-hidden="true">filter_alt</i>
-          </button>
+        <div>
+          <div class="control-row">
+            <select id="voices" class="form-control" aria-describedby="voice-privacy"></select>
+            <button id="languages-edit-button" type="button" class="btn btn-light" data-i18n-title="options_filter_languages">
+              <i class="material-icons" aria-hidden="true">filter_alt</i>
+            </button>
+          </div>
+          <small id="voice-privacy" class="form-text"></small>
         </div>
 
         <span id="rate-label" data-i18n="options_rate_label"></span>

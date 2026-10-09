@@ -85,8 +85,14 @@
     )
 
   rxjs.combineLatest([observeSetting("voiceName"), voicesPopulatedObservable])
-    .subscribe(([voiceName]) => {
+    .subscribe(([voiceName, [voices]]) => {
       $("#voices").val(voiceName || "")
+      const voice = voiceName && voices.find(x => x.voiceName == voiceName)
+      const recipient = voice && getVoiceRecipient(voice)
+      $("#voice-privacy").text(
+        !voiceName ? brapi.i18n.getMessage("voice_privacy_auto")
+        : recipient ? brapi.i18n.getMessage("voice_privacy_remote", [recipient])
+        : brapi.i18n.getMessage("voice_privacy_local"))
     })
 
 

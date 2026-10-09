@@ -327,5 +327,14 @@
   },
   "options_bar_shown_everywhere": {
     "message": "Shown on every site. To hide it on one site, use the menu at the end of the bar."
+  },
+  "voice_privacy_auto": {
+    "message": "Auto select uses a voice on this device when one matches the language. When none does, it may use an online Google voice, which receives the text you read."
+  },
+  "voice_privacy_remote": {
+    "message": "Text you read with this voice is sent to $1."
+  },
+  "voice_privacy_local": {
+    "message": "This voice runs on your device. Text stays on it."
   }
 }

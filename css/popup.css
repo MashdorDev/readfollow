@@ -110,6 +110,11 @@ body.is-popup {
   min-width: 96px;
 }
 
+#voice-privacy {
+  grid-column: 1 / -1;
+  color: var(--rf-text-muted);
+}
+
 .link-button {
   justify-self: start;
   max-width: 100%;
