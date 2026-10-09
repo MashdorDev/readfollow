@@ -17112,7 +17112,7 @@ class Autolinker {
   static #regex;
   static #numericTLDRegex;
   static findLinks(text) {
-    this.#regex ??= /\b(?:https?:\/\/|mailto:|www\.)(?:[\S--[\p{P}<>]]|\/|[\S--[\[\]]]+[\S--[\p{P}<>]])+|(?=\p{L})[\S--[@\p{Ps}\p{Pe}<>]]{1,64}@([\S--[[\p{P}--\-]<>]]{1,63}(?:\.[\S--[[\p{P}--\-]<>]]{1,63})+)/gv;
+    this.#regex ??= /\b(?:https?:\/\/|mailto:|www\.)(?:(?![\p{P}<>])\S|\/|[^\s\[\]]+(?![\p{P}<>])\S)+|(?=\p{L})(?:(?![@\p{Ps}\p{Pe}<>])\S){1,64}@((?:-|(?![\p{P}<>])\S){1,63}(?:\.(?:-|(?![\p{P}<>])\S){1,63})+)/gu;
     const [normalizedText, diffs] = pdf_find_controller_normalize(text, {
       ignoreDashEOL: true
     });
