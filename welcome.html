@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Welcome to ReadFollow</title>
+  <link rel="stylesheet" type="text/css" href="css/tokens.css">
+  <link rel="stylesheet" type="text/css" href="css/base.css">
+  <link rel="stylesheet" type="text/css" href="css/welcome.css">
+
+  <script src="js/rxjs.umd.min.js"></script>
+  <script src="js/jquery-3.7.1.min.js"></script>
+  <script src="js/defaults.js"></script>
+  <script src="js/messaging.js"></script>
+  <script src="js/page-controls.js"></script>
+  <script src="js/page-highlight.js"></script>
+  <script src="js/welcome.js"></script>
+</head>
+<body>
+  <main class="container">
+    <header class="rf-header">
+      <img src="img/icon.svg" alt="">
+      <span class="rf-title" data-i18n="extension_short_name"></span>
+    </header>
+
+    <h1 id="welcome-heading" data-i18n="welcome_heading"></h1>
+
+    <section id="try" class="rf-section">
+      <h2 data-i18n="welcome_try_title"></h2>
+      <p id="sample" data-i18n="welcome_sample"></p>
+      <button type="button" id="try-button" class="btn btn-primary" data-i18n="welcome_try_button"></button>
+      <span id="try-status" class="text-muted" role="status"></span>
+    </section>
+
+    <section class="rf-section">
+      <h2 data-i18n="welcome_start_title"></h2>
+      <ol id="ways">
+        <li data-i18n="welcome_start_select"></li>
+        <li data-i18n="welcome_start_menu"></li>
+        <li data-i18n="welcome_start_button"></li>
+      </ol>
+      <p class="text-muted" id="pin-hint"></p>
+    </section>
+
+    <section class="rf-section">
+      <h2 data-i18n="welcome_shortcuts_title"></h2>
+      <table class="table" id="shortcuts"></table>
+      <p id="shortcuts-missing" class="alert alert-info" hidden data-i18n="welcome_shortcuts_missing"></p>
+      <button type="button" id="shortcuts-button" class="btn btn-light" data-i18n="options_hotkeys_link"></button>
+    </section>
+
+    <section class="rf-section">
+      <h2 data-i18n="welcome_privacy_title"></h2>
+      <p data-i18n="welcome_privacy_body"></p>
+      <a href="options.html" data-i18n="welcome_settings_link"></a>
+    </section>
+  </main>
+</body>
+</html>

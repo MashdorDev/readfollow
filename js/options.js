@@ -35,7 +35,7 @@
   domReadyPromise
     .then(() => {
       $("#hotkeys-link").click(function() {
-        brapi.tabs.create({url: getHotkeySettingsUrl()});
+        openShortcutSettings().catch(console.error)
       });
     })
 

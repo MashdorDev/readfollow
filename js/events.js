@@ -1,7 +1,8 @@
 
-brapi.runtime.onInstalled.addListener(function() {
+brapi.runtime.onInstalled.addListener(function(details) {
   installContentScripts()
   installContextMenus()
+  if (details.reason == "install") brapi.tabs.create({url: "welcome.html"}).catch(console.error)
 })
 
 //A player tab closed mid-read is gone before it can clear the toolbar badge itself

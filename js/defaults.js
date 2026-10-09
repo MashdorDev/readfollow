@@ -558,6 +558,12 @@ function getBrowser() {
   return 'chrome';
 }
 
+//Firefox 137+ can open its own shortcut editor; elsewhere it's a settings page
+function openShortcutSettings() {
+  if (brapi.commands.openShortcutSettings) return brapi.commands.openShortcutSettings()
+  return brapi.tabs.create({url: getHotkeySettingsUrl()})
+}
+
 function getHotkeySettingsUrl() {
   switch (config.browserId) {
     case 'opera': return 'opera://settings/configureCommands';

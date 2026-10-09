@@ -267,5 +267,53 @@
   },
   "custom_voices_explanation": {
     "message": "Add your own account with a cloud voice provider to use its voices. Your keys are stored in this browser only. Text you read with these voices is sent to that provider."
+  },
+  "welcome_heading": {
+    "message": "ReadFollow reads text aloud and highlights each word on the page as it is spoken."
+  },
+  "welcome_try_title": {
+    "message": "Try it"
+  },
+  "welcome_sample": {
+    "message": "This paragraph is read with your default voice. The sentence being read turns blue, and the current word is marked in amber and underlined, so you can follow along with your eyes."
+  },
+  "welcome_try_button": {
+    "message": "Read this paragraph"
+  },
+  "welcome_start_title": {
+    "message": "Three ways to start"
+  },
+  "welcome_start_select": {
+    "message": "Select text on any page and press Alt+O. A small bar appears at the bottom of the page with pause, skip, speed and stop."
+  },
+  "welcome_start_menu": {
+    "message": "Right-click selected text and choose \"Read aloud selected text\"."
+  },
+  "welcome_start_button": {
+    "message": "Click the ReadFollow button in the toolbar to read the whole page."
+  },
+  "welcome_pin_chrome": {
+    "message": "Don't see the button? Click the puzzle piece next to the address bar, then the pin next to ReadFollow."
+  },
+  "welcome_pin_firefox": {
+    "message": "Don't see the button? Click the extensions button (the puzzle piece) in the toolbar, then the gear next to ReadFollow and \"Pin to Toolbar\"."
+  },
+  "welcome_shortcuts_title": {
+    "message": "Keyboard shortcuts"
+  },
+  "welcome_shortcut_not_set": {
+    "message": "Not set"
+  },
+  "welcome_shortcuts_missing": {
+    "message": "Some shortcuts could not be set, usually because another extension already uses the same keys. You can choose different keys below."
+  },
+  "welcome_privacy_title": {
+    "message": "Your text"
+  },
+  "welcome_privacy_body": {
+    "message": "With the voices built into your computer and the downloadable Piper voices, text never leaves your device. Google Translate and the cloud voices you add yourself (OpenAI, Azure, Amazon Polly, IBM) receive the text you ask them to read, and nothing else. ReadFollow has no account and collects no data."
+  },
+  "welcome_settings_link": {
+    "message": "Open settings"
   }
 }
