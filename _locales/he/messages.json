@@ -1,0 +1,394 @@
+{
+  "extension_name": {
+    "message": "ReadFollow: הקראת טקסט עם הדגשה תוך כדי קריאה"
+  },
+  "extension_short_name": {
+    "message": "ReadFollow"
+  },
+  "extension_description": {
+    "message": "מקריא טקסט בקול ומדגיש בדף כל מילה בזמן שהיא נאמרת. עובד בדפי אינטרנט ובקובצי PDF, במצב לא מקוון או עם קולות מקוונים."
+  },
+  "options_heading": {
+    "message": "הגדרות"
+  },
+  "options_voice_label": {
+    "message": "קול"
+  },
+  "options_voicegroup_offline": {
+    "message": "קולות לא מקוונים"
+  },
+  "options_voicegroup_experimental": {
+    "message": "קולות AI ניסיוניים"
+  },
+  "options_voicegroup_standard": {
+    "message": "קולות רגילים"
+  },
+  "options_voicegroup_additional": {
+    "message": "קולות נוספים"
+  },
+  "options_add_more_languages": {
+    "message": "➕ הוספת שפות..."
+  },
+  "options_enable_custom_voices": {
+    "message": "🧩 הפעלת קולות מותאמים אישית..."
+  },
+  "options_enable_piper_voices": {
+    "message": "הורדת קולות טבעיים שפועלים במכשיר שלך (Piper)..."
+  },
+  "options_rate_label": {
+    "message": "מהירות"
+  },
+  "options_rate_warning": {
+    "message": "לתשומת לבך: חלק מהקולות עשויים לא לעבוד במהירות גבוהה."
+  },
+  "options_pitch_label": {
+    "message": "גובה צליל"
+  },
+  "options_volume_label": {
+    "message": "עוצמת קול"
+  },
+  "options_show_highlighting": {
+    "message": "מעקב אחר הטקסט"
+  },
+  "options_highlighting_off": {
+    "message": "כבוי"
+  },
+  "options_highlighting_popup": {
+    "message": "בחלון הקופץ"
+  },
+  "options_highlighting_window": {
+    "message": "בחלון נפרד"
+  },
+  "options_audio_playback": {
+    "message": "השמעת שמע"
+  },
+  "options_audio_playback_standalone": {
+    "message": "בכרטיסייה נפרדת"
+  },
+  "options_audio_playback_embedded": {
+    "message": "בתוך הדף"
+  },
+  "advanced_word_replacements_title": {
+    "message": "החלפת מילים"
+  },
+  "advanced_word_replacements_placeholder": {
+    "message": "החלפה אחת בכל שורה, בצורה \"מילה = תחליף\". כדי לדלג על מילה, משאירים את התחליף ריק.\n\nGIF = jif\nלמשל = לדוגמה\n[דרוש מקור] ="
+  },
+  "advanced_word_replacements_saving": {
+    "message": "מתבצעת שמירה…"
+  },
+  "advanced_word_replacements_saved": {
+    "message": "נשמר"
+  },
+  "advanced_word_replacements_save_failed": {
+    "message": "לא ניתן היה לשמור"
+  },
+  "advanced_word_replacements_error_separator": {
+    "message": "שורה $LINE$: חסר \"=\"",
+    "placeholders": {
+      "line": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "advanced_word_replacements_error_missing_word": {
+    "message": "שורה $LINE$: יש להוסיף מילה לפני \"=\"",
+    "placeholders": {
+      "line": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "advanced_word_replacements_error_duplicate": {
+    "message": "שורה $LINE$: כבר מוגדרת החלפה ל\"$WORD$\" בשורה $FIRST_LINE$",
+    "placeholders": {
+      "line": {
+        "content": "$1",
+        "example": "5"
+      },
+      "word": {
+        "content": "$2",
+        "example": "GIF"
+      },
+      "first_line": {
+        "content": "$3",
+        "example": "2"
+      }
+    }
+  },
+  "options_hotkeys_link": {
+    "message": "עריכת קיצורי מקלדת"
+  },
+  "options_test_button": {
+    "message": "בדיקת הקול"
+  },
+  "options_stop_button": {
+    "message": "עצירה"
+  },
+  "options_reset_button": {
+    "message": "איפוס"
+  },
+  "player_tab_explanation": {
+    "message": "ReadFollow משתמש בכרטיסייה זו להשמעת שמע. הכרטיסייה תיסגר אוטומטית אחרי 5 דקות ללא פעילות."
+  },
+  "player_hidethistab_link": {
+    "message": "הסתרת הכרטיסייה"
+  },
+  "player_hidethistab_dialog_title": {
+    "message": "להסתיר את הכרטיסייה?"
+  },
+  "player_hidethistab_dialog_body": {
+    "message": "אם הכרטיסייה תוסתר, ReadFollow ישמיע את השמע בתוך דף האינטרנט הנוכחי. כלומר, מעבר לדף אחר יעצור את ההקראה.\n\n(אפשר לשנות זאת בחזרה בהגדרות של ReadFollow.)"
+  },
+  "player_hidethistab_dialog_ok_button": {
+    "message": "הסתרה"
+  },
+  "player_hidethistab_dialog_cancel_button": {
+    "message": "ביטול"
+  },
+  "player_permission_dialog_title": {
+    "message": "נדרשת הרשאה"
+  },
+  "player_permission_dialog_body": {
+    "message": "לאפשר ל-ReadFollow להשמיע שמע?"
+  },
+  "player_permission_dialog_ok_button": {
+    "message": "אישור"
+  },
+  "context_read_selection": {
+    "message": "הקראת הטקסט שנבחר"
+  },
+  "error_no_text": {
+    "message": "לא נמצא טקסט להקראה. כדאי לנסות לבחור קודם את הטקסט שרוצים להקריא"
+  },
+  "error_no_voice": {
+    "message": "השפה '{lang}' אינה נתמכת"
+  },
+  "error_upload_pdf": {
+    "message": "כדי להקריא קובץ PDF, יש לפתוח אותו במציג הזה: כלים (הלחצן >> בפינה הימנית העליונה) ואז פתיחה, או לגרור את הקובץ אל הדף"
+  },
+  "error_ajax_pdf": {
+    "message": "כדי להקריא את קובץ ה-PDF הזה, יש לשמור אותו במחשב ולפתוח אותו ב[מציג ה-PDF](open-pdf-viewer) הזה"
+  },
+  "error_page_unreadable": {
+    "message": "לא ניתן להקריא את האתר הזה"
+  },
+  "error_file_access": {
+    "message": "יש לתת ל-ReadFollow גישה לכתובות URL של קבצים ב[הגדרות](open-extension-settings) התוסף"
+  },
+  "error_add_permissions": {
+    "message": "יש לתת ל-ReadFollow [הרשאות](request-permissions) נוספות לאתר הזה"
+  },
+  "error_chatgpt": {
+    "message": "כדי להקריא תשובה, יש ללחוץ על סמל הרמקול שלידה"
+  },
+  "languages_heading": {
+    "message": "שפות"
+  },
+  "languages_back_button": {
+    "message": "חזרה להגדרות"
+  },
+  "google_translate_request_permission": {
+    "message": "ReadFollow מבקש להשתמש ב-Google Translate להמרת טקסט לדיבור."
+  },
+  "google_translate_allow_button": {
+    "message": "אישור"
+  },
+  "google_translate_keep_page_open": {
+    "message": "ReadFollow משתמש ב-Google Translate להמרת טקסט לדיבור. נא להשאיר את הכרטיסייה הזו פתוחה."
+  },
+  "popup_settings_button": {
+    "message": "הגדרות"
+  },
+  "popup_controls_label": {
+    "message": "השמעה"
+  },
+  "popup_loading": {
+    "message": "בטעינה"
+  },
+  "popup_play_button": {
+    "message": "הקראה"
+  },
+  "popup_pause_button": {
+    "message": "השהיה"
+  },
+  "popup_rewind_button": {
+    "message": "הקודם"
+  },
+  "popup_forward_button": {
+    "message": "הבא"
+  },
+  "popup_stop_button": {
+    "message": "עצירה"
+  },
+  "popup_smaller_text": {
+    "message": "הקטנת הטקסט"
+  },
+  "popup_larger_text": {
+    "message": "הגדלת הטקסט"
+  },
+  "popup_smaller_window": {
+    "message": "הקטנת החלון"
+  },
+  "popup_larger_window": {
+    "message": "הגדלת החלון"
+  },
+  "popup_voice_auto": {
+    "message": "בחירה אוטומטית"
+  },
+  "options_close_button": {
+    "message": "חזרה"
+  },
+  "options_section_voice": {
+    "message": "קול"
+  },
+  "options_section_reading": {
+    "message": "קריאה"
+  },
+  "options_filter_languages": {
+    "message": "בחירת השפות שיוצגו ברשימה"
+  },
+  "options_rate_edit": {
+    "message": "הקלדת מהירות מדויקת"
+  },
+  "options_saved": {
+    "message": "נשמר"
+  },
+  "options_shortcuts_label": {
+    "message": "קיצורי דרך"
+  },
+  "nav_settings": {
+    "message": "הגדרות"
+  },
+  "nav_languages": {
+    "message": "שפות"
+  },
+  "nav_custom_voices": {
+    "message": "קולות מותאמים אישית"
+  },
+  "nav_advanced": {
+    "message": "מתקדם"
+  },
+  "advanced_playback_title": {
+    "message": "השמעה"
+  },
+  "advanced_bt_silence_gap": {
+    "message": "תיקון השמטת המילים הראשונות בכל פסקה בשימוש באוזניות Bluetooth"
+  },
+  "languages_explanation": {
+    "message": "יש לבחור את השפות שבהן קוראים. רק הקולות שלהן יופיעו בתפריט הקולות. בחירת קול תחת שפה תגרום לשימוש קבוע בו עבור השפה הזו."
+  },
+  "custom_voices_explanation": {
+    "message": "אפשר להוסיף חשבון משלך אצל ספק קולות בענן כדי להשתמש בקולות שלו. המפתחות שלך נשמרים רק בדפדפן הזה. טקסט שמוקרא בקולות האלה נשלח לאותו ספק."
+  },
+  "welcome_heading": {
+    "message": "ReadFollow מקריא טקסט בקול ומדגיש בדף כל מילה בזמן שהיא נאמרת."
+  },
+  "welcome_try_title": {
+    "message": "לנסות"
+  },
+  "welcome_sample": {
+    "message": "הפסקה הזו מוקראת בקול ברירת המחדל שלך. המשפט שמוקרא נצבע בכחול, והמילה הנוכחית מסומנת בענבר ומודגשת בקו תחתון, כך שאפשר לעקוב בעיניים."
+  },
+  "welcome_try_button": {
+    "message": "הקראת הפסקה הזו"
+  },
+  "welcome_start_title": {
+    "message": "שלוש דרכים להתחיל"
+  },
+  "welcome_start_select": {
+    "message": "בוחרים טקסט בכל דף ולוחצים על Alt+O. בתחתית הדף יופיע סרגל קטן עם השהיה, דילוג, מהירות ועצירה."
+  },
+  "welcome_start_menu": {
+    "message": "לוחצים לחיצה ימנית על טקסט שנבחר ובוחרים \"הקראת הטקסט שנבחר\"."
+  },
+  "welcome_start_button": {
+    "message": "לוחצים על הלחצן של ReadFollow בסרגל הכלים כדי להקריא את כל הדף."
+  },
+  "welcome_pin_chrome": {
+    "message": "הלחצן לא מופיע? לוחצים על סמל חלק הפאזל ליד שורת הכתובת, ואז על סמל הנעיצה ליד ReadFollow."
+  },
+  "welcome_pin_firefox": {
+    "message": "הלחצן לא מופיע? לוחצים על לחצן התוספות (חלק הפאזל) בסרגל הכלים, ואז על גלגל השיניים ליד ReadFollow ועל \"הצמדה לסרגל הכלים\"."
+  },
+  "welcome_shortcuts_title": {
+    "message": "קיצורי מקלדת"
+  },
+  "welcome_shortcut_not_set": {
+    "message": "לא הוגדר"
+  },
+  "welcome_shortcuts_missing": {
+    "message": "לא ניתן היה להגדיר חלק מקיצורי הדרך, בדרך כלל כי תוסף אחר כבר משתמש באותם מקשים. אפשר לבחור מקשים אחרים בהמשך."
+  },
+  "welcome_privacy_title": {
+    "message": "הטקסט שלך"
+  },
+  "welcome_privacy_body": {
+    "message": "בקולות המובנים במחשב ובקולות Piper שאפשר להוריד, הטקסט לא יוצא מהמכשיר אף פעם. Google Translate והקולות בענן שמוסיפים ידנית (OpenAI, Azure, Amazon Polly, IBM) מקבלים רק את הטקסט שמבקשים מהם להקריא. ל-ReadFollow אין חשבון, והוא לא אוסף נתונים."
+  },
+  "welcome_settings_link": {
+    "message": "פתיחת ההגדרות"
+  },
+  "options_bar_label": {
+    "message": "סרגל ההשמעה"
+  },
+  "options_bar_show_all": {
+    "message": "הצגה בכל האתרים"
+  },
+  "options_bar_hidden_on": {
+    "message": "מוסתר ב-$1"
+  },
+  "options_bar_shown_everywhere": {
+    "message": "מוצג בכל האתרים. כדי להסתיר אותו באתר מסוים, משתמשים בתפריט שבקצה הסרגל."
+  },
+  "voice_privacy_auto": {
+    "message": "בבחירה אוטומטית נעשה שימוש בקול שבמכשיר הזה כשיש קול שמתאים לשפה. כשאין, ייתכן שייעשה שימוש בקול מקוון של Google, שמקבל את הטקסט שמוקרא."
+  },
+  "voice_privacy_remote": {
+    "message": "טקסט שמוקרא בקול הזה נשלח אל $1."
+  },
+  "voice_privacy_local": {
+    "message": "הקול הזה פועל במכשיר שלך. הטקסט נשאר בו."
+  },
+  "options_highlight_colors": {
+    "message": "צבעי ההדגשה"
+  },
+  "highlight_scheme_blue_amber": {
+    "message": "כחול וענבר"
+  },
+  "highlight_scheme_green_yellow": {
+    "message": "ירוק וצהוב"
+  },
+  "highlight_scheme_pink_lavender": {
+    "message": "ורוד ולבנדר"
+  },
+  "highlight_scheme_underline": {
+    "message": "קו תחתון בלבד"
+  },
+  "highlight_sample_before": {
+    "message": "המשפט שמוקרא והמילה"
+  },
+  "highlight_sample_word": {
+    "message": "הנוכחית"
+  },
+  "highlight_sample_after": {
+    "message": "שבו."
+  },
+  "command_play": {
+    "message": "הקראה או עצירה"
+  },
+  "command_pause": {
+    "message": "השהיה או המשך"
+  },
+  "command_stop": {
+    "message": "עצירה"
+  },
+  "command_forward": {
+    "message": "המשפט הבא"
+  },
+  "command_rewind": {
+    "message": "המשפט הקודם"
+  }
+}
