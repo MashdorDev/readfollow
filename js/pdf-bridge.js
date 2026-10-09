@@ -40,19 +40,9 @@ const highlighterReady = ["js/rxjs.umd.min.js", "js/defaults.js", "js/page-contr
     document.head.appendChild(script)
   })), Promise.resolve())
 
-//The text layer's text is transparent over the rendered page, so the highlights keep it that way and only
-//tint behind it. Sentence and word differ in hue and lightness, and the word is underlined too, so the word
-//stands out without relying on color; both tints keep black text above 12:1 contrast.
+//Overrides the page highlighter's web colors with the PDF version of the chosen scheme (see getHighlightCss),
+//which keeps the text layer transparent over the rendered page
 const highlightStyle = new CSSStyleSheet()
-highlightStyle.replaceSync(`
-  ::highlight(read-aloud-context) { color: transparent !important; background-color: rgb(66 133 244 / 0.16) !important; }
-  ::highlight(read-aloud-word) {
-    color: transparent !important;
-    background-color: rgb(255 196 0 / 0.6) !important;
-    text-decoration: underline 2px rgb(32 33 36) !important;
-    text-underline-offset: 2px;
-  }
-`)
 document.adoptedStyleSheets = [...document.adoptedStyleSheets, highlightStyle]
 
 //page being read, set when the reader moves to a page rather than when it prefetches one
@@ -72,6 +62,8 @@ async function highlightPage(pageNumber) {
   const textLayer = await getTextLayer(pageNumber)
   if (readingPage != pageNumber || !textLayer) return
   await highlighterReady
+  const {highlightColors} = await getSettings(["highlightColors"])
+  highlightStyle.replaceSync(getHighlightCss(highlightColors, {context: "read-aloud-context", word: "read-aloud-word"}, true))
   const range = document.createRange()
   range.selectNodeContents(textLayer)
   pageHighlighter.start(range, {tint: false})
@@ -148,6 +140,8 @@ async function readPageLines(pdf, pageNumber) {
   for (const item of items) {
     //marked-content items carry no text
     if (item.str == null) continue
+    //rotated text is margin material (arXiv's sideways stamp, page edge labels), not something to read
+    if (item.transform[1] || item.transform[2]) continue
     //zero-height items are spacers whose position says nothing about layout
     if (item.height) {
       const y = item.transform[5]

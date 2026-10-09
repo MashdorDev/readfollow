@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- tab icon while paused -->
+  <rect x="4" y="4" width="120" height="120" rx="28" fill="#0f766e"/>
+  <rect x="26" y="34" width="76" height="12" rx="6" fill="#cdeae6"/>
+  <rect x="26" y="58" width="28" height="12" rx="6" fill="#cdeae6"/>
+  <rect x="60" y="54" width="42" height="20" rx="7" fill="#ffc933"/>
+  <rect x="26" y="82" width="56" height="12" rx="6" fill="#cdeae6"/>
+  <circle cx="90" cy="90" r="37" fill="#5f6368" stroke="#ffffff" stroke-width="6"/>
+  <rect x="74" y="72" width="11" height="36" rx="2" fill="#ffffff"/>
+  <rect x="95" y="72" width="11" height="36" rx="2" fill="#ffffff"/>
+</svg>

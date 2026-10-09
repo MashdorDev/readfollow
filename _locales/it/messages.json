@@ -6,10 +6,10 @@
     "message": "ReadFollow"
   },
   "extension_description": {
-    "message": "Legge ad alta voce la pagina web con un click. Supporta 40+ lingue."
+    "message": "Legge il testo ad alta voce ed evidenzia ogni parola sulla pagina mentre viene letta. Per siti e PDF, offline o con voci online."
   },
   "options_heading": {
-    "message": "Opzioni"
+    "message": "Impostazioni"
   },
   "options_voice_label": {
     "message": "Voce"
@@ -33,7 +33,7 @@
     "message": "Abilita voci personalizzate"
   },
   "options_enable_piper_voices": {
-    "message": "Installa voci Piper..."
+    "message": "Scarica voci naturali che funzionano sul tuo dispositivo (Piper)..."
   },
   "options_rate_label": {
     "message": "Velocità"
@@ -48,19 +48,19 @@
     "message": "Volume"
   },
   "options_show_highlighting": {
-    "message": "Evidenzia Testo"
+    "message": "Testo da seguire"
   },
   "options_highlighting_off": {
-    "message": "Spegnere"
+    "message": "Disattivato"
   },
   "options_highlighting_popup": {
-    "message": "Mostra in popup"
+    "message": "Nel popup"
   },
   "options_highlighting_window": {
-    "message": "Mostra in una finestra separata"
+    "message": "In una finestra separata"
   },
   "options_audio_playback": {
-    "message": "Riproduzione dell&#39;audio"
+    "message": "Riproduzione audio"
   },
   "options_audio_playback_standalone": {
     "message": "Usa una scheda separata"
@@ -69,10 +69,10 @@
     "message": "A pag"
   },
   "options_hotkeys_link": {
-    "message": "Modifica i tasti di scelta rapida"
+    "message": "Modifica le scorciatoie da tastiera"
   },
   "options_test_button": {
-    "message": "Testare"
+    "message": "Prova voce"
   },
   "options_reset_button": {
     "message": "Reset"
@@ -81,7 +81,7 @@
     "message": "Interrompi"
   },
   "player_tab_explanation": {
-    "message": "Leggi ad alta voce utilizza questa scheda per la riproduzione audio. Questa scheda si chiuderà automaticamente dopo 5 minuti di inattività."
+    "message": "ReadFollow usa questa scheda per riprodurre l'audio. La scheda si chiude da sola dopo 5 minuti di inattività."
   },
   "player_hidethistab_link": {
     "message": "Nascondi questa scheda"
@@ -90,7 +90,7 @@
     "message": "Nascondere questa scheda?"
   },
   "player_hidethistab_dialog_body": {
-    "message": "Se nascondi questa scheda, Leggi ad alta voce riprodurrà l&#39;audio all&#39;interno della pagina web corrente. Ciò significa che allontanarsi dalla pagina causerà l&#39;interruzione del discorso. (Questa impostazione può essere ripristinata dalla pagina delle opzioni dell&#39;estensione)"
+    "message": "Se nascondi questa scheda, Leggi ad alta voce riprodurrà l'audio all'interno della pagina web corrente. Ciò significa che allontanarsi dalla pagina causerà l'interruzione del discorso. (Puoi annullare questa scelta nelle impostazioni di ReadFollow.)"
   },
   "player_hidethistab_dialog_ok_button": {
     "message": "Nascondere"
@@ -102,7 +102,7 @@
     "message": "Autorizzazione richiesta"
   },
   "player_permission_dialog_body": {
-    "message": "Consenti a Leggi ad alta voce di riprodurre l&#39;audio?"
+    "message": "Consentire a ReadFollow di riprodurre l'audio?"
   },
   "player_permission_dialog_ok_button": {
     "message": "Permettere"
@@ -120,22 +120,22 @@
     "message": "Usa il modulo per caricare il tuo file PDF per leggere ad alta voce"
   },
   "error_ajax_pdf": {
-    "message": "Salva questo file PDF sul tuo computer e aprilo all&#39;interno di questo [visualizzatore PDF](open-pdf-viewer) per leggerlo ad alta voce"
+    "message": "Salva questo file PDF sul tuo computer e aprilo all'interno di questo [visualizzatore PDF](open-pdf-viewer) per leggerlo ad alta voce"
   },
   "error_page_unreadable": {
     "message": "Non posso leggere ad alta voce questo sito"
   },
   "error_file_access": {
-    "message": "Devi concedere l&#39;accesso Leggi ad alta voce agli URL dei file nell&#39;estensione [settings](open-extension-settings)"
+    "message": "Devi consentire a ReadFollow l'accesso agli URL dei file nelle [impostazioni](open-extension-settings) dell'estensione"
   },
   "error_add_permissions": {
-    "message": "Devi concedere Leggi ad alta voce [autorizzazioni](request-permissions) aggiuntive per questo sito web"
+    "message": "Devi concedere a ReadFollow [autorizzazioni](request-permissions) aggiuntive per questo sito web"
   },
   "error_chatgpt": {
     "message": "Fai clic sull'icona dell'altoparlante accanto a ogni risposta per leggerla ad alta voce"
   },
   "languages_heading": {
-    "message": "Opzioni di lingua"
+    "message": "Lingue"
   },
   "languages_back_button": {
     "message": "Torna alle opzioni"
@@ -148,5 +148,197 @@
   },
   "google_translate_keep_page_open": {
     "message": "ReadFollow sta usando Google Translate per la sintesi vocale. Si prega di tenere questa scheda aperta."
+  },
+  "popup_settings_button": {
+    "message": "Impostazioni"
+  },
+  "popup_controls_label": {
+    "message": "Riproduzione"
+  },
+  "popup_loading": {
+    "message": "Caricamento"
+  },
+  "popup_play_button": {
+    "message": "Leggi ad alta voce"
+  },
+  "popup_pause_button": {
+    "message": "Pausa"
+  },
+  "popup_rewind_button": {
+    "message": "Precedente"
+  },
+  "popup_forward_button": {
+    "message": "Successivo"
+  },
+  "popup_stop_button": {
+    "message": "Interrompi"
+  },
+  "popup_smaller_text": {
+    "message": "Testo più piccolo"
+  },
+  "popup_larger_text": {
+    "message": "Testo più grande"
+  },
+  "popup_smaller_window": {
+    "message": "Finestra più piccola"
+  },
+  "popup_larger_window": {
+    "message": "Finestra più grande"
+  },
+  "popup_voice_auto": {
+    "message": "Selezione automatica"
+  },
+  "options_close_button": {
+    "message": "Indietro"
+  },
+  "options_section_voice": {
+    "message": "Voce"
+  },
+  "options_section_reading": {
+    "message": "Lettura"
+  },
+  "options_filter_languages": {
+    "message": "Scegli quali lingue mostrare"
+  },
+  "options_rate_edit": {
+    "message": "Inserisci una velocità esatta"
+  },
+  "options_saved": {
+    "message": "Salvato"
+  },
+  "options_shortcuts_label": {
+    "message": "Scorciatoie"
+  },
+  "nav_settings": {
+    "message": "Impostazioni"
+  },
+  "nav_languages": {
+    "message": "Lingue"
+  },
+  "nav_custom_voices": {
+    "message": "Voci personalizzate"
+  },
+  "nav_advanced": {
+    "message": "Avanzate"
+  },
+  "advanced_playback_title": {
+    "message": "Riproduzione"
+  },
+  "advanced_bt_silence_gap": {
+    "message": "Correggi le prime parole mancanti di ogni paragrafo quando usi cuffie Bluetooth"
+  },
+  "languages_explanation": {
+    "message": "Scegli le lingue che leggi. Solo le loro voci compaiono nel menu delle voci. Scegli una voce sotto una lingua per usarla sempre per quella lingua."
+  },
+  "custom_voices_explanation": {
+    "message": "Aggiungi il tuo account di un fornitore di voci cloud per usarne le voci. Le tue chiavi sono salvate solo in questo browser. Il testo che leggi con queste voci viene inviato a quel fornitore."
+  },
+  "welcome_heading": {
+    "message": "ReadFollow legge il testo ad alta voce ed evidenzia ogni parola sulla pagina mentre viene pronunciata."
+  },
+  "welcome_try_title": {
+    "message": "Provalo"
+  },
+  "welcome_sample": {
+    "message": "Questo paragrafo viene letto con la tua voce predefinita. La frase in lettura diventa blu e la parola corrente è segnata in ambra e sottolineata, così puoi seguire con gli occhi."
+  },
+  "welcome_try_button": {
+    "message": "Leggi questo paragrafo"
+  },
+  "welcome_start_title": {
+    "message": "Tre modi per iniziare"
+  },
+  "welcome_start_select": {
+    "message": "Seleziona del testo in qualsiasi pagina e premi Alt+O. In fondo alla pagina compare una piccola barra con pausa, salto, velocità e stop."
+  },
+  "welcome_start_menu": {
+    "message": "Fai clic destro sul testo selezionato e scegli \"Leggi il testo selezionato\"."
+  },
+  "welcome_start_button": {
+    "message": "Fai clic sul pulsante ReadFollow nella barra degli strumenti per leggere tutta la pagina."
+  },
+  "welcome_pin_chrome": {
+    "message": "Non vedi il pulsante? Fai clic sul pezzo di puzzle accanto alla barra degli indirizzi, poi sulla puntina accanto a ReadFollow."
+  },
+  "welcome_pin_firefox": {
+    "message": "Non vedi il pulsante? Fai clic sul pulsante delle estensioni (il pezzo di puzzle) nella barra degli strumenti, poi sull'ingranaggio accanto a ReadFollow e su \"Fissa nella barra degli strumenti\"."
+  },
+  "welcome_shortcuts_title": {
+    "message": "Scorciatoie da tastiera"
+  },
+  "welcome_shortcut_not_set": {
+    "message": "Non impostata"
+  },
+  "welcome_shortcuts_missing": {
+    "message": "Alcune scorciatoie non sono state impostate, di solito perché un'altra estensione usa già gli stessi tasti. Puoi scegliere tasti diversi qui sotto."
+  },
+  "welcome_privacy_title": {
+    "message": "Il tuo testo"
+  },
+  "welcome_privacy_body": {
+    "message": "Con le voci integrate nel tuo computer e le voci Piper scaricabili, il testo non lascia mai il tuo dispositivo. Google Translate e le voci cloud che aggiungi tu (OpenAI, Azure, Amazon Polly, IBM) ricevono il testo che chiedi loro di leggere, e nient'altro. ReadFollow non ha account e non raccoglie dati."
+  },
+  "welcome_settings_link": {
+    "message": "Apri impostazioni"
+  },
+  "options_bar_label": {
+    "message": "Barra di riproduzione"
+  },
+  "options_bar_show_all": {
+    "message": "Mostra su tutti i siti"
+  },
+  "options_bar_hidden_on": {
+    "message": "Nascosta su $1"
+  },
+  "options_bar_shown_everywhere": {
+    "message": "Mostrata su ogni sito. Per nasconderla su un sito, usa il menu alla fine della barra."
+  },
+  "voice_privacy_auto": {
+    "message": "La selezione automatica usa una voce di questo dispositivo quando una corrisponde alla lingua. Se nessuna corrisponde, può usare una voce Google online, che riceve il testo che leggi."
+  },
+  "voice_privacy_remote": {
+    "message": "Il testo che leggi con questa voce viene inviato a $1."
+  },
+  "voice_privacy_local": {
+    "message": "Questa voce funziona sul tuo dispositivo. Il testo resta lì."
+  },
+  "options_highlight_colors": {
+    "message": "Colori di evidenziazione"
+  },
+  "highlight_scheme_blue_amber": {
+    "message": "Blu e ambra"
+  },
+  "highlight_scheme_green_yellow": {
+    "message": "Verde e giallo"
+  },
+  "highlight_scheme_pink_lavender": {
+    "message": "Rosa e lavanda"
+  },
+  "highlight_scheme_underline": {
+    "message": "Solo sottolineatura"
+  },
+  "highlight_sample_before": {
+    "message": "La frase in lettura e la"
+  },
+  "highlight_sample_word": {
+    "message": "parola"
+  },
+  "highlight_sample_after": {
+    "message": "corrente."
+  },
+  "command_play": {
+    "message": "Leggi ad alta voce o interrompi"
+  },
+  "command_pause": {
+    "message": "Metti in pausa o riprendi"
+  },
+  "command_stop": {
+    "message": "Interrompi"
+  },
+  "command_forward": {
+    "message": "Frase successiva"
+  },
+  "command_rewind": {
+    "message": "Frase precedente"
   }
 }

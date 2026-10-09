@@ -1,0 +1,70 @@
+/* ReadFollow design tokens, shared by every extension page. The on-page bar (js/page-controls.js)
+   can't load this file inside a web page, so it repeats the few values it needs.
+   Contrast, light: text 15:1, muted text 5.9:1 on the page background, white on accent 5.5:1.
+   Dark: text 13:1, muted text 7:1, accent text 9:1. */
+
+:root {
+  color-scheme: light dark;
+
+  --rf-font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --rf-font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+
+  --rf-bg: #faf8f5;
+  --rf-surface: #ffffff;
+  --rf-surface-2: #f2efea;
+  --rf-border: #e2ddd5;
+  --rf-border-strong: #c9c2b7;
+  --rf-text: #1f2328;
+  --rf-text-muted: #5e6470;
+  --rf-accent: #0f766e;
+  --rf-accent-hover: #0b5f58;
+  --rf-accent-soft: #e0f2ef;
+  --rf-on-accent: #ffffff;
+  --rf-danger: #b42318;
+  --rf-danger-soft: #fdecea;
+  --rf-success: #15803d;
+  --rf-success-soft: #e7f6ec;
+  --rf-info-soft: #e8f0fb;
+  --rf-focus: #0f766e;
+
+  /* the same pair as the on-page and PDF highlights */
+  --rf-hl-sentence: rgb(66 133 244 / 0.18);
+  --rf-hl-word: rgb(255 196 0 / 0.6);
+
+  --rf-radius-s: 6px;
+  --rf-radius: 10px;
+  --rf-radius-l: 16px;
+  --rf-shadow: 0 1px 2px rgb(0 0 0 / 0.06), 0 4px 16px rgb(0 0 0 / 0.06);
+
+  --rf-space-1: 4px;
+  --rf-space-2: 8px;
+  --rf-space-3: 12px;
+  --rf-space-4: 16px;
+  --rf-space-5: 24px;
+  --rf-space-6: 32px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --rf-bg: #1e1f22;
+    --rf-surface: #26282c;
+    --rf-surface-2: #2e3035;
+    --rf-border: #3a3d43;
+    --rf-border-strong: #50545c;
+    --rf-text: #e8e6e3;
+    --rf-text-muted: #a3a7ae;
+    --rf-accent: #4fd1c5;
+    --rf-accent-hover: #7ee0d6;
+    --rf-accent-soft: #173d39;
+    --rf-on-accent: #0b1f1d;
+    --rf-danger: #ff8a80;
+    --rf-danger-soft: #3d2220;
+    --rf-success: #6fcf8f;
+    --rf-success-soft: #1d3426;
+    --rf-info-soft: #22303f;
+    --rf-focus: #4fd1c5;
+    --rf-hl-sentence: rgb(96 150 240 / 0.28);
+    --rf-hl-word: rgb(255 196 0 / 0.45);
+    --rf-shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 4px 16px rgb(0 0 0 / 0.3);
+  }
+}

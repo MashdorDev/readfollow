@@ -6,10 +6,10 @@
     "message": "ReadFollow"
   },
   "extension_description": {
-    "message": "อ่านออกเสียงบทความบนหน้าเว็บปัจจุบันด้วยคลิกเดียว โดยใช้การแปลงข้อความเป็นเสียง รองรับกว่า 40 ภาษา"
+    "message": "อ่านออกเสียงข้อความและไฮไลท์แต่ละคำบนหน้าขณะที่อ่าน ใช้ได้กับหน้าเว็บและ PDF ทั้งแบบออฟไลน์และเสียงออนไลน์"
   },
   "options_heading": {
-    "message": "ตัวเลือก"
+    "message": "การตั้งค่า"
   },
   "options_voice_label": {
     "message": "เสียง"
@@ -33,7 +33,7 @@
     "message": "เปิดใช้เสียงที่กำหนดเอง..."
   },
   "options_enable_piper_voices": {
-    "message": "ติดตั้งเสียง Piper..."
+    "message": "ดาวน์โหลดเสียงธรรมชาติที่ทำงานบนอุปกรณ์ของคุณ (Piper)..."
   },
   "options_rate_label": {
     "message": "ความเร็ว"
@@ -48,7 +48,7 @@
     "message": "ความดัง"
   },
   "options_show_highlighting": {
-    "message": "การไฮไลท์ข้อความ"
+    "message": "ข้อความสำหรับอ่านตาม"
   },
   "options_highlighting_off": {
     "message": "ปิด"
@@ -72,7 +72,7 @@
     "message": "แก้ไขปุ่มลัด"
   },
   "options_test_button": {
-    "message": "ทดสอบ"
+    "message": "ทดสอบเสียง"
   },
   "options_reset_button": {
     "message": "รีเซ็ต"
@@ -90,7 +90,7 @@
     "message": "ซ่อนแท็บนี้?"
   },
   "player_hidethistab_dialog_body": {
-    "message": "หากคุณซ่อนแท็บนี้ ReadFollow จะเล่นเสียงภายในหน้าเว็บปัจจุบัน ซึ่งหมายความว่าการนำทางออกจากหน้าจะทำให้การพูดหยุด\n\n(การตั้งค่านี้สามารถย้อนกลับได้จากหน้าตัวเลือกส่วนขยาย)"
+    "message": "หากคุณซ่อนแท็บนี้ ReadFollow จะเล่นเสียงภายในหน้าเว็บปัจจุบัน ซึ่งหมายความว่าการนำทางออกจากหน้าจะทำให้การพูดหยุด\n\n(คุณเปลี่ยนกลับได้ในการตั้งค่าของ ReadFollow)"
   },
   "player_hidethistab_dialog_ok_button": {
     "message": "ซ่อน"
@@ -135,7 +135,7 @@
     "message": "คลิกไอคอนลำโพงข้างคำตอบแต่ละข้อเพื่ออ่านออกเสียง"
   },
   "languages_heading": {
-    "message": "ตัวเลือกภาษา"
+    "message": "ภาษา"
   },
   "languages_back_button": {
     "message": "กลับไปที่ตัวเลือก"
@@ -148,5 +148,197 @@
   },
   "google_translate_keep_page_open": {
     "message": "ReadFollow กำลังใช้ Google แปลภาษาสำหรับการแปลงข้อความเป็นเสียง กรุณาเปิดแท็บนี้ไว้"
+  },
+  "popup_settings_button": {
+    "message": "การตั้งค่า"
+  },
+  "popup_controls_label": {
+    "message": "การเล่น"
+  },
+  "popup_loading": {
+    "message": "กำลังโหลด"
+  },
+  "popup_play_button": {
+    "message": "อ่านออกเสียง"
+  },
+  "popup_pause_button": {
+    "message": "หยุดชั่วคราว"
+  },
+  "popup_rewind_button": {
+    "message": "ก่อนหน้า"
+  },
+  "popup_forward_button": {
+    "message": "ถัดไป"
+  },
+  "popup_stop_button": {
+    "message": "หยุด"
+  },
+  "popup_smaller_text": {
+    "message": "ตัวอักษรเล็กลง"
+  },
+  "popup_larger_text": {
+    "message": "ตัวอักษรใหญ่ขึ้น"
+  },
+  "popup_smaller_window": {
+    "message": "หน้าต่างเล็กลง"
+  },
+  "popup_larger_window": {
+    "message": "หน้าต่างใหญ่ขึ้น"
+  },
+  "popup_voice_auto": {
+    "message": "เลือกอัตโนมัติ"
+  },
+  "options_close_button": {
+    "message": "กลับ"
+  },
+  "options_section_voice": {
+    "message": "เสียง"
+  },
+  "options_section_reading": {
+    "message": "การอ่าน"
+  },
+  "options_filter_languages": {
+    "message": "เลือกภาษาที่จะแสดงในรายการ"
+  },
+  "options_rate_edit": {
+    "message": "พิมพ์ความเร็วที่ต้องการ"
+  },
+  "options_saved": {
+    "message": "บันทึกแล้ว"
+  },
+  "options_shortcuts_label": {
+    "message": "ปุ่มลัด"
+  },
+  "nav_settings": {
+    "message": "การตั้งค่า"
+  },
+  "nav_languages": {
+    "message": "ภาษา"
+  },
+  "nav_custom_voices": {
+    "message": "เสียงที่กำหนดเอง"
+  },
+  "nav_advanced": {
+    "message": "ขั้นสูง"
+  },
+  "advanced_playback_title": {
+    "message": "การเล่น"
+  },
+  "advanced_bt_silence_gap": {
+    "message": "แก้ปัญหาไม่ได้ยินคำแรกๆ ของแต่ละย่อหน้าเมื่อใช้ชุดหูฟัง Bluetooth"
+  },
+  "languages_explanation": {
+    "message": "เลือกภาษาที่คุณอ่าน เมนูเสียงจะแสดงเฉพาะเสียงของภาษาเหล่านั้น เลือกเสียงใต้ภาษาใดภาษาหนึ่งเพื่อใช้เสียงนั้นกับภาษานั้นเสมอ"
+  },
+  "custom_voices_explanation": {
+    "message": "เพิ่มบัญชีของคุณเองกับผู้ให้บริการเสียงบนคลาวด์เพื่อใช้เสียงของผู้ให้บริการนั้น คีย์ของคุณจะถูกเก็บไว้ในเบราว์เซอร์นี้เท่านั้น ข้อความที่คุณอ่านด้วยเสียงเหล่านี้จะถูกส่งไปยังผู้ให้บริการนั้น"
+  },
+  "welcome_heading": {
+    "message": "ReadFollow อ่านออกเสียงข้อความและไฮไลท์แต่ละคำบนหน้าขณะที่อ่าน"
+  },
+  "welcome_try_title": {
+    "message": "ลองใช้"
+  },
+  "welcome_sample": {
+    "message": "ย่อหน้านี้อ่านด้วยเสียงเริ่มต้นของคุณ ประโยคที่กำลังอ่านจะเปลี่ยนเป็นสีน้ำเงิน และคำปัจจุบันจะทำเครื่องหมายเป็นสีอำพันพร้อมขีดเส้นใต้ เพื่อให้คุณมองตามได้"
+  },
+  "welcome_try_button": {
+    "message": "อ่านย่อหน้านี้"
+  },
+  "welcome_start_title": {
+    "message": "สามวิธีในการเริ่มต้น"
+  },
+  "welcome_start_select": {
+    "message": "เลือกข้อความในหน้าใดก็ได้แล้วกด Alt+O แถบเล็กๆ จะปรากฏที่ด้านล่างของหน้า พร้อมปุ่มหยุดชั่วคราว ข้าม ความเร็ว และหยุด"
+  },
+  "welcome_start_menu": {
+    "message": "คลิกขวาที่ข้อความที่เลือกแล้วเลือก \"อ่านออกเสียงข้อความที่เลือก\""
+  },
+  "welcome_start_button": {
+    "message": "คลิกปุ่ม ReadFollow ในแถบเครื่องมือเพื่ออ่านทั้งหน้า"
+  },
+  "welcome_pin_chrome": {
+    "message": "ไม่เห็นปุ่มใช่ไหม คลิกไอคอนจิ๊กซอว์ (ส่วนขยาย) ข้างแถบที่อยู่ แล้วคลิกหมุดข้าง ReadFollow"
+  },
+  "welcome_pin_firefox": {
+    "message": "ไม่เห็นปุ่มใช่ไหม คลิกปุ่มส่วนขยาย (จิ๊กซอว์) ในแถบเครื่องมือ แล้วคลิกรูปเฟืองข้าง ReadFollow และเลือก \"ปักหมุดไปยังแถบเครื่องมือ\""
+  },
+  "welcome_shortcuts_title": {
+    "message": "ปุ่มลัด"
+  },
+  "welcome_shortcut_not_set": {
+    "message": "ยังไม่ได้ตั้ง"
+  },
+  "welcome_shortcuts_missing": {
+    "message": "ตั้งปุ่มลัดบางรายการไม่ได้ ซึ่งมักเป็นเพราะส่วนขยายอื่นใช้ปุ่มเดียวกันอยู่แล้ว คุณเลือกปุ่มอื่นได้ด้านล่าง"
+  },
+  "welcome_privacy_title": {
+    "message": "ข้อความของคุณ"
+  },
+  "welcome_privacy_body": {
+    "message": "เมื่อใช้เสียงที่มีในคอมพิวเตอร์ของคุณและเสียง Piper ที่ดาวน์โหลดได้ ข้อความจะไม่ออกจากอุปกรณ์ของคุณ Google Translate และเสียงบนคลาวด์ที่คุณเพิ่มเอง (OpenAI, Azure, Amazon Polly, IBM) จะได้รับเฉพาะข้อความที่คุณขอให้อ่าน และไม่ได้รับสิ่งอื่นใด ReadFollow ไม่มีบัญชีผู้ใช้และไม่เก็บข้อมูลใดๆ"
+  },
+  "welcome_settings_link": {
+    "message": "เปิดการตั้งค่า"
+  },
+  "options_bar_label": {
+    "message": "แถบควบคุมการเล่น"
+  },
+  "options_bar_show_all": {
+    "message": "แสดงในทุกเว็บไซต์"
+  },
+  "options_bar_hidden_on": {
+    "message": "ซ่อนใน $1"
+  },
+  "options_bar_shown_everywhere": {
+    "message": "แสดงในทุกเว็บไซต์ หากต้องการซ่อนในเว็บไซต์ใดเว็บไซต์หนึ่ง ให้ใช้เมนูที่ปลายแถบ"
+  },
+  "voice_privacy_auto": {
+    "message": "การเลือกอัตโนมัติจะใช้เสียงในอุปกรณ์นี้เมื่อมีเสียงที่ตรงกับภาษา หากไม่มี อาจใช้เสียงออนไลน์ของ Google ซึ่งจะได้รับข้อความที่คุณอ่าน"
+  },
+  "voice_privacy_remote": {
+    "message": "ข้อความที่คุณอ่านด้วยเสียงนี้จะถูกส่งไปยัง $1"
+  },
+  "voice_privacy_local": {
+    "message": "เสียงนี้ทำงานบนอุปกรณ์ของคุณ ข้อความจะอยู่ในอุปกรณ์เท่านั้น"
+  },
+  "options_highlight_colors": {
+    "message": "สีไฮไลท์"
+  },
+  "highlight_scheme_blue_amber": {
+    "message": "น้ำเงินและอำพัน"
+  },
+  "highlight_scheme_green_yellow": {
+    "message": "เขียวและเหลือง"
+  },
+  "highlight_scheme_pink_lavender": {
+    "message": "ชมพูและลาเวนเดอร์"
+  },
+  "highlight_scheme_underline": {
+    "message": "ขีดเส้นใต้เท่านั้น"
+  },
+  "highlight_sample_before": {
+    "message": "ประโยคที่กำลังอ่านและ"
+  },
+  "highlight_sample_word": {
+    "message": "คำ"
+  },
+  "highlight_sample_after": {
+    "message": "ปัจจุบัน"
+  },
+  "command_play": {
+    "message": "อ่านออกเสียงหรือหยุด"
+  },
+  "command_pause": {
+    "message": "หยุดชั่วคราวหรือเล่นต่อ"
+  },
+  "command_stop": {
+    "message": "หยุด"
+  },
+  "command_forward": {
+    "message": "ประโยคถัดไป"
+  },
+  "command_rewind": {
+    "message": "ประโยคก่อนหน้า"
   }
 }

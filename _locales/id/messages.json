@@ -6,10 +6,10 @@
     "message": "ReadFollow"
   },
   "extension_description": {
-    "message": "Baca keras artikel halaman web saat ini dengan satu klik, menggunakan teks ke ucapan. Mendukung 40+ bahasa."
+    "message": "Membacakan teks dan menyorot tiap kata di halaman saat diucapkan. Bekerja di halaman web dan PDF, offline atau dengan suara online."
   },
   "options_heading": {
-    "message": "Opsi"
+    "message": "Pengaturan"
   },
   "options_voice_label": {
     "message": "Suara"
@@ -33,7 +33,7 @@
     "message": "Aktifkan suara kustom..."
   },
   "options_enable_piper_voices": {
-    "message": "Instal suara Piper..."
+    "message": "Unduh suara alami yang berjalan di perangkat Anda (Piper)..."
   },
   "options_rate_label": {
     "message": "Kecepatan"
@@ -48,16 +48,16 @@
     "message": "Volume"
   },
   "options_show_highlighting": {
-    "message": "Penyorotan Teks"
+    "message": "Teks untuk diikuti"
   },
   "options_highlighting_off": {
-    "message": "Matikan"
+    "message": "Mati"
   },
   "options_highlighting_popup": {
-    "message": "Tampilkan di popup"
+    "message": "Di popup"
   },
   "options_highlighting_window": {
-    "message": "Tampilkan di jendela terpisah"
+    "message": "Di jendela terpisah"
   },
   "options_audio_playback": {
     "message": "Pemutaran Audio"
@@ -69,10 +69,10 @@
     "message": "Di halaman"
   },
   "options_hotkeys_link": {
-    "message": "Edit tombol pintasan"
+    "message": "Edit pintasan keyboard"
   },
   "options_test_button": {
-    "message": "Tes"
+    "message": "Tes suara"
   },
   "options_reset_button": {
     "message": "Reset"
@@ -90,7 +90,7 @@
     "message": "Sembunyikan tab ini?"
   },
   "player_hidethistab_dialog_body": {
-    "message": "Jika Anda menyembunyikan tab ini, ReadFollow akan memutar audio di dalam halaman web saat ini. Ini berarti meninggalkan halaman akan menyebabkan ucapan berhenti.\n\n(Pengaturan ini dapat dikembalikan dari halaman Opsi ekstensi)"
+    "message": "Jika Anda menyembunyikan tab ini, ReadFollow akan memutar audio di dalam halaman web saat ini. Ini berarti meninggalkan halaman akan menyebabkan ucapan berhenti.\n\n(Anda dapat mengembalikannya di setelan ReadFollow.)"
   },
   "player_hidethistab_dialog_ok_button": {
     "message": "Sembunyikan"
@@ -135,7 +135,7 @@
     "message": "Klik ikon speaker di samping setiap jawaban untuk membacanya dengan keras"
   },
   "languages_heading": {
-    "message": "Opsi Bahasa"
+    "message": "Bahasa"
   },
   "languages_back_button": {
     "message": "Kembali ke Opsi"
@@ -148,5 +148,197 @@
   },
   "google_translate_keep_page_open": {
     "message": "ReadFollow menggunakan Google Terjemahan untuk teks ke ucapan. Harap biarkan tab ini tetap terbuka."
+  },
+  "popup_settings_button": {
+    "message": "Pengaturan"
+  },
+  "popup_controls_label": {
+    "message": "Pemutaran"
+  },
+  "popup_loading": {
+    "message": "Memuat"
+  },
+  "popup_play_button": {
+    "message": "Baca keras"
+  },
+  "popup_pause_button": {
+    "message": "Jeda"
+  },
+  "popup_rewind_button": {
+    "message": "Sebelumnya"
+  },
+  "popup_forward_button": {
+    "message": "Berikutnya"
+  },
+  "popup_stop_button": {
+    "message": "Berhenti"
+  },
+  "popup_smaller_text": {
+    "message": "Teks lebih kecil"
+  },
+  "popup_larger_text": {
+    "message": "Teks lebih besar"
+  },
+  "popup_smaller_window": {
+    "message": "Jendela lebih kecil"
+  },
+  "popup_larger_window": {
+    "message": "Jendela lebih besar"
+  },
+  "popup_voice_auto": {
+    "message": "Pilih otomatis"
+  },
+  "options_close_button": {
+    "message": "Kembali"
+  },
+  "options_section_voice": {
+    "message": "Suara"
+  },
+  "options_section_reading": {
+    "message": "Membaca"
+  },
+  "options_filter_languages": {
+    "message": "Pilih bahasa yang ditampilkan"
+  },
+  "options_rate_edit": {
+    "message": "Ketik kecepatan yang tepat"
+  },
+  "options_saved": {
+    "message": "Tersimpan"
+  },
+  "options_shortcuts_label": {
+    "message": "Pintasan"
+  },
+  "nav_settings": {
+    "message": "Pengaturan"
+  },
+  "nav_languages": {
+    "message": "Bahasa"
+  },
+  "nav_custom_voices": {
+    "message": "Suara kustom"
+  },
+  "nav_advanced": {
+    "message": "Lanjutan"
+  },
+  "advanced_playback_title": {
+    "message": "Pemutaran"
+  },
+  "advanced_bt_silence_gap": {
+    "message": "Perbaiki beberapa kata pertama di setiap paragraf yang hilang saat menggunakan headset Bluetooth"
+  },
+  "languages_explanation": {
+    "message": "Pilih bahasa yang Anda baca. Hanya suara untuk bahasa tersebut yang ditampilkan di menu suara. Pilih suara di bawah suatu bahasa untuk selalu menggunakannya bagi bahasa itu."
+  },
+  "custom_voices_explanation": {
+    "message": "Tambahkan akun Anda sendiri di penyedia suara cloud untuk menggunakan suaranya. Kunci Anda hanya disimpan di browser ini. Teks yang Anda baca dengan suara ini dikirim ke penyedia tersebut."
+  },
+  "welcome_heading": {
+    "message": "ReadFollow membacakan teks dengan keras dan menyorot setiap kata di halaman saat diucapkan."
+  },
+  "welcome_try_title": {
+    "message": "Coba"
+  },
+  "welcome_sample": {
+    "message": "Paragraf ini dibaca dengan suara default Anda. Kalimat yang sedang dibaca menjadi biru, dan kata saat ini ditandai dengan warna kuning amber dan digarisbawahi, sehingga Anda dapat mengikutinya dengan mata."
+  },
+  "welcome_try_button": {
+    "message": "Baca paragraf ini"
+  },
+  "welcome_start_title": {
+    "message": "Tiga cara untuk memulai"
+  },
+  "welcome_start_select": {
+    "message": "Pilih teks di halaman mana pun dan tekan Alt+O. Bilah kecil muncul di bagian bawah halaman dengan tombol jeda, lewati, kecepatan, dan berhenti."
+  },
+  "welcome_start_menu": {
+    "message": "Klik kanan teks yang dipilih dan pilih \"Baca keras teks yang dipilih\"."
+  },
+  "welcome_start_button": {
+    "message": "Klik tombol ReadFollow di bilah alat untuk membaca seluruh halaman."
+  },
+  "welcome_pin_chrome": {
+    "message": "Tidak melihat tombolnya? Klik ikon kepingan puzzle (Ekstensi) di samping bilah alamat, lalu ikon pin di samping ReadFollow."
+  },
+  "welcome_pin_firefox": {
+    "message": "Tidak melihat tombolnya? Klik tombol ekstensi (kepingan puzzle) di bilah alat, lalu ikon roda gigi di samping ReadFollow dan \"Sematkan ke Bilah Alat\"."
+  },
+  "welcome_shortcuts_title": {
+    "message": "Pintasan keyboard"
+  },
+  "welcome_shortcut_not_set": {
+    "message": "Belum diatur"
+  },
+  "welcome_shortcuts_missing": {
+    "message": "Beberapa pintasan tidak dapat diatur, biasanya karena ekstensi lain sudah menggunakan tombol yang sama. Anda dapat memilih tombol lain di bawah."
+  },
+  "welcome_privacy_title": {
+    "message": "Teks Anda"
+  },
+  "welcome_privacy_body": {
+    "message": "Dengan suara bawaan komputer Anda dan suara Piper yang dapat diunduh, teks tidak pernah keluar dari perangkat Anda. Google Terjemahan dan suara cloud yang Anda tambahkan sendiri (OpenAI, Azure, Amazon Polly, IBM) menerima teks yang Anda minta untuk dibacakan, dan tidak ada yang lain. ReadFollow tidak memiliki akun dan tidak mengumpulkan data."
+  },
+  "welcome_settings_link": {
+    "message": "Buka pengaturan"
+  },
+  "options_bar_label": {
+    "message": "Bilah pemutaran"
+  },
+  "options_bar_show_all": {
+    "message": "Tampilkan di semua situs"
+  },
+  "options_bar_hidden_on": {
+    "message": "Disembunyikan di $1"
+  },
+  "options_bar_shown_everywhere": {
+    "message": "Ditampilkan di setiap situs. Untuk menyembunyikannya di satu situs, gunakan menu di ujung bilah."
+  },
+  "voice_privacy_auto": {
+    "message": "Pilih otomatis menggunakan suara di perangkat ini jika ada yang cocok dengan bahasanya. Jika tidak ada, suara Google online mungkin digunakan, yang menerima teks yang Anda baca."
+  },
+  "voice_privacy_remote": {
+    "message": "Teks yang Anda baca dengan suara ini dikirim ke $1."
+  },
+  "voice_privacy_local": {
+    "message": "Suara ini berjalan di perangkat Anda. Teks tetap di perangkat."
+  },
+  "options_highlight_colors": {
+    "message": "Warna sorotan"
+  },
+  "highlight_scheme_blue_amber": {
+    "message": "Biru dan amber"
+  },
+  "highlight_scheme_green_yellow": {
+    "message": "Hijau dan kuning"
+  },
+  "highlight_scheme_pink_lavender": {
+    "message": "Merah muda dan lavender"
+  },
+  "highlight_scheme_underline": {
+    "message": "Garis bawah saja"
+  },
+  "highlight_sample_before": {
+    "message": "Kalimat yang sedang dibaca dan"
+  },
+  "highlight_sample_word": {
+    "message": "kata"
+  },
+  "highlight_sample_after": {
+    "message": "saat ini."
+  },
+  "command_play": {
+    "message": "Bacakan atau hentikan"
+  },
+  "command_pause": {
+    "message": "Jeda atau lanjutkan"
+  },
+  "command_stop": {
+    "message": "Hentikan"
+  },
+  "command_forward": {
+    "message": "Kalimat berikutnya"
+  },
+  "command_rewind": {
+    "message": "Kalimat sebelumnya"
   }
 }

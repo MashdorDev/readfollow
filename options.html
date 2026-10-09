@@ -3,8 +3,11 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ReadFollow Options</title>
-  <link rel="stylesheet" type="text/css" href="css/common.css">
+  <meta name="color-scheme" content="light dark">
+  <title>ReadFollow Settings</title>
+  <link rel="icon" type="image/svg+xml" href="img/icon.svg">
+  <link rel="stylesheet" type="text/css" href="css/tokens.css">
+  <link rel="stylesheet" type="text/css" href="css/base.css">
   <link rel="stylesheet" type="text/css" href="css/options.css">
 
   <script src="js/rxjs.umd.min.js"></script>
@@ -16,91 +19,110 @@
   <script src="js/options.js"></script>
 </head>
 <body>
-  <div class="container-fluid">
-    <button type="button" class="close" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-    <h2>
-      <span data-i18n="options_heading"></span>
-      <a href="advanced-options.html" id="expand-button" class="material-icons">open_in_new</a>
-    </h2>
-
-    <div class="form-group">
-      <span id="hotkeys-link" data-i18n="options_hotkeys_link"></span>
-    </div>
-
-    <div class="layout">
-      <div>
-        <span data-i18n="options_voice_label"></span>
-        <button id="languages-edit-button" type="button" class="btn btn-sm btn-light">
-          <i class="material-icons">filter_alt</i>
-        </button>
-      </div>
-      <div>
-        <select id="voices" class="form-control">
-        </select>
-      </div>
-
-      <div>
-        <span data-i18n="options_rate_label"></span>
-        <button id="rate-edit-button" type="button" class="btn btn-sm btn-light">
-          <i class="material-icons">mode_edit</i>
-        </button>
-      </div>
-      <div>
-        <div id="rate" class="slider" data-min="-1" data-max="1" data-steps="40" data-pow="3"></div>
-        <div id="rate-input-div">
-          <input id="rate-input" class="form-control" type="text" maxlength="5" />
-        </div>
-        <small id="rate-warning" class="form-text warning" data-i18n="options_rate_warning"></small>
-      </div>
-
-      <div class="pitch-visible">
-        <span data-i18n="options_pitch_label"></span>
-      </div>
-      <div class="pitch-visible">
-        <div id="pitch" class="slider" data-min="0" data-max="2" data-steps="40"></div>
-      </div>
-
-      <div>
-        <span data-i18n="options_volume_label"></span>
-      </div>
-      <div>
-        <div id="volume" class="slider" data-min="0.2" data-max="1" data-steps="40"></div>
-      </div>
-
-      <div>
-        <span data-i18n="options_show_highlighting"></span>
-      </div>
-      <select id="show-highlighting" class="form-control">
-        <option value="0" data-i18n="options_highlighting_off"></option>
-        <option value="1" data-i18n="options_highlighting_popup"></option>
-        <option value="2" data-i18n="options_highlighting_window"></option>
-      </select>
-
-      <div class="audio-playback-visible">
-        <span data-i18n="options_audio_playback"></span>
-      </div>
-      <select id="audio-playback" class="form-control audio-playback-visible">
-        <option value="false" data-i18n="options_audio_playback_standalone"></option>
-        <option value="true" data-i18n="options_audio_playback_embedded"></option>
-      </select>
-    </div>
-
-    <div class="form-group buttons">
-      <button type="button" id="test-voice" class="btn btn-info">
-        <div class="spinner"></div>
-        <span data-i18n="options_test_button"></span>
+  <main class="container">
+    <header class="rf-header">
+      <img src="img/icon.svg" alt="">
+      <h1 class="rf-title" data-i18n="extension_short_name"></h1>
+      <button type="button" class="close" data-i18n-title="options_close_button">
+        <span aria-hidden="true">&times;</span>
       </button>
-      <button type="button" id="reset" class="btn btn-warning" data-i18n="options_reset_button"></button>
-      <span class="green-check">
-        <i class="material-icons">check</i>
-      </span>
-    </div>
+    </header>
 
-    <div class="form-group">
-      <small id="status" style="color: red"></small>
-    </div>
-  </div>
+    <nav>
+      <ul class="rf-nav">
+        <li><a href="options.html" aria-current="page" data-i18n="nav_settings"></a></li>
+        <li><a href="languages.html" data-i18n="nav_languages"></a></li>
+        <li><a href="custom-voices.html" data-i18n="nav_custom_voices"></a></li>
+        <li><a href="advanced-options.html" data-i18n="nav_advanced"></a></li>
+      </ul>
+    </nav>
+
+    <section class="rf-section">
+      <h2 data-i18n="options_section_voice"></h2>
+      <div class="layout">
+        <label for="voices" data-i18n="options_voice_label"></label>
+        <div>
+          <div class="control-row">
+            <select id="voices" class="form-control" aria-describedby="voice-privacy"></select>
+            <button id="languages-edit-button" type="button" class="btn btn-light" data-i18n-title="options_filter_languages">
+              <i class="material-icons" aria-hidden="true">filter_alt</i>
+            </button>
+          </div>
+          <small id="voice-privacy" class="form-text"></small>
+        </div>
+
+        <span id="rate-label" data-i18n="options_rate_label"></span>
+        <div>
+          <div class="control-row">
+            <div id="rate" class="slider" data-min="-1" data-max="1" data-steps="40" data-pow="3" aria-labelledby="rate-label"></div>
+            <output id="rate-value" for="rate"></output>
+            <div id="rate-input-div">
+              <input id="rate-input" class="form-control" type="text" maxlength="5" aria-labelledby="rate-label" />
+            </div>
+            <button id="rate-edit-button" type="button" class="btn btn-light" data-i18n-title="options_rate_edit">
+              <i class="material-icons" aria-hidden="true">mode_edit</i>
+            </button>
+          </div>
+          <small id="rate-warning" class="form-text warning" data-i18n="options_rate_warning"></small>
+        </div>
+
+        <span id="pitch-label" class="pitch-visible" data-i18n="options_pitch_label"></span>
+        <div class="pitch-visible">
+          <div id="pitch" class="slider" data-min="0" data-max="2" data-steps="40" aria-labelledby="pitch-label"></div>
+        </div>
+
+        <span id="volume-label" data-i18n="options_volume_label"></span>
+        <div>
+          <div id="volume" class="slider" data-min="0.2" data-max="1" data-steps="40" aria-labelledby="volume-label"></div>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button type="button" id="test-voice" class="btn btn-primary">
+          <span class="spinner"></span>
+          <span data-i18n="options_test_button"></span>
+        </button>
+        <button type="button" id="reset" class="btn btn-light" data-i18n="options_reset_button"></button>
+        <span class="green-check" role="status" data-i18n-aria-label="options_saved">
+          <i class="material-icons" aria-hidden="true">check</i>
+        </span>
+      </div>
+      <div class="form-group">
+        <small id="status" role="alert"></small>
+      </div>
+    </section>
+
+    <section class="rf-section">
+      <h2 data-i18n="options_section_reading"></h2>
+      <div class="layout">
+        <label for="show-highlighting" data-i18n="options_show_highlighting"></label>
+        <select id="show-highlighting" class="form-control">
+          <option value="0" data-i18n="options_highlighting_off"></option>
+          <option value="1" data-i18n="options_highlighting_popup"></option>
+          <option value="2" data-i18n="options_highlighting_window"></option>
+        </select>
+
+        <label for="audio-playback" class="audio-playback-visible" data-i18n="options_audio_playback"></label>
+        <select id="audio-playback" class="form-control audio-playback-visible">
+          <option value="false" data-i18n="options_audio_playback_standalone"></option>
+          <option value="true" data-i18n="options_audio_playback_embedded"></option>
+        </select>
+
+        <span id="highlight-colors-label" data-i18n="options_highlight_colors"></span>
+        <div id="highlight-colors" role="radiogroup" aria-labelledby="highlight-colors-label"></div>
+
+        <span data-i18n="options_bar_label"></span>
+        <div>
+          <span id="bar-hidden-sites" class="text-muted"></span>
+          <button type="button" id="bar-show-all" class="btn btn-light btn-sm" data-i18n="options_bar_show_all" hidden></button>
+        </div>
+
+        <span data-i18n="options_shortcuts_label"></span>
+        <div>
+          <button type="button" id="hotkeys-link" class="btn btn-light" data-i18n="options_hotkeys_link"></button>
+        </div>
+      </div>
+    </section>
+  </main>
 </body>
 </html>

@@ -41,9 +41,7 @@ function Speech(texts, options) {
     if (isPiperVoice(options.voice)) return piperTtsEngine;
     if (isAzure(options.voice)) return azureTtsEngine;
     if (isOpenai(options.voice)) return openaiTtsEngine;
-    if (isGoogleTranslate(options.voice) && !/\s(Hebrew|Telugu)$/.test(options.voice.voiceName)) {
-      return googleTranslateTtsEngine
-    }
+    if (isGoogleTranslate(options.voice)) return googleTranslateTtsEngine;
     if (isAmazonPolly(options.voice)) return amazonPollyTtsEngine;
     if (isIbmWatson(options.voice)) return ibmWatsonTtsEngine;
     if (isGoogleNative(options.voice)) return new TimeoutTtsEngine(browserTtsEngine, 3*1000, 16*1000);

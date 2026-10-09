@@ -1,166 +1,170 @@
-
 body {
-  margin: 20px 15px 10px 15px;
+  padding: var(--rf-space-3) var(--rf-space-4) var(--rf-space-4);
+  user-select: none;
 }
-.dark-mode a {
-  color: yellowgreen;
-}
-
-#speech-info {
-  text-align: center;
+/* the follow-along view sets its own width (the window size buttons), which can widen the popup */
+body.is-popup {
+  min-width: 340px;
 }
 
-#imgLoading {
-  height: 32px;
-}
-
-#buttons {
-  min-width: 85px;
-  text-align: center;
-  margin: 15px;
-  white-space: nowrap;
-}
-#buttons > img {
-  vertical-align: top;
-}
-
-.button-1 {
-  cursor: pointer;
-  border: 2px outset;
-  border-radius: 5px;
-  background-color: #e4e4e4;
-  font-size: x-large;
-  color: #757575;
-  padding: 3px;
-  text-shadow: 1px 1px white;
-}
-.button-1:active {
-  border: 2px inset;
-}
-.button-1:hover {
-  color: #606060;
-}
-
-#btnRewind, #btnForward {
-  margin: 0 1px;
-  font-size: small;
-  vertical-align: text-bottom;
-}
-
-body.is-popup #highlight {
-  width: 350px;
-  height: 300px;
-}
-#highlight {
-  border: 1px solid lightgray;
-  padding: 1rem;
-  background-color: #ffefd5;
-  line-height: 1.35em;
-  overflow: auto;
-  word-wrap: break-word;
-  position: relative;
-  box-sizing: border-box;
-}
-#highlight span.active {
-  background-color: yellow;
-}
-.dark-mode #highlight {
-  background-color: #333;
-  border: none;
-  color: #d0d0d0;
-}
-.dark-mode #highlight span.active {
-  background-color: #0c4e00;
-}
-body:not(.is-popup) #highlight {
-  height: calc(100vh - 150px);
-}
-
-
-#toolbar {
-  margin-top: .5em;
-  text-align: right;
-  display: flex;
-}
-#toolbar .btn-group {
-  display: flex;
-}
-#toolbar .btn-group:first-child {
-  margin-right: auto;
-}
-#toolbar .btn-group:nth-child(2) {
-  margin-right: .25rem;
-}
-#toolbar .btn-group .btn:first-child {
-  border-top-left-radius: .5rem;
-  border-bottom-left-radius: .5rem;
-}
-#toolbar .btn-group .btn:last-child {
-  border-top-right-radius: .5rem;
-  border-bottom-right-radius: .5rem;
-}
-#toolbar .btn {
-  position: relative;
-  flex: 0 1 auto;
+#popup-header {
   display: flex;
   align-items: center;
-  padding: .25rem .5rem;
-  font-size: .875rem;
-  line-height: 1.5;
-  color: #212529;
-  background-color: #f8f9fa;
-  border: 1px solid transparent;
-  font-weight: 400;
-  user-select: none;
-  cursor: pointer;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  gap: var(--rf-space-2);
 }
-#toolbar .btn:hover {
-  background-color: #e2e6ea;
-  border-color: #dae0e5;
+#popup-name {
+  font-weight: 600;
 }
-#toolbar .material-icons {
-  font-size: 1em;
-}
-.dark-mode #toolbar .btn {
-  background-color: #3e3e3e;
-  color: #ddd;
-}
-body:not(.is-popup) #toolbar .btn-group.window-size {
-  display: none;
+#popup-header #btnSettings {
+  margin-inline-start: auto;
 }
 
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  color: var(--rf-text);
+  background: none;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.icon-button:hover {
+  background-color: var(--rf-surface-2);
+}
+.icon-button .material-icons {
+  font-size: 24px;
+}
+
+/* playback controls keep their order in RTL languages, as media controls usually do */
+#buttons {
+  direction: ltr;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--rf-space-3);
+  margin: var(--rf-space-4) 0 var(--rf-space-3);
+}
+
+.main-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  padding: 0;
+  color: var(--rf-on-accent);
+  background-color: var(--rf-accent);
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.main-button:hover {
+  background-color: var(--rf-accent-hover);
+}
+.main-button .material-icons {
+  font-size: 36px;
+}
+.main-button.loading {
+  cursor: default;
+}
+.main-button.loading .spinner {
+  width: 26px;
+  height: 26px;
+  border-width: 3px;
+}
 
 #status {
-  min-width: 250px;
-  font-size: small;
-  color: red;
+  margin: 0 0 var(--rf-space-3);
+  padding: var(--rf-space-3);
+  font-size: 0.9em;
   text-align: center;
+  color: var(--rf-danger);
+  background-color: var(--rf-danger-soft);
+  border-radius: var(--rf-radius-s);
+  user-select: text;
   display: none;
 }
-.dark-mode #status {
-  color: #f88;
+#status a {
+  color: inherit;
+  font-weight: 600;
 }
 
-#attribution {
-  margin-top: 10px;
-  text-align: center;
-  font-size: smaller;
+#quick-settings {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: var(--rf-space-2) var(--rf-space-3);
+  padding-top: var(--rf-space-3);
+  border-top: 1px solid var(--rf-border);
 }
-#attribution a {
-  color: #888;
-  text-decoration: none;
+#quick-settings label, #voice-label {
+  margin: 0;
+  font-weight: 400;
+  color: var(--rf-text-muted);
+}
+#quick-settings select {
+  justify-self: start;
+  width: auto;
+  min-width: 96px;
 }
 
-.google-logo span:nth-child(1), .google-logo span:nth-child(4) {
-  color: #4885ed;
+#voice-privacy {
+  grid-column: 1 / -1;
+  color: var(--rf-text-muted);
 }
-.google-logo span:nth-child(2), .google-logo span:nth-child(6) {
-  color: #db3236;
+
+.link-button {
+  justify-self: start;
+  max-width: 100%;
+  overflow: hidden;
+  padding: var(--rf-space-1) 0;
+  font: inherit;
+  text-align: start;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--rf-accent);
+  background: none;
+  border: 0;
+  cursor: pointer;
 }
-.google-logo span:nth-child(3) {
-  color: #f4c20d;
+.link-button:hover {
+  text-decoration: underline;
 }
-.google-logo span:nth-child(5) {
-  color: #3cba54;
+
+/* The follow-along text, for whole-page reading where the page itself isn't highlighted */
+#highlight {
+  margin-top: var(--rf-space-3);
+  padding: var(--rf-space-4);
+  overflow: auto;
+  overflow-wrap: break-word;
+  line-height: 1.6;
+  user-select: text;
+  background-color: var(--rf-surface);
+  border: 1px solid var(--rf-border);
+  border-radius: var(--rf-radius);
+  position: relative;
+}
+body:not(.is-popup) #highlight {
+  height: calc(100vh - 230px);
+}
+#highlight span.active {
+  background-color: var(--rf-hl-word);
+  border-radius: 3px;
+}
+
+#toolbar {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--rf-space-2);
+}
+.btn-group {
+  display: inline-flex;
+  gap: 2px;
+}
+body:not(.is-popup) #toolbar .window-size {
+  display: none;
 }

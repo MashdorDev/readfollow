@@ -3,41 +3,49 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shortcut Keys</title>
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="css/common.css">
+  <meta name="color-scheme" content="light dark">
+  <title>ReadFollow Shortcut Keys</title>
+  <link rel="icon" type="image/svg+xml" href="img/icon.svg">
+  <link rel="stylesheet" type="text/css" href="css/tokens.css">
+  <link rel="stylesheet" type="text/css" href="css/base.css">
+  <link rel="stylesheet" type="text/css" href="css/options.css">
   <style>
-  h2 {
-    margin-top: 30px;
-    margin-bottom: 20px;
+  kbd {
+    padding: 2px 6px;
+    font-family: var(--rf-font-mono);
+    font-size: 0.85em;
+    background-color: var(--rf-surface-2);
+    border: 1px solid var(--rf-border);
+    border-radius: 4px;
   }
   </style>
   <script src="js/rxjs.umd.min.js"></script>
   <script src="js/defaults.js"></script>
 </head>
 <body>
-  <div class="container">
-  <h2>
-    Shortcut Keys
-  </h2>
-  <table class="table table-bordered table-striped">
-    <tr>
-      <td>Play/Pause</td>
-      <td>Alt/Option + P</td>
-    </tr>
-    <tr>
-      <td>Stop</td>
-      <td>Alt/Option + O</td>
-    </tr>
-    <tr>
-      <td>Forward</td>
-      <td>Alt/Option + Period</td>
-    </tr>
-    <tr>
-      <td>Rewind</td>
-      <td>Alt/Option + Comma</td>
-    </tr>
-  </table>
-  </div>
+  <main class="container">
+    <header class="rf-header">
+      <img src="img/icon.svg" alt="">
+      <h1 class="rf-title">Shortcut keys</h1>
+    </header>
+    <table class="table">
+      <tr>
+        <td>Play/Pause</td>
+        <td><kbd>Alt/Option</kbd> + <kbd>P</kbd></td>
+      </tr>
+      <tr>
+        <td>Play/Stop</td>
+        <td><kbd>Alt/Option</kbd> + <kbd>O</kbd></td>
+      </tr>
+      <tr>
+        <td>Forward</td>
+        <td><kbd>Alt/Option</kbd> + <kbd>Period</kbd></td>
+      </tr>
+      <tr>
+        <td>Rewind</td>
+        <td><kbd>Alt/Option</kbd> + <kbd>Comma</kbd></td>
+      </tr>
+    </table>
+  </main>
 </body>
 </html>

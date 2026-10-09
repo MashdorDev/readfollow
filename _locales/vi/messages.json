@@ -6,10 +6,10 @@
     "message": "ReadFollow"
   },
   "extension_description": {
-    "message": "Đọc nghe nội dung trang web - tiếng Anh và Việt. Dùng nghe đọc tin tức, truyện online. Giọng đọc hay, tiện ích dễ xài."
+    "message": "Đọc to văn bản và tô sáng từng từ trên trang khi được đọc. Dùng trên trang web và PDF, ngoại tuyến hoặc với giọng đọc trực tuyến."
   },
   "options_heading": {
-    "message": "Tùy Chọn"
+    "message": "Cài đặt"
   },
   "options_voice_label": {
     "message": "Giọng đọc"
@@ -33,7 +33,7 @@
     "message": "Bật giọng nói tùy chỉnh"
   },
   "options_enable_piper_voices": {
-    "message": "Cài đặt giọng Piper..."
+    "message": "Tải giọng đọc tự nhiên chạy trên thiết bị của bạn (Piper)..."
   },
   "options_rate_label": {
     "message": "Tốc độ đọc"
@@ -48,19 +48,19 @@
     "message": "Volume"
   },
   "options_show_highlighting": {
-    "message": "Highlight câu đang đọc"
+    "message": "Văn bản để đọc theo"
   },
   "options_highlighting_off": {
     "message": "Tắt"
   },
   "options_highlighting_popup": {
-    "message": "Hiển thị trong cửa sổ bật lên"
+    "message": "Trong cửa sổ bật lên"
   },
   "options_highlighting_window": {
-    "message": "Hiển thị trong cửa sổ riêng"
+    "message": "Trong cửa sổ riêng"
   },
   "options_audio_playback": {
-    "message": "Phát thanh"
+    "message": "Phát âm thanh"
   },
   "options_audio_playback_standalone": {
     "message": "Sử dụng tab riêng biệt"
@@ -72,7 +72,7 @@
     "message": "Chỉnh sửa phím tắt"
   },
   "options_test_button": {
-    "message": "Kiểm Tra"
+    "message": "Thử giọng đọc"
   },
   "options_reset_button": {
     "message": "Reset"
@@ -81,7 +81,7 @@
     "message": "Dừng"
   },
   "player_tab_explanation": {
-    "message": "Đọc to sử dụng tab này để phát lại âm thanh. Tab này sẽ tự động đóng sau 5 phút không hoạt động."
+    "message": "ReadFollow dùng tab này để phát âm thanh. Tab này sẽ tự đóng sau 5 phút không hoạt động."
   },
   "player_hidethistab_link": {
     "message": "Ẩn tab này"
@@ -90,7 +90,7 @@
     "message": "Ẩn tab này?"
   },
   "player_hidethistab_dialog_body": {
-    "message": "Nếu bạn ẩn tab này, Đọc to sẽ phát âm thanh bên trong trang web hiện tại. Điều này có nghĩa là điều hướng khỏi trang sẽ khiến bài phát biểu dừng lại. (Cài đặt này có thể được hoàn nguyên từ trang Tùy chọn tiện ích mở rộng)"
+    "message": "Nếu bạn ẩn tab này, Đọc to sẽ phát âm thanh bên trong trang web hiện tại. Điều này có nghĩa là điều hướng khỏi trang sẽ khiến bài phát biểu dừng lại. (Bạn có thể đổi lại trong phần cài đặt của ReadFollow.)"
   },
   "player_hidethistab_dialog_ok_button": {
     "message": "Ẩn tab"
@@ -102,13 +102,13 @@
     "message": "Yêu cầu quyền"
   },
   "player_permission_dialog_body": {
-    "message": "Cho phép Đọc to để phát âm thanh?"
+    "message": "Cho phép ReadFollow phát âm thanh?"
   },
   "player_permission_dialog_ok_button": {
     "message": "Cho phép"
   },
   "context_read_selection": {
-    "message": "Đọc"
+    "message": "Đọc to văn bản đã chọn"
   },
   "error_no_text": {
     "message": "Không tìm thấy bất kỳ văn bản nào để đọc"
@@ -126,16 +126,16 @@
     "message": "Không thể đọc to trang web này"
   },
   "error_file_access": {
-    "message": "Bạn cần cấp quyền Đọc to cho các URL của tệp trong phần mở rộng [cài đặt](open-extension-settings)"
+    "message": "Bạn cần cho phép ReadFollow truy cập URL của tệp trong phần [cài đặt](open-extension-settings) của tiện ích"
   },
   "error_add_permissions": {
-    "message": "Bạn cần cấp thêm [quyền](request-permissions) Đọc to cho trang web này"
+    "message": "Bạn cần cấp thêm [quyền](request-permissions) cho ReadFollow trên trang web này"
   },
   "error_chatgpt": {
     "message": "Nhấp vào biểu tượng loa bên cạnh mỗi câu trả lời để đọc to"
   },
   "languages_heading": {
-    "message": "Lựa chọn ngôn ngữ"
+    "message": "Ngôn ngữ"
   },
   "languages_back_button": {
     "message": "Trở về"
@@ -148,5 +148,197 @@
   },
   "google_translate_keep_page_open": {
     "message": "ReadFollow đang sử dụng Google Dịch để tổng hợp giọng nói. Vui lòng giữ tab này mở."
+  },
+  "popup_settings_button": {
+    "message": "Cài đặt"
+  },
+  "popup_controls_label": {
+    "message": "Phát"
+  },
+  "popup_loading": {
+    "message": "Đang tải"
+  },
+  "popup_play_button": {
+    "message": "Đọc to"
+  },
+  "popup_pause_button": {
+    "message": "Tạm dừng"
+  },
+  "popup_rewind_button": {
+    "message": "Trước"
+  },
+  "popup_forward_button": {
+    "message": "Tiếp"
+  },
+  "popup_stop_button": {
+    "message": "Dừng"
+  },
+  "popup_smaller_text": {
+    "message": "Chữ nhỏ hơn"
+  },
+  "popup_larger_text": {
+    "message": "Chữ lớn hơn"
+  },
+  "popup_smaller_window": {
+    "message": "Cửa sổ nhỏ hơn"
+  },
+  "popup_larger_window": {
+    "message": "Cửa sổ lớn hơn"
+  },
+  "popup_voice_auto": {
+    "message": "Tự động chọn"
+  },
+  "options_close_button": {
+    "message": "Quay lại"
+  },
+  "options_section_voice": {
+    "message": "Giọng đọc"
+  },
+  "options_section_reading": {
+    "message": "Đọc"
+  },
+  "options_filter_languages": {
+    "message": "Chọn ngôn ngữ được hiển thị"
+  },
+  "options_rate_edit": {
+    "message": "Nhập tốc độ chính xác"
+  },
+  "options_saved": {
+    "message": "Đã lưu"
+  },
+  "options_shortcuts_label": {
+    "message": "Phím tắt"
+  },
+  "nav_settings": {
+    "message": "Cài đặt"
+  },
+  "nav_languages": {
+    "message": "Ngôn ngữ"
+  },
+  "nav_custom_voices": {
+    "message": "Giọng đọc tùy chỉnh"
+  },
+  "nav_advanced": {
+    "message": "Nâng cao"
+  },
+  "advanced_playback_title": {
+    "message": "Phát"
+  },
+  "advanced_bt_silence_gap": {
+    "message": "Sửa lỗi mất vài từ đầu tiên của mỗi đoạn khi dùng tai nghe Bluetooth"
+  },
+  "languages_explanation": {
+    "message": "Chọn các ngôn ngữ bạn đọc. Chỉ giọng đọc của các ngôn ngữ đó được hiển thị trong menu giọng đọc. Chọn một giọng đọc dưới một ngôn ngữ để luôn dùng giọng đó cho ngôn ngữ ấy."
+  },
+  "custom_voices_explanation": {
+    "message": "Thêm tài khoản của riêng bạn tại một nhà cung cấp giọng đọc đám mây để dùng các giọng đọc của họ. Khóa của bạn chỉ được lưu trong trình duyệt này. Văn bản bạn đọc bằng các giọng này được gửi đến nhà cung cấp đó."
+  },
+  "welcome_heading": {
+    "message": "ReadFollow đọc to văn bản và tô sáng từng từ trên trang khi được đọc."
+  },
+  "welcome_try_title": {
+    "message": "Dùng thử"
+  },
+  "welcome_sample": {
+    "message": "Đoạn văn này được đọc bằng giọng đọc mặc định của bạn. Câu đang được đọc chuyển sang màu xanh dương, và từ hiện tại được đánh dấu màu hổ phách và gạch chân, để bạn có thể dõi theo bằng mắt."
+  },
+  "welcome_try_button": {
+    "message": "Đọc đoạn văn này"
+  },
+  "welcome_start_title": {
+    "message": "Ba cách để bắt đầu"
+  },
+  "welcome_start_select": {
+    "message": "Chọn văn bản trên bất kỳ trang nào và nhấn Alt+O. Một thanh nhỏ xuất hiện ở cuối trang với các nút tạm dừng, bỏ qua, tốc độ và dừng."
+  },
+  "welcome_start_menu": {
+    "message": "Nhấp chuột phải vào văn bản đã chọn và chọn \"Đọc to văn bản đã chọn\"."
+  },
+  "welcome_start_button": {
+    "message": "Nhấp vào nút ReadFollow trên thanh công cụ để đọc toàn bộ trang."
+  },
+  "welcome_pin_chrome": {
+    "message": "Không thấy nút? Nhấp vào biểu tượng mảnh ghép (Tiện ích) cạnh thanh địa chỉ, rồi nhấp vào ghim cạnh ReadFollow."
+  },
+  "welcome_pin_firefox": {
+    "message": "Không thấy nút? Nhấp vào nút tiện ích mở rộng (mảnh ghép) trên thanh công cụ, rồi nhấp vào bánh răng cạnh ReadFollow và chọn \"Ghim vào thanh công cụ\"."
+  },
+  "welcome_shortcuts_title": {
+    "message": "Phím tắt"
+  },
+  "welcome_shortcut_not_set": {
+    "message": "Chưa đặt"
+  },
+  "welcome_shortcuts_missing": {
+    "message": "Không thể đặt một số phím tắt, thường là do một tiện ích khác đã dùng cùng tổ hợp phím. Bạn có thể chọn phím khác bên dưới."
+  },
+  "welcome_privacy_title": {
+    "message": "Văn bản của bạn"
+  },
+  "welcome_privacy_body": {
+    "message": "Với các giọng đọc có sẵn trong máy tính và các giọng Piper có thể tải về, văn bản không bao giờ rời khỏi thiết bị của bạn. Google Dịch và các giọng đọc đám mây bạn tự thêm (OpenAI, Azure, Amazon Polly, IBM) nhận văn bản bạn yêu cầu chúng đọc, và không gì khác. ReadFollow không có tài khoản và không thu thập dữ liệu."
+  },
+  "welcome_settings_link": {
+    "message": "Mở cài đặt"
+  },
+  "options_bar_label": {
+    "message": "Thanh phát"
+  },
+  "options_bar_show_all": {
+    "message": "Hiện trên mọi trang web"
+  },
+  "options_bar_hidden_on": {
+    "message": "Đã ẩn trên $1"
+  },
+  "options_bar_shown_everywhere": {
+    "message": "Hiện trên mọi trang web. Để ẩn trên một trang, dùng menu ở cuối thanh."
+  },
+  "voice_privacy_auto": {
+    "message": "Tự động chọn dùng một giọng đọc trên thiết bị này khi có giọng phù hợp với ngôn ngữ. Khi không có, nó có thể dùng một giọng đọc trực tuyến của Google, giọng này nhận văn bản bạn đọc."
+  },
+  "voice_privacy_remote": {
+    "message": "Văn bản bạn đọc bằng giọng này được gửi đến $1."
+  },
+  "voice_privacy_local": {
+    "message": "Giọng đọc này chạy trên thiết bị của bạn. Văn bản ở lại trên thiết bị."
+  },
+  "options_highlight_colors": {
+    "message": "Màu tô sáng"
+  },
+  "highlight_scheme_blue_amber": {
+    "message": "Xanh dương và hổ phách"
+  },
+  "highlight_scheme_green_yellow": {
+    "message": "Xanh lá và vàng"
+  },
+  "highlight_scheme_pink_lavender": {
+    "message": "Hồng và oải hương"
+  },
+  "highlight_scheme_underline": {
+    "message": "Chỉ gạch chân"
+  },
+  "highlight_sample_before": {
+    "message": "Câu đang được đọc và"
+  },
+  "highlight_sample_word": {
+    "message": "từ"
+  },
+  "highlight_sample_after": {
+    "message": "hiện tại."
+  },
+  "command_play": {
+    "message": "Đọc to hoặc dừng"
+  },
+  "command_pause": {
+    "message": "Tạm dừng hoặc tiếp tục"
+  },
+  "command_stop": {
+    "message": "Dừng"
+  },
+  "command_forward": {
+    "message": "Câu tiếp theo"
+  },
+  "command_rewind": {
+    "message": "Câu trước"
   }
 }

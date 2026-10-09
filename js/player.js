@@ -75,14 +75,23 @@ window.addEventListener("message", event => {
 
 const idleSubject = new rxjs.BehaviorSubject(true)
 
-//The toolbar button shows that something is being read, so it can be found and stopped from any tab
+//The toolbar button, and this tab's own icon, show that something is being read,
+//so it can be found and stopped from any tab
 idleSubject.pipe(
   rxjs.switchMap(isIdle => isIdle
     ? rxjs.of("STOPPED")
     : rxjs.timer(0, 1000).pipe(rxjs.switchMap(() => activeDoc ? Promise.resolve(activeDoc.getState()) : ["STOPPED"]))
   ),
   rxjs.distinctUntilChanged()
-).subscribe(state => showPlaybackOnButton(state).catch(console.error))
+).subscribe(state => {
+  showPlaybackOnButton(state).catch(console.error)
+  showPlaybackOnTabIcon(state)
+})
+
+function showPlaybackOnTabIcon(state) {
+  const icon = document.querySelector("link[rel=icon]")
+  if (icon) icon.href = state == "STOPPED" ? "img/icon.svg" : state == "PAUSED" ? "img/icon-paused.svg" : "img/icon-reading.svg"
+}
 
 if (queryString.has("autoclose")) {
   rxjs.combineLatest(

@@ -6,10 +6,10 @@
     "message": "ReadFollow"
   },
   "extension_description": {
-    "message": "轻轻点击，即可为您朗读页面上的文本。（现正支援超过 40 种以上语言）"
+    "message": "朗读文本，并在页面上逐词标示正在朗读的词。适用于网页和 PDF，可离线使用，也可使用在线语音。"
   },
   "options_heading": {
-    "message": "选项"
+    "message": "设置"
   },
   "options_voice_label": {
     "message": "朗读语音"
@@ -33,7 +33,7 @@
     "message": "启用自定义语音"
   },
   "options_enable_piper_voices": {
-    "message": "安装Piper语音..."
+    "message": "下载在你的设备上运行的自然语音 (Piper)..."
   },
   "options_rate_label": {
     "message": "朗读速度"
@@ -48,7 +48,7 @@
     "message": "朗读音量"
   },
   "options_show_highlighting": {
-    "message": "标示朗读文本"
+    "message": "同步显示文本"
   },
   "options_highlighting_off": {
     "message": "关"
@@ -72,7 +72,7 @@
     "message": "编辑快捷键"
   },
   "options_test_button": {
-    "message": "去测试"
+    "message": "试听语音"
   },
   "options_reset_button": {
     "message": "重设"
@@ -81,7 +81,7 @@
     "message": "停止"
   },
   "player_tab_explanation": {
-    "message": "大声朗读使用此选项卡进行音频播放。此选项卡将在 5 分钟无活动后自动关闭。"
+    "message": "ReadFollow 使用此标签页播放音频。此标签页在 5 分钟无活动后会自动关闭。"
   },
   "player_hidethistab_link": {
     "message": "隐藏此选项卡"
@@ -90,7 +90,7 @@
     "message": "隐藏此选项卡？"
   },
   "player_hidethistab_dialog_body": {
-    "message": "如果隐藏此选项卡，大声朗读将在当前网页内播放音频。这意味着离开页面将导致语音停止。 （此设置可以从扩展选项页面恢复）"
+    "message": "如果隐藏此选项卡，ReadFollow将在当前网页内播放音频。这意味着离开页面将导致语音停止。（可以在 ReadFollow 的设置中改回。）"
   },
   "player_hidethistab_dialog_ok_button": {
     "message": "隐藏"
@@ -102,7 +102,7 @@
     "message": "请求许可"
   },
   "player_permission_dialog_body": {
-    "message": "允许大声朗读播放音频吗？"
+    "message": "允许 ReadFollow 播放音频吗？"
   },
   "player_permission_dialog_ok_button": {
     "message": "允许"
@@ -126,16 +126,16 @@
     "message": "不能大声朗读这个网站"
   },
   "error_file_access": {
-    "message": "您需要在扩展 [设置](open-extension-settings) 中授予对文件 URL 的大声朗读访问权限"
+    "message": "您需要在扩展 [设置](open-extension-settings) 中允许 ReadFollow 访问文件网址"
   },
   "error_add_permissions": {
-    "message": "您需要授予大声朗读此网站的额外[权限](request-permissions)"
+    "message": "您需要授予 ReadFollow 访问此网站的额外[权限](request-permissions)"
   },
   "error_chatgpt": {
     "message": "点击每个回答旁边的扬声器图标进行朗读"
   },
   "languages_heading": {
-    "message": "语言选项"
+    "message": "语言"
   },
   "languages_back_button": {
     "message": "返回选项"
@@ -148,5 +148,197 @@
   },
   "google_translate_keep_page_open": {
     "message": "ReadFollow正在使用Google Translate进行语音合成。 请保持此标签打开。"
+  },
+  "popup_settings_button": {
+    "message": "设置"
+  },
+  "popup_controls_label": {
+    "message": "播放"
+  },
+  "popup_loading": {
+    "message": "正在加载"
+  },
+  "popup_play_button": {
+    "message": "朗读"
+  },
+  "popup_pause_button": {
+    "message": "暂停"
+  },
+  "popup_rewind_button": {
+    "message": "上一个"
+  },
+  "popup_forward_button": {
+    "message": "下一个"
+  },
+  "popup_stop_button": {
+    "message": "停止"
+  },
+  "popup_smaller_text": {
+    "message": "缩小文字"
+  },
+  "popup_larger_text": {
+    "message": "放大文字"
+  },
+  "popup_smaller_window": {
+    "message": "缩小窗口"
+  },
+  "popup_larger_window": {
+    "message": "放大窗口"
+  },
+  "popup_voice_auto": {
+    "message": "自动选择"
+  },
+  "options_close_button": {
+    "message": "返回"
+  },
+  "options_section_voice": {
+    "message": "朗读语音"
+  },
+  "options_section_reading": {
+    "message": "朗读"
+  },
+  "options_filter_languages": {
+    "message": "选择列表中显示的语言"
+  },
+  "options_rate_edit": {
+    "message": "输入精确的朗读速度"
+  },
+  "options_saved": {
+    "message": "已保存"
+  },
+  "options_shortcuts_label": {
+    "message": "快捷键"
+  },
+  "nav_settings": {
+    "message": "设置"
+  },
+  "nav_languages": {
+    "message": "语言"
+  },
+  "nav_custom_voices": {
+    "message": "自定义语音"
+  },
+  "nav_advanced": {
+    "message": "高级"
+  },
+  "advanced_playback_title": {
+    "message": "播放"
+  },
+  "advanced_bt_silence_gap": {
+    "message": "修复使用 Bluetooth 耳机时每段开头几个词听不到的问题"
+  },
+  "languages_explanation": {
+    "message": "选择你阅读的语言。语音菜单中只列出这些语言的语音。在某种语言下选择一个语音，该语言将始终使用这个语音。"
+  },
+  "custom_voices_explanation": {
+    "message": "添加你自己的云端语音服务商帐户，即可使用其语音。你的密钥仅保存在此浏览器中。使用这些语音朗读的文本会发送给该服务商。"
+  },
+  "welcome_heading": {
+    "message": "ReadFollow 朗读文本，并在页面上逐词标示正在朗读的词。"
+  },
+  "welcome_try_title": {
+    "message": "试一试"
+  },
+  "welcome_sample": {
+    "message": "这段文字使用你的默认语音朗读。正在朗读的句子会变成蓝色，当前的词会以琥珀色标示并加下划线，方便你用眼睛跟随。"
+  },
+  "welcome_try_button": {
+    "message": "朗读这段文字"
+  },
+  "welcome_start_title": {
+    "message": "三种开始方式"
+  },
+  "welcome_start_select": {
+    "message": "在任意页面上选择文本，然后按 Alt+O。页面底部会出现一个小工具栏，可以暂停、跳过、调整速度和停止。"
+  },
+  "welcome_start_menu": {
+    "message": "右键点击所选文本，然后选择“朗读所选文本”。"
+  },
+  "welcome_start_button": {
+    "message": "点击工具栏中的 ReadFollow 按钮，朗读整个页面。"
+  },
+  "welcome_pin_chrome": {
+    "message": "看不到按钮？点击地址栏旁边的拼图图标（扩展程序），然后点击 ReadFollow 旁边的图钉。"
+  },
+  "welcome_pin_firefox": {
+    "message": "看不到按钮？点击工具栏中的扩展按钮（拼图图标），然后点击 ReadFollow 旁边的齿轮，选择“固定到工具栏”。"
+  },
+  "welcome_shortcuts_title": {
+    "message": "快捷键"
+  },
+  "welcome_shortcut_not_set": {
+    "message": "未设置"
+  },
+  "welcome_shortcuts_missing": {
+    "message": "部分快捷键无法设置，通常是因为其他扩展已经使用了相同的按键。你可以在下方选择其他按键。"
+  },
+  "welcome_privacy_title": {
+    "message": "你的文本"
+  },
+  "welcome_privacy_body": {
+    "message": "使用电脑内置的语音和可下载的 Piper 语音时，文本不会离开你的设备。Google 翻译和你自己添加的云端语音（OpenAI、Azure、Amazon Polly、IBM）只会收到你要求朗读的文本，不会收到其他任何内容。ReadFollow 没有帐户，也不收集任何数据。"
+  },
+  "welcome_settings_link": {
+    "message": "打开设置"
+  },
+  "options_bar_label": {
+    "message": "播放栏"
+  },
+  "options_bar_show_all": {
+    "message": "在所有网站上显示"
+  },
+  "options_bar_hidden_on": {
+    "message": "在 $1 上隐藏"
+  },
+  "options_bar_shown_everywhere": {
+    "message": "在所有网站上显示。要在某个网站上隐藏，请使用播放栏末端的菜单。"
+  },
+  "voice_privacy_auto": {
+    "message": "自动选择会在此设备上有匹配该语言的语音时使用它。如果没有，可能会使用 Google 在线语音，该语音会收到你朗读的文本。"
+  },
+  "voice_privacy_remote": {
+    "message": "使用此语音朗读的文本会发送给 $1。"
+  },
+  "voice_privacy_local": {
+    "message": "此语音在你的设备上运行。文本不会离开设备。"
+  },
+  "options_highlight_colors": {
+    "message": "标示颜色"
+  },
+  "highlight_scheme_blue_amber": {
+    "message": "蓝色和琥珀色"
+  },
+  "highlight_scheme_green_yellow": {
+    "message": "绿色和黄色"
+  },
+  "highlight_scheme_pink_lavender": {
+    "message": "粉色和薰衣草色"
+  },
+  "highlight_scheme_underline": {
+    "message": "仅下划线"
+  },
+  "highlight_sample_before": {
+    "message": "正在朗读的句子和"
+  },
+  "highlight_sample_word": {
+    "message": "当前的"
+  },
+  "highlight_sample_after": {
+    "message": "词。"
+  },
+  "command_play": {
+    "message": "朗读或停止"
+  },
+  "command_pause": {
+    "message": "暂停或继续"
+  },
+  "command_stop": {
+    "message": "停止"
+  },
+  "command_forward": {
+    "message": "下一句"
+  },
+  "command_rewind": {
+    "message": "上一句"
   }
 }

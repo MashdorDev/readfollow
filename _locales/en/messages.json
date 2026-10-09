@@ -6,10 +6,10 @@
     "message": "ReadFollow"
   },
   "extension_description": {
-    "message": "Read aloud the current web-page article with one click, using text to speech (TTS). Supports 40+ languages."
+    "message": "Reads text aloud and highlights each word on the page as it is spoken. Works on web pages and PDFs, offline or with online voices."
   },
   "options_heading": {
-    "message": "Options"
+    "message": "Settings"
   },
   "options_voice_label": {
     "message": "Voice"
@@ -27,13 +27,13 @@
     "message": "Additional Voices"
   },
   "options_add_more_languages": {
-    "message": "➕ Add more languages..."
+    "message": "Add more languages..."
   },
   "options_enable_custom_voices": {
-    "message": "🧩 Enable custom voices..."
+    "message": "Enable custom voices..."
   },
   "options_enable_piper_voices": {
-    "message": "⚡ Install Piper voices..."
+    "message": "Download natural voices that run on your device (Piper)..."
   },
   "options_rate_label": {
     "message": "Speed"
@@ -48,19 +48,19 @@
     "message": "Volume"
   },
   "options_show_highlighting": {
-    "message": "Text Highlighting"
+    "message": "Follow-along text"
   },
   "options_highlighting_off": {
-    "message": "Turn off"
+    "message": "Off"
   },
   "options_highlighting_popup": {
-    "message": "Show in popup"
+    "message": "In the popup"
   },
   "options_highlighting_window": {
-    "message": "Show in a separate window"
+    "message": "In a separate window"
   },
   "options_audio_playback": {
-    "message": "Audio Playback"
+    "message": "Audio playback"
   },
   "options_audio_playback_standalone": {
     "message": "Use separate tab"
@@ -104,10 +104,10 @@
     }
   },
   "options_hotkeys_link": {
-    "message": "Edit shortcut keys"
+    "message": "Edit keyboard shortcuts"
   },
   "options_test_button": {
-    "message": "Test"
+    "message": "Test voice"
   },
   "options_stop_button": {
     "message": "Stop"
@@ -125,7 +125,7 @@
     "message": "Hide this tab?"
   },
   "player_hidethistab_dialog_body": {
-    "message": "If you hide this tab, ReadFollow will play audio inside the current webpage. This means navigating away from the page will cause the speech to stop.\n\n(This setting can be reverted from the extension Options page)"
+    "message": "If you hide this tab, ReadFollow will play audio inside the current webpage. This means navigating away from the page will cause the speech to stop.\n\n(You can change this back in ReadFollow's settings.)"
   },
   "player_hidethistab_dialog_ok_button": {
     "message": "Hide"
@@ -170,7 +170,7 @@
     "message": "Click the speaker icon next to each answer to read it aloud"
   },
   "languages_heading": {
-    "message": "Language Options"
+    "message": "Languages"
   },
   "languages_back_button": {
     "message": "Back to Options"
@@ -183,5 +183,197 @@
   },
   "google_translate_keep_page_open": {
     "message": "ReadFollow is using Google Translate for text-to-speech.  Please keep this tab open."
+  },
+  "popup_settings_button": {
+    "message": "Settings"
+  },
+  "popup_controls_label": {
+    "message": "Playback"
+  },
+  "popup_loading": {
+    "message": "Loading"
+  },
+  "popup_play_button": {
+    "message": "Read aloud"
+  },
+  "popup_pause_button": {
+    "message": "Pause"
+  },
+  "popup_rewind_button": {
+    "message": "Previous"
+  },
+  "popup_forward_button": {
+    "message": "Next"
+  },
+  "popup_stop_button": {
+    "message": "Stop"
+  },
+  "popup_smaller_text": {
+    "message": "Smaller text"
+  },
+  "popup_larger_text": {
+    "message": "Larger text"
+  },
+  "popup_smaller_window": {
+    "message": "Smaller window"
+  },
+  "popup_larger_window": {
+    "message": "Larger window"
+  },
+  "popup_voice_auto": {
+    "message": "Auto select"
+  },
+  "options_close_button": {
+    "message": "Back"
+  },
+  "options_section_voice": {
+    "message": "Voice"
+  },
+  "options_section_reading": {
+    "message": "Reading"
+  },
+  "options_filter_languages": {
+    "message": "Choose which languages are listed"
+  },
+  "options_rate_edit": {
+    "message": "Type an exact speed"
+  },
+  "options_saved": {
+    "message": "Saved"
+  },
+  "options_shortcuts_label": {
+    "message": "Shortcuts"
+  },
+  "nav_settings": {
+    "message": "Settings"
+  },
+  "nav_languages": {
+    "message": "Languages"
+  },
+  "nav_custom_voices": {
+    "message": "Custom voices"
+  },
+  "nav_advanced": {
+    "message": "Advanced"
+  },
+  "advanced_playback_title": {
+    "message": "Playback"
+  },
+  "advanced_bt_silence_gap": {
+    "message": "Fix missing first few words of each paragraph when using a Bluetooth headset"
+  },
+  "languages_explanation": {
+    "message": "Pick the languages you read. Only their voices are listed in the voice menu. Choose a voice under a language to always use it for that language."
+  },
+  "custom_voices_explanation": {
+    "message": "Add your own account with a cloud voice provider to use its voices. Your keys are stored in this browser only. Text you read with these voices is sent to that provider."
+  },
+  "welcome_heading": {
+    "message": "ReadFollow reads text aloud and highlights each word on the page as it is spoken."
+  },
+  "welcome_try_title": {
+    "message": "Try it"
+  },
+  "welcome_sample": {
+    "message": "This paragraph is read with your default voice. The sentence being read turns blue, and the current word is marked in amber and underlined, so you can follow along with your eyes."
+  },
+  "welcome_try_button": {
+    "message": "Read this paragraph"
+  },
+  "welcome_start_title": {
+    "message": "Three ways to start"
+  },
+  "welcome_start_select": {
+    "message": "Select text on any page and press Alt+O. A small bar appears at the bottom of the page with pause, skip, speed and stop."
+  },
+  "welcome_start_menu": {
+    "message": "Right-click selected text and choose \"Read aloud selected text\"."
+  },
+  "welcome_start_button": {
+    "message": "Click the ReadFollow button in the toolbar to read the whole page."
+  },
+  "welcome_pin_chrome": {
+    "message": "Don't see the button? Click the puzzle piece next to the address bar, then the pin next to ReadFollow."
+  },
+  "welcome_pin_firefox": {
+    "message": "Don't see the button? Click the extensions button (the puzzle piece) in the toolbar, then the gear next to ReadFollow and \"Pin to Toolbar\"."
+  },
+  "welcome_shortcuts_title": {
+    "message": "Keyboard shortcuts"
+  },
+  "welcome_shortcut_not_set": {
+    "message": "Not set"
+  },
+  "welcome_shortcuts_missing": {
+    "message": "Some shortcuts could not be set, usually because another extension already uses the same keys. You can choose different keys below."
+  },
+  "welcome_privacy_title": {
+    "message": "Your text"
+  },
+  "welcome_privacy_body": {
+    "message": "With the voices built into your computer and the downloadable Piper voices, text never leaves your device. Google Translate and the cloud voices you add yourself (OpenAI, Azure, Amazon Polly, IBM) receive the text you ask them to read, and nothing else. ReadFollow has no account and collects no data."
+  },
+  "welcome_settings_link": {
+    "message": "Open settings"
+  },
+  "options_bar_label": {
+    "message": "Playback bar"
+  },
+  "options_bar_show_all": {
+    "message": "Show on all sites"
+  },
+  "options_bar_hidden_on": {
+    "message": "Hidden on $1"
+  },
+  "options_bar_shown_everywhere": {
+    "message": "Shown on every site. To hide it on one site, use the menu at the end of the bar."
+  },
+  "voice_privacy_auto": {
+    "message": "Auto select uses a voice on this device when one matches the language. When none does, it may use an online Google voice, which receives the text you read."
+  },
+  "voice_privacy_remote": {
+    "message": "Text you read with this voice is sent to $1."
+  },
+  "voice_privacy_local": {
+    "message": "This voice runs on your device. Text stays on it."
+  },
+  "options_highlight_colors": {
+    "message": "Highlight colors"
+  },
+  "highlight_scheme_blue_amber": {
+    "message": "Blue and amber"
+  },
+  "highlight_scheme_green_yellow": {
+    "message": "Green and yellow"
+  },
+  "highlight_scheme_pink_lavender": {
+    "message": "Pink and lavender"
+  },
+  "highlight_scheme_underline": {
+    "message": "Underline only"
+  },
+  "highlight_sample_before": {
+    "message": "The sentence being read and the"
+  },
+  "highlight_sample_word": {
+    "message": "current"
+  },
+  "highlight_sample_after": {
+    "message": "word."
+  },
+  "command_play": {
+    "message": "Read aloud or stop"
+  },
+  "command_pause": {
+    "message": "Pause or resume"
+  },
+  "command_stop": {
+    "message": "Stop"
+  },
+  "command_forward": {
+    "message": "Next sentence"
+  },
+  "command_rewind": {
+    "message": "Previous sentence"
   }
 }

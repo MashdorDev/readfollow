@@ -44,28 +44,6 @@ var getSingletonAudio = lazy(() => {
 })
 var getSilenceTrack = lazy(() => makeSilenceTrack())
 
-setupDarkMode()
-
-
-
-
-async function setupDarkMode() {
-  //if extension page but not service worker
-  if (typeof brapi.commands != "undefined" && typeof window != "undefined") {
-    const [{darkMode}] = await Promise.all([
-      getSettings(["darkMode"]),
-      new Promise(f => document.addEventListener("DOMContentLoaded", f))
-    ])
-    if (typeof darkMode == "boolean") {
-      document.body.classList.toggle("dark-mode", darkMode)
-    }
-    else {
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add("dark-mode")
-      }
-    }
-  }
-}
 
 
 /**
@@ -107,7 +85,7 @@ const settingsChange$ = rxjs.fromEventPattern(
 
 function getSettings(names) {
   return new Promise(function(fulfill) {
-    brapi.storage.local.get(names || ["voiceName", "rate", "pitch", "volume", "showHighlighting", "languages", "highlightFontSize", "highlightWindowSize", "preferredVoices", "useEmbeddedPlayer", "fixBtSilenceGap", "wordReplacements", "darkMode"], fulfill);
+    brapi.storage.local.get(names || ["voiceName", "rate", "pitch", "volume", "showHighlighting", "languages", "highlightFontSize", "highlightWindowSize", "preferredVoices", "useEmbeddedPlayer", "fixBtSilenceGap", "wordReplacements"], fulfill);
   });
 }
 
@@ -119,7 +97,7 @@ function updateSettings(items) {
 
 function clearSettings(names) {
   return new Promise(function(fulfill) {
-    brapi.storage.local.remove(names || ["voiceName", "rate", "pitch", "volume", "showHighlighting", "languages", "highlightFontSize", "highlightWindowSize", "preferredVoices", "useEmbeddedPlayer", "fixBtSilenceGap", "wordReplacements", "darkMode"], fulfill);
+    brapi.storage.local.remove(names || ["voiceName", "rate", "pitch", "volume", "showHighlighting", "languages", "highlightFontSize", "highlightWindowSize", "preferredVoices", "useEmbeddedPlayer", "fixBtSilenceGap", "wordReplacements"], fulfill);
   });
 }
 
@@ -234,6 +212,49 @@ function isAzure(voice) {
 
 function isPiperVoice(voice) {
   return /^Piper /.test(voice.voiceName)
+}
+
+//Colors for the sentence and word being read, chosen in Settings (highlightColors).
+//The word keeps dark text at 10:1 or better and is always underlined, so it stands out without relying on color.
+//PDFs get translucent tints instead: the visible text there is the rendered page under a transparent text layer.
+var highlightColorSchemes = {
+  "blue-amber": {sentence: "rgba(66, 133, 244, 0.22)", word: "#ffc933", pdfSentence: "rgba(66, 133, 244, 0.16)", pdfWord: "rgba(255, 196, 0, 0.6)"},
+  "green-yellow": {sentence: "rgba(34, 197, 94, 0.22)", word: "#fde047", pdfSentence: "rgba(34, 197, 94, 0.16)", pdfWord: "rgba(250, 204, 21, 0.55)"},
+  "pink-lavender": {sentence: "rgba(236, 72, 153, 0.16)", word: "#c4b5fd", pdfSentence: "rgba(236, 72, 153, 0.14)", pdfWord: "rgba(139, 92, 246, 0.35)"},
+  "underline": {},
+}
+
+function getHighlightCss(schemeName, names, forPdf) {
+  var scheme = highlightColorSchemes[schemeName] || highlightColorSchemes["blue-amber"]
+  var sentence = forPdf ? scheme.pdfSentence : scheme.sentence
+  var word = forPdf ? scheme.pdfWord : scheme.word
+  //on a PDF the text itself is transparent, so lines need a color of their own
+  var line = forPdf || word ? "#1f2328" : "currentColor"
+  var rule = function(name, props) {
+    return "::highlight(" + name + ") { " + props.map(function(p) {return p + (forPdf ? " !important" : "") + ";"}).join(" ") + " }"
+  }
+  var sentenceProps = sentence ? ["background-color: " + sentence] : ["text-decoration: underline 1px dotted " + line]
+  var wordProps = word ? ["background-color: " + word] : []
+  wordProps.push("text-decoration: underline " + (word ? "2px " : "3px ") + line, "text-underline-offset: 2px")
+  if (forPdf) {
+    sentenceProps.push("color: transparent")
+    wordProps.push("color: transparent")
+  }
+  else if (word) wordProps.push("color: #1f2328")
+  return rule(names.context, sentenceProps) + "\n" + rule(names.word, wordProps)
+}
+
+//Who receives the text read with this voice, or null for voices that run on this device.
+//Works from the name alone, for pages that don't load the voice engines.
+function getVoiceRecipient(voice) {
+  if (isGoogleTranslate(voice)) return "Google Translate"
+  if (isOpenai(voice)) return "the OpenAI-compatible service you added"
+  if (isAzure(voice)) return "Microsoft Azure"
+  if (isAmazonPolly(voice)) return "Amazon Polly"
+  if (isIbmWatson(voice)) return "IBM Watson"
+  if (isGoogleNative(voice)) return "Google"
+  if (voice.remote) return "the online service behind this voice"
+  return null
 }
 
 function isNativeVoice(voice) {
@@ -503,11 +524,22 @@ function domReady() {
 }
 
 function setI18nText() {
+  //right to left for Arabic and other RTL UI languages
+  document.documentElement.dir = brapi.i18n.getMessage("@@bidi_dir") || "ltr"
+  document.documentElement.lang = brapi.i18n.getUILanguage()
   $("[data-i18n]").each(function() {
     var key = $(this).data("i18n");
     var text = brapi.i18n.getMessage(key);
     if ($(this).is("input")) $(this).val(text);
     else $(this).text(text);
+  })
+  //used on icon and "A+" style buttons, where the title is also the accessible name
+  $("[data-i18n-title]").each(function() {
+    var text = brapi.i18n.getMessage($(this).data("i18nTitle"));
+    $(this).attr({title: text, "aria-label": text})
+  })
+  $("[data-i18n-aria-label]").each(function() {
+    $(this).attr("aria-label", brapi.i18n.getMessage($(this).data("i18nAriaLabel")))
   })
 }
 
@@ -570,6 +602,12 @@ function getBrowser() {
   if (/Opera|OPR\//.test(navigator.userAgent)) return 'opera';
   if (/firefox/i.test(navigator.userAgent)) return 'firefox';
   return 'chrome';
+}
+
+//Firefox 137+ can open its own shortcut editor; elsewhere it's a settings page
+function openShortcutSettings() {
+  if (brapi.commands.openShortcutSettings) return brapi.commands.openShortcutSettings()
+  return brapi.tabs.create({url: getHotkeySettingsUrl()})
 }
 
 function getHotkeySettingsUrl() {

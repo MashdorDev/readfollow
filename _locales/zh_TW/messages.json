@@ -6,10 +6,10 @@
     "message": "ReadFollow"
   },
   "extension_description": {
-    "message": "輕輕點選，即可為您朗讀頁面上的文字。（目前支援超過 40 種以上的語言）"
+    "message": "朗讀文字，並在頁面上逐字標示正在朗讀的詞。適用於網頁和 PDF，可離線使用，也可使用線上語音。"
   },
   "options_heading": {
-    "message": "選項"
+    "message": "設定"
   },
   "options_voice_label": {
     "message": "朗讀語音"
@@ -33,7 +33,7 @@
     "message": "啟用客製化語音"
   },
   "options_enable_piper_voices": {
-    "message": "安裝Piper語音..."
+    "message": "下載在你的裝置上執行的自然語音 (Piper)..."
   },
   "options_rate_label": {
     "message": "朗讀速度"
@@ -48,19 +48,19 @@
     "message": "朗讀音量"
   },
   "options_show_highlighting": {
-    "message": "標示朗讀文字"
+    "message": "同步顯示文字"
   },
   "options_highlighting_off": {
     "message": "關"
   },
   "options_highlighting_popup": {
-    "message": "在彈出窗口中顯示"
+    "message": "在彈出視窗中顯示"
   },
   "options_highlighting_window": {
-    "message": "在單獨的窗口中顯示"
+    "message": "在獨立視窗中顯示"
   },
   "options_audio_playback": {
-    "message": "音頻播放"
+    "message": "音訊播放"
   },
   "options_audio_playback_standalone": {
     "message": "使用單獨的選項卡"
@@ -72,7 +72,7 @@
     "message": "編輯快捷鍵"
   },
   "options_test_button": {
-    "message": "測試"
+    "message": "試聽語音"
   },
   "options_reset_button": {
     "message": "重設"
@@ -81,7 +81,7 @@
     "message": "停止"
   },
   "player_tab_explanation": {
-    "message": "大聲朗讀使用此選項卡進行音頻播放。此選項卡將在 5 分鐘無活動後自動關閉。"
+    "message": "ReadFollow 使用此分頁播放音訊。此分頁在 5 分鐘無活動後會自動關閉。"
   },
   "player_hidethistab_link": {
     "message": "隱藏此選項卡"
@@ -90,7 +90,7 @@
     "message": "隱藏此選項卡？"
   },
   "player_hidethistab_dialog_body": {
-    "message": "如果隱藏此選項卡，大聲朗讀將在當前網頁內播放音頻。這意味著離開頁面將導致語音停止。 （此設置可以從擴展選項頁面恢復）"
+    "message": "如果隱藏此選項卡，ReadFollow將在當前網頁內播放音頻。這意味著離開頁面將導致語音停止。（可以在 ReadFollow 的設定中改回。）"
   },
   "player_hidethistab_dialog_ok_button": {
     "message": "隱藏"
@@ -102,7 +102,7 @@
     "message": "請求許可"
   },
   "player_permission_dialog_body": {
-    "message": "允許大聲朗讀播放音頻嗎？"
+    "message": "允許 ReadFollow 播放音訊嗎？"
   },
   "player_permission_dialog_ok_button": {
     "message": "允許"
@@ -126,16 +126,16 @@
     "message": "無法朗讀這個網站"
   },
   "error_file_access": {
-    "message": "您需要在擴展 [設置](open-extension-settings) 中授予對文件 URL 的大聲朗讀訪問權限"
+    "message": "您需要在擴充功能 [設定](open-extension-settings) 中允許 ReadFollow 存取檔案網址"
   },
   "error_add_permissions": {
-    "message": "您需要授予大聲朗讀此網站的額外[權限](request-permissions)"
+    "message": "您需要授予 ReadFollow 存取此網站的額外[權限](request-permissions)"
   },
   "error_chatgpt": {
     "message": "點擊每個回答旁邊的揚聲器圖標進行朗讀"
   },
   "languages_heading": {
-    "message": "語言選項"
+    "message": "語言"
   },
   "languages_back_button": {
     "message": "返回選項"
@@ -148,5 +148,197 @@
   },
   "google_translate_keep_page_open": {
     "message": "ReadFollow 正在使用 Google Translate 進行語音合成。請保持此標籤打開。"
+  },
+  "popup_settings_button": {
+    "message": "設定"
+  },
+  "popup_controls_label": {
+    "message": "播放"
+  },
+  "popup_loading": {
+    "message": "載入中"
+  },
+  "popup_play_button": {
+    "message": "朗讀"
+  },
+  "popup_pause_button": {
+    "message": "暫停"
+  },
+  "popup_rewind_button": {
+    "message": "上一個"
+  },
+  "popup_forward_button": {
+    "message": "下一個"
+  },
+  "popup_stop_button": {
+    "message": "停止"
+  },
+  "popup_smaller_text": {
+    "message": "縮小文字"
+  },
+  "popup_larger_text": {
+    "message": "放大文字"
+  },
+  "popup_smaller_window": {
+    "message": "縮小視窗"
+  },
+  "popup_larger_window": {
+    "message": "放大視窗"
+  },
+  "popup_voice_auto": {
+    "message": "自動選擇"
+  },
+  "options_close_button": {
+    "message": "返回"
+  },
+  "options_section_voice": {
+    "message": "朗讀語音"
+  },
+  "options_section_reading": {
+    "message": "朗讀"
+  },
+  "options_filter_languages": {
+    "message": "選擇清單中顯示的語言"
+  },
+  "options_rate_edit": {
+    "message": "輸入精確的朗讀速度"
+  },
+  "options_saved": {
+    "message": "已儲存"
+  },
+  "options_shortcuts_label": {
+    "message": "快捷鍵"
+  },
+  "nav_settings": {
+    "message": "設定"
+  },
+  "nav_languages": {
+    "message": "語言"
+  },
+  "nav_custom_voices": {
+    "message": "客製化語音"
+  },
+  "nav_advanced": {
+    "message": "進階"
+  },
+  "advanced_playback_title": {
+    "message": "播放"
+  },
+  "advanced_bt_silence_gap": {
+    "message": "修正使用 Bluetooth 耳機時每段開頭幾個字聽不到的問題"
+  },
+  "languages_explanation": {
+    "message": "選擇你閱讀的語言。語音選單中只會列出這些語言的語音。在某個語言下選擇一個語音，該語言就會一律使用這個語音。"
+  },
+  "custom_voices_explanation": {
+    "message": "加入你自己的雲端語音服務帳戶，即可使用其語音。你的金鑰只會儲存在這個瀏覽器中。使用這些語音朗讀的文字會傳送給該服務供應商。"
+  },
+  "welcome_heading": {
+    "message": "ReadFollow 會朗讀文字，並在頁面上逐字標示正在朗讀的詞。"
+  },
+  "welcome_try_title": {
+    "message": "試試看"
+  },
+  "welcome_sample": {
+    "message": "這段文字會以你的預設語音朗讀。正在朗讀的句子會變成藍色，目前的詞會以琥珀色標示並加上底線，方便你用眼睛跟著看。"
+  },
+  "welcome_try_button": {
+    "message": "朗讀這段文字"
+  },
+  "welcome_start_title": {
+    "message": "三種開始方式"
+  },
+  "welcome_start_select": {
+    "message": "在任何頁面上選取文字，然後按 Alt+O。頁面底部會出現一個小列，可以暫停、跳過、調整速度和停止。"
+  },
+  "welcome_start_menu": {
+    "message": "在選取的文字上按右鍵，然後選擇「朗讀所選文字」。"
+  },
+  "welcome_start_button": {
+    "message": "按一下工具列中的 ReadFollow 按鈕，即可朗讀整個頁面。"
+  },
+  "welcome_pin_chrome": {
+    "message": "看不到按鈕嗎？按一下網址列旁的拼圖圖示（擴充功能），然後按一下 ReadFollow 旁的圖釘。"
+  },
+  "welcome_pin_firefox": {
+    "message": "看不到按鈕嗎？按一下工具列中的擴充套件按鈕（拼圖圖示），然後按一下 ReadFollow 旁的齒輪，選擇「釘選到工具列」。"
+  },
+  "welcome_shortcuts_title": {
+    "message": "快捷鍵"
+  },
+  "welcome_shortcut_not_set": {
+    "message": "未設定"
+  },
+  "welcome_shortcuts_missing": {
+    "message": "部分快捷鍵無法設定，通常是因為其他擴充功能已經使用了相同的按鍵。你可以在下方選擇其他按鍵。"
+  },
+  "welcome_privacy_title": {
+    "message": "你的文字"
+  },
+  "welcome_privacy_body": {
+    "message": "使用電腦內建的語音和可下載的 Piper 語音時，文字不會離開你的裝置。Google 翻譯和你自己加入的雲端語音（OpenAI、Azure、Amazon Polly、IBM）只會收到你要求朗讀的文字，不會收到其他任何內容。ReadFollow 沒有帳戶，也不收集任何資料。"
+  },
+  "welcome_settings_link": {
+    "message": "開啟設定"
+  },
+  "options_bar_label": {
+    "message": "播放列"
+  },
+  "options_bar_show_all": {
+    "message": "在所有網站上顯示"
+  },
+  "options_bar_hidden_on": {
+    "message": "在 $1 上隱藏"
+  },
+  "options_bar_shown_everywhere": {
+    "message": "在所有網站上顯示。若要在某個網站上隱藏，請使用播放列末端的選單。"
+  },
+  "voice_privacy_auto": {
+    "message": "自動選擇會在這部裝置上有符合該語言的語音時使用它。如果沒有，可能會使用 Google 線上語音，該語音會收到你朗讀的文字。"
+  },
+  "voice_privacy_remote": {
+    "message": "使用這個語音朗讀的文字會傳送給 $1。"
+  },
+  "voice_privacy_local": {
+    "message": "這個語音在你的裝置上執行。文字不會離開裝置。"
+  },
+  "options_highlight_colors": {
+    "message": "標示顏色"
+  },
+  "highlight_scheme_blue_amber": {
+    "message": "藍色和琥珀色"
+  },
+  "highlight_scheme_green_yellow": {
+    "message": "綠色和黃色"
+  },
+  "highlight_scheme_pink_lavender": {
+    "message": "粉紅色和薰衣草色"
+  },
+  "highlight_scheme_underline": {
+    "message": "僅底線"
+  },
+  "highlight_sample_before": {
+    "message": "正在朗讀的句子和"
+  },
+  "highlight_sample_word": {
+    "message": "目前的"
+  },
+  "highlight_sample_after": {
+    "message": "詞。"
+  },
+  "command_play": {
+    "message": "朗讀或停止"
+  },
+  "command_pause": {
+    "message": "暫停或繼續"
+  },
+  "command_stop": {
+    "message": "停止"
+  },
+  "command_forward": {
+    "message": "下一句"
+  },
+  "command_rewind": {
+    "message": "上一句"
   }
 }

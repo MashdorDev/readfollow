@@ -21,6 +21,7 @@
   domReadyPromise
     .then(() => {
       if (queryString.referer) {
+        document.body.classList.add("in-popup")
         $("button.close").show()
           .click(function() {
             history.back();
@@ -30,11 +31,60 @@
 
 
 
+  //highlight colors: one choice per scheme, each with a sample drawn in its colors
+  domReadyPromise
+    .then(() => {
+      const $group = $("#highlight-colors")
+      //Japanese, Chinese and Thai don't put spaces between words
+      const space = /^(ja|zh|th)(-|$)/.test(brapi.i18n.getUILanguage()) ? "" : " "
+      for (const name of Object.keys(highlightColorSchemes)) {
+        const scheme = highlightColorSchemes[name]
+        const $label = $("<label>").addClass("scheme").appendTo($group)
+        $("<input>").attr({type: "radio", name: "highlight-colors", value: name}).appendTo($label)
+        const $text = $("<span>").addClass("scheme-text").appendTo($label)
+        $("<span>").addClass("scheme-name").text(brapi.i18n.getMessage("highlight_scheme_" + name.replace("-", "_"))).appendTo($text)
+        const $sample = $("<span>").addClass("scheme-sample").appendTo($text)
+        const $sentence = $("<span>").text(brapi.i18n.getMessage("highlight_sample_before") + space).appendTo($sample)
+        const $word = $("<span>").text(brapi.i18n.getMessage("highlight_sample_word")).appendTo($sentence)
+        $sentence.append(space + brapi.i18n.getMessage("highlight_sample_after"))
+        if (scheme.sentence) $sentence.css("background-color", scheme.sentence)
+        else $sentence.css("text-decoration", "underline 1px dotted")
+        if (scheme.word) $word.css({"background-color": scheme.word, color: "#1f2328", "text-decoration": "underline 2px #1f2328"})
+        else $word.css("text-decoration", "underline 3px")
+      }
+      $group.on("change", "input", function() {
+        updateSettings({highlightColors: this.value}).then(showConfirmation).catch(handleError)
+      })
+    })
+  rxjs.combineLatest([observeSetting("highlightColors"), domReadyPromise])
+    .subscribe(([name]) => {
+      $("#highlight-colors input").prop("checked", false)
+      $("#highlight-colors input[value='" + (highlightColorSchemes[name] ? name : "blue-amber") + "']").prop("checked", true)
+    })
+
+
+
+  //sites where the on-page bar was hidden from its menu
+  rxjs.combineLatest([observeSetting("barHiddenSites"), domReadyPromise])
+    .subscribe(([sites]) => {
+      sites = sites || []
+      $("#bar-hidden-sites").text(sites.length
+        ? brapi.i18n.getMessage("options_bar_hidden_on", [sites.join(", ")])
+        : brapi.i18n.getMessage("options_bar_shown_everywhere"))
+      $("#bar-show-all").prop("hidden", !sites.length)
+    })
+  domReadyPromise
+    .then(() => {
+      $("#bar-show-all").click(() => updateSettings({barHiddenSites: []}).catch(handleError))
+    })
+
+
+
   //hotkey
   domReadyPromise
     .then(() => {
       $("#hotkeys-link").click(function() {
-        brapi.tabs.create({url: getHotkeySettingsUrl()});
+        openShortcutSettings().catch(console.error)
       });
     })
 
@@ -68,8 +118,14 @@
     )
 
   rxjs.combineLatest([observeSetting("voiceName"), voicesPopulatedObservable])
-    .subscribe(([voiceName]) => {
+    .subscribe(([voiceName, [voices]]) => {
       $("#voices").val(voiceName || "")
+      const voice = voiceName && voices.find(x => x.voiceName == voiceName)
+      const recipient = voice && getVoiceRecipient(voice)
+      $("#voice-privacy").text(
+        !voiceName ? brapi.i18n.getMessage("voice_privacy_auto")
+        : recipient ? brapi.i18n.getMessage("voice_privacy_remote", [recipient])
+        : brapi.i18n.getMessage("voice_privacy_local"))
     })
 
 
@@ -109,6 +165,8 @@
     .subscribe(([rate, slider]) => {
       slider.setValue(Math.log(rate || defaults.rate) / Math.log($("#rate").data("pow")))
       $("#rate-input").val(rate || defaults.rate)
+      $("#rate-value").text(Number((rate || defaults.rate).toFixed(2)) + "x")
+      $("#rate .knob").attr("aria-valuetext", $("#rate-value").text())
     })
 
   rxjs.combineLatest([observeSetting("voiceName"), rateObservable, domReadyPromise])
@@ -263,7 +321,7 @@
     $("#voices").empty()
     $("<option>")
       .val("")
-      .text("Auto select")
+      .text(brapi.i18n.getMessage("popup_voice_auto"))
       .appendTo("#voices")
 
     //get voices filtered by selected languages
@@ -400,7 +458,10 @@
     var $bg = $(elem).empty().toggleClass("slider", true);
     var $bar = $("<div class='bar'>").appendTo(elem);
     var $track = $("<div class='track'>").appendTo(elem);
-    var $knob = $("<div class='knob'>").appendTo($track);
+    var $knob = $("<div class='knob' role='slider' tabindex='0' aria-valuemin='0' aria-valuemax='100'>").appendTo($track);
+    var label = $(elem).attr("aria-labelledby")
+    if (label) $knob.attr("aria-labelledby", label)
+    var position = 0;
 
     $bg.click(function(e) {
       var pos = calcPosition(e);
@@ -408,6 +469,18 @@
       onChange(min + pos*(max-min));
     })
     $knob.click(function() {
+      return false;
+    })
+    //arrow keys move one step, Page Up/Down five, Home/End to the ends
+    $knob.on("keydown", function(e) {
+      var moves = {ArrowRight: step, ArrowUp: step, ArrowLeft: -step, ArrowDown: -step, PageUp: 5*step, PageDown: -5*step}
+      var pos
+      if (e.key in moves) pos = Math.min(1, Math.max(0, position + moves[e.key]))
+      else if (e.key == "Home") pos = 0
+      else if (e.key == "End") pos = 1
+      else return
+      setPosition(pos);
+      onChange(min + pos*(max-min));
       return false;
     })
     $knob.on("mousedown touchstart", function() {
@@ -430,6 +503,8 @@
     }
 
     function setPosition(pos) {
+      position = pos;
+      $knob.attr("aria-valuenow", Math.round(100 * pos));
       var percent = (100 * pos) + "%";
       $knob.css("left", percent);
       $bar.css("width", percent);

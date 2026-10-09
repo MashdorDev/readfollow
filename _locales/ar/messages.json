@@ -6,10 +6,10 @@
     "message": "ReadFollow"
   },
   "extension_description": {
-    "message": "اقرأ مقالة صفحة الويب الحالية بصوت عالٍ بنقرة واحدة، باستخدام تحويل النص إلى كلام. يدعم أكثر من 40 لغة."
+    "message": "يقرأ النص بصوت عالٍ ويميّز كل كلمة في الصفحة أثناء نطقها. يعمل على صفحات الويب وملفات PDF، دون اتصال أو بأصوات عبر الإنترنت."
   },
   "options_heading": {
-    "message": "الخيارات"
+    "message": "الإعدادات"
   },
   "options_voice_label": {
     "message": "الصوت"
@@ -33,7 +33,7 @@
     "message": "تمكين الأصوات المخصصة..."
   },
   "options_enable_piper_voices": {
-    "message": "تثبيت أصوات Piper..."
+    "message": "تنزيل أصوات طبيعية تعمل على جهازك (Piper)..."
   },
   "options_rate_label": {
     "message": "السرعة"
@@ -48,16 +48,16 @@
     "message": "مستوى الصوت"
   },
   "options_show_highlighting": {
-    "message": "تمييز النص"
+    "message": "متابعة النص"
   },
   "options_highlighting_off": {
     "message": "إيقاف"
   },
   "options_highlighting_popup": {
-    "message": "عرض في نافذة منبثقة"
+    "message": "في النافذة المنبثقة"
   },
   "options_highlighting_window": {
-    "message": "عرض في نافذة منفصلة"
+    "message": "في نافذة منفصلة"
   },
   "options_audio_playback": {
     "message": "تشغيل الصوت"
@@ -72,7 +72,7 @@
     "message": "تعديل مفاتيح الاختصار"
   },
   "options_test_button": {
-    "message": "اختبار"
+    "message": "اختبار الصوت"
   },
   "options_reset_button": {
     "message": "إعادة تعيين"
@@ -90,7 +90,7 @@
     "message": "إخفاء علامة التبويب هذه؟"
   },
   "player_hidethistab_dialog_body": {
-    "message": "إذا أخفيت علامة التبويب هذه، سيقوم ReadFollow بتشغيل الصوت داخل صفحة الويب الحالية. هذا يعني أن الانتقال بعيداً عن الصفحة سيؤدي إلى توقف الكلام.\n\n(يمكن التراجع عن هذا الإعداد من صفحة خيارات الإضافة)"
+    "message": "إذا أخفيت علامة التبويب هذه، سيقوم ReadFollow بتشغيل الصوت داخل صفحة الويب الحالية. هذا يعني أن الانتقال بعيداً عن الصفحة سيؤدي إلى توقف الكلام.\n\n(يمكنك التراجع عن ذلك من إعدادات ReadFollow.)"
   },
   "player_hidethistab_dialog_ok_button": {
     "message": "إخفاء"
@@ -135,7 +135,7 @@
     "message": "انقر على أيقونة السماعة بجانب كل إجابة لقراءتها بصوت عالٍ"
   },
   "languages_heading": {
-    "message": "خيارات اللغة"
+    "message": "اللغات"
   },
   "languages_back_button": {
     "message": "العودة إلى الخيارات"
@@ -148,5 +148,197 @@
   },
   "google_translate_keep_page_open": {
     "message": "يستخدم ReadFollow ترجمة Google لتحويل النص إلى كلام. يرجى إبقاء علامة التبويب هذه مفتوحة."
+  },
+  "popup_settings_button": {
+    "message": "الإعدادات"
+  },
+  "popup_controls_label": {
+    "message": "التشغيل"
+  },
+  "popup_loading": {
+    "message": "جارٍ التحميل"
+  },
+  "popup_play_button": {
+    "message": "قراءة بصوت عالٍ"
+  },
+  "popup_pause_button": {
+    "message": "إيقاف مؤقت"
+  },
+  "popup_rewind_button": {
+    "message": "السابق"
+  },
+  "popup_forward_button": {
+    "message": "التالي"
+  },
+  "popup_stop_button": {
+    "message": "إيقاف"
+  },
+  "popup_smaller_text": {
+    "message": "نص أصغر"
+  },
+  "popup_larger_text": {
+    "message": "نص أكبر"
+  },
+  "popup_smaller_window": {
+    "message": "نافذة أصغر"
+  },
+  "popup_larger_window": {
+    "message": "نافذة أكبر"
+  },
+  "popup_voice_auto": {
+    "message": "اختيار تلقائي"
+  },
+  "options_close_button": {
+    "message": "رجوع"
+  },
+  "options_section_voice": {
+    "message": "الصوت"
+  },
+  "options_section_reading": {
+    "message": "القراءة"
+  },
+  "options_filter_languages": {
+    "message": "اختر اللغات التي تظهر في القائمة"
+  },
+  "options_rate_edit": {
+    "message": "اكتب سرعة محددة"
+  },
+  "options_saved": {
+    "message": "تم الحفظ"
+  },
+  "options_shortcuts_label": {
+    "message": "الاختصارات"
+  },
+  "nav_settings": {
+    "message": "الإعدادات"
+  },
+  "nav_languages": {
+    "message": "اللغات"
+  },
+  "nav_custom_voices": {
+    "message": "الأصوات المخصصة"
+  },
+  "nav_advanced": {
+    "message": "متقدم"
+  },
+  "advanced_playback_title": {
+    "message": "التشغيل"
+  },
+  "advanced_bt_silence_gap": {
+    "message": "إصلاح فقدان الكلمات الأولى من كل فقرة عند استخدام سماعة Bluetooth"
+  },
+  "languages_explanation": {
+    "message": "اختر اللغات التي تقرأ بها. تظهر أصواتها فقط في قائمة الأصوات. اختر صوتًا تحت لغة ما لاستخدامه دائمًا مع تلك اللغة."
+  },
+  "custom_voices_explanation": {
+    "message": "أضف حسابك الخاص لدى مزوّد أصوات سحابية لاستخدام أصواته. تُحفظ مفاتيحك في هذا المتصفح فقط. يُرسل النص الذي تقرؤه بهذه الأصوات إلى ذلك المزوّد."
+  },
+  "welcome_heading": {
+    "message": "يقرأ ReadFollow النص بصوت عالٍ ويميّز كل كلمة في الصفحة أثناء نطقها."
+  },
+  "welcome_try_title": {
+    "message": "جرّبه"
+  },
+  "welcome_sample": {
+    "message": "تُقرأ هذه الفقرة بصوتك الافتراضي. تتحول الجملة التي تُقرأ إلى اللون الأزرق، وتُميَّز الكلمة الحالية باللون الكهرماني مع خط تحتها، لتتمكن من المتابعة بعينيك."
+  },
+  "welcome_try_button": {
+    "message": "قراءة هذه الفقرة"
+  },
+  "welcome_start_title": {
+    "message": "ثلاث طرق للبدء"
+  },
+  "welcome_start_select": {
+    "message": "حدّد نصًا في أي صفحة واضغط Alt+O. يظهر شريط صغير أسفل الصفحة فيه أزرار الإيقاف المؤقت والتخطي والسرعة والإيقاف."
+  },
+  "welcome_start_menu": {
+    "message": "انقر بزر الماوس الأيمن على النص المحدد واختر \"قراءة النص المحدد بصوت عالٍ\"."
+  },
+  "welcome_start_button": {
+    "message": "انقر على زر ReadFollow في شريط الأدوات لقراءة الصفحة كاملة."
+  },
+  "welcome_pin_chrome": {
+    "message": "لا ترى الزر؟ انقر على قطعة الأحجية بجانب شريط العناوين، ثم على الدبوس بجانب ReadFollow."
+  },
+  "welcome_pin_firefox": {
+    "message": "لا ترى الزر؟ انقر على زر الإضافات (قطعة الأحجية) في شريط الأدوات، ثم على الترس بجانب ReadFollow واختر \"ثبّت في شريط الأدوات\"."
+  },
+  "welcome_shortcuts_title": {
+    "message": "اختصارات لوحة المفاتيح"
+  },
+  "welcome_shortcut_not_set": {
+    "message": "غير معيّن"
+  },
+  "welcome_shortcuts_missing": {
+    "message": "تعذّر تعيين بعض الاختصارات، غالبًا لأن إضافة أخرى تستخدم المفاتيح نفسها. يمكنك اختيار مفاتيح أخرى أدناه."
+  },
+  "welcome_privacy_title": {
+    "message": "نصّك"
+  },
+  "welcome_privacy_body": {
+    "message": "مع الأصوات المدمجة في حاسوبك وأصوات Piper القابلة للتنزيل، لا يغادر النص جهازك أبدًا. تتلقى ترجمة Google والأصوات السحابية التي تضيفها بنفسك (OpenAI وAzure وAmazon Polly وIBM) النص الذي تطلب منها قراءته، ولا شيء غيره. لا يتطلب ReadFollow حسابًا ولا يجمع أي بيانات."
+  },
+  "welcome_settings_link": {
+    "message": "فتح الإعدادات"
+  },
+  "options_bar_label": {
+    "message": "شريط التشغيل"
+  },
+  "options_bar_show_all": {
+    "message": "إظهار في كل المواقع"
+  },
+  "options_bar_hidden_on": {
+    "message": "مخفي في $1"
+  },
+  "options_bar_shown_everywhere": {
+    "message": "يظهر في كل موقع. لإخفائه في موقع واحد، استخدم القائمة في نهاية الشريط."
+  },
+  "voice_privacy_auto": {
+    "message": "يستخدم الاختيار التلقائي صوتًا على هذا الجهاز عندما يطابق أحدها اللغة. وإن لم يطابقها أي صوت، فقد يستخدم صوت Google عبر الإنترنت، والذي يتلقى النص الذي تقرؤه."
+  },
+  "voice_privacy_remote": {
+    "message": "يُرسل النص الذي تقرؤه بهذا الصوت إلى $1."
+  },
+  "voice_privacy_local": {
+    "message": "يعمل هذا الصوت على جهازك. يبقى النص عليه."
+  },
+  "options_highlight_colors": {
+    "message": "ألوان التمييز"
+  },
+  "highlight_scheme_blue_amber": {
+    "message": "أزرق وكهرماني"
+  },
+  "highlight_scheme_green_yellow": {
+    "message": "أخضر وأصفر"
+  },
+  "highlight_scheme_pink_lavender": {
+    "message": "وردي وخزامي"
+  },
+  "highlight_scheme_underline": {
+    "message": "خط سفلي فقط"
+  },
+  "highlight_sample_before": {
+    "message": "الجملة التي تُقرأ وفيها"
+  },
+  "highlight_sample_word": {
+    "message": "الكلمة"
+  },
+  "highlight_sample_after": {
+    "message": "الحالية."
+  },
+  "command_play": {
+    "message": "القراءة بصوت عالٍ أو الإيقاف"
+  },
+  "command_pause": {
+    "message": "إيقاف مؤقت أو استئناف"
+  },
+  "command_stop": {
+    "message": "إيقاف"
+  },
+  "command_forward": {
+    "message": "الجملة التالية"
+  },
+  "command_rewind": {
+    "message": "الجملة السابقة"
   }
 }

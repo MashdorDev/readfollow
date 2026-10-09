@@ -3,35 +3,38 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Select Languages</title>
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="css/common.css">
+  <meta name="color-scheme" content="light dark">
+  <title>ReadFollow Languages</title>
+  <link rel="icon" type="image/svg+xml" href="img/icon.svg">
+  <link rel="stylesheet" type="text/css" href="css/tokens.css">
+  <link rel="stylesheet" type="text/css" href="css/base.css">
+  <link rel="stylesheet" type="text/css" href="css/options.css">
   <style>
-  h2 {
-    margin-top: 15px;
-    margin-bottom: 20px;
+  #lang-list {
+    columns: 240px;
+    column-gap: var(--rf-space-5);
+  }
+  #lang-list .form-check {
+    break-inside: avoid;
+    padding: var(--rf-space-1) 0;
+  }
+  #lang-list label {
+    display: flex;
+    align-items: center;
+    gap: var(--rf-space-2);
+    margin: 0;
+    font-weight: 400;
+    cursor: pointer;
   }
   .voice-list {
-    display: inline-block;
-    margin: .2em 0 .8em 1em;
-    padding: .5em 1em;
-    background-color: #f6f6f6;
-    color: #454545;
-    border: 1px solid #c5c5c5;
-    border-radius: 5px;
-    white-space: nowrap;
+    margin: var(--rf-space-1) 0 var(--rf-space-3) var(--rf-space-5);
+    padding: var(--rf-space-2) var(--rf-space-3);
+    font-size: 0.9em;
+    background-color: var(--rf-surface-2);
+    border-radius: var(--rf-radius-s);
   }
-  .voice-list input[type=radio] {
-    margin-right: .4em;
-  }
-  .dark-mode .voice-list {
-    background-color: #333;
-    border: none;
-    box-shadow: 1px 1px black;
-    color: #ddd;
-  }
-  .dark-mode .close {
-    color: white;
+  .voice-list label {
+    padding: 2px 0;
   }
   </style>
 
@@ -42,12 +45,29 @@
   <script src="js/languages.js"></script>
 </head>
 <body>
-  <div class="container">
-    <h2 data-i18n="languages_heading"></h2>
-    <form>
-      <div class="form-group" id="lang-list">
-      </div>
-    </form>
-  </div>
+  <main class="container">
+    <header class="rf-header">
+      <img src="img/icon.svg" alt="">
+      <h1 class="rf-title" data-i18n="extension_short_name"></h1>
+    </header>
+
+    <nav>
+      <ul class="rf-nav">
+        <li><a href="options.html" data-i18n="nav_settings"></a></li>
+        <li><a href="languages.html" aria-current="page" data-i18n="nav_languages"></a></li>
+        <li><a href="custom-voices.html" data-i18n="nav_custom_voices"></a></li>
+        <li><a href="advanced-options.html" data-i18n="nav_advanced"></a></li>
+      </ul>
+    </nav>
+
+    <section class="rf-section">
+      <h2 data-i18n="languages_heading"></h2>
+      <p class="text-muted" data-i18n="languages_explanation"></p>
+      <form>
+        <div class="form-group" id="lang-list">
+        </div>
+      </form>
+    </section>
+  </main>
 </body>
 </html>

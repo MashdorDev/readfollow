@@ -6,10 +6,10 @@
     "message": "ReadFollow"
   },
   "extension_description": {
-    "message": "Танҳо як маротиба тугмаро зер карда, мақолаи саҳифаи ҷориро ба воситаи технологияи табдили матн ба нутқ(TTS) баланд хонед. Зиёда аз 40 забон дастгирӣ карда мешавад."
+    "message": "Матнро бо овози баланд мехонад ва ҳар калимаро ҳангоми талаффуз дар саҳифа ҷудо мекунад. Дар сайтҳо ва PDF, офлайн ё онлайн."
   },
   "options_heading": {
-    "message": "Имконот"
+    "message": "Танзимот"
   },
   "options_voice_label": {
     "message": "Овоз"
@@ -33,7 +33,7 @@
     "message": "Фаъол кардани забонҳои фармоишӣ"
   },
   "options_enable_piper_voices": {
-    "message": "Идоракунии овозҳои «Пайпер»"
+    "message": "Боргирии овозҳои табиӣ, ки дар дастгоҳи шумо кор мекунанд (Piper)..."
   },
   "options_rate_label": {
     "message": "Суръат"
@@ -48,16 +48,16 @@
     "message": "Баландии садо"
   },
   "options_show_highlighting": {
-    "message": "Ҷудо кардани матн бо ранг"
+    "message": "Матн барои пайгирӣ"
   },
   "options_highlighting_off": {
-    "message": "Ғайрифаъол кардан"
+    "message": "Хомӯш"
   },
   "options_highlighting_popup": {
-    "message": "Намоиш дар равзанаи зоҳиршаванда"
+    "message": "Дар равзанаи зоҳиршаванда"
   },
   "options_highlighting_window": {
-    "message": "Намоиш дар равзанаи алоҳида"
+    "message": "Дар равзанаи алоҳида"
   },
   "options_audio_playback": {
     "message": "Пахши аудиоӣ"
@@ -69,10 +69,10 @@
     "message": "Дар ҳудуди саҳифа"
   },
   "options_hotkeys_link": {
-    "message": "Таҳрир кардани тугмаи миёнбур"
+    "message": "Таҳрир кардани тугмаҳои миёнбур"
   },
   "options_test_button": {
-    "message": "Санҷиш"
+    "message": "Санҷиши овоз"
   },
   "options_reset_button": {
     "message": "Бозсозӣ"
@@ -81,7 +81,7 @@
     "message": "Қатъ кардан"
   },
   "player_tab_explanation": {
-    "message": "Барномаи «Баланд хонед» барои пахши аудиоӣ аз ин варақа истифода мебарад. Ҳангоми бефаъолиятӣ ин варақа пас аз 5 дақиқа ба таври худкор пӯшида мешавад."
+    "message": "ReadFollow ин варақаро барои пахши аудио истифода мебарад. Ин варақа пас аз 5 дақиқаи бефаъолиятӣ худкор пӯшида мешавад."
   },
   "player_hidethistab_link": {
     "message": "Пинҳон кардани ин варақа"
@@ -90,7 +90,7 @@
     "message": "Ин варақаро пинҳон мекунед?"
   },
   "player_hidethistab_dialog_body": {
-    "message": "Агар шумо ин варақаро пинҳон кунед, барномаи «Баланд хонед» аудиоро дар ҳудуди саҳифаи ҷорӣ пахш мекунад. Ин маънои онро дорад, ки агар шумо аз ин саҳифа ба саҳифаи дигар гузаред, хониши матн қатъ карда мешавад.\n\n(Ин танзим тавассути саҳифаи «Имконот» дар дохили васеъшавӣ бекор карда мешавад)"
+    "message": "Агар шумо ин варақаро пинҳон кунед, барномаи «Баланд хонед» аудиоро дар ҳудуди саҳифаи ҷорӣ пахш мекунад. Ин маънои онро дорад, ки агар шумо аз ин саҳифа ба саҳифаи дигар гузаред, хониши матн қатъ карда мешавад.\n\n(Инро дар танзимоти ReadFollow бозгардонидан мумкин аст.)"
   },
   "player_hidethistab_dialog_ok_button": {
     "message": "Пинҳон кардан"
@@ -102,7 +102,7 @@
     "message": "Иҷозат лозим аст"
   },
   "player_permission_dialog_body": {
-    "message": "Ба барномаи «Баланд хонед» иҷозат медиҳед, то тавонад аудиоро пахш кунад?"
+    "message": "Ба ReadFollow иҷозат медиҳед, ки аудио пахш кунад?"
   },
   "player_permission_dialog_ok_button": {
     "message": "Иҷозат додан"
@@ -126,16 +126,16 @@
     "message": "Матни ин сомона бо овози баланд хонда намешавад"
   },
   "error_file_access": {
-    "message": "Шумо бояд иҷозат диҳед, то барномаи «Баланд хонед» тавонад ба нишониҳои «URL»-и файлҳо дар [танзимоти](open-extension-settings) васеъшавӣ дастрасӣ пайдо намояд"
+    "message": "Шумо бояд дар [танзимоти](open-extension-settings) васеъкунанда ба ReadFollow иҷозати дастрасӣ ба URL-ҳои файлҳоро диҳед"
   },
   "error_add_permissions": {
-    "message": "Барои ин сомона шумо бояд ба барномаи «Баланд хонед» [иҷозатҳои](request-permissions) иловагиро татбиқ намоед"
+    "message": "Шумо бояд ба ReadFollow барои ин сомона [иҷозатҳои](request-permissions) иловагӣ диҳед"
   },
   "error_chatgpt": {
     "message": "Пеш аз ҳар як ҷавоб нишонаи баландгӯякро зер кунед, то ки он бо овози баланд хонда шавад"
   },
   "languages_heading": {
-    "message": "Имконоти забон"
+    "message": "Забонҳо"
   },
   "languages_back_button": {
     "message": "Бозгашт ба имконот"
@@ -148,5 +148,197 @@
   },
   "google_translate_keep_page_open": {
     "message": "Барои табдил кардани матн ба нутқ, барномаи «Баланд хонед» аз технологияи «Google Translate» истифода мебарад.  Лутфан, ин варақаро кушода нигоҳ доред."
+  },
+  "popup_settings_button": {
+    "message": "Танзимот"
+  },
+  "popup_controls_label": {
+    "message": "Пахш"
+  },
+  "popup_loading": {
+    "message": "Бор шуда истодааст"
+  },
+  "popup_play_button": {
+    "message": "Бо овози баланд хондан"
+  },
+  "popup_pause_button": {
+    "message": "Таваққуф"
+  },
+  "popup_rewind_button": {
+    "message": "Қаблӣ"
+  },
+  "popup_forward_button": {
+    "message": "Навбатӣ"
+  },
+  "popup_stop_button": {
+    "message": "Қатъ кардан"
+  },
+  "popup_smaller_text": {
+    "message": "Матни хурдтар"
+  },
+  "popup_larger_text": {
+    "message": "Матни калонтар"
+  },
+  "popup_smaller_window": {
+    "message": "Равзанаи хурдтар"
+  },
+  "popup_larger_window": {
+    "message": "Равзанаи калонтар"
+  },
+  "popup_voice_auto": {
+    "message": "Интихоби худкор"
+  },
+  "options_close_button": {
+    "message": "Бозгашт"
+  },
+  "options_section_voice": {
+    "message": "Овоз"
+  },
+  "options_section_reading": {
+    "message": "Хониш"
+  },
+  "options_filter_languages": {
+    "message": "Интихоб кунед, ки кадом забонҳо дар рӯйхат нишон дода шаванд"
+  },
+  "options_rate_edit": {
+    "message": "Суръати аниқро ворид кунед"
+  },
+  "options_saved": {
+    "message": "Нигоҳ дошта шуд"
+  },
+  "options_shortcuts_label": {
+    "message": "Тугмаҳои миёнбур"
+  },
+  "nav_settings": {
+    "message": "Танзимот"
+  },
+  "nav_languages": {
+    "message": "Забонҳо"
+  },
+  "nav_custom_voices": {
+    "message": "Овозҳои фармоишӣ"
+  },
+  "nav_advanced": {
+    "message": "Иловагӣ"
+  },
+  "advanced_playback_title": {
+    "message": "Пахш"
+  },
+  "advanced_bt_silence_gap": {
+    "message": "Ислоҳи гум шудани чанд калимаи аввали ҳар сарсатр ҳангоми истифодаи гӯшмонаки Bluetooth"
+  },
+  "languages_explanation": {
+    "message": "Забонҳоеро, ки бо онҳо мехонед, интихоб кунед. Дар менюи овозҳо танҳо овозҳои онҳо нишон дода мешаванд. Барои он ки барои як забон ҳамеша як овоз истифода шавад, онро дар зери ҳамон забон интихоб кунед."
+  },
+  "custom_voices_explanation": {
+    "message": "Барои истифодаи овозҳои провайдери овозҳои абрӣ ҳисоби худро дар он илова кунед. Калидҳои шумо танҳо дар ҳамин браузер нигоҳ дошта мешаванд. Матне, ки бо ин овозҳо мехонед, ба ҳамон провайдер фиристода мешавад."
+  },
+  "welcome_heading": {
+    "message": "ReadFollow матнро бо овози баланд мехонад ва ҳар калимаро ҳангоми талаффуз дар саҳифа бо ранг ҷудо мекунад."
+  },
+  "welcome_try_title": {
+    "message": "Санҷед"
+  },
+  "welcome_sample": {
+    "message": "Ин сарсатр бо овози пешфарзи шумо хонда мешавад. Ҷумлае, ки хонда мешавад, кабуд мешавад ва калимаи ҷорӣ бо ранги каҳрабоӣ ҷудо ва зерхат карда мешавад, то ки шумо бо чашм аз паи он равед."
+  },
+  "welcome_try_button": {
+    "message": "Хондани ин сарсатр"
+  },
+  "welcome_start_title": {
+    "message": "Се роҳи оғоз"
+  },
+  "welcome_start_select": {
+    "message": "Дар ҳар саҳифа матнро интихоб кунед ва Alt+O-ро пахш кунед. Дар поёни саҳифа навори хурде бо тугмаҳои таваққуф, гузаштан, суръат ва қатъ пайдо мешавад."
+  },
+  "welcome_start_menu": {
+    "message": "Матни интихобшударо бо тугмаи рости муш зер кунед ва \"Хондани матни интихобшуда бо овози баланд\"-ро интихоб кунед."
+  },
+  "welcome_start_button": {
+    "message": "Барои хондани тамоми саҳифа тугмаи ReadFollow-ро дар навори абзорҳо зер кунед."
+  },
+  "welcome_pin_chrome": {
+    "message": "Тугмаро намебинед? Нишонаи пора-муаммо (Васеъкуниҳо)-ро дар назди сатри суроға зер кунед, баъд сӯзанакро дар назди ReadFollow."
+  },
+  "welcome_pin_firefox": {
+    "message": "Тугмаро намебинед? Тугмаи васеъкуниҳо (пора-муаммо)-ро дар навори абзорҳо зер кунед, баъд чархакро дар назди ReadFollow ва \"Ба навори абзорҳо васл кардан\"-ро интихоб кунед."
+  },
+  "welcome_shortcuts_title": {
+    "message": "Тугмаҳои миёнбур"
+  },
+  "welcome_shortcut_not_set": {
+    "message": "Танзим нашудааст"
+  },
+  "welcome_shortcuts_missing": {
+    "message": "Баъзе тугмаҳои миёнбур танзим нашуданд, одатан аз он сабаб, ки васеъкунии дигар ҳамон тугмаҳоро аллакай истифода мебарад. Шумо метавонед дар поён тугмаҳои дигарро интихоб кунед."
+  },
+  "welcome_privacy_title": {
+    "message": "Матни шумо"
+  },
+  "welcome_privacy_body": {
+    "message": "Бо овозҳои дарунсохти компютери шумо ва овозҳои боргиришавандаи Piper матн ҳеҷ гоҳ дастгоҳи шуморо тарк намекунад. Google Translate ва овозҳои абрие, ки худатон илова мекунед (OpenAI, Azure, Amazon Polly, IBM), матнеро мегиранд, ки шумо хондани онро дархост мекунед, ва дигар ҳеҷ чиз. ReadFollow ҳисоб надорад ва ягон маълумот ҷамъ намекунад."
+  },
+  "welcome_settings_link": {
+    "message": "Кушодани танзимот"
+  },
+  "options_bar_label": {
+    "message": "Навори пахш"
+  },
+  "options_bar_show_all": {
+    "message": "Нишон додан дар ҳамаи сомонаҳо"
+  },
+  "options_bar_hidden_on": {
+    "message": "Дар $1 пинҳон аст"
+  },
+  "options_bar_shown_everywhere": {
+    "message": "Дар ҳар сомона нишон дода мешавад. Барои пинҳон кардани он дар як сомона, менюи охири наворро истифода баред."
+  },
+  "voice_privacy_auto": {
+    "message": "Интихоби худкор овози ин дастгоҳро истифода мебарад, агар яке ба забон мувофиқ бошад. Агар ҳеҷ кадом мувофиқ набошад, метавонад овози онлайни Google-ро истифода барад, ки матни хондаи шуморо мегирад."
+  },
+  "voice_privacy_remote": {
+    "message": "Матне, ки бо ин овоз мехонед, ба $1 фиристода мешавад."
+  },
+  "voice_privacy_local": {
+    "message": "Ин овоз дар дастгоҳи шумо кор мекунад. Матн дар он мемонад."
+  },
+  "options_highlight_colors": {
+    "message": "Рангҳои ҷудокунӣ"
+  },
+  "highlight_scheme_blue_amber": {
+    "message": "Кабуд ва каҳрабоӣ"
+  },
+  "highlight_scheme_green_yellow": {
+    "message": "Сабз ва зард"
+  },
+  "highlight_scheme_pink_lavender": {
+    "message": "Гулобӣ ва лавандагун"
+  },
+  "highlight_scheme_underline": {
+    "message": "Танҳо зерхат"
+  },
+  "highlight_sample_before": {
+    "message": "Ҷумлае, ки хонда мешавад, ва"
+  },
+  "highlight_sample_word": {
+    "message": "калимаи"
+  },
+  "highlight_sample_after": {
+    "message": "ҷорӣ."
+  },
+  "command_play": {
+    "message": "Бо овози баланд хондан ё қатъ кардан"
+  },
+  "command_pause": {
+    "message": "Таваққуф ё идома"
+  },
+  "command_stop": {
+    "message": "Қатъ кардан"
+  },
+  "command_forward": {
+    "message": "Ҷумлаи навбатӣ"
+  },
+  "command_rewind": {
+    "message": "Ҷумлаи қаблӣ"
   }
 }

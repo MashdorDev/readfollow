@@ -6,7 +6,7 @@
     "message": "ReadFollow"
   },
   "extension_description": {
-    "message": "Læs den aktuelle webside-artikel højt med et klik ved hjælp af tekst til tale. Understøtter mere end 40 sprog."
+    "message": "Læser tekst højt og fremhæver hvert ord på siden, mens det siges. Virker på websider og PDF-filer, offline eller med onlinestemmer."
   },
   "options_heading": {
     "message": "Indstillinger"
@@ -33,7 +33,7 @@
     "message": "Aktivér brugerdefinerede stemmer..."
   },
   "options_enable_piper_voices": {
-    "message": "Installér Piper-stemmer..."
+    "message": "Download naturlige stemmer, der kører på din enhed (Piper)..."
   },
   "options_rate_label": {
     "message": "Hastighed"
@@ -48,16 +48,16 @@
     "message": "Lydstyrke"
   },
   "options_show_highlighting": {
-    "message": "Tekstfremhævning"
+    "message": "Tekst til at følge med"
   },
   "options_highlighting_off": {
-    "message": "Slå fra"
+    "message": "Fra"
   },
   "options_highlighting_popup": {
-    "message": "Vis i popup"
+    "message": "I popup-vinduet"
   },
   "options_highlighting_window": {
-    "message": "Vis i separat vindue"
+    "message": "I et separat vindue"
   },
   "options_audio_playback": {
     "message": "Lydafspilning"
@@ -72,7 +72,7 @@
     "message": "Rediger genvejstaster"
   },
   "options_test_button": {
-    "message": "Test"
+    "message": "Test stemme"
   },
   "options_reset_button": {
     "message": "Nulstil"
@@ -90,7 +90,7 @@
     "message": "Skjul denne fane?"
   },
   "player_hidethistab_dialog_body": {
-    "message": "Hvis du skjuler denne fane, vil ReadFollow afspille lyd inde på den aktuelle webside. Det betyder, at navigation væk fra siden vil stoppe talen.\n\n(Denne indstilling kan fortrydes fra udvidelsens indstillingsside)"
+    "message": "Hvis du skjuler denne fane, vil ReadFollow afspille lyd inde på den aktuelle webside. Det betyder, at navigation væk fra siden vil stoppe talen.\n\n(Du kan ændre det tilbage i ReadFollows indstillinger.)"
   },
   "player_hidethistab_dialog_ok_button": {
     "message": "Skjul"
@@ -135,7 +135,7 @@
     "message": "Klik på højttalerikonet ved siden af hvert svar for at læse det højt"
   },
   "languages_heading": {
-    "message": "Sprogindstillinger"
+    "message": "Sprog"
   },
   "languages_back_button": {
     "message": "Tilbage til indstillinger"
@@ -148,5 +148,197 @@
   },
   "google_translate_keep_page_open": {
     "message": "ReadFollow bruger Google Oversæt til tekst til tale. Hold venligst denne fane åben."
+  },
+  "popup_settings_button": {
+    "message": "Indstillinger"
+  },
+  "popup_controls_label": {
+    "message": "Afspilning"
+  },
+  "popup_loading": {
+    "message": "Indlæser"
+  },
+  "popup_play_button": {
+    "message": "Læs højt"
+  },
+  "popup_pause_button": {
+    "message": "Pause"
+  },
+  "popup_rewind_button": {
+    "message": "Forrige"
+  },
+  "popup_forward_button": {
+    "message": "Næste"
+  },
+  "popup_stop_button": {
+    "message": "Stop"
+  },
+  "popup_smaller_text": {
+    "message": "Mindre tekst"
+  },
+  "popup_larger_text": {
+    "message": "Større tekst"
+  },
+  "popup_smaller_window": {
+    "message": "Mindre vindue"
+  },
+  "popup_larger_window": {
+    "message": "Større vindue"
+  },
+  "popup_voice_auto": {
+    "message": "Vælg automatisk"
+  },
+  "options_close_button": {
+    "message": "Tilbage"
+  },
+  "options_section_voice": {
+    "message": "Stemme"
+  },
+  "options_section_reading": {
+    "message": "Oplæsning"
+  },
+  "options_filter_languages": {
+    "message": "Vælg, hvilke sprog der vises på listen"
+  },
+  "options_rate_edit": {
+    "message": "Skriv en præcis hastighed"
+  },
+  "options_saved": {
+    "message": "Gemt"
+  },
+  "options_shortcuts_label": {
+    "message": "Genveje"
+  },
+  "nav_settings": {
+    "message": "Indstillinger"
+  },
+  "nav_languages": {
+    "message": "Sprog"
+  },
+  "nav_custom_voices": {
+    "message": "Brugerdefinerede stemmer"
+  },
+  "nav_advanced": {
+    "message": "Avanceret"
+  },
+  "advanced_playback_title": {
+    "message": "Afspilning"
+  },
+  "advanced_bt_silence_gap": {
+    "message": "Ret manglende første ord i hvert afsnit ved brug af et Bluetooth-headset"
+  },
+  "languages_explanation": {
+    "message": "Vælg de sprog, du læser. Kun deres stemmer vises i stemmemenuen. Vælg en stemme under et sprog for altid at bruge den til det sprog."
+  },
+  "custom_voices_explanation": {
+    "message": "Tilføj din egen konto hos en udbyder af cloudstemmer for at bruge dens stemmer. Dine nøgler gemmes kun i denne browser. Tekst, du læser med disse stemmer, sendes til den udbyder."
+  },
+  "welcome_heading": {
+    "message": "ReadFollow læser tekst højt og fremhæver hvert ord på siden, mens det bliver sagt."
+  },
+  "welcome_try_title": {
+    "message": "Prøv det"
+  },
+  "welcome_sample": {
+    "message": "Dette afsnit læses med din standardstemme. Den sætning, der læses, bliver blå, og det aktuelle ord markeres med rav og understreges, så du kan følge med med øjnene."
+  },
+  "welcome_try_button": {
+    "message": "Læs dette afsnit"
+  },
+  "welcome_start_title": {
+    "message": "Tre måder at starte på"
+  },
+  "welcome_start_select": {
+    "message": "Markér tekst på en hvilken som helst side, og tryk på Alt+O. En lille bjælke vises nederst på siden med pause, spring over, hastighed og stop."
+  },
+  "welcome_start_menu": {
+    "message": "Højreklik på den markerede tekst, og vælg \"Læs markeret tekst højt\"."
+  },
+  "welcome_start_button": {
+    "message": "Klik på ReadFollow-knappen på værktøjslinjen for at læse hele siden."
+  },
+  "welcome_pin_chrome": {
+    "message": "Kan du ikke se knappen? Klik på puslespilsbrikken ved siden af adresselinjen og derefter på nålen ved siden af ReadFollow."
+  },
+  "welcome_pin_firefox": {
+    "message": "Kan du ikke se knappen? Klik på udvidelsesknappen (puslespilsbrikken) på værktøjslinjen, derefter på tandhjulet ved siden af ReadFollow og \"Fastgør til værktøjslinjen\"."
+  },
+  "welcome_shortcuts_title": {
+    "message": "Genvejstaster"
+  },
+  "welcome_shortcut_not_set": {
+    "message": "Ikke angivet"
+  },
+  "welcome_shortcuts_missing": {
+    "message": "Nogle genveje kunne ikke angives, som regel fordi en anden udvidelse allerede bruger de samme taster. Du kan vælge andre taster nedenfor."
+  },
+  "welcome_privacy_title": {
+    "message": "Din tekst"
+  },
+  "welcome_privacy_body": {
+    "message": "Med de stemmer, der er indbygget i din computer, og de Piper-stemmer, der kan downloades, forlader teksten aldrig din enhed. Google Translate og de cloudstemmer, du selv tilføjer (OpenAI, Azure, Amazon Polly, IBM), modtager den tekst, du beder dem læse, og intet andet. ReadFollow har ingen konto og indsamler ingen data."
+  },
+  "welcome_settings_link": {
+    "message": "Åbn indstillinger"
+  },
+  "options_bar_label": {
+    "message": "Afspilningsbjælke"
+  },
+  "options_bar_show_all": {
+    "message": "Vis på alle websteder"
+  },
+  "options_bar_hidden_on": {
+    "message": "Skjult på $1"
+  },
+  "options_bar_shown_everywhere": {
+    "message": "Vises på alle websteder. Brug menuen i enden af bjælken for at skjule den på et enkelt websted."
+  },
+  "voice_privacy_auto": {
+    "message": "Vælg automatisk bruger en stemme på denne enhed, når en passer til sproget. Når ingen gør, kan den bruge en onlinestemme fra Google, som modtager den tekst, du læser."
+  },
+  "voice_privacy_remote": {
+    "message": "Tekst, du læser med denne stemme, sendes til $1."
+  },
+  "voice_privacy_local": {
+    "message": "Denne stemme kører på din enhed. Teksten bliver på den."
+  },
+  "options_highlight_colors": {
+    "message": "Fremhævningsfarver"
+  },
+  "highlight_scheme_blue_amber": {
+    "message": "Blå og rav"
+  },
+  "highlight_scheme_green_yellow": {
+    "message": "Grøn og gul"
+  },
+  "highlight_scheme_pink_lavender": {
+    "message": "Lyserød og lavendel"
+  },
+  "highlight_scheme_underline": {
+    "message": "Kun understregning"
+  },
+  "highlight_sample_before": {
+    "message": "Sætningen, der læses, og det"
+  },
+  "highlight_sample_word": {
+    "message": "aktuelle"
+  },
+  "highlight_sample_after": {
+    "message": "ord."
+  },
+  "command_play": {
+    "message": "Læs højt eller stop"
+  },
+  "command_pause": {
+    "message": "Sæt på pause eller fortsæt"
+  },
+  "command_stop": {
+    "message": "Stop"
+  },
+  "command_forward": {
+    "message": "Næste sætning"
+  },
+  "command_rewind": {
+    "message": "Forrige sætning"
   }
 }

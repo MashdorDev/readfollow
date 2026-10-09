@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- Chrome Web Store marquee, 1400x560: ?img=<raw 1280x800 capture of a page being read> -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    html, body { margin: 0; width: 1400px; height: 560px; overflow: hidden; }
+    body {
+      position: relative;
+      background: #0f766e; color: #ffffff;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    .text { position: absolute; left: 80px; top: 0; bottom: 0; width: 470px; display: flex; flex-direction: column; justify-content: center; gap: 22px; }
+    .name { display: flex; align-items: center; gap: 18px; font-size: 56px; font-weight: 650; letter-spacing: -0.02em; }
+    .name svg { width: 72px; height: 72px; }
+    .line { font-size: 26px; line-height: 1.4; color: #cdeae6; }
+    .line mark { background: #ffc933; color: #1f2328; padding: 0 4px; border-radius: 4px; text-decoration: underline 3px #1f2328; text-underline-offset: 3px; }
+    .shot {
+      position: absolute; left: 620px; top: 70px; width: 860px; height: 540px;
+      border-radius: 14px 0 0 0; overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+      background: #ffffff;
+    }
+    /* the reading part of the capture: article column, highlight and bar */
+    .shot img { position: absolute; left: -230px; top: -196px; width: 1280px; }
+  </style>
+</head>
+<body>
+  <div class="text">
+    <div class="name">
+      <svg viewBox="0 0 128 128" aria-hidden="true">
+        <rect x="4" y="4" width="120" height="120" rx="28" fill="#ffffff" fill-opacity="0.14"/>
+        <rect x="26" y="34" width="76" height="12" rx="6" fill="#cdeae6"/>
+        <rect x="26" y="58" width="28" height="12" rx="6" fill="#cdeae6"/>
+        <rect x="60" y="54" width="42" height="20" rx="7" fill="#ffc933"/>
+        <rect x="26" y="82" width="56" height="12" rx="6" fill="#cdeae6"/>
+      </svg>
+      ReadFollow
+    </div>
+    <div class="line">Text to speech that highlights each <mark>word</mark> as it is read, on web pages and PDFs.</div>
+  </div>
+  <div class="shot"><img id="img" alt=""></div>
+  <script src="marquee.js"></script>
+</body>
+</html>
