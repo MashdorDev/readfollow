@@ -524,6 +524,9 @@ function domReady() {
 }
 
 function setI18nText() {
+  //right to left for Arabic and other RTL UI languages
+  document.documentElement.dir = brapi.i18n.getMessage("@@bidi_dir") || "ltr"
+  document.documentElement.lang = brapi.i18n.getUILanguage()
   $("[data-i18n]").each(function() {
     var key = $(this).data("i18n");
     var text = brapi.i18n.getMessage(key);

@@ -39,7 +39,9 @@ body.is-popup {
   font-size: 24px;
 }
 
+/* playback controls keep their order in RTL languages, as media controls usually do */
 #buttons {
+  direction: ltr;
   display: flex;
   align-items: center;
   justify-content: center;

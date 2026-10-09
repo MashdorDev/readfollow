@@ -35,6 +35,8 @@
   domReadyPromise
     .then(() => {
       const $group = $("#highlight-colors")
+      //Japanese, Chinese and Thai don't put spaces between words
+      const space = /^(ja|zh|th)(-|$)/.test(brapi.i18n.getUILanguage()) ? "" : " "
       for (const name of Object.keys(highlightColorSchemes)) {
         const scheme = highlightColorSchemes[name]
         const $label = $("<label>").addClass("scheme").appendTo($group)
@@ -42,9 +44,9 @@
         const $text = $("<span>").addClass("scheme-text").appendTo($label)
         $("<span>").addClass("scheme-name").text(brapi.i18n.getMessage("highlight_scheme_" + name.replace("-", "_"))).appendTo($text)
         const $sample = $("<span>").addClass("scheme-sample").appendTo($text)
-        const $sentence = $("<span>").text(brapi.i18n.getMessage("highlight_sample_before") + " ").appendTo($sample)
+        const $sentence = $("<span>").text(brapi.i18n.getMessage("highlight_sample_before") + space).appendTo($sample)
         const $word = $("<span>").text(brapi.i18n.getMessage("highlight_sample_word")).appendTo($sentence)
-        $sentence.append(" " + brapi.i18n.getMessage("highlight_sample_after"))
+        $sentence.append(space + brapi.i18n.getMessage("highlight_sample_after"))
         if (scheme.sentence) $sentence.css("background-color", scheme.sentence)
         else $sentence.css("text-decoration", "underline 1px dotted")
         if (scheme.word) $word.css({"background-color": scheme.word, color: "#1f2328", "text-decoration": "underline 2px #1f2328"})
@@ -319,7 +321,7 @@
     $("#voices").empty()
     $("<option>")
       .val("")
-      .text("Auto select")
+      .text(brapi.i18n.getMessage("popup_voice_auto"))
       .appendTo("#voices")
 
     //get voices filtered by selected languages

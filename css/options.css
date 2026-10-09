@@ -125,8 +125,10 @@ body.in-popup .rf-nav {
   text-underline-offset: 2px;
 }
 
-/* Sliders built by createSlider() in js/options.js */
+/* Sliders built by createSlider() in js/options.js. Kept left to right in RTL languages,
+   since createSlider() positions the knob from the left. */
 .slider {
+  direction: ltr;
   position: relative;
   height: 6px;
   margin: var(--rf-space-3) 10px;
