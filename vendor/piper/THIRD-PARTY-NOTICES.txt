@@ -23,9 +23,6 @@ Components and licenses:
   source at https://github.com/rhasspy/piper-phonemize. These files are a
   separate program that the extension talks to through messages.
 
-- Bootstrap (bootstrap.min.css): MIT License, Copyright (c) Twitter, Inc. and
-  The Bootstrap Authors.
-
 - React, ReactDOM, rxjs, immer and the other libraries in bundle.js: see
   bundle.js.LICENSE.txt.
 
