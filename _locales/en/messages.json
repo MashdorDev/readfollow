@@ -315,5 +315,17 @@
   },
   "welcome_settings_link": {
     "message": "Open settings"
+  },
+  "options_bar_label": {
+    "message": "Playback bar"
+  },
+  "options_bar_show_all": {
+    "message": "Show on all sites"
+  },
+  "options_bar_hidden_on": {
+    "message": "Hidden on $1"
+  },
+  "options_bar_shown_everywhere": {
+    "message": "Shown on every site. To hide it on one site, use the menu at the end of the bar."
   }
 }

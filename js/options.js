@@ -31,6 +31,22 @@
 
 
 
+  //sites where the on-page bar was hidden from its menu
+  rxjs.combineLatest([observeSetting("barHiddenSites"), domReadyPromise])
+    .subscribe(([sites]) => {
+      sites = sites || []
+      $("#bar-hidden-sites").text(sites.length
+        ? brapi.i18n.getMessage("options_bar_hidden_on", [sites.join(", ")])
+        : brapi.i18n.getMessage("options_bar_shown_everywhere"))
+      $("#bar-show-all").prop("hidden", !sites.length)
+    })
+  domReadyPromise
+    .then(() => {
+      $("#bar-show-all").click(() => updateSettings({barHiddenSites: []}).catch(handleError))
+    })
+
+
+
   //hotkey
   domReadyPromise
     .then(() => {
