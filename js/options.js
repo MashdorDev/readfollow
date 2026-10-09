@@ -21,6 +21,7 @@
   domReadyPromise
     .then(() => {
       if (queryString.referer) {
+        document.body.classList.add("in-popup")
         $("button.close").show()
           .click(function() {
             history.back();
@@ -109,6 +110,8 @@
     .subscribe(([rate, slider]) => {
       slider.setValue(Math.log(rate || defaults.rate) / Math.log($("#rate").data("pow")))
       $("#rate-input").val(rate || defaults.rate)
+      $("#rate-value").text(Number((rate || defaults.rate).toFixed(2)) + "x")
+      $("#rate .knob").attr("aria-valuetext", $("#rate-value").text())
     })
 
   rxjs.combineLatest([observeSetting("voiceName"), rateObservable, domReadyPromise])
@@ -400,7 +403,10 @@
     var $bg = $(elem).empty().toggleClass("slider", true);
     var $bar = $("<div class='bar'>").appendTo(elem);
     var $track = $("<div class='track'>").appendTo(elem);
-    var $knob = $("<div class='knob'>").appendTo($track);
+    var $knob = $("<div class='knob' role='slider' tabindex='0' aria-valuemin='0' aria-valuemax='100'>").appendTo($track);
+    var label = $(elem).attr("aria-labelledby")
+    if (label) $knob.attr("aria-labelledby", label)
+    var position = 0;
 
     $bg.click(function(e) {
       var pos = calcPosition(e);
@@ -408,6 +414,18 @@
       onChange(min + pos*(max-min));
     })
     $knob.click(function() {
+      return false;
+    })
+    //arrow keys move one step, Page Up/Down five, Home/End to the ends
+    $knob.on("keydown", function(e) {
+      var moves = {ArrowRight: step, ArrowUp: step, ArrowLeft: -step, ArrowDown: -step, PageUp: 5*step, PageDown: -5*step}
+      var pos
+      if (e.key in moves) pos = Math.min(1, Math.max(0, position + moves[e.key]))
+      else if (e.key == "Home") pos = 0
+      else if (e.key == "End") pos = 1
+      else return
+      setPosition(pos);
+      onChange(min + pos*(max-min));
       return false;
     })
     $knob.on("mousedown touchstart", function() {
@@ -430,6 +448,8 @@
     }
 
     function setPosition(pos) {
+      position = pos;
+      $knob.attr("aria-valuenow", Math.round(100 * pos));
       var percent = (100 * pos) + "%";
       $knob.css("left", percent);
       $bar.css("width", percent);

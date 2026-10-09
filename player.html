@@ -4,12 +4,12 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ReadFollow</title>
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="css/common.css">
-
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" type="text/css" href="css/tokens.css">
+  <link rel="stylesheet" type="text/css" href="css/base.css">
   <style>
-    body {
-      font-size: 16px;
+    .container {
+      max-width: 640px;
     }
   </style>
 
@@ -25,12 +25,16 @@
   <script src="js/player.js"></script>
 </head>
 <body>
-  <div class="container">
-    <p class="mt-2">
+  <main class="container">
+    <header class="rf-header">
+      <img src="img/icon.svg" alt="">
+      <h1 class="rf-title" data-i18n="extension_short_name"></h1>
+    </header>
+    <p>
       <span data-i18n="player_tab_explanation"></span>
       <span id="hidethistab-link" class="link" data-i18n="player_hidethistab_link"></span>
     </p>
-  </div>
+  </main>
 
 
   <!-- Dialogs -->

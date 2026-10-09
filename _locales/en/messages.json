@@ -9,7 +9,7 @@
     "message": "Read aloud the current web-page article with one click, using text to speech (TTS). Supports 40+ languages."
   },
   "options_heading": {
-    "message": "Options"
+    "message": "Settings"
   },
   "options_voice_label": {
     "message": "Voice"
@@ -48,19 +48,19 @@
     "message": "Volume"
   },
   "options_show_highlighting": {
-    "message": "Text Highlighting"
+    "message": "Follow-along text"
   },
   "options_highlighting_off": {
-    "message": "Turn off"
+    "message": "Off"
   },
   "options_highlighting_popup": {
-    "message": "Show in popup"
+    "message": "In the popup"
   },
   "options_highlighting_window": {
-    "message": "Show in a separate window"
+    "message": "In a separate window"
   },
   "options_audio_playback": {
-    "message": "Audio Playback"
+    "message": "Audio playback"
   },
   "options_audio_playback_standalone": {
     "message": "Use separate tab"
@@ -104,10 +104,10 @@
     }
   },
   "options_hotkeys_link": {
-    "message": "Edit shortcut keys"
+    "message": "Edit keyboard shortcuts"
   },
   "options_test_button": {
-    "message": "Test"
+    "message": "Test voice"
   },
   "options_stop_button": {
     "message": "Stop"
@@ -170,7 +170,7 @@
     "message": "Click the speaker icon next to each answer to read it aloud"
   },
   "languages_heading": {
-    "message": "Language Options"
+    "message": "Languages"
   },
   "languages_back_button": {
     "message": "Back to Options"
@@ -183,5 +183,89 @@
   },
   "google_translate_keep_page_open": {
     "message": "ReadFollow is using Google Translate for text-to-speech.  Please keep this tab open."
+  },
+  "popup_settings_button": {
+    "message": "Settings"
+  },
+  "popup_controls_label": {
+    "message": "Playback"
+  },
+  "popup_loading": {
+    "message": "Loading"
+  },
+  "popup_play_button": {
+    "message": "Read aloud"
+  },
+  "popup_pause_button": {
+    "message": "Pause"
+  },
+  "popup_rewind_button": {
+    "message": "Previous"
+  },
+  "popup_forward_button": {
+    "message": "Next"
+  },
+  "popup_stop_button": {
+    "message": "Stop"
+  },
+  "popup_smaller_text": {
+    "message": "Smaller text"
+  },
+  "popup_larger_text": {
+    "message": "Larger text"
+  },
+  "popup_smaller_window": {
+    "message": "Smaller window"
+  },
+  "popup_larger_window": {
+    "message": "Larger window"
+  },
+  "popup_voice_auto": {
+    "message": "Auto select"
+  },
+  "options_close_button": {
+    "message": "Back"
+  },
+  "options_section_voice": {
+    "message": "Voice"
+  },
+  "options_section_reading": {
+    "message": "Reading"
+  },
+  "options_filter_languages": {
+    "message": "Choose which languages are listed"
+  },
+  "options_rate_edit": {
+    "message": "Type an exact speed"
+  },
+  "options_saved": {
+    "message": "Saved"
+  },
+  "options_shortcuts_label": {
+    "message": "Shortcuts"
+  },
+  "nav_settings": {
+    "message": "Settings"
+  },
+  "nav_languages": {
+    "message": "Languages"
+  },
+  "nav_custom_voices": {
+    "message": "Custom voices"
+  },
+  "nav_advanced": {
+    "message": "Advanced"
+  },
+  "advanced_playback_title": {
+    "message": "Playback"
+  },
+  "advanced_bt_silence_gap": {
+    "message": "Fix missing first few words of each paragraph when using a Bluetooth headset"
+  },
+  "languages_explanation": {
+    "message": "Pick the languages you read. Only their voices are listed in the voice menu. Choose a voice under a language to always use it for that language."
+  },
+  "custom_voices_explanation": {
+    "message": "Add your own account with a cloud voice provider to use its voices. Your keys are stored in this browser only. Text you read with these voices is sent to that provider."
   }
 }

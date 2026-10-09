@@ -44,28 +44,6 @@ var getSingletonAudio = lazy(() => {
 })
 var getSilenceTrack = lazy(() => makeSilenceTrack())
 
-setupDarkMode()
-
-
-
-
-async function setupDarkMode() {
-  //if extension page but not service worker
-  if (typeof brapi.commands != "undefined" && typeof window != "undefined") {
-    const [{darkMode}] = await Promise.all([
-      getSettings(["darkMode"]),
-      new Promise(f => document.addEventListener("DOMContentLoaded", f))
-    ])
-    if (typeof darkMode == "boolean") {
-      document.body.classList.toggle("dark-mode", darkMode)
-    }
-    else {
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add("dark-mode")
-      }
-    }
-  }
-}
 
 
 /**
@@ -107,7 +85,7 @@ const settingsChange$ = rxjs.fromEventPattern(
 
 function getSettings(names) {
   return new Promise(function(fulfill) {
-    brapi.storage.local.get(names || ["voiceName", "rate", "pitch", "volume", "showHighlighting", "languages", "highlightFontSize", "highlightWindowSize", "preferredVoices", "useEmbeddedPlayer", "fixBtSilenceGap", "wordReplacements", "darkMode"], fulfill);
+    brapi.storage.local.get(names || ["voiceName", "rate", "pitch", "volume", "showHighlighting", "languages", "highlightFontSize", "highlightWindowSize", "preferredVoices", "useEmbeddedPlayer", "fixBtSilenceGap", "wordReplacements"], fulfill);
   });
 }
 
@@ -119,7 +97,7 @@ function updateSettings(items) {
 
 function clearSettings(names) {
   return new Promise(function(fulfill) {
-    brapi.storage.local.remove(names || ["voiceName", "rate", "pitch", "volume", "showHighlighting", "languages", "highlightFontSize", "highlightWindowSize", "preferredVoices", "useEmbeddedPlayer", "fixBtSilenceGap", "wordReplacements", "darkMode"], fulfill);
+    brapi.storage.local.remove(names || ["voiceName", "rate", "pitch", "volume", "showHighlighting", "languages", "highlightFontSize", "highlightWindowSize", "preferredVoices", "useEmbeddedPlayer", "fixBtSilenceGap", "wordReplacements"], fulfill);
   });
 }
 
@@ -508,6 +486,14 @@ function setI18nText() {
     var text = brapi.i18n.getMessage(key);
     if ($(this).is("input")) $(this).val(text);
     else $(this).text(text);
+  })
+  //used on icon and "A+" style buttons, where the title is also the accessible name
+  $("[data-i18n-title]").each(function() {
+    var text = brapi.i18n.getMessage($(this).data("i18nTitle"));
+    $(this).attr({title: text, "aria-label": text})
+  })
+  $("[data-i18n-aria-label]").each(function() {
+    $(this).attr("aria-label", brapi.i18n.getMessage($(this).data("i18nAriaLabel")))
   })
 }
 

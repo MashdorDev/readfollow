@@ -1,5 +1,6 @@
 
 $(function() {
+  setI18nText()
   getSettings(["awsCreds", "ibmCreds", "azureCreds"])
     .then(function(items) {
       if (items.awsCreds) {
