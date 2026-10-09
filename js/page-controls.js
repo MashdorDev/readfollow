@@ -71,8 +71,10 @@ var pageControls = (function() {
     var hostStyle = {position: "fixed", left: "50%", bottom: "24px", transform: "translateX(-50%)", "z-index": "2147483647", margin: "0", padding: "0", border: "0", background: "none"}
     for (var name in hostStyle) host.style.setProperty(name, hostStyle[name], "important")
     var root = host.attachShadow({mode: "open"})
-    var style = document.createElement("style")
-    style.textContent = css
+    //a constructed sheet rather than a <style> element, which a style-src CSP (pdf.js's viewer has one) blocks
+    var sheet = new CSSStyleSheet()
+    sheet.replaceSync(css)
+    root.adoptedStyleSheets = [sheet]
     var bar = document.createElement("div")
     bar.className = "bar"
     bar.setAttribute("role", "toolbar")
@@ -90,7 +92,7 @@ var pageControls = (function() {
     rates.forEach(function(value) {rate.appendChild(rateOption(value))})
     var stop = button("stop", "Stop", "stop")
     bar.append(grip, rewind, toggle, forward, rate, stop)
-    root.append(style, bar)
+    root.append(bar)
     elems = {root: root, bar: bar, toggle: toggle, rate: rate, state: null}
     rewind.addEventListener("click", function() {onCommand("rewind")})
     forward.addEventListener("click", function() {onCommand("forward")})

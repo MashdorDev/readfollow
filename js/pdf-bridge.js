@@ -29,8 +29,68 @@ window.addEventListener("message", async event => {
   event.source.postMessage({id, ...reply}, event.origin)
 })
 
+//The page highlighter used for web pages also follows the reading here, on pdf.js's text layer.
+//It is a set of classic scripts, so they are added as script elements rather than imported.
+const highlighterReady = ["js/rxjs.umd.min.js", "js/defaults.js", "js/page-controls.js", "js/page-highlight.js"]
+  .reduce((loaded, file) => loaded.then(() => new Promise((resolve, reject) => {
+    const script = document.createElement("script")
+    script.src = "../../../" + file
+    script.onload = resolve
+    script.onerror = () => reject(new Error("Failed to load " + file))
+    document.head.appendChild(script)
+  })), Promise.resolve())
+
+//The text layer's text is transparent over the rendered page, so the highlights keep it that way and only
+//tint behind it. Sentence and word differ in hue and lightness, and the word is underlined too, so the word
+//stands out without relying on color; both tints keep black text above 12:1 contrast.
+const highlightStyle = new CSSStyleSheet()
+highlightStyle.replaceSync(`
+  ::highlight(read-aloud-context) { color: transparent !important; background-color: rgb(66 133 244 / 0.16) !important; }
+  ::highlight(read-aloud-word) {
+    color: transparent !important;
+    background-color: rgb(255 196 0 / 0.6) !important;
+    text-decoration: underline 2px rgb(32 33 36) !important;
+    text-underline-offset: 2px;
+  }
+`)
+document.adoptedStyleSheets = [...document.adoptedStyleSheets, highlightStyle]
+
+//page being read, set when the reader moves to a page rather than when it prefetches one
+let readingPage = null
+
+//Zooming or rotating renders the text layer again, which leaves the highlights on removed nodes
+app.eventBus.on("textlayerrendered", event => {
+  if (event.pageNumber == readingPage && window.pageHighlighter?.isActive()) highlightPage(readingPage)
+})
+
 await app.initializedPromise
 parent.postMessage({method: "viewerReady"}, "*")
+
+
+async function highlightPage(pageNumber) {
+  readingPage = pageNumber
+  const textLayer = await getTextLayer(pageNumber)
+  if (readingPage != pageNumber || !textLayer) return
+  await highlighterReady
+  const range = document.createRange()
+  range.selectNodeContents(textLayer)
+  pageHighlighter.start(range, {tint: false})
+}
+
+//pdf.js renders a page's text layer once the page scrolls into view
+async function getTextLayer(pageNumber) {
+  const div = () => app.pdfViewer.getPageView(pageNumber - 1)?.textLayer?.div
+  if (div()?.querySelector("span")) return div()
+  await new Promise(resolve => {
+    const onRendered = event => {
+      if (event.pageNumber != pageNumber) return
+      app.eventBus.off("textlayerrendered", onRendered)
+      resolve()
+    }
+    app.eventBus.on("textlayerrendered", onRendered)
+  })
+  return div()
+}
 
 
 async function loadDocument(buffer) {
@@ -53,8 +113,11 @@ async function getCurrentIndex() {
 async function getTexts(index, quietly) {
   const pdf = await getDocument()
   if (index >= pdf.numPages) return null
-  if (!quietly) app.pdfViewer.currentPageNumber = index + 1
   const pageNumber = index + 1
+  if (!quietly) {
+    app.pdfViewer.currentPageNumber = pageNumber
+    highlightPage(pageNumber).catch(console.error)
+  }
   const neighbor = pageNumber > 1 ? pageNumber - 1 : pageNumber + 1
   let lines = await getPageLines(pdf, pageNumber)
   if (neighbor <= pdf.numPages) lines = trimRepeatedLines(lines, await getPageLines(pdf, neighbor))
