@@ -140,6 +140,8 @@ async function readPageLines(pdf, pageNumber) {
   for (const item of items) {
     //marked-content items carry no text
     if (item.str == null) continue
+    //rotated text is margin material (arXiv's sideways stamp, page edge labels), not something to read
+    if (item.transform[1] || item.transform[2]) continue
     //zero-height items are spacers whose position says nothing about layout
     if (item.height) {
       const y = item.transform[5]
