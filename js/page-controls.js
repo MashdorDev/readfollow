@@ -15,33 +15,45 @@ var pageControls = (function() {
   var host = null
   var elems = null
 
+  //colors repeat css/tokens.css, which a page can't load into the shadow root
   var css = `
+    :host { all: initial; }
     .bar {
+      --surface: #ffffff; --text: #1f2328; --muted: #5e6470; --hover: #f2efea; --border: #e2ddd5;
+      --accent: #0f766e; --accent-hover: #0b5f58; --on-accent: #ffffff;
       display: flex; align-items: center; gap: 2px;
       padding: 6px 8px 6px 4px;
-      background: #202124; color: #e8eaed;
+      background: var(--surface); color: var(--text);
+      border: 1px solid var(--border);
       border-radius: 999px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-      font: 13px/1 system-ui, -apple-system, "Segoe UI", sans-serif;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.16);
+      font: 13px/1 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
       user-select: none;
+    }
+    @media (prefers-color-scheme: dark) {
+      .bar {
+        --surface: #26282c; --text: #e8e6e3; --muted: #a3a7ae; --hover: #33363b; --border: #3a3d43;
+        --accent: #4fd1c5; --accent-hover: #7ee0d6; --on-accent: #0b1f1d;
+      }
     }
     button, select {
       font: inherit; color: inherit; background: none; border: 0; margin: 0;
       cursor: pointer; border-radius: 999px;
     }
     button { width: 34px; height: 34px; padding: 0; display: grid; place-items: center; }
-    button:hover, select:hover { background: rgba(255, 255, 255, 0.12); }
-    button:focus-visible, select:focus-visible { outline: 2px solid #ffc933; outline-offset: 1px; }
+    button:hover, select:hover { background: var(--hover); }
+    button:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
     svg { width: 20px; height: 20px; fill: currentColor; }
-    .grip { width: 22px; cursor: grab; color: #9aa0a6; }
+    .grip { width: 22px; cursor: grab; color: var(--muted); }
     .grip:hover { background: none; }
     .grip:active { cursor: grabbing; }
-    .toggle { width: 40px; height: 40px; background: #ffc933; color: #202124; }
-    .toggle:hover { background: #ffd65c; }
+    .toggle { width: 40px; height: 40px; background: var(--accent); color: var(--on-accent); }
+    .toggle:hover { background: var(--accent-hover); }
     .toggle svg { width: 24px; height: 24px; }
-    select { height: 30px; padding: 0 6px; margin: 0 2px; appearance: none; -webkit-appearance: none; }
-    select option { color: #202124; background: #fff; }
+    select { height: 30px; padding: 0 6px; margin: 0 2px; appearance: none; -webkit-appearance: none; font-variant-numeric: tabular-nums; }
+    select option { color: var(--text); background: var(--surface); }
     .loading .toggle { opacity: 0.6; }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
   `
 
   //built with DOM calls rather than innerHTML, which pages enforcing Trusted Types would block

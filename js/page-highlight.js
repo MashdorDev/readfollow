@@ -324,10 +324,13 @@ var pageHighlighter = (function() {
     if (installStyle.done) return
     installStyle.done = true
     var sheet = new CSSStyleSheet()
+    //Same pair as PDFs: blue sentence, amber word. The word sets its own dark text and an underline,
+    //so it keeps 10:1 contrast on dark sites and stands out without relying on color.
     sheet.replaceSync(
-      "::highlight(" + selectionHighlight + ") { background-color: rgba(66, 133, 244, 0.14); }\n" +
-      "::highlight(" + contextHighlight + ") { background-color: #fff3bf; color: #000; }\n" +
-      "::highlight(" + wordHighlight + ") { background-color: #ffc933; color: #000; }"
+      "::highlight(" + selectionHighlight + ") { background-color: rgba(15, 118, 110, 0.10); }\n" +
+      "::highlight(" + contextHighlight + ") { background-color: rgba(66, 133, 244, 0.22); }\n" +
+      "::highlight(" + wordHighlight + ") { background-color: #ffc933; color: #1f2328;" +
+        " text-decoration: underline 2px #1f2328; text-underline-offset: 2px; }"
     )
     document.adoptedStyleSheets = document.adoptedStyleSheets.concat(sheet)
   }
