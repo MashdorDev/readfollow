@@ -75,6 +75,15 @@ window.addEventListener("message", event => {
 
 const idleSubject = new rxjs.BehaviorSubject(true)
 
+//The toolbar button shows that something is being read, so it can be found and stopped from any tab
+idleSubject.pipe(
+  rxjs.switchMap(isIdle => isIdle
+    ? rxjs.of("STOPPED")
+    : rxjs.timer(0, 1000).pipe(rxjs.switchMap(() => activeDoc ? Promise.resolve(activeDoc.getState()) : ["STOPPED"]))
+  ),
+  rxjs.distinctUntilChanged()
+).subscribe(state => showPlaybackOnButton(state).catch(console.error))
+
 if (queryString.has("autoclose")) {
   rxjs.combineLatest(
     idleSubject,
