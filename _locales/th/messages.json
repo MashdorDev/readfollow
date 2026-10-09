@@ -340,5 +340,53 @@
   },
   "command_rewind": {
     "message": "ประโยคก่อนหน้า"
+  },
+  "nav_about": {
+    "message": "เกี่ยวกับ"
+  },
+  "about_support_title": {
+    "message": "สนับสนุน ReadFollow"
+  },
+  "about_support_body": {
+    "message": "ReadFollow ใช้งานได้ฟรี ไม่ต้องมีบัญชีและไม่มีโฆษณา และจะเป็นแบบนี้ต่อไป หากช่วยให้คุณอ่านได้ง่ายขึ้น คุณสามารถสนับสนุนการพัฒนาได้"
+  },
+  "about_source": {
+    "message": "ซอร์สโค้ดบน GitHub"
+  },
+  "about_report": {
+    "message": "รายงานปัญหา"
+  },
+  "about_made_by": {
+    "message": "สร้างโดย"
+  },
+  "about_built_on_title": {
+    "message": "สร้างขึ้นจาก"
+  },
+  "about_credit_read_aloud": {
+    "message": "ReadFollow เริ่มต้นจากการ fork มาจาก Read Aloud ซึ่งยังคงทำหน้าที่อ่านหน้าเว็บและให้เสียงส่วนใหญ่"
+  },
+  "about_credit_piper": {
+    "message": "เสียงธรรมชาติที่ทำงานบนอุปกรณ์ของคุณ"
+  },
+  "about_credit_pdfjs": {
+    "message": "โปรแกรมดู PDF"
+  },
+  "about_credit_onnx": {
+    "message": "รันโมเดลเสียงของ Piper ในเบราว์เซอร์"
+  },
+  "about_credit_espeak": {
+    "message": "แปลงข้อความเป็นหน่วยเสียงสำหรับเสียง Piper โดยทำงานเป็นโปรแกรมแยกต่างหาก"
+  },
+  "about_not_affiliated": {
+    "message": "ReadFollow ไม่มีส่วนเกี่ยวข้องกับ Read Aloud หรือผู้สร้าง และไม่ได้รับการรับรองจาก Read Aloud หรือผู้สร้าง"
+  },
+  "about_version": {
+    "message": "เวอร์ชัน $1"
+  },
+  "welcome_footer": {
+    "message": "ReadFollow ฟรีและเป็นโอเพนซอร์ส สร้างขึ้นจาก Read Aloud ของ Hai Phan"
+  },
+  "welcome_about_link": {
+    "message": "เกี่ยวกับและการสนับสนุน"
   }
 }

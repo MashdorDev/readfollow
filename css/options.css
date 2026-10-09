@@ -203,3 +203,76 @@ body.in-popup .rf-nav {
 #word-replacements-errors:empty {
   display: none;
 }
+
+/* About */
+.support-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--rf-space-2);
+  margin: var(--rf-space-3) 0 var(--rf-space-4);
+}
+.support-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--rf-space-3);
+  padding: var(--rf-space-2) var(--rf-space-3);
+  color: var(--rf-text);
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid var(--rf-border);
+  border-radius: var(--rf-radius-s);
+}
+.support-btn:hover {
+  color: var(--rf-text);
+  background-color: var(--rf-surface-2);
+}
+.support-btn svg {
+  flex: none;
+  color: var(--rf-text-muted);
+}
+/* the two donation buttons take their service's color on hover, as on GitHub and Ko-fi */
+.support-btn.sponsors:hover {
+  color: #fff;
+  background-color: #bf3989;
+  border-color: #bf3989;
+}
+.support-btn.kofi:hover {
+  color: #fff;
+  background-color: #d63c3a;
+  border-color: #d63c3a;
+}
+.support-btn.sponsors:hover svg, .support-btn.kofi:hover svg {
+  color: inherit;
+}
+.made-by {
+  margin: 0;
+  color: var(--rf-text-muted);
+}
+
+.credits {
+  margin: 0 0 var(--rf-space-4);
+  padding: 0;
+  list-style: none;
+}
+.credits li {
+  padding: var(--rf-space-3) 0;
+  border-top: 1px solid var(--rf-border);
+}
+.credits li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+.credits li > a {
+  font-weight: 600;
+}
+.credits li > span {
+  margin-inline-start: var(--rf-space-2);
+  font-size: 0.85em;
+}
+.credits p {
+  margin: var(--rf-space-1) 0 0;
+}
+/* names and licenses stay left to right inside RTL pages */
+.credits li > span {
+  unicode-bidi: isolate;
+}

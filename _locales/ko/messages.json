@@ -340,5 +340,53 @@
   },
   "command_rewind": {
     "message": "이전 문장"
+  },
+  "nav_about": {
+    "message": "정보"
+  },
+  "about_support_title": {
+    "message": "ReadFollow 후원하기"
+  },
+  "about_support_body": {
+    "message": "ReadFollow는 무료이며 계정도 광고도 없고, 앞으로도 계속 그럴 것입니다. 읽기에 도움이 된다면 개발을 후원하실 수 있습니다."
+  },
+  "about_source": {
+    "message": "GitHub의 소스 코드"
+  },
+  "about_report": {
+    "message": "문제 신고"
+  },
+  "about_made_by": {
+    "message": "제작:"
+  },
+  "about_built_on_title": {
+    "message": "기반 프로젝트"
+  },
+  "about_credit_read_aloud": {
+    "message": "ReadFollow는 Read Aloud의 포크로 시작했으며, 페이지 읽기 기능과 대부분의 음성은 여전히 Read Aloud가 제공합니다."
+  },
+  "about_credit_piper": {
+    "message": "기기에서 실행되는 자연스러운 음성입니다."
+  },
+  "about_credit_pdfjs": {
+    "message": "PDF 뷰어입니다."
+  },
+  "about_credit_onnx": {
+    "message": "브라우저에서 Piper 음성 모델을 실행합니다."
+  },
+  "about_credit_espeak": {
+    "message": "Piper 음성을 위해 텍스트를 발음 단위로 변환합니다. 별도의 프로그램으로 실행됩니다."
+  },
+  "about_not_affiliated": {
+    "message": "ReadFollow는 Read Aloud 또는 그 제작자와 제휴 관계가 없으며 이들의 보증을 받지 않았습니다."
+  },
+  "about_version": {
+    "message": "버전 $1"
+  },
+  "welcome_footer": {
+    "message": "ReadFollow는 무료 오픈 소스이며, Hai Phan의 Read Aloud를 기반으로 만들어졌습니다."
+  },
+  "welcome_about_link": {
+    "message": "정보 및 후원"
   }
 }

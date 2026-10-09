@@ -340,5 +340,53 @@
   },
   "command_rewind": {
     "message": "पिछला वाक्य"
+  },
+  "nav_about": {
+    "message": "परिचय"
+  },
+  "about_support_title": {
+    "message": "ReadFollow का समर्थन करें"
+  },
+  "about_support_body": {
+    "message": "ReadFollow मुफ़्त है, बिना खाते और बिना विज्ञापनों के, और यह हमेशा ऐसा ही रहेगा। अगर यह आपको पढ़ने में मदद करता है, तो आप इसके विकास में सहयोग कर सकते हैं।"
+  },
+  "about_source": {
+    "message": "GitHub पर सोर्स कोड"
+  },
+  "about_report": {
+    "message": "समस्या की रिपोर्ट करें"
+  },
+  "about_made_by": {
+    "message": "निर्माता:"
+  },
+  "about_built_on_title": {
+    "message": "इन पर आधारित"
+  },
+  "about_credit_read_aloud": {
+    "message": "ReadFollow की शुरुआत Read Aloud के फ़ोर्क के रूप में हुई थी, जो अब भी पेज पढ़ने का काम करता है और ज़्यादातर आवाज़ें देता है।"
+  },
+  "about_credit_piper": {
+    "message": "प्राकृतिक आवाज़ें जो आपके डिवाइस पर चलती हैं।"
+  },
+  "about_credit_pdfjs": {
+    "message": "PDF व्यूअर।"
+  },
+  "about_credit_onnx": {
+    "message": "Piper आवाज़ मॉडल को ब्राउज़र में चलाता है।"
+  },
+  "about_credit_espeak": {
+    "message": "Piper आवाज़ों के लिए टेक्स्ट को बोलने की ध्वनियों में बदलता है। यह एक अलग प्रोग्राम के रूप में चलता है।"
+  },
+  "about_not_affiliated": {
+    "message": "ReadFollow का Read Aloud या उसके लेखक से कोई संबंध नहीं है, और न ही उन्होंने इसका समर्थन किया है।"
+  },
+  "about_version": {
+    "message": "संस्करण $1"
+  },
+  "welcome_footer": {
+    "message": "ReadFollow मुफ़्त और ओपन सोर्स है, और Hai Phan के Read Aloud पर आधारित है।"
+  },
+  "welcome_about_link": {
+    "message": "परिचय और समर्थन"
   }
 }

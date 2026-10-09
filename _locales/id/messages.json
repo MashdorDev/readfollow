@@ -340,5 +340,53 @@
   },
   "command_rewind": {
     "message": "Kalimat sebelumnya"
+  },
+  "nav_about": {
+    "message": "Tentang"
+  },
+  "about_support_title": {
+    "message": "Dukung ReadFollow"
+  },
+  "about_support_body": {
+    "message": "ReadFollow gratis, tanpa akun dan tanpa iklan, dan akan tetap begitu. Jika ReadFollow membantu Anda membaca, Anda bisa mendukung pengembangannya."
+  },
+  "about_source": {
+    "message": "Kode sumber di GitHub"
+  },
+  "about_report": {
+    "message": "Laporkan masalah"
+  },
+  "about_made_by": {
+    "message": "Dibuat oleh"
+  },
+  "about_built_on_title": {
+    "message": "Dibangun di atas"
+  },
+  "about_credit_read_aloud": {
+    "message": "ReadFollow berawal sebagai fork dari Read Aloud, yang masih menyediakan pembacaan halaman dan sebagian besar suara."
+  },
+  "about_credit_piper": {
+    "message": "Suara alami yang berjalan di perangkat Anda."
+  },
+  "about_credit_pdfjs": {
+    "message": "Penampil PDF."
+  },
+  "about_credit_onnx": {
+    "message": "Menjalankan model suara Piper di browser."
+  },
+  "about_credit_espeak": {
+    "message": "Mengubah teks menjadi bunyi ucapan untuk suara Piper. Program ini berjalan secara terpisah."
+  },
+  "about_not_affiliated": {
+    "message": "ReadFollow tidak berafiliasi dengan maupun didukung oleh Read Aloud atau pembuatnya."
+  },
+  "about_version": {
+    "message": "Versi $1"
+  },
+  "welcome_footer": {
+    "message": "ReadFollow gratis dan open source, dibangun di atas Read Aloud karya Hai Phan."
+  },
+  "welcome_about_link": {
+    "message": "Tentang dan dukungan"
   }
 }

@@ -390,5 +390,53 @@
   },
   "command_rewind": {
     "message": "המשפט הקודם"
+  },
+  "nav_about": {
+    "message": "אודות"
+  },
+  "about_support_title": {
+    "message": "תמיכה ב-ReadFollow"
+  },
+  "about_support_body": {
+    "message": "ReadFollow חינמי, בלי חשבון ובלי פרסומות, וכך זה יישאר. אם הוא עוזר לכם לקרוא, אפשר לתמוך בפיתוח שלו."
+  },
+  "about_source": {
+    "message": "קוד המקור ב-GitHub"
+  },
+  "about_report": {
+    "message": "דיווח על בעיה"
+  },
+  "about_made_by": {
+    "message": "פותח על ידי"
+  },
+  "about_built_on_title": {
+    "message": "מבוסס על"
+  },
+  "about_credit_read_aloud": {
+    "message": "ReadFollow נבנה על בסיס Read Aloud, שעדיין אחראי על הקראת הדף ועל רוב הקולות."
+  },
+  "about_credit_piper": {
+    "message": "הקולות הטבעיים שפועלים במכשיר שלכם."
+  },
+  "about_credit_pdfjs": {
+    "message": "מציג ה-PDF."
+  },
+  "about_credit_onnx": {
+    "message": "מריץ את מודלי הקול של Piper בדפדפן."
+  },
+  "about_credit_espeak": {
+    "message": "ממיר טקסט לצלילי דיבור בשביל הקולות של Piper. הוא פועל כתוכנה נפרדת."
+  },
+  "about_not_affiliated": {
+    "message": "ReadFollow לא קשור ל-Read Aloud או למפתח שלו, ולא קיבל מהם אישור."
+  },
+  "about_version": {
+    "message": "גרסה $1"
+  },
+  "welcome_footer": {
+    "message": "ReadFollow חינמי ובקוד פתוח, ומבוסס על Read Aloud של Hai Phan."
+  },
+  "welcome_about_link": {
+    "message": "אודות ותמיכה"
   }
 }

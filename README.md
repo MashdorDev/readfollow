@@ -4,18 +4,24 @@
   Text to speech that highlights each word on the page as it reads, so you can follow along.
 </div>
 
+![A Wikipedia article being read: the sentence in blue, the current word in amber, the playback bar at the bottom](store/screenshot-1-web.png)
+
 ## What it does
 
 Select some text on any page and start reading (toolbar button, `Alt+O`, or right-click > read selection). While it reads:
 
-- the text you selected is tinted, so you can see how much is left
-- the current sentence is highlighted, and the word being spoken is highlighted on top of it
-- a small bar at the bottom of the page gives you previous/next sentence, play/pause, speed and stop; drag it by the handle if it covers something
+- the current sentence is highlighted, and the word being spoken is marked on top of it
+- the text you selected stays lightly tinted, so you can see how much is left
+- a small bar gives you previous/next sentence, play/pause, speed and stop; drag it anywhere, and it remembers the spot on each site
 - clicking any word in the selection jumps reading to that word
 
-Word-by-word highlighting needs a voice that reports word positions. The voices built into Windows, macOS and ChromeOS do; cloud voices highlight one sentence or phrase at a time.
+It works the same way in PDFs, in a bundled PDF.js viewer. Clicking the toolbar button with nothing selected reads the whole page, with the text shown in the popup.
 
-Works in Chrome and Firefox (140 or newer).
+Voices built into Windows, macOS and ChromeOS report each word as they speak it. Online voices (Google Translate, and OpenAI, Azure, Amazon Polly or IBM with your own key) and the downloadable Piper voices that run on your device don't, so ReadFollow works out the word from the length of each piece of audio.
+
+Highlight colors, speed, voice and per-language voices are in Settings. The interface is translated into 27 languages, including Arabic and Hebrew right to left.
+
+Works in Chrome 125 or newer and Firefox 140 or newer.
 
 ## Install from source
 
@@ -23,8 +29,24 @@ Works in Chrome and Firefox (140 or newer).
 
 **Firefox:** run `npm run build:firefox`, then load `build/firefox/manifest.json` from `about:debugging` > This Firefox > Load Temporary Add-on. A temporary add-on is removed when Firefox restarts; a permanent install needs a signed build.
 
+## Support
+
+ReadFollow is free, with no account and no ads, and it will stay that way. If it helps you read, you can support its development:
+
+- [GitHub Sponsors](https://github.com/sponsors/MashdorDev)
+- [Ko-fi](https://ko-fi.com/dorzairidev)
+
+Problems and ideas go in [issues](https://github.com/MashdorDev/readfollow/issues). Made by [Dor Zairi](https://dorzairi.com).
+
 ## Credit
 
-ReadFollow is based on [Read Aloud](https://github.com/ken107/read-aloud) by Hai Phan, which provides the page reading, voices and most of the extension. The original history is kept in this repository. Both are released under the MIT license, see [LICENSE](LICENSE).
+ReadFollow is based on [Read Aloud](https://github.com/ken107/read-aloud) by Hai Phan, which still provides the page reading and most of the voices. The original history is kept in this repository. Both are released under the MIT license, see [LICENSE](LICENSE).
+
+It also bundles:
+
+- [Piper](https://github.com/rhasspy/piper) voices (Rhasspy, MIT), through the [Piper browser app](https://github.com/ken107/piper-browser-extension) by Hai Phan (MIT), in `vendor/piper`, built from `piper/`
+- [PDF.js](https://mozilla.github.io/pdf.js/) by Mozilla (Apache 2.0), in `vendor/pdfjs`
+- [ONNX Runtime](https://onnxruntime.ai/) by Microsoft (MIT), which runs the Piper models
+- [eSpeak NG](https://github.com/espeak-ng/espeak-ng) (GPL 3.0), which turns text into speech sounds for Piper and runs as a separate program; see `vendor/piper/THIRD-PARTY-NOTICES.txt`
 
 ReadFollow is not affiliated with or endorsed by Read Aloud or its author.

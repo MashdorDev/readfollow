@@ -340,5 +340,53 @@
   },
   "command_rewind": {
     "message": "Önceki cümle"
+  },
+  "nav_about": {
+    "message": "Hakkında"
+  },
+  "about_support_title": {
+    "message": "ReadFollow'u destekleyin"
+  },
+  "about_support_body": {
+    "message": "ReadFollow ücretsizdir, hesap gerektirmez ve reklam içermez. Bu hep böyle kalacak. Okumanıza yardımcı oluyorsa geliştirilmesine destek olabilirsiniz."
+  },
+  "about_source": {
+    "message": "GitHub'da kaynak kodu"
+  },
+  "about_report": {
+    "message": "Sorun bildir"
+  },
+  "about_made_by": {
+    "message": "Geliştiren:"
+  },
+  "about_built_on_title": {
+    "message": "Temel aldığı projeler"
+  },
+  "about_credit_read_aloud": {
+    "message": "ReadFollow, Read Aloud'un bir çatalı (fork) olarak başladı. Sayfa okuma ve seslerin çoğu hâlâ Read Aloud tarafından sağlanıyor."
+  },
+  "about_credit_piper": {
+    "message": "Cihazınızda çalışan doğal sesler."
+  },
+  "about_credit_pdfjs": {
+    "message": "PDF görüntüleyici."
+  },
+  "about_credit_onnx": {
+    "message": "Piper ses modellerini tarayıcıda çalıştırır."
+  },
+  "about_credit_espeak": {
+    "message": "Piper sesleri için metni konuşma seslerine dönüştürür. Ayrı bir program olarak çalışır."
+  },
+  "about_not_affiliated": {
+    "message": "ReadFollow'un Read Aloud veya geliştiricisiyle herhangi bir bağlantısı yoktur ve onlar tarafından onaylanmamıştır."
+  },
+  "about_version": {
+    "message": "Sürüm $1"
+  },
+  "welcome_footer": {
+    "message": "ReadFollow ücretsiz ve açık kaynaklıdır, Hai Phan'ın Read Aloud'u üzerine kurulmuştur."
+  },
+  "welcome_about_link": {
+    "message": "Hakkında ve destek"
   }
 }
