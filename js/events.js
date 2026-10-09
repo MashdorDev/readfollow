@@ -4,6 +4,14 @@ brapi.runtime.onInstalled.addListener(function() {
   installContextMenus()
 })
 
+//A player tab closed mid-read is gone before it can clear the toolbar badge itself
+brapi.tabs.onRemoved.addListener(function() {
+  sendToPlayer({method: "getPlaybackState"})
+    .then(result => result ? result.state : "STOPPED", () => "STOPPED")
+    .then(state => state == "STOPPED" && showPlaybackOnButton(state))
+    .catch(console.error)
+})
+
 
 /**
  * IPC handlers

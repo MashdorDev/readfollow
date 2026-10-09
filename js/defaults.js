@@ -552,6 +552,20 @@ function escapeHtml(text) {
   })
 }
 
+//Badge and tooltip on the toolbar button, so reading can be found and stopped from any tab
+async function showPlaybackOnButton(state) {
+  if (state == "STOPPED") {
+    await brapi.action.setBadgeText({text: ""})
+    await brapi.action.setTitle({title: brapi.i18n.getMessage("extension_name")})
+    return
+  }
+  const paused = state == "PAUSED"
+  await brapi.action.setBadgeBackgroundColor({color: paused ? "#5f6368" : "#188038"})
+  if (brapi.action.setBadgeTextColor) await brapi.action.setBadgeTextColor({color: "#ffffff"})
+  await brapi.action.setBadgeText({text: paused ? "II" : "▶"})
+  await brapi.action.setTitle({title: brapi.i18n.getMessage("extension_short_name") + (paused ? ": paused" : ": reading")})
+}
+
 function getBrowser() {
   if (/Opera|OPR\//.test(navigator.userAgent)) return 'opera';
   if (/firefox/i.test(navigator.userAgent)) return 'firefox';
