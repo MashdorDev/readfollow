@@ -194,6 +194,7 @@ function Speech(texts, options) {
             unit = startUnit(enginePlaybackState.texts[0], 0)
           } else {
             unit = startUnit(texts[playlist.getIndex()], event.charIndex || 0)
+            if (event.duration) unit.duration = event.duration
             const nextText = texts[playlist.getIndex() + 1]
             if (nextText && engine.prefetch != null) engine.prefetch(nextText, options)
           }
@@ -350,12 +351,33 @@ function Speech(texts, options) {
     return (now - unit.startTime - unit.pausedTotal - (unit.pausedAt ? now - unit.pausedAt : 0)) / 1000
   }
 
-  //Takes the word that contains the estimated character, or the one before it when that's a space
+  //Takes the word that contains the estimated character, or the one before it when that's a space.
+  //Audio voices report how long the chunk plays, so the position is that share of the chunk; a learned pace
+  //alone drifts further the longer a chunk read faster or slower than average goes on.
   function estimatePosition(unit) {
-    const charIndex = Math.min(unit.offset + Math.floor(Math.max(0, spokenSeconds(unit)) * charsPerSecond), unit.text.length - 1)
+    const charIndex = Math.min(unit.duration
+      ? unit.offset + charsAtFraction(unit.text, unit.offset, spokenSeconds(unit) / unit.duration)
+      : unit.offset + Math.floor(Math.max(0, spokenSeconds(unit)) * charsPerSecond), unit.text.length - 1)
     let start = Math.max(charIndex, 0)
     while (start > 0 && /\S/.test(unit.text[start - 1])) start--
     return makeWordPosition(unit.text, {charIndex: start})
+  }
+
+  //Characters from offset that take up the given share of the speaking time. Voices pause at punctuation,
+  //so a sentence end counts as much as 8 letters and a comma as 4, about 0.5s and 0.25s at a normal pace.
+  function charsAtFraction(text, offset, fraction) {
+    const sentenceEnd = /[.!?\n。！？]/
+    const clause = /[,;:،、，；：]/
+    const weight = c => sentenceEnd.test(c) ? 8 : clause.test(c) ? 4 : 1
+    let total = 0
+    for (let i = offset; i < text.length; i++) total += weight(text[i])
+    const target = Math.min(1, Math.max(0, fraction)) * total
+    let sum = 0
+    for (let i = offset; i < text.length; i++) {
+      sum += weight(text[i])
+      if (sum > target) return i - offset
+    }
+    return text.length - 1 - offset
   }
 
   //Very short units are mostly start-up delay, so they would skew the pace

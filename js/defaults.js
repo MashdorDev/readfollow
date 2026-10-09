@@ -747,7 +747,8 @@ function playAudioHere(urlPromise, options, playbackState$) {
     rxjs.exhaustMap(() =>
       rxjs.merge(
         rxjs.concat(
-          rxjs.of({type: "start"}),
+          //how long this audio plays at its rate, so the word being spoken can be placed in it
+          rxjs.defer(() => rxjs.of({type: "start", duration: isFinite(audio.duration) ? audio.duration / audio.defaultPlaybackRate : undefined})),
           new rxjs.Observable(observer => {
             audio.onended = () => observer.next({type: "end"})
             audio.onerror = () => observer.error(new Error(audio.error.message || audio.error.code))
