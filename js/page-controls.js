@@ -35,7 +35,9 @@ var pageControls = (function() {
         --accent: #4fd1c5; --accent-hover: #7ee0d6; --on-accent: #0b1f1d;
       }
     }
+    /* all: initial leaves direction alone, so an RTL page would mirror the buttons but not their arrows */
     .bar {
+      direction: ltr;
       position: relative;
       display: flex; align-items: center; gap: 2px;
       padding: 6px 4px 6px 4px;
