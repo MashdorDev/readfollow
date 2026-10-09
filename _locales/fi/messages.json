@@ -1,9 +1,9 @@
 {
   "extension_name": {
-    "message": "Read Aloud: Tekstistä puheeksi -lukija"
+    "message": "ReadFollow: Tekstistä puheeksi -lukija"
   },
   "extension_short_name": {
-    "message": "Read Aloud"
+    "message": "ReadFollow"
   },
   "extension_description": {
     "message": "Lue nykyinen verkkosivu ääneen yhdellä napsautuksella käyttäen tekstistä puheeksi -tekniikkaa. Tukee yli 40 kieltä."
@@ -96,7 +96,7 @@
     "message": "Kirjaudu ulos"
   },
   "player_tab_explanation": {
-    "message": "Read Aloud käyttää tätä välilehteä äänen toistoon. Tämä välilehti sulkeutuu automaattisesti 5 minuutin käyttämättömyyden jälkeen."
+    "message": "ReadFollow käyttää tätä välilehteä äänen toistoon. Tämä välilehti sulkeutuu automaattisesti 5 minuutin käyttämättömyyden jälkeen."
   },
   "player_hidethistab_link": {
     "message": "Piilota tämä välilehti"
@@ -105,7 +105,7 @@
     "message": "Piilota tämä välilehti?"
   },
   "player_hidethistab_dialog_body": {
-    "message": "Jos piilotat tämän välilehden, Read Aloud toistaa äänen nykyisen verkkosivun sisällä. Tämä tarkoittaa, että sivulta poistuminen pysäyttää puheen.\n\n(Tämä asetus voidaan kumota laajennuksen asetussivulta)"
+    "message": "Jos piilotat tämän välilehden, ReadFollow toistaa äänen nykyisen verkkosivun sisällä. Tämä tarkoittaa, että sivulta poistuminen pysäyttää puheen.\n\n(Tämä asetus voidaan kumota laajennuksen asetussivulta)"
   },
   "player_hidethistab_dialog_ok_button": {
     "message": "Piilota"
@@ -117,7 +117,7 @@
     "message": "Lupa pyydetty"
   },
   "player_permission_dialog_body": {
-    "message": "Sallitaanko Read Aloud toistaa ääntä?"
+    "message": "Sallitaanko ReadFollow toistaa ääntä?"
   },
   "player_permission_dialog_ok_button": {
     "message": "Salli"
@@ -141,10 +141,10 @@
     "message": "Tätä verkkosivustoa ei voi lukea ääneen"
   },
   "error_file_access": {
-    "message": "Sinun on myönnettävä Read Aloud -sovellukselle pääsy tiedostojen URL-osoitteisiin laajennuksen [asetuksissa](open-extension-settings)"
+    "message": "Sinun on myönnettävä ReadFollow -sovellukselle pääsy tiedostojen URL-osoitteisiin laajennuksen [asetuksissa](open-extension-settings)"
   },
   "error_add_permissions": {
-    "message": "Sinun on myönnettävä Read Aloud -sovellukselle lisä[oikeudet](request-permissions) tälle verkkosivustolle"
+    "message": "Sinun on myönnettävä ReadFollow -sovellukselle lisä[oikeudet](request-permissions) tälle verkkosivustolle"
   },
   "error_login_required": {
     "message": "[Kirjaudu sisään](sign-in) käyttääksesi Premium-ääniä"
@@ -174,12 +174,12 @@
     "message": "Takaisin asetuksiin"
   },
   "google_translate_request_permission": {
-    "message": "Read Aloud haluaa käyttää Google-kääntäjää tekstistä puheeksi -toimintoon."
+    "message": "ReadFollow haluaa käyttää Google-kääntäjää tekstistä puheeksi -toimintoon."
   },
   "google_translate_allow_button": {
     "message": "Salli"
   },
   "google_translate_keep_page_open": {
-    "message": "Read Aloud käyttää Google-kääntäjää tekstistä puheeksi -toimintoon. Pidä tämä välilehti auki."
+    "message": "ReadFollow käyttää Google-kääntäjää tekstistä puheeksi -toimintoon. Pidä tämä välilehti auki."
   }
 }

@@ -409,7 +409,7 @@ async function createOffscreen() {
   const readyPromise = new Promise(f => messageHandlers.offscreenCheckIn = f)
   brapi.offscreen.createDocument({
     reasons: ["AUDIO_PLAYBACK"],
-    justification: "Read Aloud would like to play audio in the background",
+    justification: "ReadFollow would like to play audio in the background",
     url: brapi.runtime.getURL("offscreen.html")
   })
   await readyPromise

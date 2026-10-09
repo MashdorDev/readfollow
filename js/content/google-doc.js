@@ -85,9 +85,9 @@ function AddonReadAloudDoc() {
     console.log("Waiting for addon to advertise...")
     return new Promise(function(fulfill, reject) {
       var menu = $(".goog-menuitem-content").filter(function() {
-        return $(this).text().startsWith("Read Aloud TTS")
+        return $(this).text().startsWith("ReadFollow TTS")
       })
-      if (!menu.length) reject(new Error("'Read Aloud TTS' addon not found"))
+      if (!menu.length) reject(new Error("'ReadFollow TTS' addon not found"))
       simulateClick(menu.get(0))
       setTimeout(fulfill, 250)
     })
@@ -144,7 +144,7 @@ function AddonReadAloudDoc() {
     }
     var $popup = $("<div>")
       .appendTo(document.body)
-      .data("message", "You need to install the Read Aloud Google Workspace add-on to read aloud this document.")
+      .data("message", "You need to install the ReadFollow Google Workspace add-on to read aloud this document.")
       .css({
         position: "absolute",
         left: anchorOffset.left + anchorDimension.width/2 - 160,
@@ -167,7 +167,7 @@ function AddonReadAloudDoc() {
       })
     var $text = $("<div>")
       .appendTo($popup)
-      .html("Please use this menu to find and install the Read Aloud Google Workspace add-on.  For instructions, see <a style='color:yellow' target='_blank' href='https://blog.readaloud.app/2021/09/google-docs-update.html'>this post</a>.")
+      .html("Please use this menu to find and install the ReadFollow Google Workspace add-on.  For instructions, see <a style='color:yellow' target='_blank' href='https://blog.readaloud.app/2021/09/google-docs-update.html'>this post</a>.")
       .css({
         backgroundColor: "#333",
         color: "#fff",
@@ -186,7 +186,7 @@ function AddonReadAloudDoc() {
     }
     var $popup = $("<div>")
       .appendTo(document.body)
-      .data("message", "You need to use the Read Aloud Google Workspace add-on to read aloud this document.")
+      .data("message", "You need to use the ReadFollow Google Workspace add-on to read aloud this document.")
       .css({
         position: "absolute",
         left: anchorOffset.left + anchorDimension.width/2 - 300,

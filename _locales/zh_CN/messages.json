@@ -1,9 +1,9 @@
 {
   "extension_name": {
-    "message": "Read Aloud: 文本语音朗读助理"
+    "message": "ReadFollow: 文本语音朗读助理"
   },
   "extension_short_name": {
-    "message": "Read Aloud"
+    "message": "ReadFollow"
   },
   "extension_description": {
     "message": "轻轻点击，即可为您朗读页面上的文本。（现正支援超过 40 种以上语言）"
@@ -174,12 +174,12 @@
     "message": "返回选项"
   },
   "google_translate_request_permission": {
-    "message": "Read Aloud希望使用Google Translate进行语音合成。"
+    "message": "ReadFollow希望使用Google Translate进行语音合成。"
   },
   "google_translate_allow_button": {
     "message": "允许"
   },
   "google_translate_keep_page_open": {
-    "message": "Read Aloud正在使用Google Translate进行语音合成。 请保持此标签打开。"
+    "message": "ReadFollow正在使用Google Translate进行语音合成。 请保持此标签打开。"
   }
 }

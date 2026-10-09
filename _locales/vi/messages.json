@@ -1,9 +1,9 @@
 {
   "extension_name": {
-    "message": "Đọc Cho Tôi Nghe"
+    "message": "ReadFollow: Đọc Cho Tôi Nghe"
   },
   "extension_short_name": {
-    "message": "Đọc Tui Nghe"
+    "message": "ReadFollow"
   },
   "extension_description": {
     "message": "Đọc nghe nội dung trang web - tiếng Anh và Việt. Dùng nghe đọc tin tức, truyện online. Giọng đọc hay, tiện ích dễ xài."
@@ -177,12 +177,12 @@
     "message": "Trở về"
   },
   "google_translate_request_permission": {
-    "message": "Read Aloud muốn sử dụng Google Dịch để tổng hợp giọng nói."
+    "message": "ReadFollow muốn sử dụng Google Dịch để tổng hợp giọng nói."
   },
   "google_translate_allow_button": {
     "message": "Cho phép"
   },
   "google_translate_keep_page_open": {
-    "message": "Read Aloud đang sử dụng Google Dịch để tổng hợp giọng nói. Vui lòng giữ tab này mở."
+    "message": "ReadFollow đang sử dụng Google Dịch để tổng hợp giọng nói. Vui lòng giữ tab này mở."
   }
 }
