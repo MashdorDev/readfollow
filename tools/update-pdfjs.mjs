@@ -39,12 +39,23 @@ const viewerScript = '<script src="viewer.mjs" type="module"></script>'
 if (!html.includes(viewerScript)) throw new Error("viewer.html layout changed, can't add the bridge script")
 fs.writeFileSync(viewerHtml, html.replace(viewerScript, viewerScript + '\n  <script src="../../../js/pdf-bridge.js" type="module"></script>'))
 
+//addons.mozilla.org rejects files its linter can't parse, and it can't parse the v flag (set subtraction) in the
+//viewer's link finder. The same expression with lookaheads and the u flag matches identically.
+const viewerMjs = path.join(out, "web", "viewer.mjs")
+const autolinkV = String.raw`/\b(?:https?:\/\/|mailto:|www\.)(?:[\S--[\p{P}<>]]|\/|[\S--[\[\]]]+[\S--[\p{P}<>]])+|(?=\p{L})[\S--[@\p{Ps}\p{Pe}<>]]{1,64}@([\S--[[\p{P}--\-]<>]]{1,63}(?:\.[\S--[[\p{P}--\-]<>]]{1,63})+)/gv`
+const autolinkU = String.raw`/\b(?:https?:\/\/|mailto:|www\.)(?:(?![\p{P}<>])\S|\/|[^\s\[\]]+(?![\p{P}<>])\S)+|(?=\p{L})(?:(?![@\p{Ps}\p{Pe}<>])\S){1,64}@((?:-|(?![\p{P}<>])\S){1,63}(?:\.(?:-|(?![\p{P}<>])\S){1,63})+)/gu`
+const viewerCode = fs.readFileSync(viewerMjs, "utf8")
+if (!viewerCode.includes(autolinkV)) throw new Error("viewer.mjs link finder changed, check whether it still needs rewriting for addons-linter")
+fs.writeFileSync(viewerMjs, viewerCode.replace(autolinkV, autolinkU))
+
 fs.writeFileSync(path.join(out, "README.txt"), `pdf.js ${version} viewer bundled in ReadFollow
 
 Prebuilt generic viewer (legacy build) from ${zipUrl}
 Apache License 2.0, Copyright Mozilla Foundation, see LICENSE.
 
-Unchanged except: web/viewer.html loads ReadFollow's js/pdf-bridge.js, and
+Unchanged except: web/viewer.html loads ReadFollow's js/pdf-bridge.js, one regular
+expression in web/viewer.mjs is rewritten without the v flag (addons-linter can't
+parse it; it matches the same text), and
 source maps, the debugger and the sample PDF are removed.
 Regenerate with: node tools/update-pdfjs.mjs ${version}
 `)

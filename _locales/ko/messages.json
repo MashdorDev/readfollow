@@ -1,6 +1,6 @@
 {
   "extension_name": {
-    "message": "ReadFollow: 텍스트 음성 변환 리더"
+    "message": "ReadFollow: 텍스트 음성 변환 및 단어 강조"
   },
   "extension_short_name": {
     "message": "ReadFollow"
@@ -397,5 +397,8 @@
   },
   "about_more_get": {
     "message": "확장 프로그램 받기"
+  },
+  "privacy_policy_link": {
+    "message": "개인정보처리방침"
   }
 }

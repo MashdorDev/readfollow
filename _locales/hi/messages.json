@@ -1,6 +1,6 @@
 {
   "extension_name": {
-    "message": "ReadFollow: टेक्स्ट टू स्पीच वॉइस रीडर"
+    "message": "ReadFollow: टेक्स्ट टू स्पीच और शब्द हाइलाइट"
   },
   "extension_short_name": {
     "message": "ReadFollow"
@@ -397,5 +397,8 @@
   },
   "about_more_get": {
     "message": "एक्सटेंशन पाएँ"
+  },
+  "privacy_policy_link": {
+    "message": "गोपनीयता नीति"
   }
 }

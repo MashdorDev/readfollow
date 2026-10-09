@@ -1,6 +1,6 @@
 {
   "extension_name": {
-    "message": "ReadFollow: Pembaca Suara Teks ke Ucapan"
+    "message": "ReadFollow: Teks ke Ucapan dengan Sorotan Kata"
   },
   "extension_short_name": {
     "message": "ReadFollow"
@@ -397,5 +397,8 @@
   },
   "about_more_get": {
     "message": "Dapatkan ekstensi"
+  },
+  "privacy_policy_link": {
+    "message": "Kebijakan privasi"
   }
 }

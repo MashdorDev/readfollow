@@ -1,0 +1,15 @@
+{
+  "categories": {
+    "firefox": [
+      "language-support",
+      "other"
+    ]
+  },
+  "summary": {
+    "en-US": "Reads text aloud and highlights each word on the page as it is spoken. Works on web pages and PDFs, offline or with online voices. Free and open source, with no account and no ads."
+  },
+  "version": {
+    "license": "MIT",
+    "approval_notes": "ReadFollow is built on Read Aloud (ken107/read-aloud, MIT); the repository keeps its full history, and the uploaded source archive is the repository at this version.\n\nMinified or generated files and their sources:\n- vendor/piper/bundle.js and inference-worker.js: built from piper/ with Node 22: cd piper && npm ci && npm run build (writes into vendor/piper). CI rebuilds them on every change and fails if they differ.\n- vendor/piper/piper_phonemize.js/.wasm/.data and ort/ort-wasm-simd.wasm: prebuilt WebAssembly from rhasspy/piper-phonemize and onnxruntime-web 1.17.3; see vendor/piper/THIRD-PARTY-NOTICES.txt.\n- vendor/pdfjs: the PDF.js 6.4.299 legacy release, unchanged apart from one script tag in web/viewer.html and one regular expression in web/viewer.mjs rewritten without the v flag so addons-linter can parse it. node tools/update-pdfjs.mjs regenerates it.\n- js/jquery-3.7.1.min.js, js/rxjs.umd.min.js, js/aws-sdk.js: unmodified library builds.\nThe Firefox package is generated from the Chrome sources with: node tools/build-firefox.mjs\n\nHow to test: select text on any page and press Alt+O (or right-click > Read aloud selected text). The sentence and the current word are highlighted and a playback bar appears. With an online voice, Firefox shows 'Allow ReadFollow to play audio?' in the player tab once. PDFs: open any PDF and click the toolbar button."
+  }
+}

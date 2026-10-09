@@ -1,6 +1,6 @@
 {
   "extension_name": {
-    "message": "ReadFollow: Bir Metni Sesli Okuyucu"
+    "message": "ReadFollow: Metni sesli okuma ve kelime vurgulama"
   },
   "extension_short_name": {
     "message": "ReadFollow"
@@ -397,5 +397,8 @@
   },
   "about_more_get": {
     "message": "Eklentiyi edinin"
+  },
+  "privacy_policy_link": {
+    "message": "Gizlilik politikası"
   }
 }

@@ -1,6 +1,6 @@
 {
   "extension_name": {
-    "message": "ReadFollow: 文字語音朗讀助理"
+    "message": "ReadFollow: 文字語音朗讀與逐字標示"
   },
   "extension_short_name": {
     "message": "ReadFollow"
@@ -397,5 +397,8 @@
   },
   "about_more_get": {
     "message": "取得擴充功能"
+  },
+  "privacy_policy_link": {
+    "message": "隱私權政策"
   }
 }

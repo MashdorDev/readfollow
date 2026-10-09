@@ -1,6 +1,6 @@
 {
   "extension_name": {
-    "message": "ReadFollow: Hlasová čtečka textu"
+    "message": "ReadFollow: Předčítání textu se zvýrazněním slov"
   },
   "extension_short_name": {
     "message": "ReadFollow"
@@ -397,5 +397,8 @@
   },
   "about_more_get": {
     "message": "Získat rozšíření"
+  },
+  "privacy_policy_link": {
+    "message": "Zásady ochrany osobních údajů"
   }
 }

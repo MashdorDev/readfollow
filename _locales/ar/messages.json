@@ -1,6 +1,6 @@
 {
   "extension_name": {
-    "message": "ReadFollow: قارئ النصوص الصوتي"
+    "message": "ReadFollow: تحويل النص إلى كلام مع تمييز الكلمات"
   },
   "extension_short_name": {
     "message": "ReadFollow"
@@ -397,5 +397,8 @@
   },
   "about_more_get": {
     "message": "احصل على الإضافة"
+  },
+  "privacy_policy_link": {
+    "message": "سياسة الخصوصية"
   }
 }

@@ -1,6 +1,6 @@
 {
   "extension_name": {
-    "message": "ReadFollow: Преобразование текста в речь"
+    "message": "ReadFollow: Озвучка текста с выделением слов"
   },
   "extension_short_name": {
     "message": "ReadFollow"
@@ -397,5 +397,8 @@
   },
   "about_more_get": {
     "message": "Получить расширение"
+  },
+  "privacy_policy_link": {
+    "message": "Политика конфиденциальности"
   }
 }

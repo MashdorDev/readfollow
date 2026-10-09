@@ -36,7 +36,7 @@ ReadFollow is free, with no account and no ads, and it will stay that way. If it
 - [GitHub Sponsors](https://github.com/sponsors/MashdorDev)
 - [Ko-fi](https://ko-fi.com/dorzairidev)
 
-Problems and ideas go in [issues](https://github.com/MashdorDev/readfollow/issues). Made by [Dor Zairi](https://dorzairi.com).
+Problems and ideas go in [issues](https://github.com/MashdorDev/readfollow/issues). [Privacy policy](https://docs.dorzairi.com/docs/b5c13935-107d-4363-a02d-7e7f6161f9a5/). Made by [Dor Zairi](https://dorzairi.com).
 
 If you like ReadFollow, try [Window Fullscreen for YouTube](https://github.com/MashdorDev/window-fullscreen-for-youtube) by the same developer: it makes the YouTube player fill the browser window without going fullscreen ([Chrome](https://chromewebstore.google.com/detail/window-fullscreen-for-you/jghckcdnmagoohfbjplpfjbnbkpfcekl), [Firefox](https://addons.mozilla.org/firefox/addon/window-fullscreen-for-youtube/)).
 
