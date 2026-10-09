@@ -56,6 +56,8 @@ async function popout(tabId) {
 
 async function init() {
   await domReady()
+  setI18nText()
+  initQuickSettings().catch(handleError)
 
   $("#btnPlay").click(onPlay);
   $("#btnPause").click(onPause);
@@ -67,7 +69,6 @@ async function init() {
   $("#increase-font-size").click(changeFontSize.bind(null, +1));
   $("#decrease-window-size").click(changeWindowSize.bind(null, -1));
   $("#increase-window-size").click(changeWindowSize.bind(null, +1));
-  $("#toggle-dark-mode").click(toggleDarkMode);
 
   refreshSize();
 
@@ -122,6 +123,10 @@ function handleError(err) {
       }
     })
   }
+  //the browser's own wording for pages extensions can't touch (its settings pages, the extension stores)
+  else if (/Cannot access|cannot be scripted|Missing host permission/i.test(err.message)) {
+    $("#status").html(formatError({code: "error_page_unreadable"})).show();
+  }
   else {
     $("#status").text(err.message).show();
   }
@@ -145,7 +150,6 @@ async function updateButtons() {
   engineInitializingSubject.next(state == "LOADING" && speech?.engine)
 
   $("#imgLoading").toggle(state == "LOADING");
-  $("#btnSettings").toggle(state == "STOPPED");
   $("#btnPlay").toggle(state == "PAUSED" || state == "STOPPED");
   $("#btnPause").toggle(state == "PLAYING");
   $("#btnStop").toggle(state == "PAUSED" || state == "PLAYING" || state == "LOADING");
@@ -344,7 +348,24 @@ function refreshSize() {
   }
 }
 
-function toggleDarkMode() {
-  const darkMode = document.body.classList.toggle("dark-mode")
-  updateSettings({darkMode})
+//Speed and voice, so the common changes don't need the settings page.
+//Speed is saved per voice, the same way the settings page and the on-page bar save it.
+async function initQuickSettings() {
+  const rates = [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 2.5, 3]
+  const {voiceName} = await getSettings(["voiceName"])
+  const rateKey = "rate" + (voiceName || "")
+  const rate = await getSetting(rateKey) || defaults.rate
+  const $speed = $("#speed")
+  for (const value of rates.includes(rate) ? rates : [...rates, rate].sort((a, b) => a - b)) {
+    $("<option>").val(value).text(value + "x").appendTo($speed)
+  }
+  $speed.val(String(rate)).change(async function() {
+    const value = Number($(this).val())
+    await updateSettings({[rateKey]: value})
+    brapi.runtime.sendMessage({dest: "player", method: "setRate", args: [value]}).catch(() => "not reading")
+  })
+  $("#voice-name")
+    .text(voiceName || brapi.i18n.getMessage("popup_voice_auto"))
+    .attr("title", voiceName || "")
+    .click(onSettings)
 }
