@@ -27,14 +27,14 @@ module.exports = (env, argv) => ({
     extensions: ['.tsx', '.ts', '.js'],
   },
   output: {
-    //production builds go straight into the extension package
+    //production builds go straight into the extension package, next to the files tracked there
+    //(index.html, the notices, piper_phonemize.*), so the folder isn't cleaned
     path: argv.mode == 'production' ? path.resolve(__dirname, '..', 'vendor', 'piper') : path.resolve(__dirname, 'build', 'debug'),
-    clean: true,
+    clean: argv.mode != 'production',
   },
   plugins: [
     new CopyPlugin({
       patterns: [
-        'dist',
         {from: 'node_modules/onnxruntime-web/dist/ort-wasm-simd.wasm', to: 'ort/'},
       ]
     }),

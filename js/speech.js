@@ -206,6 +206,22 @@ function Speech(texts, options) {
             unit = startUnit(enginePlaybackState.texts[enginePlaybackState.index], 0)
           }
           break
+        //Piper reports each phrase of the sentence as it starts playing: its share of the sentence's phonemes
+        //and how long its audio plays, so the word estimate restarts at every phrase
+        case "phrase":
+          if (enginePlaybackState && event.phonemeTotal && event.seconds) {
+            const index = enginePlaybackState.sentenceStartIndicies.indexOf(event.sentenceStartIndex)
+            const text = enginePlaybackState.texts[index]
+            if (text == null) break
+            enginePlaybackState.index = index
+            const charAt = phonemes => Math.round(text.length * phonemes / event.phonemeTotal)
+            const start = phraseStartAt(text, charAt(event.phonemeOffset))
+            const end = event.phonemeOffset + event.phonemeCount >= event.phonemeTotal ? text.length : phraseStartAt(text, charAt(event.phonemeOffset + event.phonemeCount))
+            unit = startUnit(text, start)
+            unit.end = Math.max(end, Math.min(start + 1, text.length))
+            unit.duration = event.seconds / options.rate
+          }
+          break
         case "end":
           if (unit) learnPace(unit)
           unit = null
@@ -356,28 +372,44 @@ function Speech(texts, options) {
   //alone drifts further the longer a chunk read faster or slower than average goes on.
   function estimatePosition(unit) {
     const charIndex = Math.min(unit.duration
-      ? unit.offset + charsAtFraction(unit.text, unit.offset, spokenSeconds(unit) / unit.duration)
+      ? unit.offset + charsAtFraction(unit.text, unit.offset, unit.end || unit.text.length, spokenSeconds(unit) / unit.duration)
       : unit.offset + Math.floor(Math.max(0, spokenSeconds(unit)) * charsPerSecond), unit.text.length - 1)
     let start = Math.max(charIndex, 0)
     while (start > 0 && /\S/.test(unit.text[start - 1])) start--
     return makeWordPosition(unit.text, {charIndex: start})
   }
 
+  //Piper splits sentences into phrases at commas and similar marks, and the phoneme share lands near one of them,
+  //so a phrase starts right after the nearest such mark, or at the start of the word the share falls in
+  function phraseStartAt(text, index) {
+    if (index <= 0) return 0
+    const reach = 20
+    const clauseEnd = /[,;:،、，；：]/
+    let best = -1
+    for (let i = Math.max(1, index - reach); i < Math.min(text.length, index + reach); i++) {
+      if (clauseEnd.test(text[i - 1]) && (best < 0 || Math.abs(i - index) < Math.abs(best - index))) best = i
+    }
+    let start = best >= 0 ? best : Math.min(index, text.length)
+    if (best < 0) while (start > 0 && /\S/.test(text[start - 1])) start--
+    while (start < text.length && /\s/.test(text[start])) start++
+    return start
+  }
+
   //Characters from offset that take up the given share of the speaking time. Voices pause at punctuation,
   //so a sentence end counts as much as 8 letters and a comma as 4, about 0.5s and 0.25s at a normal pace.
-  function charsAtFraction(text, offset, fraction) {
+  function charsAtFraction(text, offset, end, fraction) {
     const sentenceEnd = /[.!?\n。！？]/
     const clause = /[,;:،、，；：]/
     const weight = c => sentenceEnd.test(c) ? 8 : clause.test(c) ? 4 : 1
     let total = 0
-    for (let i = offset; i < text.length; i++) total += weight(text[i])
+    for (let i = offset; i < end; i++) total += weight(text[i])
     const target = Math.min(1, Math.max(0, fraction)) * total
     let sum = 0
-    for (let i = offset; i < text.length; i++) {
+    for (let i = offset; i < end; i++) {
       sum += weight(text[i])
       if (sum > target) return i - offset
     }
-    return text.length - 1 - offset
+    return end - 1 - offset
   }
 
   //Very short units are mostly start-up delay, so they would skew the pace
@@ -385,7 +417,7 @@ function Speech(texts, options) {
     const minSeconds = 1.5
     const seconds = spokenSeconds(unit)
     if (unit.hasWords || seconds < minSeconds) return
-    const measured = (unit.text.length - unit.offset) / seconds
+    const measured = ((unit.end || unit.text.length) - unit.offset) / seconds
     charsPerSecond = paceLearned ? charsPerSecond * 0.6 + measured * 0.4 : measured
     paceLearned = true
   }
