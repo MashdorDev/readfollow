@@ -267,11 +267,13 @@ function GoogleTranslateTtsEngine() {
   this.getVoices = function() {
     return voices;
   }
+  //Google Translate's speech still takes the old codes for these two and rejects the current ones
+  var googleLangCodes = {he: "iw", fil: "tl"}
   function getAudioUrl(text, {voice: {lang}}) {
     assert(text && lang);
     return cache.fetchCached(
       JSON.stringify([text, lang]),
-      () => googleTranslateSynthesizeSpeech(text, lang)
+      () => googleTranslateSynthesizeSpeech(text, googleLangCodes[lang] || lang)
       //data URL, no destroy()
     )
   }
@@ -279,7 +281,6 @@ function GoogleTranslateTtsEngine() {
       {"voice_name": "GoogleTranslate Afrikaans", "lang": "af", "event_types": ["start", "end", "error"]},
       {"voice_name": "GoogleTranslate Albanian", "lang": "sq", "event_types": ["start", "end", "error"]},
       {"voice_name": "GoogleTranslate Arabic", "lang": "ar", "event_types": ["start", "end", "error"]},
-      {"voice_name": "GoogleTranslate Armenian", "lang": "hy", "event_types": ["start", "end", "error"]},
       {"voice_name": "GoogleTranslate Bengali", "lang": "bn", "event_types": ["start", "end", "error"]},
       {"voice_name": "GoogleTranslate Bosnian", "lang": "bs", "event_types": ["start", "end", "error"]},
       {"voice_name": "GoogleTranslate Bulgarian", "lang": "bg", "event_types": ["start", "end", "error"]},
@@ -290,7 +291,6 @@ function GoogleTranslateTtsEngine() {
       {"voice_name": "GoogleTranslate Danish", "lang": "da", "event_types": ["start", "end", "error"]},
       {"voice_name": "GoogleTranslate Dutch", "lang": "nl", "event_types": ["start", "end", "error"]},
       {"voice_name": "GoogleTranslate English", "lang": "en", "event_types": ["start", "end", "error"]},
-      {"voice_name": "GoogleTranslate Esperanto", "lang": "eo", "event_types": ["start", "end", "error"]},
       {"voice_name": "GoogleTranslate Estonian", "lang": "et", "event_types": ["start", "end", "error"]},
       {"voice_name": "GoogleTranslate Filipino", "lang": "fil", "event_types": ["start", "end", "error"]},
       {"voice_name": "GoogleTranslate Finnish", "lang": "fi", "event_types": ["start", "end", "error"]},
@@ -311,7 +311,6 @@ function GoogleTranslateTtsEngine() {
       {"voice_name": "GoogleTranslate Korean", "lang": "ko", "event_types": ["start", "end", "error"]},
       {"voice_name": "GoogleTranslate Latin", "lang": "la", "event_types": ["start", "end", "error"]},
       {"voice_name": "GoogleTranslate Latvian", "lang": "lv", "event_types": ["start", "end", "error"]},
-      {"voice_name": "GoogleTranslate Macedonian", "lang": "mk", "event_types": ["start", "end", "error"]},
       {"voice_name": "GoogleTranslate Malay", "lang": "ms", "event_types": ["start", "end", "error"]},
       {"voice_name": "GoogleTranslate Malayalam", "lang": "ml", "event_types": ["start", "end", "error"]},
       {"voice_name": "GoogleTranslate Marathi", "lang": "mr", "event_types": ["start", "end", "error"]},
