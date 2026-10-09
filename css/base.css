@@ -123,6 +123,13 @@ small, .small {
 .btn:hover {
   background-color: var(--rf-surface-2);
 }
+/* a link styled as a button keeps the button's look, not the link's underline and hover color */
+a.btn {
+  text-decoration: none;
+}
+a.btn-light:hover {
+  color: var(--rf-text);
+}
 .btn:disabled {
   opacity: 0.55;
   cursor: default;

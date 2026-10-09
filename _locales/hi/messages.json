@@ -388,5 +388,14 @@
   },
   "welcome_about_link": {
     "message": "परिचय और समर्थन"
+  },
+  "about_more_title": {
+    "message": "अगर आपको ReadFollow पसंद है"
+  },
+  "about_more_window_fullscreen": {
+    "message": "YouTube प्लेयर को फ़ुलस्क्रीन किए बिना पूरी ब्राउज़र विंडो में फैला देता है, ताकि आपके टैब, एड्रेस बार और टास्कबार अपनी जगह पर बने रहें। मुफ़्त और ओपन सोर्स, उसी डेवलपर की ओर से।"
+  },
+  "about_more_get": {
+    "message": "एक्सटेंशन पाएँ"
   }
 }

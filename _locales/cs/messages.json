@@ -388,5 +388,14 @@
   },
   "welcome_about_link": {
     "message": "O rozšíření a podpora"
+  },
+  "about_more_title": {
+    "message": "Pokud se vám ReadFollow líbí"
+  },
+  "about_more_window_fullscreen": {
+    "message": "Roztáhne přehrávač YouTube přes celé okno prohlížeče bez přepnutí na celou obrazovku, takže karty, adresní řádek a hlavní panel zůstanou na svém místě. Zdarma a s otevřeným zdrojovým kódem, od stejného vývojáře."
+  },
+  "about_more_get": {
+    "message": "Získat rozšíření"
   }
 }

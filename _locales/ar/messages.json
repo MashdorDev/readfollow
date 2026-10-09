@@ -388,5 +388,14 @@
   },
   "welcome_about_link": {
     "message": "حول المشروع ودعمه"
+  },
+  "about_more_title": {
+    "message": "إذا أعجبك ReadFollow"
+  },
+  "about_more_window_fullscreen": {
+    "message": "يجعل مشغّل YouTube يملأ نافذة المتصفح دون الانتقال إلى وضع ملء الشاشة، فتبقى علامات التبويب وشريط العنوان وشريط المهام في أماكنها. مجاني ومفتوح المصدر، من المطوّر نفسه."
+  },
+  "about_more_get": {
+    "message": "احصل على الإضافة"
   }
 }

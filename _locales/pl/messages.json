@@ -388,5 +388,14 @@
   },
   "welcome_about_link": {
     "message": "O rozszerzeniu i wsparcie"
+  },
+  "about_more_title": {
+    "message": "Jeśli lubisz ReadFollow"
+  },
+  "about_more_window_fullscreen": {
+    "message": "Sprawia, że odtwarzacz YouTube wypełnia całe okno przeglądarki bez przechodzenia na pełny ekran, więc karty, pasek adresu i pasek zadań zostają na swoim miejscu. Darmowe i open source, od tego samego twórcy."
+  },
+  "about_more_get": {
+    "message": "Pobierz rozszerzenie"
   }
 }

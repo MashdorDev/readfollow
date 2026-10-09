@@ -388,5 +388,14 @@
   },
   "welcome_about_link": {
     "message": "Over en steun"
+  },
+  "about_more_title": {
+    "message": "Als je ReadFollow fijn vindt"
+  },
+  "about_more_window_fullscreen": {
+    "message": "Laat de YouTube-speler het hele browservenster vullen zonder naar volledig scherm te gaan, zodat je tabbladen, adresbalk en taakbalk blijven waar ze zijn. Gratis en open source, van dezelfde ontwikkelaar."
+  },
+  "about_more_get": {
+    "message": "Extensie downloaden"
   }
 }

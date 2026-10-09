@@ -388,5 +388,14 @@
   },
   "welcome_about_link": {
     "message": "Giới thiệu và ủng hộ"
+  },
+  "about_more_title": {
+    "message": "Nếu bạn thích ReadFollow"
+  },
+  "about_more_window_fullscreen": {
+    "message": "Giúp trình phát YouTube lấp đầy cửa sổ trình duyệt mà không chuyển sang chế độ toàn màn hình, nên các tab, thanh địa chỉ và thanh tác vụ vẫn ở nguyên chỗ. Miễn phí và mã nguồn mở, cùng nhà phát triển."
+  },
+  "about_more_get": {
+    "message": "Tải tiện ích"
   }
 }

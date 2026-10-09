@@ -438,5 +438,14 @@
   },
   "welcome_about_link": {
     "message": "אודות ותמיכה"
+  },
+  "about_more_title": {
+    "message": "אם ReadFollow מוצא חן בעיניכם"
+  },
+  "about_more_window_fullscreen": {
+    "message": "הנגן של YouTube ממלא את כל חלון הדפדפן בלי לעבור למסך מלא, כך שהכרטיסיות, שורת הכתובת ושורת המשימות נשארות במקומן. חינמי ובקוד פתוח, מאותו מפתח."
+  },
+  "about_more_get": {
+    "message": "מעבר לחנות"
   }
 }

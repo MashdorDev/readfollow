@@ -388,5 +388,14 @@
   },
   "welcome_about_link": {
     "message": "概要と支援"
+  },
+  "about_more_title": {
+    "message": "ReadFollow を気に入っていただけたら"
+  },
+  "about_more_window_fullscreen": {
+    "message": "全画面表示に切り替えずに、YouTube プレーヤーをブラウザーのウィンドウいっぱいに広げます。タブ、アドレスバー、タスクバーはそのまま表示されます。同じ開発者による無料のオープンソース拡張機能です。"
+  },
+  "about_more_get": {
+    "message": "拡張機能を入手"
   }
 }

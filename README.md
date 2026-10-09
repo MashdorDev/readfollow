@@ -38,6 +38,8 @@ ReadFollow is free, with no account and no ads, and it will stay that way. If it
 
 Problems and ideas go in [issues](https://github.com/MashdorDev/readfollow/issues). Made by [Dor Zairi](https://dorzairi.com).
 
+If you like ReadFollow, try [Window Fullscreen for YouTube](https://github.com/MashdorDev/window-fullscreen-for-youtube) by the same developer: it makes the YouTube player fill the browser window without going fullscreen ([Chrome](https://chromewebstore.google.com/detail/window-fullscreen-for-you/jghckcdnmagoohfbjplpfjbnbkpfcekl), [Firefox](https://addons.mozilla.org/firefox/addon/window-fullscreen-for-youtube/)).
+
 ## Credit
 
 ReadFollow is based on [Read Aloud](https://github.com/ken107/read-aloud) by Hai Phan, which still provides the page reading and most of the voices. The original history is kept in this repository. Both are released under the MIT license, see [LICENSE](LICENSE).
