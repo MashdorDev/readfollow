@@ -14,15 +14,39 @@ domReady().then(async () => {
       const range = document.createRange()
       range.selectNodeContents(sample)
       pageHighlighter.start(range, {tint: false})
+      showPlaybackError()
     }
     catch (err) {
-      $("#try-status").text(err.message || String(err))
+      showError(err)
     }
   })
 
   $("#shortcuts-button").click(() => openShortcutSettings().catch(console.error))
   await showShortcuts()
 })
+
+//A read that fails after it starts (no voice for the language, a voice service error) ends without throwing,
+//so watch the player until it is reading or reports the error
+async function showPlaybackError() {
+  const startupTimeout = 15000
+  const started = Date.now()
+  while (Date.now() - started < startupTimeout) {
+    const {state, playbackError} = await bgPageInvoke("getPlaybackState")
+    if (playbackError) {
+      showError(playbackError)
+      return
+    }
+    if (state == "PLAYING") return
+    await new Promise(resolve => setTimeout(resolve, 300))
+  }
+}
+
+//Errors with a code (no voice for the language...) carry it as JSON in the message, like the popup expects
+function showError(err) {
+  const message = (err && err.message) || String(err)
+  if (/^{/.test(message)) $("#try-status").html(formatError(JSON.parse(message)))
+  else $("#try-status").text(message)
+}
 
 //A suggested shortcut that another extension already uses is left empty by the browser, without telling anyone
 async function showShortcuts() {
