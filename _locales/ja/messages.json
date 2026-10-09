@@ -340,5 +340,53 @@
   },
   "command_rewind": {
     "message": "前の文"
+  },
+  "nav_about": {
+    "message": "概要"
+  },
+  "about_support_title": {
+    "message": "ReadFollow を支援する"
+  },
+  "about_support_body": {
+    "message": "ReadFollow は無料で、アカウント不要、広告なしです。今後もこのままです。読書に役立っているなら、開発を支援していただけます。"
+  },
+  "about_source": {
+    "message": "GitHub のソースコード"
+  },
+  "about_report": {
+    "message": "問題を報告"
+  },
+  "about_made_by": {
+    "message": "制作:"
+  },
+  "about_built_on_title": {
+    "message": "基盤となるプロジェクト"
+  },
+  "about_credit_read_aloud": {
+    "message": "ReadFollow は Read Aloud のフォークとして始まりました。ページの読み上げとほとんどの音声は、今も Read Aloud が提供しています。"
+  },
+  "about_credit_piper": {
+    "message": "デバイス上で動作する自然な音声。"
+  },
+  "about_credit_pdfjs": {
+    "message": "PDF ビューアー。"
+  },
+  "about_credit_onnx": {
+    "message": "Piper の音声モデルをブラウザーで実行します。"
+  },
+  "about_credit_espeak": {
+    "message": "Piper 音声のためにテキストを音素に変換します。別のプログラムとして動作します。"
+  },
+  "about_not_affiliated": {
+    "message": "ReadFollow は Read Aloud およびその作者とは提携しておらず、承認も受けていません。"
+  },
+  "about_version": {
+    "message": "バージョン $1"
+  },
+  "welcome_footer": {
+    "message": "ReadFollow は無料のオープンソースで、Hai Phan による Read Aloud をベースにしています。"
+  },
+  "welcome_about_link": {
+    "message": "概要と支援"
   }
 }

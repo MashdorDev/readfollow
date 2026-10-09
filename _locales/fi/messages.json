@@ -340,5 +340,53 @@
   },
   "command_rewind": {
     "message": "Edellinen lause"
+  },
+  "nav_about": {
+    "message": "Tietoja"
+  },
+  "about_support_title": {
+    "message": "Tue ReadFollow-projektia"
+  },
+  "about_support_body": {
+    "message": "ReadFollow on ilmainen, ilman tiliä ja ilman mainoksia, ja niin se myös pysyy. Jos se auttaa sinua lukemaan, voit tukea sen kehitystä."
+  },
+  "about_source": {
+    "message": "Lähdekoodi GitHubissa"
+  },
+  "about_report": {
+    "message": "Ilmoita ongelmasta"
+  },
+  "about_made_by": {
+    "message": "Tekijä:"
+  },
+  "about_built_on_title": {
+    "message": "Perustana"
+  },
+  "about_credit_read_aloud": {
+    "message": "ReadFollow sai alkunsa Read Aloud -laajennuksen forkina. Read Aloud hoitaa yhä sivun lukemisen ja suurimman osan äänistä."
+  },
+  "about_credit_piper": {
+    "message": "Luonnolliset äänet, jotka toimivat laitteellasi."
+  },
+  "about_credit_pdfjs": {
+    "message": "PDF-katseluohjelma."
+  },
+  "about_credit_onnx": {
+    "message": "Ajaa Piper-äänimalleja selaimessa."
+  },
+  "about_credit_espeak": {
+    "message": "Muuntaa tekstin puheäänteiksi Piper-ääniä varten. Se toimii erillisenä ohjelmana."
+  },
+  "about_not_affiliated": {
+    "message": "ReadFollow ei ole sidoksissa Read Aloud -laajennukseen tai sen tekijään, eivätkä ne ole hyväksyneet sitä."
+  },
+  "about_version": {
+    "message": "Versio $1"
+  },
+  "welcome_footer": {
+    "message": "ReadFollow on ilmainen ja avointa lähdekoodia, ja se perustuu Read Aloud -laajennukseen, jonka on tehnyt Hai Phan."
+  },
+  "welcome_about_link": {
+    "message": "Tietoja ja tuki"
   }
 }

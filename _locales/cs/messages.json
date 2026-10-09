@@ -340,5 +340,53 @@
   },
   "command_rewind": {
     "message": "Předchozí věta"
+  },
+  "nav_about": {
+    "message": "O rozšíření"
+  },
+  "about_support_title": {
+    "message": "Podpořte ReadFollow"
+  },
+  "about_support_body": {
+    "message": "ReadFollow je zdarma, bez účtu a bez reklam, a tak to i zůstane. Pokud vám pomáhá při čtení, můžete podpořit jeho vývoj."
+  },
+  "about_source": {
+    "message": "Zdrojový kód na GitHubu"
+  },
+  "about_report": {
+    "message": "Nahlásit problém"
+  },
+  "about_made_by": {
+    "message": "Vytvořil"
+  },
+  "about_built_on_title": {
+    "message": "Postaveno na"
+  },
+  "about_credit_read_aloud": {
+    "message": "ReadFollow vznikl jako fork rozšíření Read Aloud, které stále zajišťuje čtení stránek a většinu hlasů."
+  },
+  "about_credit_piper": {
+    "message": "Přirozené hlasy, které běží ve vašem zařízení."
+  },
+  "about_credit_pdfjs": {
+    "message": "Prohlížeč PDF."
+  },
+  "about_credit_onnx": {
+    "message": "Spouští hlasové modely Piper v prohlížeči."
+  },
+  "about_credit_espeak": {
+    "message": "Převádí text na řečové zvuky pro hlasy Piper. Běží jako samostatný program."
+  },
+  "about_not_affiliated": {
+    "message": "ReadFollow není spojen s rozšířením Read Aloud ani s jeho autorem a není jimi schválen."
+  },
+  "about_version": {
+    "message": "Verze $1"
+  },
+  "welcome_footer": {
+    "message": "ReadFollow je zdarma a open source, postavený na rozšíření Read Aloud, jehož autorem je Hai Phan."
+  },
+  "welcome_about_link": {
+    "message": "O rozšíření a podpora"
   }
 }

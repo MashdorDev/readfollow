@@ -375,5 +375,53 @@
   },
   "command_rewind": {
     "message": "Previous sentence"
+  },
+  "nav_about": {
+    "message": "About"
+  },
+  "about_support_title": {
+    "message": "Support ReadFollow"
+  },
+  "about_support_body": {
+    "message": "ReadFollow is free, with no account and no ads, and it will stay that way. If it helps you read, you can support its development."
+  },
+  "about_source": {
+    "message": "Source code on GitHub"
+  },
+  "about_report": {
+    "message": "Report a problem"
+  },
+  "about_made_by": {
+    "message": "Made by"
+  },
+  "about_built_on_title": {
+    "message": "Built on"
+  },
+  "about_credit_read_aloud": {
+    "message": "ReadFollow started as a fork of Read Aloud, which still provides the page reading and most of the voices."
+  },
+  "about_credit_piper": {
+    "message": "The natural voices that run on your device."
+  },
+  "about_credit_pdfjs": {
+    "message": "The PDF viewer."
+  },
+  "about_credit_onnx": {
+    "message": "Runs the Piper voice models in the browser."
+  },
+  "about_credit_espeak": {
+    "message": "Turns text into speech sounds for the Piper voices. It runs as a separate program."
+  },
+  "about_not_affiliated": {
+    "message": "ReadFollow is not affiliated with or endorsed by Read Aloud or its author."
+  },
+  "about_version": {
+    "message": "Version $1"
+  },
+  "welcome_footer": {
+    "message": "ReadFollow is free and open source, built on Read Aloud by Hai Phan."
+  },
+  "welcome_about_link": {
+    "message": "About and support"
   }
 }

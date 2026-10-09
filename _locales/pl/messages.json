@@ -340,5 +340,53 @@
   },
   "command_rewind": {
     "message": "Poprzednie zdanie"
+  },
+  "nav_about": {
+    "message": "O rozszerzeniu"
+  },
+  "about_support_title": {
+    "message": "Wesprzyj ReadFollow"
+  },
+  "about_support_body": {
+    "message": "ReadFollow jest darmowy, bez konta i bez reklam, i tak już zostanie. Jeśli pomaga Ci w czytaniu, możesz wesprzeć jego rozwój."
+  },
+  "about_source": {
+    "message": "Kod źródłowy na GitHubie"
+  },
+  "about_report": {
+    "message": "Zgłoś problem"
+  },
+  "about_made_by": {
+    "message": "Autor:"
+  },
+  "about_built_on_title": {
+    "message": "Oparte na"
+  },
+  "about_credit_read_aloud": {
+    "message": "ReadFollow powstał jako fork Read Aloud, który nadal odpowiada za czytanie strony i większość głosów."
+  },
+  "about_credit_piper": {
+    "message": "Naturalne głosy działające na Twoim urządzeniu."
+  },
+  "about_credit_pdfjs": {
+    "message": "Przeglądarka PDF."
+  },
+  "about_credit_onnx": {
+    "message": "Uruchamia modele głosów Piper w przeglądarce."
+  },
+  "about_credit_espeak": {
+    "message": "Zamienia tekst na dźwięki mowy dla głosów Piper. Działa jako osobny program."
+  },
+  "about_not_affiliated": {
+    "message": "ReadFollow nie jest powiązany z Read Aloud ani jego autorem i nie jest przez nich zatwierdzony."
+  },
+  "about_version": {
+    "message": "Wersja $1"
+  },
+  "welcome_footer": {
+    "message": "ReadFollow jest darmowy i open source, oparty na Read Aloud autorstwa Hai Phan."
+  },
+  "welcome_about_link": {
+    "message": "O rozszerzeniu i wsparcie"
   }
 }

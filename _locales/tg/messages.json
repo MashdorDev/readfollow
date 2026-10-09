@@ -340,5 +340,53 @@
   },
   "command_rewind": {
     "message": "Ҷумлаи қаблӣ"
+  },
+  "nav_about": {
+    "message": "Дар бораи барнома"
+  },
+  "about_support_title": {
+    "message": "Дастгирии ReadFollow"
+  },
+  "about_support_body": {
+    "message": "ReadFollow ройгон аст, бе ҳисоб ва бе реклама, ва ҳамин тавр боқӣ мемонад. Агар он ба шумо дар хондан кӯмак кунад, шумо метавонед рушди онро дастгирӣ кунед."
+  },
+  "about_source": {
+    "message": "Коди манбаъ дар GitHub"
+  },
+  "about_report": {
+    "message": "Гузориш дар бораи мушкилот"
+  },
+  "about_made_by": {
+    "message": "Муаллиф:"
+  },
+  "about_built_on_title": {
+    "message": "Дар асоси"
+  },
+  "about_credit_read_aloud": {
+    "message": "ReadFollow ҳамчун шохаи (fork) Read Aloud оғоз ёфт, ки то ҳол хондани саҳифа ва аксари овозҳоро таъмин мекунад."
+  },
+  "about_credit_piper": {
+    "message": "Овозҳои табиӣ, ки дар дастгоҳи шумо кор мекунанд."
+  },
+  "about_credit_pdfjs": {
+    "message": "Намоишгари PDF."
+  },
+  "about_credit_onnx": {
+    "message": "Моделҳои овозии Piper-ро дар браузер иҷро мекунад."
+  },
+  "about_credit_espeak": {
+    "message": "Матнро барои овозҳои Piper ба садоҳои нутқ табдил медиҳад. Он ҳамчун барномаи алоҳида кор мекунад."
+  },
+  "about_not_affiliated": {
+    "message": "ReadFollow бо Read Aloud ё муаллифи он алоқаманд нест ва аз ҷониби онҳо тасдиқ нашудааст."
+  },
+  "about_version": {
+    "message": "Версияи $1"
+  },
+  "welcome_footer": {
+    "message": "ReadFollow ройгон ва бо коди кушода аст ва дар асоси Read Aloud-и Hai Phan сохта шудааст."
+  },
+  "welcome_about_link": {
+    "message": "Дар бораи барнома ва дастгирӣ"
   }
 }

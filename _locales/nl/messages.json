@@ -340,5 +340,53 @@
   },
   "command_rewind": {
     "message": "Vorige zin"
+  },
+  "nav_about": {
+    "message": "Over"
+  },
+  "about_support_title": {
+    "message": "Steun ReadFollow"
+  },
+  "about_support_body": {
+    "message": "ReadFollow is gratis, zonder account en zonder advertenties, en dat blijft zo. Als het je helpt bij het lezen, kun je de ontwikkeling steunen."
+  },
+  "about_source": {
+    "message": "Broncode op GitHub"
+  },
+  "about_report": {
+    "message": "Een probleem melden"
+  },
+  "about_made_by": {
+    "message": "Gemaakt door"
+  },
+  "about_built_on_title": {
+    "message": "Gebouwd op"
+  },
+  "about_credit_read_aloud": {
+    "message": "ReadFollow begon als een fork van Read Aloud, dat nog steeds het voorlezen van de pagina en de meeste stemmen levert."
+  },
+  "about_credit_piper": {
+    "message": "De natuurlijke stemmen die op je apparaat draaien."
+  },
+  "about_credit_pdfjs": {
+    "message": "De PDF-viewer."
+  },
+  "about_credit_onnx": {
+    "message": "Draait de Piper-stemmodellen in de browser."
+  },
+  "about_credit_espeak": {
+    "message": "Zet tekst om in spraakklanken voor de Piper-stemmen. Het draait als een apart programma."
+  },
+  "about_not_affiliated": {
+    "message": "ReadFollow is niet verbonden aan of goedgekeurd door Read Aloud of de maker ervan."
+  },
+  "about_version": {
+    "message": "Versie $1"
+  },
+  "welcome_footer": {
+    "message": "ReadFollow is gratis en open source, gebouwd op Read Aloud van Hai Phan."
+  },
+  "welcome_about_link": {
+    "message": "Over en steun"
   }
 }

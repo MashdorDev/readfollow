@@ -340,5 +340,53 @@
   },
   "command_rewind": {
     "message": "上一句"
+  },
+  "nav_about": {
+    "message": "关于"
+  },
+  "about_support_title": {
+    "message": "支持 ReadFollow"
+  },
+  "about_support_body": {
+    "message": "ReadFollow 免费，无需账户，没有广告，并且会一直如此。如果它对你的阅读有帮助，你可以支持它的开发。"
+  },
+  "about_source": {
+    "message": "GitHub 上的源代码"
+  },
+  "about_report": {
+    "message": "报告问题"
+  },
+  "about_made_by": {
+    "message": "作者："
+  },
+  "about_built_on_title": {
+    "message": "基于以下项目"
+  },
+  "about_credit_read_aloud": {
+    "message": "ReadFollow 最初是 Read Aloud 的一个分支，页面朗读功能和大部分语音仍由 Read Aloud 提供。"
+  },
+  "about_credit_piper": {
+    "message": "在你的设备上运行的自然语音。"
+  },
+  "about_credit_pdfjs": {
+    "message": "PDF 查看器。"
+  },
+  "about_credit_onnx": {
+    "message": "在浏览器中运行 Piper 语音模型。"
+  },
+  "about_credit_espeak": {
+    "message": "为 Piper 语音将文本转换为音素。它作为一个独立程序运行。"
+  },
+  "about_not_affiliated": {
+    "message": "ReadFollow 与 Read Aloud 及其作者没有关联，也未获得其认可。"
+  },
+  "about_version": {
+    "message": "版本 $1"
+  },
+  "welcome_footer": {
+    "message": "ReadFollow 免费且开源，基于 Hai Phan 开发的 Read Aloud。"
+  },
+  "welcome_about_link": {
+    "message": "关于与支持"
   }
 }
