@@ -1,6 +1,6 @@
 {
   "extension_name": {
-    "message": "ReadFollow: Texto A Voz"
+    "message": "ReadFollow: Texto a voz con resaltado de palabras"
   },
   "extension_short_name": {
     "message": "ReadFollow"
@@ -397,5 +397,8 @@
   },
   "about_more_get": {
     "message": "Obtener la extensión"
+  },
+  "privacy_policy_link": {
+    "message": "Política de privacidad"
   }
 }

@@ -1,6 +1,6 @@
 {
   "extension_name": {
-    "message": "ReadFollow: Tekst til tale-oplæser"
+    "message": "ReadFollow: Tekst til tale med fremhævning af ord"
   },
   "extension_short_name": {
     "message": "ReadFollow"
@@ -397,5 +397,8 @@
   },
   "about_more_get": {
     "message": "Hent udvidelsen"
+  },
+  "privacy_policy_link": {
+    "message": "Privatlivspolitik"
   }
 }

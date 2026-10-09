@@ -1,6 +1,6 @@
 {
   "extension_name": {
-    "message": "ReadFollow: Un Lettore Vocale da Testo a Voce"
+    "message": "ReadFollow: Lettura vocale con parole evidenziate"
   },
   "extension_short_name": {
     "message": "ReadFollow"
@@ -397,5 +397,8 @@
   },
   "about_more_get": {
     "message": "Ottieni l'estensione"
+  },
+  "privacy_policy_link": {
+    "message": "Informativa sulla privacy"
   }
 }

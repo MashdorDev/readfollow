@@ -1,6 +1,6 @@
 {
   "extension_name": {
-    "message": "ReadFollow: テキスト読み上げ音声リーダー"
+    "message": "ReadFollow: テキスト読み上げと単語の強調表示"
   },
   "extension_short_name": {
     "message": "ReadFollow"
@@ -397,5 +397,8 @@
   },
   "about_more_get": {
     "message": "拡張機能を入手"
+  },
+  "privacy_policy_link": {
+    "message": "プライバシーポリシー"
   }
 }

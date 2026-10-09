@@ -1,6 +1,6 @@
 {
   "extension_name": {
-    "message": "ReadFollow: Lecteur vocal de texte"
+    "message": "ReadFollow: Synthèse vocale et surlignage des mots"
   },
   "extension_short_name": {
     "message": "ReadFollow"
@@ -397,5 +397,8 @@
   },
   "about_more_get": {
     "message": "Obtenir l'extension"
+  },
+  "privacy_policy_link": {
+    "message": "Politique de confidentialité"
   }
 }

@@ -1,6 +1,6 @@
 {
   "extension_name": {
-    "message": "ReadFollow: הקראת טקסט עם הדגשה תוך כדי קריאה"
+    "message": "ReadFollow: הקראת טקסט עם הדגשת מילים"
   },
   "extension_short_name": {
     "message": "ReadFollow"
@@ -447,5 +447,8 @@
   },
   "about_more_get": {
     "message": "מעבר לחנות"
+  },
+  "privacy_policy_link": {
+    "message": "מדיניות פרטיות"
   }
 }

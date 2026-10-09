@@ -1,6 +1,6 @@
 {
   "extension_name": {
-    "message": "ReadFollow: Czytnik tekstu na mowę"
+    "message": "ReadFollow: Tekst na mowę z podświetlaniem słów"
   },
   "extension_short_name": {
     "message": "ReadFollow"
@@ -397,5 +397,8 @@
   },
   "about_more_get": {
     "message": "Pobierz rozszerzenie"
+  },
+  "privacy_policy_link": {
+    "message": "Polityka prywatności"
   }
 }

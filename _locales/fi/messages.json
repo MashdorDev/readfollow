@@ -1,6 +1,6 @@
 {
   "extension_name": {
-    "message": "ReadFollow: Tekstistä puheeksi -lukija"
+    "message": "ReadFollow: Tekstistä puheeksi ja sanojen korostus"
   },
   "extension_short_name": {
     "message": "ReadFollow"
@@ -397,5 +397,8 @@
   },
   "about_more_get": {
     "message": "Hanki laajennus"
+  },
+  "privacy_policy_link": {
+    "message": "Tietosuojakäytäntö"
   }
 }

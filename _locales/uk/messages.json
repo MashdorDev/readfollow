@@ -1,6 +1,6 @@
 {
   "extension_name": {
-    "message": "ReadFollow: Голосовий читач тексту"
+    "message": "ReadFollow: Озвучення тексту з виділенням слів"
   },
   "extension_short_name": {
     "message": "ReadFollow"
@@ -397,5 +397,8 @@
   },
   "about_more_get": {
     "message": "Отримати розширення"
+  },
+  "privacy_policy_link": {
+    "message": "Політика конфіденційності"
   }
 }

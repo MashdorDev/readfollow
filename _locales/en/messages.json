@@ -1,6 +1,6 @@
 {
   "extension_name": {
-    "message": "ReadFollow: Text to Speech That Highlights As It Reads"
+    "message": "ReadFollow: Text to Speech with Word Highlights"
   },
   "extension_short_name": {
     "message": "ReadFollow"
@@ -432,5 +432,8 @@
   },
   "about_more_get": {
     "message": "Get the extension"
+  },
+  "privacy_policy_link": {
+    "message": "Privacy policy"
   }
 }
