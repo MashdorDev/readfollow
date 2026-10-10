@@ -29,6 +29,10 @@ Works in Chrome 125 or newer and Firefox 140 or newer.
 
 **Firefox:** run `npm run build:firefox`, then load `build/firefox/manifest.json` from `about:debugging` > This Firefox > Load Temporary Add-on. A temporary add-on is removed when Firefox restarts; a permanent install needs a signed build.
 
+## Releasing
+
+Raise `version` in `manifest.json` and `package.json` and merge to main. CI lints the Firefox build, checks that `vendor/piper` matches a fresh build of `piper/`, and then publishes to Firefox Add-ons and the Chrome Web Store and creates a GitHub Release. To publish the current version again, run the CI workflow by hand with "publish" ticked. Store copy, reviewer notes and the submission checklist are in [STORE-LISTING.md](STORE-LISTING.md).
+
 ## Support
 
 ReadFollow is free, with no account and no ads, and it will stay that way. If it helps you read, you can support its development:

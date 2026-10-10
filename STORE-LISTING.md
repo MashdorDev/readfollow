@@ -144,11 +144,28 @@ The Firefox package is generated from the Chrome sources with: node tools/build-
 How to test: select text on any page and press Alt+O (or right-click > Read aloud selected text). The sentence and the current word are highlighted and a playback bar appears. With an online voice, Firefox shows "Allow ReadFollow to play audio?" in the player tab once. PDFs: open any PDF and click the toolbar button.
 ```
 
+## AMO product page fields
+
+Filled in the Developer Hub by hand after the first submission; CI only sends what is in `amo-metadata.json`.
+
+- Support email: dorzairidev@gmail.com. Support site: https://github.com/MashdorDev/readfollow/issues
+- Homepage: https://github.com/MashdorDev/readfollow
+- Contributions URL: https://github.com/sponsors/MashdorDev
+- Tags: `scholar` only. AMO picks from a fixed list and nothing else in it describes the add-on.
+- Icon `img/icon.png`, the four screenshots with the captions above, and the privacy policy in its own Developer Hub section.
+- Developer comments:
+
+```text
+Online voices send the text you ask to have read to that voice's service. Voices on your computer and Piper voices stay on your device. The first time an online voice plays, Firefox may ask "Allow ReadFollow to play audio?" in the player tab. Bugs and requests: https://github.com/MashdorDev/readfollow/issues
+```
+
 ## Submission checklist
 
-- [ ] Search the Chrome Web Store for "ReadFollow" by hand: the name should be free
-- [ ] Chrome: create the item by uploading `npm run package` output by hand, which gives the item ID CI needs
-- [ ] Chrome: fill the store listing, privacy practices and distribution tabs from this file
-- [ ] AMO: submit the Firefox build (`npm run build:firefox`, zipped) as a listed add-on, with the source archive and the notes above
-- [ ] Add the CI secrets for this repository (see `docs/plan.md`)
-- [ ] After approval: add the ReadFollow card to Window Fullscreen for YouTube (`docs/plan.md` step 6)
+- [x] Search the Chrome Web Store for "ReadFollow" by hand: the name should be free
+- [x] Chrome: create the item by uploading `npm run package` output by hand, which gives the item ID CI needs (`pipjjjdajcbfjbnmpnhlfkmlopmbbgkk`, 2026-10-10)
+- [x] Chrome: fill the store listing, privacy practices and distribution tabs from this file
+- [x] AMO: submit 1.0.0 as a listed add-on with the source archive and the notes above (CI, 2026-10-10)
+- [x] AMO: fill the product page fields above
+- [x] Add the AMO secrets and `CWS_EXTENSION_ID` to this repository
+- [ ] Add `CWS_CLIENT_ID`, `CWS_CLIENT_SECRET` and `CWS_REFRESH_TOKEN` before the next version
+- [ ] After approval: add the ReadFollow card to Window Fullscreen for YouTube and the store links to the README (`docs/plan.md` step 6)
