@@ -128,7 +128,8 @@ jobs:
         with:
           name: packages-${{ github.sha }}
           path: ./artifact
-      # Until the AMO secrets are added to this repository, a version bump publishes nothing
+      # Until the AMO secrets are added to this repository, a version bump publishes nothing.
+      # A listed version can wait days for a reviewer, so the job ends once AMO has accepted the upload.
       - name: web-ext sign --channel=listed
         id: sign
         env:
@@ -147,7 +148,8 @@ jobs:
             --api-secret="$AMO_JWT_SECRET" \
             --channel=listed \
             --amo-metadata=amo-metadata.json \
-            --upload-source-code=./artifact/readfollow-source.zip
+            --upload-source-code=./artifact/readfollow-source.zip \
+            --approval-timeout=0
           echo "published=true" >> "$GITHUB_OUTPUT"
 
   deploy-chrome:
