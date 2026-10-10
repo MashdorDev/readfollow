@@ -88,7 +88,7 @@ Not affiliated with or endorsed by Read Aloud or its author.
 ## Categories
 
 - **Chrome:** Accessibility.
-- **AMO:** Language Support, and Other (AMO has no accessibility category).
+- **AMO:** Language Support (AMO has no accessibility category, and "Other" can't be combined with another category).
 
 ## Screenshot captions
 
