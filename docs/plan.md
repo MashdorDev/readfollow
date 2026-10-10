@@ -21,8 +21,15 @@ The maintainer wrote 15 of the 16 commits on master in 2026. Outside PRs that ge
 
    Done for the stores: the unused `ttsEngine` permission removed; pdf.js's one v-flag regex rewritten, so addons-linter reports 0 errors (its remaining warnings are inside jQuery, pdf.js and the Piper bundle); store images in `store/`.
 
-   Still to do: listing copy for both stores (description, Chrome's single purpose and permission justifications, data use), the AMO source package with build steps for `vendor/piper`, CI that signs and publishes on a version bump the way Window Fullscreen does, and the first upload by hand on the Chrome Web Store, which creates the item ID that CI needs. Search the Chrome store for "ReadFollow" by hand before that.
-6. **After the stores approve it.** Add a ReadFollow card to Window Fullscreen for YouTube (options page Support section and README), the same as the one on ReadFollow's About page, pointing at ReadFollow's store pages, in that extension's next release. Decided 2026-10-09: not before, so its live users don't land on a GitHub-only install.
+   Listing copy, reviewer notes and the submission checklist are in `STORE-LISTING.md`; `amo-metadata.json` carries AMO's summary, category, license and reviewer notes. CI (`.github/workflows/ci.yml`) lints, rebuilds Piper and fails if it differs from `vendor/piper`, and publishes to both stores when the manifest version changes on main or when the workflow is run by hand with "publish" ticked.
+
+   Submitted 2026-10-10, both waiting for review:
+   - **Chrome Web Store:** item `pipjjjdajcbfjbnmpnhlfkmlopmbbgkk`, uploaded by hand (the dashboard can't be driven by a browser extension). Category Make Chrome Yours > Accessibility. Verified CRX uploads stay off, since CI uploads a plain zip.
+   - **Firefox Add-ons:** listed add-on `readfollow-text-to-speech-with`, version 6560731, sent by CI with the source archive. Category Language Support only (AMO rejects "Other" next to another category), tag `scholar`, contributions link GitHub Sponsors.
+   - The repository was made public the same day: the store homepage and support links were 404 while it was private, and eSpeak NG's GPL needs its source available.
+
+   Keys: the AMO API key is in Bitwarden as "AMO API key (MashdorDev)" and in the `AMO_JWT_*` secrets of this repository and Window Fullscreen's (they share it); the Chrome item ID is in "ReadFollow Chrome Web Store item" and `CWS_EXTENSION_ID`. Still missing: `CWS_CLIENT_ID`, `CWS_CLIENT_SECRET` and `CWS_REFRESH_TOKEN` for this repository, needed before the next version so CI can upload it to Chrome. Until they are set, the Chrome job skips with a warning.
+6. **After the stores approve it.** Add a ReadFollow card to Window Fullscreen for YouTube (options page Support section and README), the same as the one on ReadFollow's About page, pointing at ReadFollow's store pages, in that extension's next release. Decided 2026-10-09: not before, so its live users don't land on a GitHub-only install. In this repository, the README's install section then links the two store pages ahead of the install-from-source steps.
 
 ## Not in the first release
 
