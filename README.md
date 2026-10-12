@@ -4,6 +4,10 @@
   Text to speech that highlights each word on the page as it reads, so you can follow along.
 </div>
 
+[![Watch the 21-second demo: ReadFollow reading a Wikipedia article and highlighting each word](store/promo-video-poster.jpg)](store/promo-video.mp4)
+
+<p align="center"><em>Watch the 21-second demo (click the image).</em></p>
+
 ![A Wikipedia article being read: the sentence in blue, the current word in amber, the playback bar at the bottom](store/screenshot-1-web.png)
 
 ## What it does
