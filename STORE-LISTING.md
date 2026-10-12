@@ -101,7 +101,7 @@ Not affiliated with or endorsed by Read Aloud or its author.
 
 Chrome also takes `store/promo-tile-440x280.png` (small promo tile, required) and `store/marquee-1400x560.png` (marquee, optional). The store icon is `img/icon.png`.
 
-The demo video is `store/promo-video.mp4` (21 seconds, 1080p). The Chrome Web Store only takes a YouTube link in the "Promo video" field, so upload it to YouTube and paste that link. AMO has no video field.
+The demo video is `store/promo-video.mp4` (21 seconds, 1080p). It is on YouTube at https://youtu.be/TexUG4T1kZQ, which is the link for the Chrome Web Store "Promo video" field. AMO has no video field.
 
 ## Links
 
