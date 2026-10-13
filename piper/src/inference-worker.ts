@@ -1,11 +1,14 @@
-import * as ort from "onnxruntime-web/wasm"
+import * as ort from "onnxruntime-web/webgpu"
 import { ModelConfig, PcmData } from "./types"
 import config from "./config"
 import { makeDispatcher } from "@lsdsoftware/message-dispatcher"
 
-//one thread: onnxruntime starts its extra threads from blob: scripts, which extension pages may not run
-ort.env.wasm.numThreads = 1
-ort.env.wasm.wasmPaths = "./ort/"
+//A high quality voice on one wasm thread synthesizes slower than it speaks, leaving gaps between sentences.
+//WebGPU keeps ahead in both browsers. Without it, wasm threads still help in Chrome; Firefox extension pages
+//can't be cross-origin isolated, so onnxruntime drops to one thread there by itself.
+//The runtime loads its .mjs from this folder (not a blob:), so extension pages may run its thread workers.
+ort.env.wasm.wasmPaths = new URL("ort/", self.location.href).href
+const executionProviders = ["webgpu", "wasm"]
 
 
 class TransferableResult {
@@ -49,7 +52,7 @@ async function makeInferenceEngine(args: Record<string, unknown>) {
   const lengthScale = modelConfig.inference?.length_scale ?? config.defaults.lengthScale
   const noiseW = modelConfig.inference?.noise_w ?? config.defaults.noiseW
 
-  const session = await ort.InferenceSession.create(URL.createObjectURL(model))
+  const session = await ort.InferenceSession.create(URL.createObjectURL(model), {executionProviders})
   const engine: Engine = {
     async infer(phonemeIds, speakerId) {
       const feeds: Record<string, ort.Tensor> = {
@@ -69,6 +72,11 @@ async function makeInferenceEngine(args: Record<string, unknown>) {
       await session.release()
     }
   }
+
+  //WebGPU compiles its shaders on the first run, about 12s in Firefox. Pay that while the voice loads,
+  //not between the first and second sentence.
+  const warmupIds = Object.values(modelConfig.phoneme_id_map ?? {}).flat().slice(0, config.warmupPhonemes)
+  if (warmupIds.length) await engine.infer(warmupIds, session.inputNames.includes("sid") ? 0 : undefined)
 
   const engineId = String(Math.random())
   engines.set(engineId, engine)

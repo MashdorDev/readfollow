@@ -9,8 +9,9 @@ export default {
     file: "voices.json",
     maxAge: 7*24*3600*1000
   },
-  //the bundled espeak data can't phonemize these, the original app used a server for them
-  unsupportedLanguages: /^(ru|lb|ar)\b/,
+  //the bundled espeak data can't phonemize these, the original app used a server for them.
+  //Hebrew's only voice (saspeech) wants phoneme_type "hebrew", text with vowel marks added, which nothing here does.
+  unsupportedLanguages: /^(ru|lb|ar|he)\b/,
 
   excludeVoices: new Set([
     "vi_VN-vivos-x_low",
@@ -46,6 +47,7 @@ export default {
 
   phonemizeBatchSize: 1000,
   numPhonemesToPrefetch: 100,
+  warmupPhonemes: 40,
   paragraphSilenceSeconds: .75,
 
   testSpeech: "It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire. During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet. Pursued by the Empire's sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy...",
