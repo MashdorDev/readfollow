@@ -3,7 +3,7 @@ import config from "./config"
 import { Phrase } from "./phonemizer"
 import { makeSynthesizer } from "./synthesizer"
 import { PcmData, PlayAudio } from "./types"
-import { lazy, makeBatchProcessor, wait } from "./utils"
+import { immediate, lazy, makeBatchProcessor, wait } from "./utils"
 
 interface SpeakOptions {
   readonly speakerId: number|undefined,
@@ -33,6 +33,18 @@ export interface PhraseTiming {
   readonly phonemeCount: number
   readonly phonemeTotal: number
   readonly seconds: number
+  //When the voice reports alignment: where each word of the phrase starts in its audio, numbering words from the
+  //start of the sentence, and how many words the sentence has, so the caller can check they match its own text
+  readonly words?: ReadonlyArray<{readonly index: number, readonly seconds: number}>
+  readonly sentenceWordCount?: number
+}
+
+//A sentence, and optionally a word in it to start from. The word is used only when the voice reads the sentence
+//as textWordCount words, so a word counted in the caller's text is the same word here.
+export interface SeekTarget {
+  readonly index: number
+  readonly wordIndex?: number
+  readonly textWordCount?: number
 }
 
 interface Callbacks {
@@ -56,7 +68,7 @@ export function makeSpeech(
 ) {
   const sentences = makeSentences(synth, opts)
   const playlist = makePlaylist(sentences, opts, callbacks)
-  const control = new rxjs.Subject<"pause"|"resume"|"next"|"forward"|"rewind"|number>()
+  const control = new rxjs.Subject<"pause"|"resume"|"next"|"forward"|"rewind"|SeekTarget>()
   return {
     sentenceStartIndicies: sentences.map(sentence => sentence.startIndex),
     play: lazy(() => new Promise<void>((fulfill, reject) => {
@@ -105,8 +117,8 @@ export function makeSpeech(
     rewind() {
       control.next("rewind")
     },
-    seek(index: number) {
-      control.next(index)
+    seek(target: SeekTarget) {
+      control.next(target)
     }
   }
 }
@@ -174,13 +186,23 @@ function makePlaylist(
       }
     },
 
-    seek(index: number, isPaused: boolean): Playing|undefined {
+    seek({index, wordIndex, textWordCount}: SeekTarget, isPaused: boolean): Playing|undefined {
       if (index >= 0 && index < sentences.length) {
         return makePlaying(async playbackState => {
           sentenceIndex = index
           phraseIndex = 0
           callbacks.onSentence(sentences[sentenceIndex].startIndex, sentences[sentenceIndex].endIndex)
-          await playPhrase(opts, sentences, sentenceIndex, phraseIndex, playbackState, callbacks)
+          let startPhoneme = 0
+          if (wordIndex) {
+            const phrases = await sentences[sentenceIndex].getPhrases()
+            const words = phrases.map(phrase => findWordStarts(phrase.phonemes))
+            if (words.flat().length == textWordCount) {
+              let before = 0
+              while (phraseIndex < phrases.length - 1 && before + words[phraseIndex].length <= wordIndex) before += words[phraseIndex++].length
+              startPhoneme = words[phraseIndex][wordIndex - before] ?? 0
+            }
+          }
+          await playPhrase(opts, sentences, sentenceIndex, phraseIndex, playbackState, callbacks, startPhoneme)
         }, isPaused)
       }
     }
@@ -229,6 +251,7 @@ function makeSentences(
         const phrases = await phonemize()
         return phrases.map<MyPhrase>((phrase, index) => ({
           phonemeIds: phrase.phonemeIds,
+          idOwners: phrase.idOwners,
           phonemes: phrase.phonemes,
           silenceSeconds: index == phrases.length-1 && /\n\s*$/.test(text) ? config.paragraphSilenceSeconds : phrase.silenceSeconds,
           getPcmData: lazy(() => synth.synthesize(phrase, opts.speakerId))
@@ -269,6 +292,7 @@ async function playPhrase(
   phraseIndex: number,
   playbackState: PlaybackState,
   callbacks: Callbacks,
+  startPhoneme = 0
 ) {
   prefetch(sentences, sentenceIndex, phraseIndex, playbackState)
     .catch(err => err.name != "CancellationException" && console.error(err))
@@ -277,18 +301,45 @@ async function playPhrase(
   await wait(playbackState, "resumed")
 
   if (phraseIndex < phrases.length) {
-    const pcmData = await phrases[phraseIndex].getPcmData()
+    const phrase = phrases[phraseIndex]
+    const fullPcm = await phrase.getPcmData()
     await wait(playbackState, "resumed")
 
+    //where each phoneme starts in the audio, in samples per channel
+    const phonemeStarts = immediate(() => {
+      if (!fullPcm.idSamples || fullPcm.idSamples.length != phrase.idOwners.length) return null
+      const starts: number[] = []
+      let sample = 0
+      phrase.idOwners.forEach((owner, i) => {
+        if (owner >= 0 && starts[owner] == null) starts[owner] = sample
+        sample += fullPcm.idSamples![i]
+      })
+      //a phoneme the voice has no id for takes no time, so it starts where the next one does
+      for (let i = phrase.phonemes.length - 1; i >= 0; i--) starts[i] ??= starts[i + 1] ?? sample
+      return starts
+    })
+    //a seek to a word starts the audio there; without alignment it starts at the phrase
+    const skipPhonemes = phonemeStarts?.[startPhoneme] != null ? startPhoneme : 0
+    const skipSamples = skipPhonemes ? phonemeStarts![skipPhonemes] : 0
+    const pcmData = skipSamples ? {...fullPcm, samples: fullPcm.samples.subarray(skipSamples * fullPcm.numChannels)} : fullPcm
+    const secondsOf = (samples: number) => samples / fullPcm.sampleRate
+
     const countPhonemes = (list: MyPhrase[]) => list.reduce((sum, phrase) => sum + phrase.phonemes.length, 0)
+    const wordsBefore = phrases.slice(0, phraseIndex).reduce((sum, phrase) => sum + findWordStarts(phrase.phonemes).length, 0)
     callbacks.onPhrase?.({
       sentenceStartIndex: sentences[sentenceIndex].startIndex,
-      phonemeOffset: countPhonemes(phrases.slice(0, phraseIndex)),
-      phonemeCount: phrases[phraseIndex].phonemes.length,
+      phonemeOffset: countPhonemes(phrases.slice(0, phraseIndex)) + skipPhonemes,
+      phonemeCount: phrase.phonemes.length - skipPhonemes,
       phonemeTotal: countPhonemes(phrases),
-      seconds: pcmData.samples.length / (pcmData.sampleRate * pcmData.numChannels) + phrases[phraseIndex].silenceSeconds,
+      seconds: pcmData.samples.length / (pcmData.sampleRate * pcmData.numChannels) + phrase.silenceSeconds,
+      ...(phonemeStarts && {
+        words: findWordStarts(phrase.phonemes)
+          .map((phoneme, i) => ({index: wordsBefore + i, seconds: secondsOf(phonemeStarts[phoneme] - skipSamples)}))
+          .filter(word => word.seconds >= 0),
+        sentenceWordCount: phrases.reduce((sum, phrase) => sum + findWordStarts(phrase.phonemes).length, 0),
+      }),
     })
-    let playing = opts.playAudio(pcmData, phrases[phraseIndex].silenceSeconds)
+    let playing = opts.playAudio(pcmData, phrase.silenceSeconds)
     try {
       while (await Promise.race([wait(playbackState, "paused"), playing.completePromise]) == "paused") {
         const paused = playing.pause()
@@ -300,6 +351,27 @@ async function playPhrase(
       playing.pause()
     }
   }
+}
+
+
+//The phoneme each word starts at. Words are space-separated groups that hold a letter, which in IPA includes
+//the stress marks; a group of punctuation alone (a dash between spaces) isn't a word in the text either.
+export function findWordStarts(phonemes: readonly string[]): number[] {
+  const starts: number[] = []
+  let groupStart = -1
+  let hasLetter = false
+  for (let i = 0; i <= phonemes.length; i++) {
+    if (i == phonemes.length || /\s/.test(phonemes[i])) {
+      if (groupStart >= 0 && hasLetter) starts.push(groupStart)
+      groupStart = -1
+      hasLetter = false
+    }
+    else {
+      if (groupStart < 0) groupStart = i
+      if (/\p{L}/u.test(phonemes[i])) hasLetter = true
+    }
+  }
+  return starts
 }
 
 

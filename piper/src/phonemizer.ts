@@ -5,6 +5,7 @@ import { lazy } from "./utils"
 export interface Phrase {
   readonly phonemes: string[]
   readonly phonemeIds: number[]
+  readonly idOwners: number[]
   readonly silenceSeconds: number
 }
 
@@ -70,7 +71,7 @@ export function makePhonemizer(modelConfig: ModelConfig) {
           .filter(x => x.phonemes.length)
           .map(({phonemes, silenceSeconds}) => ({
             phonemes,
-            phonemeIds: toPhonemeIds(phonemes, modelConfig),
+            ...toPhonemeIds(phonemes, modelConfig),
             silenceSeconds
           }))
       })
@@ -95,12 +96,16 @@ const PINYIN_GROUP_END_PHONEMES = new Set([
   " ",
 ])
 
-function toPhonemeIds(phonemes: readonly string[], modelConfig: ModelConfig): number[] {
+//Also returns which phoneme each id belongs to (-1 for the start and end markers); a pad after a phoneme counts as
+//part of it, so the alignment of a phoneme covers the pause that follows it
+function toPhonemeIds(phonemes: readonly string[], modelConfig: ModelConfig): {phonemeIds: number[], idOwners: number[]} {
   if (!modelConfig.phoneme_id_map) throw new Error("Missing modelConfig.phoneme_id_map")
 
   const {bos, eos, pad, addBos, addEos, interspersePad} = config.phonemeIdConfig
   const missing = new Set<string>()
   const phonemeIds = [] as number[]
+  const idOwners = [] as number[]
+  let owner = -1
   const idMap = modelConfig.phoneme_id_map
 
   const pushMapped = (phoneme: string): boolean => {
@@ -111,18 +116,21 @@ function toPhonemeIds(phonemes: readonly string[], modelConfig: ModelConfig): nu
     }
 
     phonemeIds.push(...ids)
+    for (const _ of ids) idOwners.push(owner)
     return true
   }
 
   if (modelConfig.phoneme_type === "pinyin") {
     if (addBos) pushMapped(bos)
 
-    for (const phoneme of phonemes) {
+    for (const [index, phoneme] of phonemes.entries()) {
+      owner = index
       if (pushMapped(phoneme) && PINYIN_GROUP_END_PHONEMES.has(phoneme)) {
         pushMapped(pad)
       }
     }
 
+    owner = -1
     if (addEos) pushMapped(eos)
   }
   else {
@@ -131,15 +139,17 @@ function toPhonemeIds(phonemes: readonly string[], modelConfig: ModelConfig): nu
       if (interspersePad) pushMapped(pad)
     }
 
-    for (const phoneme of phonemes) {
+    for (const [index, phoneme] of phonemes.entries()) {
+      owner = index
       if (pushMapped(phoneme) && interspersePad) {
         pushMapped(pad)
       }
     }
 
+    owner = -1
     if (addEos) pushMapped(eos)
   }
 
   if (missing.size) console.warn("Missing mapping for phonemes", missing)
-  return phonemeIds
+  return {phonemeIds, idOwners}
 }
