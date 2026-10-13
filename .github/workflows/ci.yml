@@ -142,6 +142,7 @@ jobs:
             exit 0
           fi
           node tools/build-firefox.mjs
+          set +e
           npx --yes web-ext@8 sign \
             --source-dir build/firefox \
             --api-key="$AMO_JWT_ISSUER" \
@@ -149,7 +150,17 @@ jobs:
             --channel=listed \
             --amo-metadata=amo-metadata.json \
             --upload-source-code=./artifact/readfollow-source.zip \
-            --approval-timeout=0
+            --approval-timeout=0 2>&1 | tee sign.log
+          status=${PIPESTATUS[0]}
+          set -e
+          # Publishing again (workflow_dispatch) to reach a store that missed this version:
+          # AMO already has it, which must not stop the Chrome upload
+          if [ "$status" -ne 0 ] && grep -q "already exists" sign.log; then
+            echo "::notice::AMO already has this version; nothing to publish to Firefox."
+            echo "published=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          [ "$status" -eq 0 ] || exit "$status"
           echo "published=true" >> "$GITHUB_OUTPUT"
 
   deploy-chrome:
