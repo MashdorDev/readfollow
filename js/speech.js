@@ -156,7 +156,10 @@ function Speech(texts, options) {
             unit = null
             wordPosition = pendingPosition
             pendingPosition = null
-            if (enginePlaybackState) enginePlaybackState.index = cmd.index
+            if (enginePlaybackState) {
+              enginePlaybackState.index = cmd.index
+              if (text != null) enginePlaybackState.jumpTo = cmd.index
+            }
             return current
           } else {
             const playback$ = playlist.seek(cmd.index, cmd.offset)
@@ -210,9 +213,14 @@ function Speech(texts, options) {
           break
         case "sentence":
           //Piper says which sentence is next before it has the audio; the word stays put until the phrase starts,
-          //on the sentence's first word, or on the clicked word after a jump into this sentence
+          //on the sentence's first word, or on the clicked word after a jump into this sentence.
+          //After two quick jumps the first one's sentence can still arrive; it's ignored until the latest one does.
           if (enginePlaybackState) {
             const index = enginePlaybackState.sentenceStartIndicies.indexOf(event.startIndex)
+            if (enginePlaybackState.jumpTo != null) {
+              if (index != enginePlaybackState.jumpTo) break
+              enginePlaybackState.jumpTo = null
+            }
             if (unit) learnPace(unit)
             unit = null
             if (index != enginePlaybackState.index || !wordPosition) wordPosition = makeWordPosition(enginePlaybackState.texts[index], {charIndex: 0})
