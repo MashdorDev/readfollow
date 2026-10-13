@@ -27,6 +27,11 @@ Highlight colors, speed, voice and per-language voices are in Settings. The inte
 
 Works in Chrome 125 or newer and Firefox 140 or newer.
 
+## Install
+
+- [Chrome Web Store](https://chromewebstore.google.com/detail/pipjjjdajcbfjbnmpnhlfkmlopmbbgkk)
+- [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/readfollow-text-to-speech-with/)
+
 ## Install from source
 
 **Chrome:** open `chrome://extensions`, turn on Developer mode, click "Load unpacked" and pick this folder.
