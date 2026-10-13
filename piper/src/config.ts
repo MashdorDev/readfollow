@@ -9,8 +9,9 @@ export default {
     file: "voices.json",
     maxAge: 7*24*3600*1000
   },
-  //the bundled espeak data can't phonemize these, the original app used a server for them
-  unsupportedLanguages: /^(ru|lb|ar)\b/,
+  //the bundled espeak data can't phonemize these, the original app used a server for them.
+  //Hebrew's only voice (saspeech) wants phoneme_type "hebrew", text with vowel marks added, which nothing here does.
+  unsupportedLanguages: /^(ru|lb|ar|he)\b/,
 
   excludeVoices: new Set([
     "vi_VN-vivos-x_low",
