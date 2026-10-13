@@ -515,9 +515,15 @@ function App() {
     currentSpeech?.rewind()
   }
 
-  function onSeek({index}: Record<string, unknown>) {
-    if (typeof index != "number") throw new Error("Bad args")
-    currentSpeech?.seek(index)
+  function onSeek({index, wordIndex, textWordCount}: Record<string, unknown>) {
+    if (!(
+      typeof index == "number" &&
+      (typeof wordIndex == "number" || typeof wordIndex == "undefined") &&
+      (typeof textWordCount == "number" || typeof textWordCount == "undefined")
+    )) {
+      throw new Error("Bad args")
+    }
+    currentSpeech?.seek({index, wordIndex, textWordCount})
   }
 
   function onTestSpeak(event: React.MouseEvent<HTMLButtonElement>) {

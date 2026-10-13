@@ -701,7 +701,7 @@ function PiperTtsEngine() {
             case "rewind":
               return piper.sendRequest("rewind")
             case "seek":
-              return piper.sendRequest("seek", {index: cmd.index})
+              return piper.sendRequest("seek", {index: cmd.index, wordIndex: cmd.wordIndex, textWordCount: cmd.textWordCount})
           }
         }),
         rxjs.ignoreElements(),
@@ -747,7 +747,8 @@ function PiperTtsEngine() {
   this.rewind = function() {
     control?.next("rewind")
   }
-  this.seek = function(index) {
-    control?.next({type: "seek", index})
+  //wordIndex counts words in the sentence text; Piper starts there only if it reads textWordCount words in it
+  this.seek = function(index, wordIndex, textWordCount) {
+    control?.next({type: "seek", index, wordIndex, textWordCount})
   }
 }

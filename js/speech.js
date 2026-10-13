@@ -148,7 +148,15 @@ function Speech(texts, options) {
         }
         case "seek": {
           if (engine.seek != null) {
-            engine.seek(cmd.index)
+            const text = enginePlaybackState && enginePlaybackState.texts[cmd.index]
+            const wordStarts = text != null ? findWordStarts(text) : []
+            const wordIndex = cmd.offset ? wordStarts.filter(start => start <= cmd.offset).length - 1 : 0
+            engine.seek(cmd.index, Math.max(wordIndex, 0), wordStarts.length)
+            //show the clicked word until the engine reports where it starts
+            unit = null
+            wordPosition = pendingPosition
+            pendingPosition = null
+            if (enginePlaybackState) enginePlaybackState.index = cmd.index
             return current
           } else {
             const playback$ = playlist.seek(cmd.index, cmd.offset)
@@ -191,7 +199,8 @@ function Speech(texts, options) {
               sentenceStartIndicies: event.sentenceStartIndicies,
               index: 0
             }
-            unit = startUnit(enginePlaybackState.texts[0], 0)
+            unit = null
+            wordPosition = makeWordPosition(enginePlaybackState.texts[0], {charIndex: 0})
           } else {
             unit = startUnit(texts[playlist.getIndex()], event.charIndex || 0)
             if (event.duration) unit.duration = event.duration
@@ -200,10 +209,14 @@ function Speech(texts, options) {
           }
           break
         case "sentence":
+          //Piper says which sentence is next before it has the audio; the word stays put until the phrase starts,
+          //on the sentence's first word, or on the clicked word after a jump into this sentence
           if (enginePlaybackState) {
-            enginePlaybackState.index = enginePlaybackState.sentenceStartIndicies.indexOf(event.startIndex)
+            const index = enginePlaybackState.sentenceStartIndicies.indexOf(event.startIndex)
             if (unit) learnPace(unit)
-            unit = startUnit(enginePlaybackState.texts[enginePlaybackState.index], 0)
+            unit = null
+            if (index != enginePlaybackState.index || !wordPosition) wordPosition = makeWordPosition(enginePlaybackState.texts[index], {charIndex: 0})
+            enginePlaybackState.index = index
           }
           break
         //Piper reports each phrase of the sentence as it starts playing: its share of the sentence's phonemes
@@ -220,6 +233,12 @@ function Speech(texts, options) {
             unit = startUnit(text, start)
             unit.end = Math.max(end, Math.min(start + 1, text.length))
             unit.duration = event.seconds / options.rate
+            //voices with alignment say when each word starts; usable when they read the sentence as the same words
+            const wordStarts = event.words && findWordStarts(text)
+            if (wordStarts && wordStarts.length == event.sentenceWordCount && event.words.length) {
+              unit.wordTimes = event.words.map(word => ({charIndex: wordStarts[word.index], seconds: word.seconds / options.rate}))
+              unit.offset = unit.wordTimes[0].charIndex
+            }
           }
           break
         case "end":
@@ -310,7 +329,7 @@ function Speech(texts, options) {
   }
 
   function seekTo(index, offset, resume) {
-    const text = texts[index]
+    const text = enginePlaybackState ? enginePlaybackState.texts[index] : texts[index]
     pendingPosition = offset && text != null ? makeWordPosition(text, {charIndex: offset}) : null
     cmd$.next({name: "seek", index, offset})
     if (resume) playbackState$.next("resumed")
@@ -371,12 +390,27 @@ function Speech(texts, options) {
   //Audio voices report how long the chunk plays, so the position is that share of the chunk; a learned pace
   //alone drifts further the longer a chunk read faster or slower than average goes on.
   function estimatePosition(unit) {
+    if (unit.wordTimes) {
+      const seconds = spokenSeconds(unit)
+      const current = unit.wordTimes.filter(word => word.seconds <= seconds).pop() || unit.wordTimes[0]
+      return makeWordPosition(unit.text, {charIndex: current.charIndex})
+    }
     const charIndex = Math.min(unit.duration
       ? unit.offset + charsAtFraction(unit.text, unit.offset, unit.end || unit.text.length, spokenSeconds(unit) / unit.duration)
       : unit.offset + Math.floor(Math.max(0, spokenSeconds(unit)) * charsPerSecond), unit.text.length - 1)
     let start = Math.max(charIndex, 0)
     while (start > 0 && /\S/.test(unit.text[start - 1])) start--
     return makeWordPosition(unit.text, {charIndex: start})
+  }
+
+  //Where each word of the text starts: runs of non-space characters that hold a letter or digit,
+  //the same words a voice with alignment counts (a dash between spaces is neither)
+  function findWordStarts(text) {
+    const starts = []
+    const word = /\S+/g
+    let match
+    while ((match = word.exec(text))) if (/[\p{L}\p{N}]/u.test(match[0])) starts.push(match.index)
+    return starts
   }
 
   //Piper splits sentences into phrases at commas and similar marks, and the phoneme share lands near one of them,

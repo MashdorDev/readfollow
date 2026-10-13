@@ -62,6 +62,8 @@ export interface PcmData {
   readonly samples: Float32Array
   readonly sampleRate: number
   readonly numChannels: number
+  //audio samples (per channel) of each phoneme id, when the model reports alignment
+  readonly idSamples?: readonly number[]
 }
 
 export interface PlayAudio {
