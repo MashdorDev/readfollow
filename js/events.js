@@ -3,10 +3,22 @@ brapi.runtime.onInstalled.addListener(function(details) {
   installContentScripts()
   installContextMenus()
   if (details.reason == "install") brapi.tabs.create({url: "welcome.html"}).catch(console.error)
+  rememberVersionForWhatsNew(details).catch(console.error)
 })
 
-//Firefox drops the context menu on browser restart, Chrome keeps it
+//Firefox can lose its saved copy of the menu, which onInstalled never recreates
 brapi.runtime.onStartup.addListener(installContextMenus)
+
+//The popup shows release highlights once, diffed against the version the update came from.
+//storage.local, not sync: "has this browser shown it yet" shouldn't be eaten by another machine.
+async function rememberVersionForWhatsNew({reason, previousVersion}) {
+  const current = brapi.runtime.getManifest().version
+  if (reason == "install") return brapi.storage.local.set({lastSeenVersion: current})
+  if (reason != "update" || !previousVersion || previousVersion == current) return
+  const {lastSeenVersion} = await brapi.storage.local.get({lastSeenVersion: null})
+  //two updates before the popup is opened: keep the older mark so the skipped release still shows
+  if (!lastSeenVersion) await brapi.storage.local.set({lastSeenVersion: previousVersion})
+}
 
 //A player tab closed mid-read is gone before it can clear the toolbar badge itself
 brapi.tabs.onRemoved.addListener(function() {

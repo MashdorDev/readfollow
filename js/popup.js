@@ -71,6 +71,7 @@ async function init() {
   $("#increase-window-size").click(changeWindowSize.bind(null, +1));
 
   refreshSize();
+  showWhatsNew().catch(console.error)
 
   const {state} = await bgPageInvoke("getPlaybackState")
   if (state == "PAUSED" || state == "STOPPED") onPlay()
@@ -240,6 +241,22 @@ function scrollIntoView(child, scrollParent) {
 
 
 var currentPlayRequestId
+
+//Shown once: opening the popup is the acknowledgement, so the version is marked seen as it renders
+async function showWhatsNew() {
+  const current = brapi.runtime.getManifest().version
+  const {lastSeenVersion} = await brapi.storage.local.get({lastSeenVersion: null})
+  if (!lastSeenVersion || lastSeenVersion == current) return
+  const entries = highlightsSince(lastSeenVersion, current)
+  $("#whats-new-title").text(entries.length
+    ? brapi.i18n.getMessage("whats_new_title", [entries[0].version])
+    : brapi.i18n.getMessage("whats_new_updated", [current]))
+  for (const entry of entries)
+    for (const text of entry.highlights) $("<li>").text(text).appendTo("#whats-new-list")
+  $("#whats-new-dismiss").click(() => $("#whats-new").prop("hidden", true))
+  $("#whats-new").prop("hidden", false)
+  await brapi.storage.local.set({lastSeenVersion: current})
+}
 
 function onPlay() {
   $("#status").hide();

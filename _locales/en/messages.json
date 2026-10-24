@@ -435,5 +435,32 @@
   },
   "privacy_policy_link": {
     "message": "Privacy policy"
+  },
+  "whats_new_title": {
+    "message": "New in $VERSION$",
+    "placeholders": {
+      "version": {"content": "$1", "example": "1.0.3"}
+    }
+  },
+  "whats_new_updated": {
+    "message": "Updated to $VERSION$",
+    "placeholders": {
+      "version": {"content": "$1", "example": "1.0.3"}
+    }
+  },
+  "whats_new_dismiss": {
+    "message": "Dismiss"
+  },
+  "whats_new_all_releases": {
+    "message": "All release notes"
+  },
+  "release_notes_title": {
+    "message": "Release notes"
+  },
+  "release_notes_installed": {
+    "message": "Installed"
+  },
+  "release_notes_full_changelog": {
+    "message": "Every change, including the ones you won't notice"
   }
 }

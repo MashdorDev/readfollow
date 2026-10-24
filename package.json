@@ -4,7 +4,8 @@
   "description": "Text to speech that highlights each word on the page as it reads.",
   "scripts": {
     "package": "zip -r build/package.zip _locales css img js sound vendor *.html manifest.json background.js -x \\*.map",
-    "build:firefox": "node tools/build-firefox.mjs"
+    "build:firefox": "node tools/build-firefox.mjs",
+    "test": "node --test"
   },
   "repository": {
     "type": "git",

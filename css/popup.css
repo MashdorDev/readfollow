@@ -77,6 +77,44 @@ body.is-popup {
   border-width: 3px;
 }
 
+#whats-new {
+  margin-top: var(--rf-space-3);
+  padding: var(--rf-space-2) var(--rf-space-3) var(--rf-space-3);
+  background-color: var(--rf-accent-soft);
+  border-radius: var(--rf-radius);
+  user-select: text;
+}
+#whats-new-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#whats-new h2 {
+  margin: 0;
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--rf-accent);
+}
+#whats-new-dismiss {
+  width: 28px;
+  height: 28px;
+}
+#whats-new-dismiss .material-icons {
+  font-size: 18px;
+}
+#whats-new ul {
+  margin: var(--rf-space-1) 0 var(--rf-space-2);
+  padding-inline-start: var(--rf-space-4);
+  font-size: 0.9em;
+}
+#whats-new li + li {
+  margin-top: var(--rf-space-1);
+}
+#whats-new a {
+  font-size: 0.9em;
+  color: var(--rf-accent);
+}
+
 #status {
   margin: 0 0 var(--rf-space-3);
   padding: var(--rf-space-3);
