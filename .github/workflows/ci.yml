@@ -28,6 +28,8 @@ jobs:
           node-version: '22'
       - name: Syntax check
         run: for f in js/*.js js/content/*.js tools/*.mjs background.js; do node --check "$f"; done
+      - name: Unit tests
+        run: node --test
       - name: Build the Firefox package
         run: node tools/build-firefox.mjs
       # AMO rejects an upload with linter errors; warnings inside the bundled libraries are expected

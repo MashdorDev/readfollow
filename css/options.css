@@ -277,6 +277,33 @@ body.in-popup .rf-nav {
   unicode-bidi: isolate;
 }
 
+#release-notes h3 {
+  margin: var(--rf-space-4) 0 var(--rf-space-1);
+  font-size: 1rem;
+}
+#release-notes h3:first-of-type {
+  margin-top: 0;
+}
+.release-notes-installed {
+  margin-inline-start: var(--rf-space-2);
+  font-size: 0.75em;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--rf-accent);
+}
+#release-notes ul {
+  margin: 0;
+  padding-inline-start: var(--rf-space-5);
+}
+#release-notes li + li {
+  margin-top: var(--rf-space-1);
+}
+#release-notes > a {
+  display: inline-block;
+  margin-top: var(--rf-space-4);
+}
+
 .more-extension {
   display: flex;
   align-items: flex-start;
