@@ -1,6 +1,6 @@
 {
   "name": "readfollow",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Text to speech that highlights each word on the page as it reads.",
   "scripts": {
     "package": "zip -r build/package.zip _locales css img js sound vendor *.html manifest.json background.js -x \\*.map",
