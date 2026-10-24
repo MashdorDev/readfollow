@@ -5,6 +5,9 @@ brapi.runtime.onInstalled.addListener(function(details) {
   if (details.reason == "install") brapi.tabs.create({url: "welcome.html"}).catch(console.error)
 })
 
+//Firefox drops the context menu on browser restart, Chrome keeps it
+brapi.runtime.onStartup.addListener(installContextMenus)
+
 //A player tab closed mid-read is gone before it can clear the toolbar badge itself
 brapi.tabs.onRemoved.addListener(function() {
   sendToPlayer({method: "getPlaybackState"})
@@ -66,7 +69,7 @@ async function installContentScripts() {
 
 function installContextMenus() {
   if (brapi.contextMenus)
-  brapi.contextMenus.create({
+  brapi.contextMenus.removeAll(() => brapi.contextMenus.create({
     id: "read-selection",
     title: brapi.i18n.getMessage("context_read_selection"),
     contexts: ["selection"]
@@ -74,7 +77,7 @@ function installContextMenus() {
   function() {
     if (brapi.runtime.lastError) console.error(brapi.runtime.lastError)
     else console.info("Installed context menus")
-  })
+  }))
 }
 
 
