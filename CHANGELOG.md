@@ -9,6 +9,8 @@ Release notes on the About page) lives in `js/whatsnew.js`.
 
 ## [Unreleased]
 
+## [1.0.3] - 2026-10-24
+
 ### Added
 - **What's new after an update.** The first time the popup opens after
   ReadFollow updates, it lists what changed since the version you had, then
@@ -74,6 +76,7 @@ First release of ReadFollow, built on [Read Aloud](https://github.com/ken107/rea
 - The original author's servers and site. ReadFollow sends nothing to its
   developer.
 
-[Unreleased]: https://github.com/MashdorDev/readfollow/compare/v1.0.2...HEAD
+[Unreleased]: https://github.com/MashdorDev/readfollow/compare/v1.0.3...HEAD
+[1.0.3]: https://github.com/MashdorDev/readfollow/compare/v1.0.2...v1.0.3
 [1.0.2]: https://github.com/MashdorDev/readfollow/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/MashdorDev/readfollow/releases/tag/v1.0.1
