@@ -41,7 +41,8 @@ var contentHandlers = [
   // Google Docs ---------------------------------------------------------------
   {
     match: function(url) {
-      return url.startsWith("https://docs.google.com/document/d/")
+      //the published and mobile views are plain HTML and need no extra permission
+      return url.startsWith("https://docs.google.com/document/d/") && !/\/(mobilebasic|pub)$/.test(url.split(/[?#]/)[0])
     },
     validate: function() {
       if (this.alreadyAsked) return
