@@ -7,6 +7,13 @@
 
 var WHATS_NEW_ENTRIES = [
   {
+    version: "1.0.4",
+    highlights: [
+      "Some pages, such as Project Gutenberg books, stopped before saying a word because ReadFollow guessed the wrong language. It now trusts the page when the guess is shaky.",
+      "Google Docs opened in their mobile or published view, and Google Slides opened as a web page, are read again.",
+    ],
+  },
+  {
     version: "1.0.3",
     highlights: [
       "In Firefox, \"Read aloud selected text\" could vanish from the right-click menu and stay gone. It is now added back every time the browser starts.",

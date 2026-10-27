@@ -9,6 +9,22 @@ Release notes on the About page) lives in `js/whatsnew.js`.
 
 ## [Unreleased]
 
+## [1.0.4] - 2026-10-27
+
+### Fixed
+- **Pages that stopped before saying anything.** Language detection on the
+  first few lines of a page could make a wild guess, such as Maltese for a
+  Project Gutenberg book whose opening is a header and a list of roman
+  numerals. The guess overrode the page's own language, no voice matched it,
+  and reading stopped. Guesses the browser marks as unreliable are now
+  ignored, and if no voice exists for a detected language the page's declared
+  language is used. ([#31](https://github.com/MashdorDev/readfollow/pull/31))
+- **Google Docs and Slides shared as web pages.** The mobile (`/mobilebasic`)
+  and published (`/pub`) views of a Google Doc said "No text found", and a
+  Google Slides deck opened with `/htmlpresent` found no text. They are plain
+  web pages, and are now read like any other page. They also no longer ask for
+  the Google Docs permission. ([#32](https://github.com/MashdorDev/readfollow/pull/32))
+
 ## [1.0.3] - 2026-10-24
 
 ### Added
@@ -76,7 +92,8 @@ First release of ReadFollow, built on [Read Aloud](https://github.com/ken107/rea
 - The original author's servers and site. ReadFollow sends nothing to its
   developer.
 
-[Unreleased]: https://github.com/MashdorDev/readfollow/compare/v1.0.3...HEAD
+[Unreleased]: https://github.com/MashdorDev/readfollow/compare/v1.0.4...HEAD
+[1.0.4]: https://github.com/MashdorDev/readfollow/compare/v1.0.3...v1.0.4
 [1.0.3]: https://github.com/MashdorDev/readfollow/compare/v1.0.2...v1.0.3
 [1.0.2]: https://github.com/MashdorDev/readfollow/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/MashdorDev/readfollow/releases/tag/v1.0.1
