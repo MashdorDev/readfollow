@@ -24,7 +24,9 @@
 
   function getRequireJs() {
     if (location.hostname == "docs.google.com") {
-      if (/^\/presentation\/d\//.test(location.pathname)) return ["js/content/google-slides.js"];
+      //published, mobile and HTML-presentation views are plain pages, not the editors
+      if (/\/(mobilebasic|pub|htmlpresent)$/.test(location.pathname)) return ["js/content/html-doc.js"];
+      else if (/^\/presentation\/d\//.test(location.pathname)) return ["js/content/google-slides.js"];
       else if (/\/document\/d\//.test(location.pathname)) return ["js/content/googleDocsUtil.js", "js/content/google-doc.js"];
       else if ($(".drive-viewer-paginated-scrollable").length) return ["js/content/google-drive-doc.js"];
       else return ["js/content/html-doc.js"];
