@@ -257,7 +257,9 @@ function Doc(source, onEnd) {
       brapi.i18n.detectLanguage(text, fulfill);
     })
     .then(function(result) {
-      if (result) {
+      //a short or odd opening (a Gutenberg header, a list of roman numerals) gets wild guesses
+      //like Maltese, which override the page's declared language and then find no voice
+      if (result && result.isReliable) {
           var list = result.languages.filter(function(item) {return item.language != "und"});
           list.sort(function(a,b) {return b.percentage-a.percentage});
           return list[0] && list[0].language;
@@ -280,7 +282,12 @@ function Doc(source, onEnd) {
       wordReplacements: settings.wordReplacements,
       lang: config.langMap[lang] || lang || 'en-US',
     }
-    const voice = await getSpeechVoice(settings.voiceName, options.lang)
+    let voice = await getSpeechVoice(settings.voiceName, options.lang)
+    //no voice for the detected language: the page's own declared language beats stopping
+    if (!voice && info.lang && lang != info.lang) {
+      options.lang = config.langMap[info.lang] || info.lang
+      voice = await getSpeechVoice(settings.voiceName, options.lang)
+    }
     if (!voice) throw new Error(JSON.stringify({code: "error_no_voice", lang: options.lang}));
     options.voice = voice;
     return new Speech(texts, options);
