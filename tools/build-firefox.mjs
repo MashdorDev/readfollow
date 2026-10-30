@@ -20,8 +20,8 @@ manifest.background = {scripts: [...background.matchAll(/"(js\/[^"]+\.js)"/g)].m
 manifest.browser_specific_settings = {gecko: {
   id: "readfollow@dorzairi.dev",
   strict_min_version: "140.0",
-  //text is sent to cloud voices
-  data_collection_permissions: {required: ["websiteContent"]},
+  //text is sent to cloud voices; error reports are opt-in
+  data_collection_permissions: {required: ["websiteContent"], optional: ["technicalAndInteraction"]},
 }}
 manifest.permissions = manifest.permissions.filter(p => !["offscreen", "tts"].includes(p))
 delete manifest.key

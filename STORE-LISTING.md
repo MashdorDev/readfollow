@@ -79,7 +79,7 @@ MADE TO BE READ
 Highlight colors to choose from, including an underline-only style, light and dark themes, full keyboard use, and an interface in 27 languages, including Arabic and Hebrew right to left.
 
 YOUR TEXT
-With the voices on your computer and Piper voices, text never leaves your device. Online voices receive only the text you ask them to read. ReadFollow has no account, no analytics and no ads.
+With the voices on your computer and Piper voices, text never leaves your device. Online voices receive only the text you ask them to read. ReadFollow has no account, no analytics and no ads. Error reports are optional and off by default, and never include what you read.
 
 Free and open source (MIT), built on Read Aloud by Hai Phan: https://github.com/MashdorDev/readfollow
 Not affiliated with or endorsed by Read Aloud or its author.

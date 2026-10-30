@@ -276,7 +276,7 @@
     "message": "Váš text"
   },
   "welcome_privacy_body": {
-    "message": "S hlasy vestavěnými ve vašem počítači a se stahovatelnými hlasy Piper text nikdy neopustí vaše zařízení. Google Translate a cloudové hlasy, které si sami přidáte (OpenAI, Azure, Amazon Polly, IBM), dostávají text, který jim zadáte k přečtení, a nic jiného. ReadFollow nemá žádné účty a neshromažďuje žádná data."
+    "message": "S hlasy vestavěnými ve vašem počítači a se stahovatelnými hlasy Piper text nikdy neopustí vaše zařízení. Google Translate a cloudové hlasy, které si sami přidáte (OpenAI, Azure, Amazon Polly, IBM), dostávají text, který jim zadáte k přečtení, a nic jiného. ReadFollow nemá žádné účty a neshromažďuje žádná data. Hlášení o chybách jsou volitelná a ve výchozím nastavení vypnutá."
   },
   "welcome_settings_link": {
     "message": "Otevřít nastavení"
@@ -400,5 +400,11 @@
   },
   "privacy_policy_link": {
     "message": "Zásady ochrany osobních údajů"
+  },
+  "options_error_reports_label": {
+    "message": "Odesílat hlášení o chybách"
+  },
+  "options_error_reports_help": {
+    "message": "Když čtení selže, vývojář se dozví, co se stalo. Nikdy neobsahuje čtený text ani stránku."
   }
 }

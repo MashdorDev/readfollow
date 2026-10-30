@@ -276,7 +276,7 @@
     "message": "Votre texte"
   },
   "welcome_privacy_body": {
-    "message": "Avec les voix intégrées à votre ordinateur et les voix Piper téléchargeables, le texte ne quitte jamais votre appareil. Google Translate et les voix cloud que vous ajoutez vous-même (OpenAI, Azure, Amazon Polly, IBM) reçoivent le texte que vous leur demandez de lire, et rien d'autre. ReadFollow n'a pas de compte et ne collecte aucune donnée."
+    "message": "Avec les voix intégrées à votre ordinateur et les voix Piper téléchargeables, le texte ne quitte jamais votre appareil. Google Translate et les voix cloud que vous ajoutez vous-même (OpenAI, Azure, Amazon Polly, IBM) reçoivent le texte que vous leur demandez de lire, et rien d'autre. ReadFollow n'a pas de compte et ne collecte aucune donnée. Les rapports d'erreur sont facultatifs et désactivés par défaut."
   },
   "welcome_settings_link": {
     "message": "Ouvrir les paramètres"
@@ -400,5 +400,11 @@
   },
   "privacy_policy_link": {
     "message": "Politique de confidentialité"
+  },
+  "options_error_reports_label": {
+    "message": "Envoyer des rapports d'erreur"
+  },
+  "options_error_reports_help": {
+    "message": "Quand la lecture échoue, le développeur est informé du problème. Ne contient jamais le texte lu ni la page."
   }
 }

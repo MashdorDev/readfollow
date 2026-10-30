@@ -276,7 +276,7 @@
     "message": "Tekstisi"
   },
   "welcome_privacy_body": {
-    "message": "Kun käytät tietokoneesi sisäänrakennettuja ääniä ja ladattavia Piper-ääniä, teksti ei koskaan poistu laitteeltasi. Google Translate ja itse lisäämäsi pilviäänet (OpenAI, Azure, Amazon Polly, IBM) vastaanottavat tekstin, jonka pyydät niitä lukemaan, eivätkä mitään muuta. ReadFollow ei vaadi tiliä eikä kerää tietoja."
+    "message": "Kun käytät tietokoneesi sisäänrakennettuja ääniä ja ladattavia Piper-ääniä, teksti ei koskaan poistu laitteeltasi. Google Translate ja itse lisäämäsi pilviäänet (OpenAI, Azure, Amazon Polly, IBM) vastaanottavat tekstin, jonka pyydät niitä lukemaan, eivätkä mitään muuta. ReadFollow ei vaadi tiliä eikä kerää tietoja. Virheraportit ovat valinnaisia ja oletuksena pois päältä."
   },
   "welcome_settings_link": {
     "message": "Avaa asetukset"
@@ -400,5 +400,11 @@
   },
   "privacy_policy_link": {
     "message": "Tietosuojakäytäntö"
+  },
+  "options_error_reports_label": {
+    "message": "Lähetä virheraportteja"
+  },
+  "options_error_reports_help": {
+    "message": "Kun lukeminen epäonnistuu, kehittäjä saa tietää, mikä meni vikaan. Ei koskaan sisällä lukemaasi tekstiä tai sivua."
   }
 }

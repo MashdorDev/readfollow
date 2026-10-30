@@ -290,6 +290,7 @@ function Doc(source, onEnd) {
     }
     if (!voice) throw new Error(JSON.stringify({code: "error_no_voice", lang: options.lang}));
     options.voice = voice;
+    setReportVoice(voice);
     return new Speech(texts, options);
   }
 

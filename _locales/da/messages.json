@@ -276,7 +276,7 @@
     "message": "Din tekst"
   },
   "welcome_privacy_body": {
-    "message": "Med de stemmer, der er indbygget i din computer, og de Piper-stemmer, der kan downloades, forlader teksten aldrig din enhed. Google Translate og de cloudstemmer, du selv tilføjer (OpenAI, Azure, Amazon Polly, IBM), modtager den tekst, du beder dem læse, og intet andet. ReadFollow har ingen konto og indsamler ingen data."
+    "message": "Med de stemmer, der er indbygget i din computer, og de Piper-stemmer, der kan downloades, forlader teksten aldrig din enhed. Google Translate og de cloudstemmer, du selv tilføjer (OpenAI, Azure, Amazon Polly, IBM), modtager den tekst, du beder dem læse, og intet andet. ReadFollow har ingen konto og indsamler ingen data. Fejlrapporter er valgfrie og slået fra som standard."
   },
   "welcome_settings_link": {
     "message": "Åbn indstillinger"
@@ -400,5 +400,11 @@
   },
   "privacy_policy_link": {
     "message": "Privatlivspolitik"
+  },
+  "options_error_reports_label": {
+    "message": "Send fejlrapporter"
+  },
+  "options_error_reports_help": {
+    "message": "Når oplæsningen fejler, får udvikleren besked om, hvad der gik galt. Indeholder aldrig den tekst, du læser, eller siden."
   }
 }

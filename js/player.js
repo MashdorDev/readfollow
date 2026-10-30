@@ -293,8 +293,12 @@ function closePlayer() {
 function handleError(err) {
   if (err) {
     reportError(err);
+    reportFailure(err);
   }
 }
+
+window.addEventListener("error", event => event.error && reportFailure(event.error))
+window.addEventListener("unhandledrejection", event => event.reason && reportFailure(event.reason))
 
 function reportError(err) {
   if (err && err.stack) {

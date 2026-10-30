@@ -276,7 +276,7 @@
     "message": "Metniniz"
   },
   "welcome_privacy_body": {
-    "message": "Bilgisayarınızda yerleşik sesler ve indirilebilir Piper sesleriyle metin cihazınızdan hiç çıkmaz. Google Translate ve kendiniz eklediğiniz bulut sesleri (OpenAI, Azure, Amazon Polly, IBM) yalnızca okumalarını istediğiniz metni alır, başka hiçbir şey almaz. ReadFollow hesap gerektirmez ve veri toplamaz."
+    "message": "Bilgisayarınızda yerleşik sesler ve indirilebilir Piper sesleriyle metin cihazınızdan hiç çıkmaz. Google Translate ve kendiniz eklediğiniz bulut sesleri (OpenAI, Azure, Amazon Polly, IBM) yalnızca okumalarını istediğiniz metni alır, başka hiçbir şey almaz. ReadFollow hesap gerektirmez ve veri toplamaz. Hata raporları isteğe bağlıdır ve varsayılan olarak kapalıdır."
   },
   "welcome_settings_link": {
     "message": "Ayarları aç"
@@ -400,5 +400,11 @@
   },
   "privacy_policy_link": {
     "message": "Gizlilik politikası"
+  },
+  "options_error_reports_label": {
+    "message": "Hata raporları gönder"
+  },
+  "options_error_reports_help": {
+    "message": "Okuma başarısız olduğunda geliştiriciye neyin yanlış gittiği bildirilir. Okuduğunuz metni veya sayfayı asla içermez."
   }
 }

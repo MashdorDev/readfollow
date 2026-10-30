@@ -276,7 +276,7 @@
     "message": "Je tekst"
   },
   "welcome_privacy_body": {
-    "message": "Met de stemmen die in je computer zijn ingebouwd en de downloadbare Piper-stemmen verlaat tekst nooit je apparaat. Google Translate en de cloudstemmen die je zelf toevoegt (OpenAI, Azure, Amazon Polly, IBM) ontvangen de tekst die je ze laat voorlezen, en verder niets. ReadFollow heeft geen account en verzamelt geen gegevens."
+    "message": "Met de stemmen die in je computer zijn ingebouwd en de downloadbare Piper-stemmen verlaat tekst nooit je apparaat. Google Translate en de cloudstemmen die je zelf toevoegt (OpenAI, Azure, Amazon Polly, IBM) ontvangen de tekst die je ze laat voorlezen, en verder niets. ReadFollow heeft geen account en verzamelt geen gegevens. Foutrapporten zijn optioneel en staan standaard uit."
   },
   "welcome_settings_link": {
     "message": "Instellingen openen"
@@ -400,5 +400,11 @@
   },
   "privacy_policy_link": {
     "message": "Privacybeleid"
+  },
+  "options_error_reports_label": {
+    "message": "Foutrapporten verzenden"
+  },
+  "options_error_reports_help": {
+    "message": "Als voorlezen mislukt, krijgt de ontwikkelaar te horen wat er misging. Bevat nooit de tekst die je leest of de pagina."
   }
 }

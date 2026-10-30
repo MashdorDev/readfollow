@@ -9,6 +9,13 @@ Release notes on the About page) lives in `js/whatsnew.js`.
 
 ## [Unreleased]
 
+## [1.0.5] - 2026-10-30
+
+### Added
+- **Optional error reports.** Off by default. Turn on "Send error reports" in Settings to tell
+  the developer when reading fails. A report never contains the text you read or the page you
+  read it on; see the [privacy policy](docs/privacy-policy.md).
+
 ## [1.0.4] - 2026-10-27
 
 ### Fixed
@@ -92,7 +99,8 @@ First release of ReadFollow, built on [Read Aloud](https://github.com/ken107/rea
 - The original author's servers and site. ReadFollow sends nothing to its
   developer.
 
-[Unreleased]: https://github.com/MashdorDev/readfollow/compare/v1.0.4...HEAD
+[Unreleased]: https://github.com/MashdorDev/readfollow/compare/v1.0.5...HEAD
+[1.0.5]: https://github.com/MashdorDev/readfollow/compare/v1.0.4...v1.0.5
 [1.0.4]: https://github.com/MashdorDev/readfollow/compare/v1.0.3...v1.0.4
 [1.0.3]: https://github.com/MashdorDev/readfollow/compare/v1.0.2...v1.0.3
 [1.0.2]: https://github.com/MashdorDev/readfollow/compare/v1.0.1...v1.0.2

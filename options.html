@@ -15,6 +15,7 @@
   <script src="js/aws-sdk.js"></script>
   <script src="js/defaults.js"></script>
   <script src="js/messaging.js"></script>
+  <script src="js/reporting.js"></script>
   <script src="js/tts-engines.js"></script>
   <script src="js/options.js"></script>
 </head>
@@ -121,6 +122,12 @@
         <span data-i18n="options_shortcuts_label"></span>
         <div>
           <button type="button" id="hotkeys-link" class="btn btn-light" data-i18n="options_hotkeys_link"></button>
+        </div>
+
+        <label for="error-reports" data-i18n="options_error_reports_label"></label>
+        <div>
+          <input type="checkbox" id="error-reports" aria-describedby="error-reports-help">
+          <small id="error-reports-help" class="form-text" data-i18n="options_error_reports_help"></small>
         </div>
       </div>
     </section>
