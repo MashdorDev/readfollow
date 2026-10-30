@@ -276,7 +276,7 @@
     "message": "テキストの扱い"
   },
   "welcome_privacy_body": {
-    "message": "コンピュータに組み込まれた音声とダウンロード可能なPiper音声では、テキストがデバイスの外に出ることはありません。Google翻訳と自分で追加したクラウド音声 (OpenAI、Azure、Amazon Polly、IBM) は、読み上げを依頼したテキストだけを受け取ります。ReadFollowにはアカウントがなく、データを一切収集しません。"
+    "message": "コンピュータに組み込まれた音声とダウンロード可能なPiper音声では、テキストがデバイスの外に出ることはありません。Google翻訳と自分で追加したクラウド音声 (OpenAI、Azure、Amazon Polly、IBM) は、読み上げを依頼したテキストだけを受け取ります。ReadFollowにはアカウントがなく、データを一切収集しません。 エラーレポートは任意で、既定ではオフです。"
   },
   "welcome_settings_link": {
     "message": "設定を開く"

@@ -276,7 +276,7 @@
     "message": "Din text"
   },
   "welcome_privacy_body": {
-    "message": "Med rösterna som är inbyggda i din dator och de nedladdningsbara Piper-rösterna lämnar texten aldrig din enhet. Google Translate och de molnröster du själv lägger till (OpenAI, Azure, Amazon Polly, IBM) får den text du ber dem läsa, och inget annat. ReadFollow har inget konto och samlar inte in några data."
+    "message": "Med rösterna som är inbyggda i din dator och de nedladdningsbara Piper-rösterna lämnar texten aldrig din enhet. Google Translate och de molnröster du själv lägger till (OpenAI, Azure, Amazon Polly, IBM) får den text du ber dem läsa, och inget annat. ReadFollow har inget konto och samlar inte in några data. Felrapporter är valfria och avstängda som standard."
   },
   "welcome_settings_link": {
     "message": "Öppna inställningar"

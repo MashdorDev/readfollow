@@ -17,7 +17,8 @@ const KNOWN_MESSAGES = [
   /^Failed to (get EPUB document info|flip EPUB page|get EPUB text)$/,
   /^Piper phonemizer failed with exit code -?\d+$/,
   /^This voice needs a phonemizer that ReadFollow doesn't include \([\w-]+, [\w-]+\)$/,
-  /^(A listener indicated|Could not establish)/,
+  /^A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received( \w+)?$/,
+  /^Could not establish connection\. Receiving end does not exist\.( \w+)?$/,
 ]
 
 //V8 ("at fn (chrome-extension://id/js/a.js:1:2)") and SpiderMonkey ("fn@moz-extension://id/js/a.js:1:2")
@@ -60,7 +61,7 @@ function describeReportError(err) {
   }
   if (EXPECTED_CODES.includes(code)) return null
 
-  const name = /^\w+$/.test(err.name) ? err.name : "Error"
+  const name = typeof err.name == "string" && /^\w+$/.test(err.name) ? err.name : "Error"
   const frames = reportFrames(err.stack)
   const known = !code && KNOWN_MESSAGES.some(re => re.test(message))
   const top = frames[frames.length - 1]
@@ -114,7 +115,12 @@ async function reportFailure(err) {
     const sentAt = new Date().toISOString()
     await fetch(REPORT_ENDPOINT, {
       method: "POST",
-      headers: {"Content-Type": "application/x-sentry-envelope"},
+      //In Firefox a CORS request would carry Origin: moz-extension://<id>, and that id is random per install, so
+      //it would identify the device. no-cors with these headers sends Origin: null. Not in Chrome: its id is the
+      //same for everyone, and the player's COEP blocks a no-cors response.
+      mode: config.browserId == "firefox" ? "no-cors" : "cors",
+      referrerPolicy: "no-referrer",
+      headers: {"Content-Type": "text/plain"},
       credentials: "omit",
       keepalive: true,  //the player can close right after a failure
       body: [

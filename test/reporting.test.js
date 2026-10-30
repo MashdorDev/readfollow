@@ -50,6 +50,21 @@ test("a known prefix with text appended does not pass", () => {
   assert.ok(!JSON.stringify(event).includes("medical"))
 })
 
+test("a server's message that starts like a browser's does not pass", () => {
+  const event = describeReportError(fails("Could not establish connection to https://bank.example for input " + SECRET))
+  assert.ok(!JSON.stringify(event).includes("bank.example"))
+})
+
+test("the browser's own messaging errors pass, with the method name", () => {
+  const message = "Could not establish connection. Receiving end does not exist. getTexts"
+  assert.equal(describeReportError(fails(message)).message.formatted, "Reading failed: " + message)
+})
+
+test("something thrown that isn't an Error still gets a usable type", () => {
+  const event = describeReportError({message: SECRET})
+  assert.equal(event.message.formatted, "Reading failed: Error at unknown")
+})
+
 test("the normal permission flow and cancelling are not failures", () => {
   assert.equal(describeReportError(fails(JSON.stringify({code: "error_add_permissions", perms: {}}))), null)
   assert.equal(describeReportError(fails("x", "", "CancellationException")), null)

@@ -276,7 +276,7 @@
     "message": "你的文本"
   },
   "welcome_privacy_body": {
-    "message": "使用电脑内置的语音和可下载的 Piper 语音时，文本不会离开你的设备。Google 翻译和你自己添加的云端语音（OpenAI、Azure、Amazon Polly、IBM）只会收到你要求朗读的文本，不会收到其他任何内容。ReadFollow 没有帐户，也不收集任何数据。"
+    "message": "使用电脑内置的语音和可下载的 Piper 语音时，文本不会离开你的设备。Google 翻译和你自己添加的云端语音（OpenAI、Azure、Amazon Polly、IBM）只会收到你要求朗读的文本，不会收到其他任何内容。ReadFollow 没有帐户，也不收集任何数据。 错误报告是可选的，默认关闭。"
   },
   "welcome_settings_link": {
     "message": "打开设置"

@@ -276,7 +276,7 @@
     "message": "你的文字"
   },
   "welcome_privacy_body": {
-    "message": "使用電腦內建的語音和可下載的 Piper 語音時，文字不會離開你的裝置。Google 翻譯和你自己加入的雲端語音（OpenAI、Azure、Amazon Polly、IBM）只會收到你要求朗讀的文字，不會收到其他任何內容。ReadFollow 沒有帳戶，也不收集任何資料。"
+    "message": "使用電腦內建的語音和可下載的 Piper 語音時，文字不會離開你的裝置。Google 翻譯和你自己加入的雲端語音（OpenAI、Azure、Amazon Polly、IBM）只會收到你要求朗讀的文字，不會收到其他任何內容。ReadFollow 沒有帳戶，也不收集任何資料。 錯誤報告為選用功能，預設關閉。"
   },
   "welcome_settings_link": {
     "message": "開啟設定"

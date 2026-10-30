@@ -276,7 +276,7 @@
     "message": "Il tuo testo"
   },
   "welcome_privacy_body": {
-    "message": "Con le voci integrate nel tuo computer e le voci Piper scaricabili, il testo non lascia mai il tuo dispositivo. Google Translate e le voci cloud che aggiungi tu (OpenAI, Azure, Amazon Polly, IBM) ricevono il testo che chiedi loro di leggere, e nient'altro. ReadFollow non ha account e non raccoglie dati."
+    "message": "Con le voci integrate nel tuo computer e le voci Piper scaricabili, il testo non lascia mai il tuo dispositivo. Google Translate e le voci cloud che aggiungi tu (OpenAI, Azure, Amazon Polly, IBM) ricevono il testo che chiedi loro di leggere, e nient'altro. ReadFollow non ha account e non raccoglie dati. Le segnalazioni di errore sono facoltative e disattivate per impostazione predefinita."
   },
   "welcome_settings_link": {
     "message": "Apri impostazioni"

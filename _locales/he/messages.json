@@ -326,7 +326,7 @@
     "message": "הטקסט שלכם"
   },
   "welcome_privacy_body": {
-    "message": "בקולות המובנים במחשב ובקולות Piper שאפשר להוריד, הטקסט לא יוצא מהמכשיר. Google Translate והקולות בענן שאתם מוסיפים (OpenAI, Azure, Amazon Polly, IBM) מקבלים רק את הטקסט שביקשתם מהם להקריא. ל-ReadFollow אין חשבון, והוא לא אוסף נתונים."
+    "message": "בקולות המובנים במחשב ובקולות Piper שאפשר להוריד, הטקסט לא יוצא מהמכשיר. Google Translate והקולות בענן שאתם מוסיפים (OpenAI, Azure, Amazon Polly, IBM) מקבלים רק את הטקסט שביקשתם מהם להקריא. ל-ReadFollow אין חשבון, והוא לא אוסף נתונים. דיווחי השגיאות הם אופציונליים וכבויים כברירת מחדל."
   },
   "welcome_settings_link": {
     "message": "פתיחת ההגדרות"

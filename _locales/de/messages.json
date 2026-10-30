@@ -276,7 +276,7 @@
     "message": "Ihr Text"
   },
   "welcome_privacy_body": {
-    "message": "Mit den in Ihren Computer eingebauten Stimmen und den herunterladbaren Piper-Stimmen verlässt Text nie Ihr Gerät. Google Translate und die Cloud-Stimmen, die Sie selbst hinzufügen (OpenAI, Azure, Amazon Polly, IBM), erhalten den Text, den sie vorlesen sollen, und sonst nichts. ReadFollow hat kein Konto und sammelt keine Daten."
+    "message": "Mit den in Ihren Computer eingebauten Stimmen und den herunterladbaren Piper-Stimmen verlässt Text nie Ihr Gerät. Google Translate und die Cloud-Stimmen, die Sie selbst hinzufügen (OpenAI, Azure, Amazon Polly, IBM), erhalten den Text, den sie vorlesen sollen, und sonst nichts. ReadFollow hat kein Konto und sammelt keine Daten. Fehlerberichte sind optional und standardmäßig ausgeschaltet."
   },
   "welcome_settings_link": {
     "message": "Einstellungen öffnen"

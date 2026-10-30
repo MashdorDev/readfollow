@@ -210,9 +210,12 @@
   domReadyPromise
     .then(async () => {
       const checkbox = $("#error-reports")
-      checkbox.prop("checked", await hasReportConsent())
+      //also what unticks it after Reset
+      observeSetting("errorReports").subscribe(async () => checkbox.prop("checked", await hasReportConsent()))
       checkbox.change(async function() {
         const on = this.checked
+        //a second click while Firefox's prompt is open would otherwise be overwritten when it closes
+        this.disabled = true
         //Firefox shows its own consent prompt for technical data. Chrome doesn't know the key and rejects,
         //which is fine: there the checkbox is consent.
         try {
@@ -220,6 +223,7 @@
             ? await brapi.permissions.request({data_collection: [REPORT_DATA_PERMISSION]})
             : await brapi.permissions.remove({data_collection: [REPORT_DATA_PERMISSION]})
           if (on && !changed) {
+            this.disabled = false
             this.checked = false
             return
           }
@@ -227,6 +231,7 @@
         catch (err) {
           console.debug("No data-collection permissions in this browser", err)
         }
+        this.disabled = false
         await updateSettings({errorReports: on})
       })
     })

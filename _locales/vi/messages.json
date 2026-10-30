@@ -276,7 +276,7 @@
     "message": "Văn bản của bạn"
   },
   "welcome_privacy_body": {
-    "message": "Với các giọng đọc có sẵn trong máy tính và các giọng Piper có thể tải về, văn bản không bao giờ rời khỏi thiết bị của bạn. Google Dịch và các giọng đọc đám mây bạn tự thêm (OpenAI, Azure, Amazon Polly, IBM) nhận văn bản bạn yêu cầu chúng đọc, và không gì khác. ReadFollow không có tài khoản và không thu thập dữ liệu."
+    "message": "Với các giọng đọc có sẵn trong máy tính và các giọng Piper có thể tải về, văn bản không bao giờ rời khỏi thiết bị của bạn. Google Dịch và các giọng đọc đám mây bạn tự thêm (OpenAI, Azure, Amazon Polly, IBM) nhận văn bản bạn yêu cầu chúng đọc, và không gì khác. ReadFollow không có tài khoản và không thu thập dữ liệu. Báo cáo lỗi là tùy chọn và mặc định tắt."
   },
   "welcome_settings_link": {
     "message": "Mở cài đặt"

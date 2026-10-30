@@ -311,7 +311,7 @@
     "message": "Your text"
   },
   "welcome_privacy_body": {
-    "message": "With the voices built into your computer and the downloadable Piper voices, text never leaves your device. Google Translate and the cloud voices you add yourself (OpenAI, Azure, Amazon Polly, IBM) receive the text you ask them to read, and nothing else. ReadFollow has no account and collects no data."
+    "message": "With the voices built into your computer and the downloadable Piper voices, text never leaves your device. Google Translate and the cloud voices you add yourself (OpenAI, Azure, Amazon Polly, IBM) receive the text you ask them to read, and nothing else. ReadFollow has no account and collects no data. Error reports are optional and off by default."
   },
   "welcome_settings_link": {
     "message": "Open settings"

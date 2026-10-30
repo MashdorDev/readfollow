@@ -35,7 +35,7 @@ Removing the extension deletes all of it.
 
 ## Error reports (optional)
 
-Reading can fail in ways nobody hears about, so version 1.0.5 and later can tell the developer when it does. This is off until you turn on "Send error reports" in Settings. In Firefox the browser also asks for your permission, and you can withdraw it in the add-on's settings at any time. When it is on and reading fails, a short report goes to a GlitchTip server run by the developer at `glitchtip.dorzairi.com`. GlitchTip is open-source error tracking, self-hosted on the developer's own hardware. No third-party company receives the report.
+Reading can fail in ways nobody hears about, so version 1.0.5 and later can tell the developer when it does. This is off until you turn on "Send error reports" in Settings. In Firefox the browser also asks for your permission, and you can withdraw it in the add-on's settings at any time. When it is on and reading fails, a short report goes to a GlitchTip server run by the developer at `glitchtip.dorzairi.com`. GlitchTip is open-source error tracking, self-hosted on the developer's own hardware. The server sits behind Cloudflare, which carries the traffic and so handles the report and your IP address on the way through. No other company receives it.
 
 A report contains:
 

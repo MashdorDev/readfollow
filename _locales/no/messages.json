@@ -276,7 +276,7 @@
     "message": "Teksten din"
   },
   "welcome_privacy_body": {
-    "message": "Med stemmene som er innebygd i datamaskinen din og Piper-stemmene du kan laste ned, forlater teksten aldri enheten din. Google Translate og skystemmene du legger til selv (OpenAI, Azure, Amazon Polly, IBM) mottar teksten du ber dem lese, og ingenting annet. ReadFollow har ingen konto og samler ikke inn data."
+    "message": "Med stemmene som er innebygd i datamaskinen din og Piper-stemmene du kan laste ned, forlater teksten aldri enheten din. Google Translate og skystemmene du legger til selv (OpenAI, Azure, Amazon Polly, IBM) mottar teksten du ber dem lese, og ingenting annet. ReadFollow har ingen konto og samler ikke inn data. Feilrapporter er valgfrie og er av som standard."
   },
   "welcome_settings_link": {
     "message": "Åpne innstillinger"

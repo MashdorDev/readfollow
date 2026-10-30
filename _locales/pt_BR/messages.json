@@ -276,7 +276,7 @@
     "message": "Seu texto"
   },
   "welcome_privacy_body": {
-    "message": "Com as vozes integradas ao seu computador e as vozes Piper para download, o texto nunca sai do seu dispositivo. O Google Translate e as vozes na nuvem que você mesmo adiciona (OpenAI, Azure, Amazon Polly, IBM) recebem o texto que você pede para eles lerem, e nada mais. O ReadFollow não tem conta e não coleta nenhum dado."
+    "message": "Com as vozes integradas ao seu computador e as vozes Piper para download, o texto nunca sai do seu dispositivo. O Google Translate e as vozes na nuvem que você mesmo adiciona (OpenAI, Azure, Amazon Polly, IBM) recebem o texto que você pede para eles lerem, e nada mais. O ReadFollow não tem conta e não coleta nenhum dado. Os relatórios de erro são opcionais e vêm desativados."
   },
   "welcome_settings_link": {
     "message": "Abrir configurações"

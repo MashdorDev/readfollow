@@ -276,7 +276,7 @@
     "message": "Teks Anda"
   },
   "welcome_privacy_body": {
-    "message": "Dengan suara bawaan komputer Anda dan suara Piper yang dapat diunduh, teks tidak pernah keluar dari perangkat Anda. Google Terjemahan dan suara cloud yang Anda tambahkan sendiri (OpenAI, Azure, Amazon Polly, IBM) menerima teks yang Anda minta untuk dibacakan, dan tidak ada yang lain. ReadFollow tidak memiliki akun dan tidak mengumpulkan data."
+    "message": "Dengan suara bawaan komputer Anda dan suara Piper yang dapat diunduh, teks tidak pernah keluar dari perangkat Anda. Google Terjemahan dan suara cloud yang Anda tambahkan sendiri (OpenAI, Azure, Amazon Polly, IBM) menerima teks yang Anda minta untuk dibacakan, dan tidak ada yang lain. ReadFollow tidak memiliki akun dan tidak mengumpulkan data. Laporan kesalahan bersifat opsional dan nonaktif secara default."
   },
   "welcome_settings_link": {
     "message": "Buka pengaturan"

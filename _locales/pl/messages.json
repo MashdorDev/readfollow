@@ -276,7 +276,7 @@
     "message": "Twój tekst"
   },
   "welcome_privacy_body": {
-    "message": "W przypadku głosów wbudowanych w Twój komputer i pobieranych głosów Piper tekst nigdy nie opuszcza Twojego urządzenia. Google Translate i głosy w chmurze, które dodajesz samodzielnie (OpenAI, Azure, Amazon Polly, IBM), otrzymują tekst, który każesz im przeczytać, i nic więcej. ReadFollow nie ma kont i nie zbiera żadnych danych."
+    "message": "W przypadku głosów wbudowanych w Twój komputer i pobieranych głosów Piper tekst nigdy nie opuszcza Twojego urządzenia. Google Translate i głosy w chmurze, które dodajesz samodzielnie (OpenAI, Azure, Amazon Polly, IBM), otrzymują tekst, który każesz im przeczytać, i nic więcej. ReadFollow nie ma kont i nie zbiera żadnych danych. Raporty o błędach są opcjonalne i domyślnie wyłączone."
   },
   "welcome_settings_link": {
     "message": "Otwórz ustawienia"
