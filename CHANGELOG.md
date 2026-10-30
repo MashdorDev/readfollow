@@ -9,6 +9,11 @@ Release notes on the About page) lives in `js/whatsnew.js`.
 
 ## [Unreleased]
 
+### Added
+- **Optional error reports.** Off by default. Turn on "Send error reports" in Settings to tell
+  the developer when reading fails. A report never contains the text you read or the page you
+  read it on; see the [privacy policy](docs/privacy-policy.md).
+
 ## [1.0.4] - 2026-10-27
 
 ### Fixed

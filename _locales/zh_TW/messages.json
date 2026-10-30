@@ -400,5 +400,11 @@
   },
   "privacy_policy_link": {
     "message": "隱私權政策"
+  },
+  "options_error_reports_label": {
+    "message": "傳送錯誤報告"
+  },
+  "options_error_reports_help": {
+    "message": "朗讀失敗時告知開發者發生了什麼問題。絕不包含您朗讀的文字或頁面。"
   }
 }

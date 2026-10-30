@@ -400,5 +400,11 @@
   },
   "privacy_policy_link": {
     "message": "Informativa sulla privacy"
+  },
+  "options_error_reports_label": {
+    "message": "Invia segnalazioni di errore"
+  },
+  "options_error_reports_help": {
+    "message": "Quando la lettura non riesce, lo sviluppatore viene informato del problema. Non include mai il testo letto né la pagina."
   }
 }

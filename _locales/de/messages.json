@@ -400,5 +400,11 @@
   },
   "privacy_policy_link": {
     "message": "Datenschutzerklärung"
+  },
+  "options_error_reports_label": {
+    "message": "Fehlerberichte senden"
+  },
+  "options_error_reports_help": {
+    "message": "Wenn das Vorlesen fehlschlägt, erfährt der Entwickler, was schiefging. Enthält nie den gelesenen Text oder die Seite."
   }
 }

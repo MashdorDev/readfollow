@@ -400,5 +400,11 @@
   },
   "privacy_policy_link": {
     "message": "隐私政策"
+  },
+  "options_error_reports_label": {
+    "message": "发送错误报告"
+  },
+  "options_error_reports_help": {
+    "message": "朗读失败时告知开发者出了什么问题。绝不包含您朗读的文本或页面。"
   }
 }

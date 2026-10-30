@@ -400,5 +400,11 @@
   },
   "privacy_policy_link": {
     "message": "Chính sách quyền riêng tư"
+  },
+  "options_error_reports_label": {
+    "message": "Gửi báo cáo lỗi"
+  },
+  "options_error_reports_help": {
+    "message": "Khi đọc thất bại, nhà phát triển sẽ biết điều gì đã xảy ra. Không bao giờ bao gồm văn bản bạn đọc hoặc trang."
   }
 }

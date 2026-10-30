@@ -400,5 +400,11 @@
   },
   "privacy_policy_link": {
     "message": "Gizlilik politikası"
+  },
+  "options_error_reports_label": {
+    "message": "Hata raporları gönder"
+  },
+  "options_error_reports_help": {
+    "message": "Okuma başarısız olduğunda geliştiriciye neyin yanlış gittiği bildirilir. Okuduğunuz metni veya sayfayı asla içermez."
   }
 }

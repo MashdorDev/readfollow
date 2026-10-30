@@ -400,5 +400,11 @@
   },
   "privacy_policy_link": {
     "message": "Polityka prywatności"
+  },
+  "options_error_reports_label": {
+    "message": "Wysyłaj raporty o błędach"
+  },
+  "options_error_reports_help": {
+    "message": "Gdy czytanie się nie powiedzie, deweloper dowie się, co poszło nie tak. Raport nigdy nie zawiera czytanego tekstu ani strony."
   }
 }

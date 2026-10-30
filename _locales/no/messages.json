@@ -400,5 +400,11 @@
   },
   "privacy_policy_link": {
     "message": "Personvernerklæring"
+  },
+  "options_error_reports_label": {
+    "message": "Send feilrapporter"
+  },
+  "options_error_reports_help": {
+    "message": "Når opplesingen mislykkes, får utvikleren vite hva som gikk galt. Inneholder aldri teksten du leser eller siden."
   }
 }

@@ -400,5 +400,11 @@
   },
   "privacy_policy_link": {
     "message": "Integritetspolicy"
+  },
+  "options_error_reports_label": {
+    "message": "Skicka felrapporter"
+  },
+  "options_error_reports_help": {
+    "message": "När uppläsningen misslyckas får utvecklaren veta vad som gick fel. Innehåller aldrig texten du läser eller sidan."
   }
 }

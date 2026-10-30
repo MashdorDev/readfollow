@@ -400,5 +400,11 @@
   },
   "privacy_policy_link": {
     "message": "Privacybeleid"
+  },
+  "options_error_reports_label": {
+    "message": "Foutrapporten verzenden"
+  },
+  "options_error_reports_help": {
+    "message": "Als voorlezen mislukt, krijgt de ontwikkelaar te horen wat er misging. Bevat nooit de tekst die je leest of de pagina."
   }
 }

@@ -400,5 +400,11 @@
   },
   "privacy_policy_link": {
     "message": "गोपनीयता नीति"
+  },
+  "options_error_reports_label": {
+    "message": "त्रुटि रिपोर्ट भेजें"
+  },
+  "options_error_reports_help": {
+    "message": "पढ़ना विफल होने पर डेवलपर को बताया जाता है कि क्या गलत हुआ। इसमें आपका पढ़ा गया टेक्स्ट या पेज कभी शामिल नहीं होता।"
   }
 }

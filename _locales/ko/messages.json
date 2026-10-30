@@ -400,5 +400,11 @@
   },
   "privacy_policy_link": {
     "message": "개인정보처리방침"
+  },
+  "options_error_reports_label": {
+    "message": "오류 보고서 보내기"
+  },
+  "options_error_reports_help": {
+    "message": "읽기에 실패하면 무엇이 잘못되었는지 개발자에게 알립니다. 읽는 텍스트나 페이지는 절대 포함되지 않습니다."
   }
 }

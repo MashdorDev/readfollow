@@ -400,5 +400,11 @@
   },
   "privacy_policy_link": {
     "message": "プライバシーポリシー"
+  },
+  "options_error_reports_label": {
+    "message": "エラーレポートを送信"
+  },
+  "options_error_reports_help": {
+    "message": "読み上げに失敗したとき、問題の内容を開発者に知らせます。読んでいるテキストやページは含まれません。"
   }
 }

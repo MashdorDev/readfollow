@@ -400,5 +400,11 @@
   },
   "privacy_policy_link": {
     "message": "Política de privacidad"
+  },
+  "options_error_reports_label": {
+    "message": "Enviar informes de errores"
+  },
+  "options_error_reports_help": {
+    "message": "Cuando la lectura falla, se informa al desarrollador de lo ocurrido. Nunca incluye el texto que lees ni la página."
   }
 }

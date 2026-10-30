@@ -400,5 +400,11 @@
   },
   "privacy_policy_link": {
     "message": "Zásady ochrany osobních údajů"
+  },
+  "options_error_reports_label": {
+    "message": "Odesílat hlášení o chybách"
+  },
+  "options_error_reports_help": {
+    "message": "Když čtení selže, vývojář se dozví, co se stalo. Nikdy neobsahuje čtený text ani stránku."
   }
 }

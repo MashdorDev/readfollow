@@ -400,5 +400,11 @@
   },
   "privacy_policy_link": {
     "message": "Kebijakan privasi"
+  },
+  "options_error_reports_label": {
+    "message": "Kirim laporan kesalahan"
+  },
+  "options_error_reports_help": {
+    "message": "Saat pembacaan gagal, pengembang diberi tahu apa yang salah. Tidak pernah menyertakan teks yang Anda baca atau halamannya."
   }
 }

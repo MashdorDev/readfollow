@@ -206,6 +206,31 @@
 
 
 
+  //errorReports
+  domReadyPromise
+    .then(async () => {
+      const checkbox = $("#error-reports")
+      checkbox.prop("checked", await hasReportConsent())
+      checkbox.change(async function() {
+        const on = this.checked
+        //Firefox shows its own consent prompt for technical data. Chrome doesn't know the key and rejects,
+        //which is fine: there the checkbox is consent.
+        try {
+          const changed = on
+            ? await brapi.permissions.request({data_collection: [REPORT_DATA_PERMISSION]})
+            : await brapi.permissions.remove({data_collection: [REPORT_DATA_PERMISSION]})
+          if (on && !changed) {
+            this.checked = false
+            return
+          }
+        }
+        catch (err) {
+          console.debug("No data-collection permissions in this browser", err)
+        }
+        await updateSettings({errorReports: on})
+      })
+    })
+
   //showHighlighting
   domReadyPromise
     .then(() => {

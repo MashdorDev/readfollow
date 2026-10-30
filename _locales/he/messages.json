@@ -450,5 +450,11 @@
   },
   "privacy_policy_link": {
     "message": "מדיניות פרטיות"
+  },
+  "options_error_reports_label": {
+    "message": "שליחת דיווחי שגיאות"
+  },
+  "options_error_reports_help": {
+    "message": "כשההקראה נכשלת, המפתח מקבל דיווח על מה שקרה. הדיווח אף פעם לא כולל את הטקסט שאתם קוראים או את הדף."
   }
 }

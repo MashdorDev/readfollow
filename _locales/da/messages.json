@@ -400,5 +400,11 @@
   },
   "privacy_policy_link": {
     "message": "Privatlivspolitik"
+  },
+  "options_error_reports_label": {
+    "message": "Send fejlrapporter"
+  },
+  "options_error_reports_help": {
+    "message": "Når oplæsningen fejler, får udvikleren besked om, hvad der gik galt. Indeholder aldrig den tekst, du læser, eller siden."
   }
 }

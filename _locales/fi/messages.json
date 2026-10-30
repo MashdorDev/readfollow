@@ -400,5 +400,11 @@
   },
   "privacy_policy_link": {
     "message": "Tietosuojakäytäntö"
+  },
+  "options_error_reports_label": {
+    "message": "Lähetä virheraportteja"
+  },
+  "options_error_reports_help": {
+    "message": "Kun lukeminen epäonnistuu, kehittäjä saa tietää, mikä meni vikaan. Ei koskaan sisällä lukemaasi tekstiä tai sivua."
   }
 }

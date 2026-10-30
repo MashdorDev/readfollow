@@ -462,5 +462,11 @@
   },
   "release_notes_full_changelog": {
     "message": "Every change, including the ones you won't notice"
+  },
+  "options_error_reports_label": {
+    "message": "Send error reports"
+  },
+  "options_error_reports_help": {
+    "message": "When reading fails, tell the developer what went wrong. Never includes the text you read or the page."
   }
 }

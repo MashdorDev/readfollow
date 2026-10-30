@@ -400,5 +400,11 @@
   },
   "privacy_policy_link": {
     "message": "سياسة الخصوصية"
+  },
+  "options_error_reports_label": {
+    "message": "إرسال تقارير الأخطاء"
+  },
+  "options_error_reports_help": {
+    "message": "عند فشل القراءة، يتم إخبار المطور بما حدث. لا يتضمن التقرير النص الذي تقرأه أو الصفحة أبدًا."
   }
 }
