@@ -7,6 +7,12 @@
 
 var WHATS_NEW_ENTRIES = [
   {
+    version: "1.0.5",
+    highlights: [
+      "New in Settings: you can choose to send error reports when reading fails. They stay off unless you turn them on, and never include what you read.",
+    ],
+  },
+  {
     version: "1.0.4",
     highlights: [
       "Some pages, such as Project Gutenberg books, stopped before saying a word because ReadFollow guessed the wrong language. It now trusts the page when the guess is shaky.",
