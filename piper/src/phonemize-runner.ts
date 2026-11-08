@@ -187,7 +187,10 @@ export function makePhonemizeRunner(load: () => Promise<RawPhonemizer>) {
   }
 
   async function runPieces(pieces: string[], lang: string): Promise<string[][][]> {
-    const phonemizer = await getModule()
+    //another phonemize call can throw the module away while this one waits for it
+    let promise = getModule()
+    let phonemizer = await promise
+    while (current != promise) phonemizer = await (promise = getModule())
     try {
       const {exitCode, results} = phonemizer.run(pieces, lang)
       if (exitCode != 0) throw new Error("exit code " + exitCode)
@@ -195,7 +198,7 @@ export function makePhonemizeRunner(load: () => Promise<RawPhonemizer>) {
       return results.map(x => x.phonemes)
     }
     catch (err) {
-      current = undefined
+      if (current == promise) current = undefined
       throw err
     }
   }

@@ -114,3 +114,8 @@ test("a fatal Piper failure carries the same context", () => {
   assert.equal(event.extra["text.loneSurrogates"], 1)
   assert.equal(event.tags.lang, "de")
 })
+
+test("a negative exit code is still a known kind", () => {
+  const event = describeSkipReport({kind: "exit code -1", lang: "en-us"})
+  assert.equal(event.message.formatted, "Skipped a sentence: Piper phonemizer failed: exit code -1")
+})

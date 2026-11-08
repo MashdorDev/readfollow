@@ -16,7 +16,7 @@ const KNOWN_MESSAGES = [
   /^Non-PDF content$/,
   /^Failed to (get EPUB document info|flip EPUB page|get EPUB text)$/,
   /^Piper phonemizer failed with exit code -?\d+$/,
-  /^Piper phonemizer failed: [\w ]{1,80}$/,
+  /^Piper phonemizer failed: [\w -]{1,80}$/,
   /^This voice needs a phonemizer that ReadFollow doesn't include \([\w-]+, [\w-]+\)$/,
   /^A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received( \w+)?$/,
   /^Could not establish connection\. Receiving end does not exist\.( \w+)?$/,
@@ -47,7 +47,7 @@ function reportFrames(stack) {
 function describePhonemizeFailure(failure) {
   if (!failure || typeof failure != "object") return undefined
   const extra = {}
-  if (/^[\w ]{1,80}$/.test(failure.kind)) extra.kind = failure.kind
+  if (/^[\w -]{1,80}$/.test(failure.kind)) extra.kind = failure.kind
   if (/^[a-z]{2,3}(-[a-z0-9]+)*$/i.test(failure.lang)) extra.lang = failure.lang
   if (/^[a-z]{2,3}_[A-Z]{2}-[\w-]{1,40}$/.test(failure.voice)) extra.voice = failure.voice
   const text = failure.text && typeof failure.text == "object" ? failure.text : {}

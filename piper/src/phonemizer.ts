@@ -35,15 +35,21 @@ async function batchPhonemize(texts: string[], lang: string, phonemeType: Phonem
 export function makePhonemizer(modelConfig: ModelConfig) {
   const phonemeType = modelConfig.phoneme_type ?? config.defaults.phonemeType
   const sentenceSilenceSeconds = config.defaults.sentenceSilenceSeconds
+  let failuresInARow = 0
 
   return {
     //A text the phonemizer can't handle comes back with no phrases, so it is skipped, and is passed to onSkip.
-    //If every text in a batch fails, the phonemizer itself is broken and the reading stops.
+    //Two failed texts in a row mean the phonemizer itself is broken for this voice, and the reading stops.
     async batchPhonemize(texts: string[], onSkip?: (failure: PhonemizeFailure) => void): Promise<Phrase[][]> {
       const results = await batchPhonemize(texts, modelConfig.espeak.voice, phonemeType)
-      const failures = results.filter(isFailure)
-      if (failures.length && failures.length == results.length && results.length > 1) throw new PhonemizerError(failures[0])
-      failures.forEach(failure => onSkip?.(failure))
+      for (const result of results) {
+        if (!isFailure(result)) {
+          failuresInARow = 0
+          continue
+        }
+        if (++failuresInARow >= 2) throw new PhonemizerError(result)
+        onSkip?.(result)
+      }
 
       return results.map(result => {
         if (isFailure(result)) return []
