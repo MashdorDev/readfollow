@@ -20,7 +20,7 @@ Release notes on the About page) lives in `js/whatsnew.js`.
   and the reading goes on. Two failed sentences in a row still stop it.
 - **More useful error reports.** With error reports on, a Piper failure now
   says how long the text was, which kinds of characters and scripts it held,
-  and which voice and language were used. The text itself is still never sent.
+  and which language it was read in. The text itself is still never sent.
 
 ## [1.0.5] - 2026-10-30
 
