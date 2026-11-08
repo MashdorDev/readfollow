@@ -1,6 +1,7 @@
 import * as rxjs from "rxjs"
 import config from "./config"
 import { Phrase } from "./phonemizer"
+import { PhonemizeFailure } from "./phonemize-runner"
 import { makeSynthesizer } from "./synthesizer"
 import { PcmData, PlayAudio } from "./types"
 import { immediate, lazy, makeBatchProcessor, wait } from "./utils"
@@ -50,6 +51,7 @@ export interface SeekTarget {
 interface Callbacks {
   onSentence(startIndex: number, endIndex: number): void
   onPhrase?(timing: PhraseTiming): void
+  onSkip?(failure: PhonemizeFailure): void
 }
 
 interface Playing {
@@ -66,7 +68,7 @@ export function makeSpeech(
   opts: SpeakOptions,
   callbacks: Callbacks
 ) {
-  const sentences = makeSentences(synth, opts)
+  const sentences = makeSentences(synth, opts, callbacks)
   const playlist = makePlaylist(sentences, opts, callbacks)
   const control = new rxjs.Subject<"pause"|"resume"|"next"|"forward"|"rewind"|SeekTarget>()
   return {
@@ -212,7 +214,8 @@ function makePlaylist(
 
 function makeSentences(
   synth: Synthesizer,
-  opts: SpeakOptions
+  opts: SpeakOptions,
+  callbacks: Callbacks
 ) {
   /**
    * Hebrew       ׃
@@ -238,7 +241,7 @@ function makeSentences(
 
   const batchPhonemize = makeBatchProcessor(config.phonemizeBatchSize, async (sentences: string[]) => {
     const phonemizer = await synth.phonemizerPromise
-    return phonemizer.batchPhonemize(sentences)
+    return phonemizer.batchPhonemize(sentences, callbacks.onSkip)
   })
 
   return sentences.map<Sentence>((text, i) => {

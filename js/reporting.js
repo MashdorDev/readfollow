@@ -16,6 +16,7 @@ const KNOWN_MESSAGES = [
   /^Non-PDF content$/,
   /^Failed to (get EPUB document info|flip EPUB page|get EPUB text)$/,
   /^Piper phonemizer failed with exit code -?\d+$/,
+  /^Piper phonemizer failed: [\w -]{1,80}$/,
   /^This voice needs a phonemizer that ReadFollow doesn't include \([\w-]+, [\w-]+\)$/,
   /^A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received( \w+)?$/,
   /^Could not establish connection\. Receiving end does not exist\.( \w+)?$/,
@@ -39,6 +40,36 @@ function reportFrames(stack) {
     })
   }
   return frames.reverse()
+}
+
+//What the Piper frame says about a text it couldn't phonemize: counts and names, checked field by field so nothing
+//else can ride along (the frame is ours, but the text it was reading is not)
+function describePhonemizeFailure(failure) {
+  if (!failure || typeof failure != "object") return undefined
+  const extra = {}
+  if (/^[\w -]{1,80}$/.test(failure.kind)) extra.kind = failure.kind
+  if (/^[a-z]{2,3}(-[a-z0-9]+)*$/i.test(failure.lang)) extra.lang = failure.lang
+  if (/^[a-z]{2,3}_[A-Z]{2}-[\w-]{1,40}$/.test(failure.voice)) extra.voice = failure.voice
+  const text = failure.text && typeof failure.text == "object" ? failure.text : {}
+  for (const [key, value] of Object.entries(text)) {
+    if (/^[a-zA-Z]{1,20}$/.test(key) && Number.isInteger(value) && value >= 0) extra["text." + key] = value
+  }
+  if (Array.isArray(text.scripts)) extra["text.scripts"] = text.scripts.filter(s => /^[A-Z][a-z]{1,15}$/.test(s)).join(",")
+  return extra
+}
+
+//A sentence Piper skipped: the reading went on, so it's a warning
+function describeSkipReport(failure) {
+  const extra = describePhonemizeFailure(failure)
+  if (!extra || !extra.kind) return null
+  const title = "Piper phonemizer failed: " + extra.kind
+  return {
+    level: "warning",
+    message: {formatted: "Skipped a sentence: " + title},
+    fingerprint: ["skip " + title],
+    tags: extra.lang ? {lang: extra.lang} : {},
+    extra,
+  }
 }
 
 //Returns the event to send, or null when the error isn't a failure worth reporting
@@ -68,11 +99,13 @@ function describeReportError(err) {
   const where = top ? `${top.filename.slice("app:///".length)}:${top.lineno}` : "unknown"
   const title = code ? code + (lang ? " " + lang : "") : known ? message : `${name} at ${where}`
 
+  const extra = describePhonemizeFailure(err.failure)
   return {
     level: "error",
     message: {formatted: "Reading failed: " + title},
     fingerprint: [title],
-    tags: {},
+    tags: extra && extra.lang ? {lang: extra.lang} : {},
+    extra,
     exception: frames.length ? {values: [{type: name, value: title, stacktrace: {frames}}]} : undefined,
   }
 }
@@ -101,9 +134,17 @@ async function hasReportConsent() {
   return !perms.data_collection || perms.data_collection.includes(REPORT_DATA_PERMISSION)
 }
 
-async function reportFailure(err) {
+function reportFailure(err) {
+  return sendReport(() => describeReportError(err))
+}
+
+function reportSkip(failure) {
+  return sendReport(() => describeSkipReport(failure))
+}
+
+async function sendReport(describe) {
   try {
-    const event = describeReportError(err)
+    const event = describe()
     if (!event) return
     const key = event.fingerprint[0]
     if (reportsSent >= MAX_REPORTS_PER_PAGE || reportsSeen.has(key)) return
@@ -128,7 +169,7 @@ async function reportFailure(err) {
         JSON.stringify({type: "event"}),
         JSON.stringify({
           ...event,
-          tags: {voice: voiceFamily(reportVoice), browser: config.browserId},
+          tags: {...event.tags, voice: voiceFamily(reportVoice), browser: config.browserId},
           event_id: eventId,
           timestamp: sentAt,
           platform: "javascript",
@@ -144,5 +185,5 @@ async function reportFailure(err) {
 }
 
 if (typeof module != "undefined") {
-  module.exports = {describeReportError, reportFrames}
+  module.exports = {describeReportError, describeSkipReport, reportFrames}
 }

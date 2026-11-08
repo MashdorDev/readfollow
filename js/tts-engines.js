@@ -707,7 +707,7 @@ function PiperTtsEngine() {
         rxjs.ignoreElements(),
         rxjs.mergeWith(piperCallbacks),
         rxjs.map(event => {
-          if (event.type == "error") throw event.error
+          if (event.type == "error") throw event.failure ? Object.assign(event.error, {failure: event.failure}) : event.error
           return event
         }),
         rxjs.takeWhile(event => event.type != "end")
