@@ -97,7 +97,7 @@ test("a skipped Piper sentence sends counts and names, never the text", () => {
   assert.equal(event.tags.lang, "en-us")
   assert.equal(event.extra["text.length"], 120)
   assert.equal(event.extra["text.scripts"], "Latin")
-  assert.equal(event.extra.voice, "en_US-cori-high")
+  assert.equal(event.extra.voice, undefined, "which voice is never reported, only its kind")
   assert.equal(event.extra["text.words"], undefined)
   assert.ok(!JSON.stringify(event).includes("medical"))
 })

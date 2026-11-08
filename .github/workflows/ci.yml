@@ -30,6 +30,9 @@ jobs:
         run: for f in js/*.js js/content/*.js tools/*.mjs background.js; do node --check "$f"; done
       - name: Unit tests
         run: node --test
+      # A version bump without its CHANGELOG section would reach the stores with no notes
+      - name: CHANGELOG has a section for this version
+        run: node tools/release-notes.mjs "$(node -p "require('./manifest.json').version")" > /dev/null
       - name: Build the Firefox package
         run: node tools/build-firefox.mjs
       # AMO rejects an upload with linter errors; warnings inside the bundled libraries are expected
@@ -144,13 +147,15 @@ jobs:
             exit 0
           fi
           node tools/build-firefox.mjs
+          # The CHANGELOG section becomes the version's release notes on AMO
+          node tools/release-notes.mjs "${{ needs.detect-version.outputs.version }}" --amo amo-metadata.json > "$RUNNER_TEMP/amo-metadata.json"
           set +e
           npx --yes web-ext@8 sign \
             --source-dir build/firefox \
             --api-key="$AMO_JWT_ISSUER" \
             --api-secret="$AMO_JWT_SECRET" \
             --channel=listed \
-            --amo-metadata=amo-metadata.json \
+            --amo-metadata="$RUNNER_TEMP/amo-metadata.json" \
             --upload-source-code=./artifact/readfollow-source.zip \
             --approval-timeout=0 2>&1 | tee sign.log
           status=${PIPESTATUS[0]}
@@ -234,10 +239,12 @@ jobs:
             sleep 15
           done
           echo "::warning::AMO did not serve $VERSION within 5 minutes (a new version may still be in review); releasing without the .xpi"
+      - name: Release notes from CHANGELOG.md
+        run: node tools/release-notes.mjs "${{ needs.detect-version.outputs.version }}" > "$RUNNER_TEMP/release-notes.md"
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ needs.detect-version.outputs.version }}
           name: v${{ needs.detect-version.outputs.version }}
-          generate_release_notes: true
+          body_path: ${{ runner.temp }}/release-notes.md
           files: ./artifact/*

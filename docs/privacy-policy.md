@@ -1,6 +1,6 @@
 # Privacy Policy: ReadFollow
 
-_Last updated: 30 October 2026_
+_Last updated: 8 November 2026_
 
 ReadFollow ("the extension") is a free, open-source browser extension that reads text aloud and highlights each word on the page as it is spoken.
 
@@ -42,6 +42,7 @@ A report contains:
 - the type of error and the file and line in the extension where it happened, or a fixed error name from the extension's own list;
 - for a missing voice, the language code it was looking for, such as `mt`;
 - what kind of voice was in use (on the device, Piper, Google Translate or a cloud voice), not which one;
+- when a Piper voice fails on a sentence (version 1.0.6 and later): the language code it was reading in and counts about that sentence, such as its length in characters, its number of words and its longest word, how many letters, digits, spaces and other kinds of characters it held, and which writing systems it used (for example Latin or Hebrew). Never the sentence itself;
 - the extension version and the browser name.
 
 A report does **not** contain the text you read, the page or PDF address, your voice or settings, keys, or anything that identifies you. Error messages are left out unless they match a fixed list, because a message could quote what was being read. Like any request, it reaches the server with your IP address; the extension does not include it in the report.
