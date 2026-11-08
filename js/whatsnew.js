@@ -7,6 +7,12 @@
 
 var WHATS_NEW_ENTRIES = [
   {
+    version: "1.0.6",
+    highlights: [
+      "Piper voices no longer stop partway through a long page. A sentence Piper can't read is skipped instead of ending the reading.",
+    ],
+  },
+  {
     version: "1.0.5",
     highlights: [
       "New in Settings: you can choose to send error reports when reading fails. They stay off unless you turn them on, and never include what you read.",

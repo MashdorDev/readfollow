@@ -9,6 +9,19 @@ Release notes on the About page) lives in `js/whatsnew.js`.
 
 ## [Unreleased]
 
+## [1.0.6] - 2026-11-08
+
+### Fixed
+- **Piper voices stopped after a long read.** After about 20,000 characters on
+  one page, every sentence failed and Piper stayed broken until the player
+  closed. It now keeps reading however long the page is, and very long
+  sentences are split so they can be read at all.
+- **One sentence Piper cannot read no longer ends the reading.** It is skipped
+  and the reading goes on. Two failed sentences in a row still stop it.
+- **More useful error reports.** With error reports on, a Piper failure now
+  says how long the text was, which kinds of characters and scripts it held,
+  and which voice and language were used. The text itself is still never sent.
+
 ## [1.0.5] - 2026-10-30
 
 ### Added
