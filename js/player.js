@@ -26,6 +26,7 @@ const piperDispatcher = makeDispatcher("piper-host", {
   onParagraph: args => piperCallbacks.next({type: "paragraph", ...args}),
   onEnd: args => piperCallbacks.next({type: "end", ...args}),
   onError: args => piperCallbacks.next({type: "error", ...args}),
+  onSkip: args => reportSkip(args),
   audioPlay: args => audioPlayer.play(args.src, args.rate, args.volume),
   audioPause: () => audioPlayer.pause(),
   audioResume: () => audioPlayer.resume(),

@@ -4,7 +4,7 @@
 
 const test = require("node:test")
 const assert = require("node:assert")
-const {describeReportError, reportFrames} = require("../js/reporting.js")
+const {describeReportError, describeSkipReport, reportFrames} = require("../js/reporting.js")
 
 const SECRET = "my private medical letter https://bank.example/account?id=42"
 
@@ -82,4 +82,35 @@ test("frames drop page scripts and the per-install id, in both browsers' formats
   assert.deepEqual(frames.map(f => f.filename), ["app:///js/document.js", "app:///js/speech.js"])
   assert.ok(!JSON.stringify(frames).includes("11111111"))
   assert.ok(!JSON.stringify(frames).includes("abcdef"))
+})
+
+test("a skipped Piper sentence sends counts and names, never the text", () => {
+  const event = describeSkipReport({
+    kind: "RuntimeError memory access out of bounds",
+    lang: "en-us",
+    voice: "en_US-cori-high",
+    text: {length: 120, digits: 3, scripts: ["Latin", SECRET], note: SECRET, words: -1},
+    extra: SECRET,
+  })
+  assert.equal(event.level, "warning")
+  assert.equal(event.message.formatted, "Skipped a sentence: Piper phonemizer failed: RuntimeError memory access out of bounds")
+  assert.equal(event.tags.lang, "en-us")
+  assert.equal(event.extra["text.length"], 120)
+  assert.equal(event.extra["text.scripts"], "Latin")
+  assert.equal(event.extra.voice, "en_US-cori-high")
+  assert.equal(event.extra["text.words"], undefined)
+  assert.ok(!JSON.stringify(event).includes("medical"))
+})
+
+test("a skip whose kind carries text is not sent", () => {
+  assert.equal(describeSkipReport({kind: SECRET, lang: "en"}), null)
+})
+
+test("a fatal Piper failure carries the same context", () => {
+  const err = fails("Piper phonemizer failed: uncaught wasm exception", "Error: x\n    at l (moz-extension://abc/vendor/piper/bundle.js:2:5)")
+  err.failure = {kind: "uncaught wasm exception", lang: "de", text: {length: 50, loneSurrogates: 1}}
+  const event = describeReportError(err)
+  assert.equal(event.message.formatted, "Reading failed: Piper phonemizer failed: uncaught wasm exception")
+  assert.equal(event.extra["text.loneSurrogates"], 1)
+  assert.equal(event.tags.lang, "de")
 })

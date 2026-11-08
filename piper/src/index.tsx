@@ -7,6 +7,7 @@ import { advertiseVoices, deleteVoice, getVoiceList, installVoice, makeAdvertise
 import { makeSpeech } from "./speech"
 import * as storage from "./storage"
 import { makeSynthesizer } from "./synthesizer"
+import { PhonemizerError } from "./phonemize-runner"
 import { MyVoice, PcmData, PlayAudio } from "./types"
 import { immediate, makeWav } from "./utils"
 
@@ -447,6 +448,10 @@ function App() {
       },
       onPhrase(timing) {
         notifyCaller("onPhrase", {...timing})
+      },
+      onSkip(failure) {
+        appendActivityLog(`Skipped a sentence the phonemizer couldn't read (${failure.kind})`)
+        notifyCaller("onSkip", {...failure, voice: voice.key})
       }
     })
     function notifyCaller(method: string, args?: Record<string, unknown>) {
@@ -485,7 +490,7 @@ function App() {
       catch (err: any) {
         if (err.name != "CancellationException") {
           reportError(err)
-          notifyCaller("onError", {error: err})
+          notifyCaller("onError", {error: err, failure: err instanceof PhonemizerError ? {...err.failure, voice: voice.key} : undefined})
         }
       }
       finally {

@@ -1,6 +1,6 @@
 import config from "./config"
 import type { ModelConfig, PhonemeType } from "./types"
-import { lazy } from "./utils"
+import { PhonemizeFailure, PhonemizerError, loadPiperPhonemize, makePhonemizeRunner } from "./phonemize-runner"
 
 export interface Phrase {
   readonly phonemes: string[]
@@ -10,32 +10,17 @@ export interface Phrase {
 }
 
 
-declare function createPiperPhonemize(module: {
-  print(output: string): void
-}): Promise<{
+declare function createPiperPhonemize(module: Record<string, unknown>): Promise<{
   callMain(args: string[]): number
 }>
 
-const getLocalPhonemizer = lazy(async () => {
-  let results: Array<{text: string, phonemes: string[][]}> = []
-  const piperPhonemize = await createPiperPhonemize({
-    print(output) {
-      results.push(JSON.parse(output))
-    }
+const phonemizeLocal = makePhonemizeRunner(() => loadPiperPhonemize(
+  createPiperPhonemize,
+  () => fetch("piper_phonemize.wasm").then(res => {
+    if (!res.ok) throw new Error("Failed to load piper_phonemize.wasm, status " + res.status)
+    return res.arrayBuffer()
   })
-  return {
-    phonemize(texts: string[], lang: string) {
-      results = []
-      const exitCode = piperPhonemize.callMain([
-        "--espeak_data", "/espeak-ng-data",
-        "--language", lang,
-        "--input", JSON.stringify(texts.map(text => ({text}))),
-      ])
-      if (exitCode != 0) throw new Error("Piper phonemizer failed with exit code " + exitCode)
-      return results
-    }
-  }
-})
+))
 
 const unsupportedLanguages = config.unsupportedLanguages
 
@@ -43,8 +28,7 @@ async function batchPhonemize(texts: string[], lang: string, phonemeType: Phonem
   if (phonemeType != "espeak" || unsupportedLanguages.test(lang)) {
     throw new Error("This voice needs a phonemizer that ReadFollow doesn't include (" + phonemeType + ", " + lang + ")")
   }
-  const {phonemize} = await getLocalPhonemizer()
-  return phonemize(texts, lang)
+  return phonemizeLocal(texts, lang)
 }
 
 
@@ -53,12 +37,17 @@ export function makePhonemizer(modelConfig: ModelConfig) {
   const sentenceSilenceSeconds = config.defaults.sentenceSilenceSeconds
 
   return {
-    async batchPhonemize(texts: string[]): Promise<Phrase[][]> {
+    //A text the phonemizer can't handle comes back with no phrases, so it is skipped, and is passed to onSkip.
+    //If every text in a batch fails, the phonemizer itself is broken and the reading stops.
+    async batchPhonemize(texts: string[], onSkip?: (failure: PhonemizeFailure) => void): Promise<Phrase[][]> {
       const results = await batchPhonemize(texts, modelConfig.espeak.voice, phonemeType)
-      if (results.length != texts.length || results.some((x,i) => x.text != texts[i])) throw new Error("Unexpected")
+      const failures = results.filter(isFailure)
+      if (failures.length && failures.length == results.length && results.length > 1) throw new PhonemizerError(failures[0])
+      failures.forEach(failure => onSkip?.(failure))
 
       return results.map(result => {
-        const sentences = result.phonemes
+        if (isFailure(result)) return []
+        const sentences = result
           .map(phonemes => ({
             phonemes,
             silenceSeconds: sentenceSilenceSeconds
@@ -77,6 +66,11 @@ export function makePhonemizer(modelConfig: ModelConfig) {
       })
     }
   }
+}
+
+
+function isFailure(result: string[][] | PhonemizeFailure): result is PhonemizeFailure {
+  return !Array.isArray(result)
 }
 
 
