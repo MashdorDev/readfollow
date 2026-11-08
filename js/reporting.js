@@ -49,7 +49,7 @@ function describePhonemizeFailure(failure) {
   const extra = {}
   if (/^[\w -]{1,80}$/.test(failure.kind)) extra.kind = failure.kind
   if (/^[a-z]{2,3}(-[a-z0-9]+)*$/i.test(failure.lang)) extra.lang = failure.lang
-  if (/^[a-z]{2,3}_[A-Z]{2}-[\w-]{1,40}$/.test(failure.voice)) extra.voice = failure.voice
+  //failure.voice (which Piper voice) is left out: the privacy policy promises the kind of voice only
   const text = failure.text && typeof failure.text == "object" ? failure.text : {}
   for (const [key, value] of Object.entries(text)) {
     if (/^[a-zA-Z]{1,20}$/.test(key) && Number.isInteger(value) && value >= 0) extra["text." + key] = value
