@@ -54,7 +54,13 @@ const scriptingOn = '["enableScripting", {\n  value: true,'
 if (!viewerPatched.includes(scriptingOn)) throw new Error("viewer.mjs enableScripting default changed")
 viewerPatched = viewerPatched.replace(scriptingOn, '["enableScripting", {\n  value: false,')
 fs.writeFileSync(viewerMjs, viewerPatched)
-fs.rmSync(path.join(out, "build", "pdf.sandbox.mjs"))
+//quickjs-eval is the interpreter only the sandbox loads. The nowasm fallbacks are wasm2js copies of the image
+//decoders, each a base64 blob on one line, loaded only when WebAssembly fails; the manifest allows
+//wasm-unsafe-eval, so the .wasm decoders always load.
+for (const file of ["build/pdf.sandbox.mjs", "web/wasm/quickjs-eval.js", "web/wasm/quickjs-eval.wasm",
+  "web/wasm/jbig2_nowasm_fallback.js", "web/wasm/openjpeg_nowasm_fallback.js"]) {
+  fs.rmSync(path.join(out, file))
+}
 
 //The Chrome Web Store flags core-js's old IE Object.create fallback (it builds a <script> tag from pieces to
 //get a null-prototype object out of an ActiveX document or an iframe) as obfuscated code. Every browser
@@ -86,7 +92,8 @@ Unchanged except: web/viewer.html loads ReadFollow's js/pdf-bridge.js, one regul
 expression in web/viewer.mjs is rewritten without the v flag (addons-linter can't
 parse it; it matches the same text), core-js's old IE Object.create fallback is
 replaced with the native Object.create in viewer.mjs, pdf.mjs and pdf.worker.mjs,
-PDF scripting is off by default and build/pdf.sandbox.mjs is removed, and
+PDF scripting is off by default and build/pdf.sandbox.mjs and web/wasm/quickjs-eval.*
+are removed, the web/wasm/*_nowasm_fallback.js decoders are removed, and
 source maps, the debugger and the sample PDF are removed.
 Regenerate with: node tools/update-pdfjs.mjs ${version}
 `)
