@@ -5,6 +5,9 @@ Apache License 2.0, Copyright Mozilla Foundation, see LICENSE.
 
 Unchanged except: web/viewer.html loads ReadFollow's js/pdf-bridge.js, one regular
 expression in web/viewer.mjs is rewritten without the v flag (addons-linter can't
-parse it; it matches the same text), and
+parse it; it matches the same text), core-js's old IE Object.create fallback is
+replaced with the native Object.create in viewer.mjs, pdf.mjs and pdf.worker.mjs,
+PDF scripting is off by default and build/pdf.sandbox.mjs and web/wasm/quickjs-eval.*
+are removed, the web/wasm/*_nowasm_fallback.js decoders are removed, and
 source maps, the debugger and the sample PDF are removed.
 Regenerate with: node tools/update-pdfjs.mjs 6.4.299

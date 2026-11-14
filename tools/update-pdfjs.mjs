@@ -46,7 +46,42 @@ const autolinkV = String.raw`/\b(?:https?:\/\/|mailto:|www\.)(?:[\S--[\p{P}<>]]|
 const autolinkU = String.raw`/\b(?:https?:\/\/|mailto:|www\.)(?:(?![\p{P}<>])\S|\/|[^\s\[\]]+(?![\p{P}<>])\S)+|(?=\p{L})(?:(?![@\p{Ps}\p{Pe}<>])\S){1,64}@((?:-|(?![\p{P}<>])\S){1,63}(?:\.(?:-|(?![\p{P}<>])\S){1,63})+)/gu`
 const viewerCode = fs.readFileSync(viewerMjs, "utf8")
 if (!viewerCode.includes(autolinkV)) throw new Error("viewer.mjs link finder changed, check whether it still needs rewriting for addons-linter")
-fs.writeFileSync(viewerMjs, viewerCode.replace(autolinkV, autolinkU))
+let viewerPatched = viewerCode.replace(autolinkV, autolinkU)
+
+//PDF scripting runs form JavaScript in pdf.sandbox.mjs, which carries a second webpack bundle inside one string
+//literal. ReadFollow only reads PDFs aloud, so scripting is turned off and the sandbox isn't shipped.
+const scriptingOn = '["enableScripting", {\n  value: true,'
+if (!viewerPatched.includes(scriptingOn)) throw new Error("viewer.mjs enableScripting default changed")
+viewerPatched = viewerPatched.replace(scriptingOn, '["enableScripting", {\n  value: false,')
+fs.writeFileSync(viewerMjs, viewerPatched)
+//quickjs-eval is the interpreter only the sandbox loads. The nowasm fallbacks are wasm2js copies of the image
+//decoders, each a base64 blob on one line, loaded only when WebAssembly fails; the manifest allows
+//wasm-unsafe-eval, so the .wasm decoders always load.
+for (const file of ["build/pdf.sandbox.mjs", "web/wasm/quickjs-eval.js", "web/wasm/quickjs-eval.wasm",
+  "web/wasm/jbig2_nowasm_fallback.js", "web/wasm/openjpeg_nowasm_fallback.js"]) {
+  fs.rmSync(path.join(out, file))
+}
+
+//The Chrome Web Store flags core-js's old IE Object.create fallback (it builds a <script> tag from pieces to
+//get a null-prototype object out of an ActiveX document or an iframe) as obfuscated code. Every browser
+//ReadFollow supports has a native Object.create, so the fallback is never reached; replace it with the native one.
+const objectCreateFallback = /\/\* global ActiveXObject -- old IE, WSH \*\/\n([\s\S]*?\n)var GT = '>';\nvar LT = '<';[\s\S]*?\nmodule\.exports = Object\.create \|\| function create\(O, Properties\) \{[\s\S]*?\n\};\n/
+const objectCreateNative = `$1var IE_PROTO = sharedKey('IE_PROTO');
+hiddenKeys[IE_PROTO] = true;
+
+// \`Object.create\` method
+// https://tc39.es/ecma262/#sec-object.create
+// ReadFollow: native in every supported browser, the old IE fallback is removed
+module.exports = Object.create;
+`
+for (const file of ["web/viewer.mjs", "build/pdf.mjs", "build/pdf.worker.mjs"]) {
+  const full = path.join(out, file)
+  const code = fs.readFileSync(full, "utf8")
+  if (!objectCreateFallback.test(code)) throw new Error(`${file}: core-js object-create layout changed`)
+  const patched = code.replace(objectCreateFallback, objectCreateNative)
+  if (/ActiveXObject|LT \+ SCRIPT/.test(patched)) throw new Error(`${file}: old IE script-tag code is still present`)
+  fs.writeFileSync(full, patched)
+}
 
 fs.writeFileSync(path.join(out, "README.txt"), `pdf.js ${version} viewer bundled in ReadFollow
 
@@ -55,7 +90,10 @@ Apache License 2.0, Copyright Mozilla Foundation, see LICENSE.
 
 Unchanged except: web/viewer.html loads ReadFollow's js/pdf-bridge.js, one regular
 expression in web/viewer.mjs is rewritten without the v flag (addons-linter can't
-parse it; it matches the same text), and
+parse it; it matches the same text), core-js's old IE Object.create fallback is
+replaced with the native Object.create in viewer.mjs, pdf.mjs and pdf.worker.mjs,
+PDF scripting is off by default and build/pdf.sandbox.mjs and web/wasm/quickjs-eval.*
+are removed, the web/wasm/*_nowasm_fallback.js decoders are removed, and
 source maps, the debugger and the sample PDF are removed.
 Regenerate with: node tools/update-pdfjs.mjs ${version}
 `)

@@ -9,6 +9,14 @@ Release notes on the About page) lives in `js/whatsnew.js`.
 
 ## [Unreleased]
 
+## [1.0.7] - 2026-11-13
+
+### Changed
+- **The bundled PDF viewer no longer runs JavaScript inside PDFs.** ReadFollow
+  only reads PDFs aloud, so form scripts were never needed. The script engine,
+  and an old Internet Explorer workaround the Chrome Web Store reads as
+  obfuscated code, are no longer in the package.
+
 ## [1.0.6] - 2026-11-08
 
 ### Fixed
@@ -112,7 +120,9 @@ First release of ReadFollow, built on [Read Aloud](https://github.com/ken107/rea
 - The original author's servers and site. ReadFollow sends nothing to its
   developer.
 
-[Unreleased]: https://github.com/MashdorDev/readfollow/compare/v1.0.5...HEAD
+[Unreleased]: https://github.com/MashdorDev/readfollow/compare/v1.0.7...HEAD
+[1.0.7]: https://github.com/MashdorDev/readfollow/compare/v1.0.6...v1.0.7
+[1.0.6]: https://github.com/MashdorDev/readfollow/compare/v1.0.5...v1.0.6
 [1.0.5]: https://github.com/MashdorDev/readfollow/compare/v1.0.4...v1.0.5
 [1.0.4]: https://github.com/MashdorDev/readfollow/compare/v1.0.3...v1.0.4
 [1.0.3]: https://github.com/MashdorDev/readfollow/compare/v1.0.2...v1.0.3
